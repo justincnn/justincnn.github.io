@@ -9,7 +9,7 @@
     
     <title>
         
-            Docker常用命令记录 |
+            笛卡尔梦境中的容器之旅：Ubuntu上Docker和Docker Compose的安装方法 |
         
         文科生的 IT 笔记
     </title>
@@ -159,7 +159,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">Docker常用命令记录</span>
+                <span class="title-hover-animation">笛卡尔梦境中的容器之旅：Ubuntu上Docker和Docker Compose的安装方法</span>
             </div>
 
             
@@ -179,13 +179,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-06-04 17:41:53</span>
-        <span class="mobile">2023-06-04 17:41</span>
+        <span class="pc">2023-06-04 18:41:41</span>
+        <span class="mobile">2023-06-04 18:41</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-04 17:43:35</span>
+        <span class="pc">2023-06-04 18:42:46</span>
     </span>
     
     
@@ -207,6 +207,10 @@
                 
                     <li>
                         <a href="/tags/Docker/">Docker</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Linux/">Linux</a>&nbsp;
                     </li>
                 
             </ul>
@@ -231,21 +235,41 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <p>记一些不常用的命令是一件很麻烦的事，此文用以记录一些常用的docker命令</p>
-<h4 id="列出所有的容器-ID"><a href="#列出所有的容器-ID" class="headerlink" title="列出所有的容器 ID"></a>列出所有的容器 ID</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -aq</span><br></pre></td></tr></table></figure>
+                <ul>
+<li><p>Docker是一种容器化技术，它能够让开发者打包应用程序和其依赖项成为一个独立的容器，并可以在任何地方运行这个容器，不受运行环境的限制。简单来说，Docker就像是一个小型的虚拟机，可以在其中运行应用程序。</p>
+</li>
+<li><p>Docker Compose是一个用于管理Docker容器的工具，它能够让开发者通过编写简单的YAML文件来定义并运行多个容器，协同工作。与Docker不同的是，Docker Compose更注重于在多个容器之间建立联系和协调，以实现更复杂的应用程序部署。它可以让开发者更方便地管理多个容器，减少容器之间的配置和交互的复杂度，从而更容易地构建和维护应用程序。</p>
+</li>
+</ul>
+<p>本文介绍下如何在Ubuntu下安装这两者，其他Linux也可参照</p>
+<h3 id="安装Docker："><a href="#安装Docker：" class="headerlink" title="安装Docker："></a>安装Docker：</h3><p>1.1 更新包列表并安装必要的软件包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</span><br></pre></td></tr></table></figure>
 
-<h4 id="停止所有的容器"><a href="#停止所有的容器" class="headerlink" title="停止所有的容器"></a>停止所有的容器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -aq)</span><br><span class="line">~~~~</span><br><span class="line"></span><br><span class="line">#### 删除所有的容器</span><br></pre></td></tr></table></figure>
-<p>docker rm $(docker ps -aq)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 删除所有不使用的镜像</span><br></pre></td></tr></table></figure>
-<p>docker image prune –force –all</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">或者</span><br></pre></td></tr></table></figure>
-<p>docker image prune -f -a&#96; : </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 删除所有停止的容器</span><br></pre></td></tr></table></figure>
-<p>docker container prune -f</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#### 复制文件</span><br></pre></td></tr></table></figure>
-<p>docker cp mycontainer:&#x2F;opt&#x2F;file.txt &#x2F;opt&#x2F;local&#x2F;<br>docker cp &#x2F;opt&#x2F;local&#x2F;file.txt mycontainer:&#x2F;opt&#x2F;</p>
-<pre><code>
-</code></pre>
+<p>1.2. 添加Docker的GPG密钥：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+
+<p>1.3. 添加Docker的APT仓库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br></pre></td></tr></table></figure>
+
+<p>1.4. 安装Docker CE：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Docker-Compose"><a href="#安装Docker-Compose" class="headerlink" title="安装Docker Compose"></a>安装Docker Compose</h3><p>2.1. 下载Docker Compose的二进制文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>2.2. 赋予docker-compose可执行权限：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>2.3. 添加docker-compose到系统PATH中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>2.4. 验证Docker Compose是否安装成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+<p>如果Docker Compose版本号被正确显示，则说明安装成功。</p>
+<h3 id="DockerGPG密钥的作用"><a href="#DockerGPG密钥的作用" class="headerlink" title="DockerGPG密钥的作用"></a>DockerGPG密钥的作用</h3><p>Docker的GPG密钥用于验证Docker软件包的真实性和完整性，以确保其未被篡改或恶意修改。当您从Docker官方仓库中下载Docker软件包时，您可以使用这个GPG密钥进行验证。如果您下载的软件包与Docker官方发布的软件包不匹配，GPG密钥验证将失败并给出警告。这有助于确保您下载的软件包是来自可信来源的，并且没有被篡改。</p>
 
             </div>
 
@@ -255,16 +279,16 @@
 <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li class="post-title">
-            <span class="type">Post title</span>: <span class="content">Docker常用命令记录</span>
+            <span class="type">Post title</span>: <span class="content">笛卡尔梦境中的容器之旅：Ubuntu上Docker和Docker Compose的安装方法</span>
         </li>
         <li class="post-author">
             <span class="type">Post author</span>: <span class="content">Justin Ye</span>
         </li>
         <li class="post-time">
-            <span class="type">Create time</span>: <span class="content">2023-06-04 17:41:53</span>
+            <span class="type">Create time</span>: <span class="content">2023-06-04 18:41:41</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>: <span class="content">2023/06/04/Docker常用命令记录/</span>
+            <span class="type">Post link</span>: <span class="content">2023/06/04/笛卡尔梦境中的容器之旅：Ubuntu上Docker和Docker-Compose的安装方法/</span>
         </li>
         <li class="post-license">
             <span class="type">Copyright notice</span>: <span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -285,6 +309,10 @@
                             <a href="/tags/Docker/">#Docker</a>&nbsp;
                         </li>
                     
+                        <li class="tag-item">
+                            <a href="/tags/Linux/">#Linux</a>&nbsp;
+                        </li>
+                    
                 </ul>
             
 
@@ -294,13 +322,13 @@
                         <div class="article-prev">
                             <a class="prev"
                                rel="prev"
-                               href="/2023/06/04/%E7%94%B2%E9%AA%A8%E6%96%87vps-ubuntu%E5%BC%80%E6%94%BE%E6%89%80%E6%9C%89%E7%AB%AF%E5%8F%A3/"
+                               href="/2023/06/04/Docker%E4%B8%AD%E8%BD%BB%E6%9D%BE%E5%AE%89%E8%A3%85Ubuntu%EF%BC%9A%E5%9C%A8Docker%E4%B8%AD%E6%8E%A2%E7%B4%A2%E6%97%A0%E9%99%90%E5%8F%AF%E8%83%BD/"
                             >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                                 <span class="title flex-center">
-                                <span class="post-nav-title-item">甲骨文vps ubuntu开放所有端口</span>
+                                <span class="post-nav-title-item">Docker中轻松安装Ubuntu：在Docker中探索无限可能</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                             </a>
@@ -310,10 +338,10 @@
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/06/04/Omnivore%EF%BC%9A%E9%87%8A%E6%94%BE%E4%BD%A0%E7%9A%84%E5%9C%A8%E7%BA%BF%E9%98%85%E8%AF%BB%E6%BD%9C%E8%83%BD%EF%BC%8C%E7%95%85%E4%BA%AB%E7%B2%BE%E5%BD%A9%E5%86%85%E5%AE%B9/"
+                               href="/2023/06/04/Gcam%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90%EF%BC%8C%E5%B0%8F%E7%B1%B311%E6%91%84%E5%83%8F%E5%A4%B4%E5%8F%82%E6%95%B0/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Omnivore：释放你的在线阅读潜能，畅享精彩内容</span>
+                                <span class="post-nav-title-item">Gcam全方位解析，小米11摄像头参数</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -332,7 +360,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8-ID"><span class="nav-number">1.</span> <span class="nav-text">列出所有的容器 ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">停止所有的容器</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">安装Docker：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker-Compose"><span class="nav-number">2.</span> <span class="nav-text">安装Docker Compose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DockerGPG%E5%AF%86%E9%92%A5%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">DockerGPG密钥的作用</span></a></li></ol>
     </div>
 </div>
 

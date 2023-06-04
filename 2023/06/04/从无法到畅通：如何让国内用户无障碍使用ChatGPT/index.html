@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Justin Ye">
+    
+    <title>
+        
+            从无法到畅通：如何让国内用户无障碍使用ChatGPT |
+        
+        文科生的 IT 笔记
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066cc","logo":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","favicon":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","avatar":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041600338.png","description":"Never stop creating and never stop adoring, || for you are the star that lights up the sky of my soul.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               文科生的 IT 笔记
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">从无法到畅通：如何让国内用户无障碍使用ChatGPT</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Justin Ye</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-06-04 18:54:36</span>
+        <span class="mobile">2023-06-04 18:54</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-06-04 18:57:07</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/VPS/">VPS</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Docker/">Docker</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/How-to/">How to</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Vps/">Vps</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Script/">Script</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Ai/">Ai</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <p>ChatGPT 是一个基于英语的自然语言处理技术的大型语言模型，由 OpenAI 开发并维护。在国内使用 ChatGPT 面临以下困难：</p>
+<ul>
+<li><p>注册难：由于 ChatGPT 是由外国公司开发和维护的，因此需要通过国际互联网进行注册，需要填写个人信息等敏感信息，这对于一些用户来说可能会有隐私安全的顾虑。</p>
+</li>
+<li><p>充值难：由于 ChatGPT 是一个付费的云服务，需要通过信用卡等国际支付方式进行充值。然而，由于中国大陆的金融监管政策限制，很多用户无法使用国际支付方式进行充值，这导致了使用 ChatGPT 的门槛较高。</p>
+</li>
+<li><p>网络封锁：由于 ChatGPT 的服务器在国外，受到中国大陆的网络封锁影响，使用 ChatGPT 时可能会遇到连接困难、网络不稳定等问题。此外，中国政府也对聊天机器人进行了严格的审查和限制，这也导致了 ChatGPT 在中国的使用面临了一定的限制和困难。</p>
+</li>
+</ul>
+<h2 id="跨越网络的warp"><a href="#跨越网络的warp" class="headerlink" title="跨越网络的warp"></a>跨越网络的warp</h2><p>此为option，具体从下面的docker-compose选择来决定是否要运行此脚本</p>
+<h3 id="1-Warp的好处"><a href="#1-Warp的好处" class="headerlink" title="1.Warp的好处"></a>1.Warp的好处</h3><p>1.1  支持 chatGPT，解锁奈飞流媒体<br>1.2 避免 Google 验证码或是使用 Google 学术搜索<br>1.3 可调用 IPv4 接口，使青龙和V2P等项目能正常运行<br>1.4 由于可以双向转输数据，能做对方VPS的跳板和探针，替代 HE tunnelbroker能让 IPv6 only VPS 上做的节点支持 Telegram<br>1.5 IPv6 建的节点能在只支持 IPv4 的 PassWall、ShadowSocksR Plus+ 上使用</p>
+<h3 id="2-Warp-安装脚本"><a href="#2-Warp-安装脚本" class="headerlink" title="2.Warp 安装脚本"></a>2.Warp 安装脚本</h3><h5 id="option-1"><a href="#option-1" class="headerlink" title="option 1"></a>option 1</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/mikupeto/warp-script/warp.sh &amp;&amp; bash warp.sh</span><br></pre></td></tr></table></figure>
+<h5 id="option-2"><a href="#option-2" class="headerlink" title="option 2"></a>option 2</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh &amp;&amp; bash menu.sh [option] [lisence]</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Warp命令"><a href="#3-Warp命令" class="headerlink" title="3.Warp命令"></a>3.Warp命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp [option] [lisence]</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Warp-Option-解释"><a href="#4-Warp-Option-解释" class="headerlink" title="4.Warp Option 解释"></a>4.Warp Option 解释</h3><table>
+<thead>
+<tr>
+<th>[option] 变量1 变量2</th>
+<th>具体动作说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>h</td>
+<td>帮助</td>
+</tr>
+<tr>
+<td>4</td>
+<td>原无论任何状态 -&gt; WARP IPv4</td>
+</tr>
+<tr>
+<td>4 lisence name</td>
+<td>把 WARP+ Lisence 和设备名添加进去，如 bash menu.sh 4 5670ljg-sS9jD334-6o6g4M9F Goodluck</td>
+</tr>
+<tr>
+<td>6</td>
+<td>原无论任何状态 -&gt; WARP IPv6</td>
+</tr>
+<tr>
+<td>d</td>
+<td>原无论任何状态 -&gt; WARP 双栈</td>
+</tr>
+<tr>
+<td>o</td>
+<td>WARP 开关，脚本主动判断当前状态，自动开或关</td>
+</tr>
+<tr>
+<td>u</td>
+<td>卸载 WARP</td>
+</tr>
+<tr>
+<td>n</td>
+<td>断网时，用于刷WARP网络 (WARP bug)</td>
+</tr>
+<tr>
+<td>b</td>
+<td>升级内核、开启BBR及DD</td>
+</tr>
+<tr>
+<td>a</td>
+<td>免费 WARP 账户升级 WARP+</td>
+</tr>
+<tr>
+<td>a lisence</td>
+<td>在上面基础上把 WARP+ Lisence 添加进去，如 bash menu.sh a N5670ljg-sS9jD334-6o6g4M9F</td>
+</tr>
+<tr>
+<td>p</td>
+<td>刷 Warp+ 流量</td>
+</tr>
+<tr>
+<td>c</td>
+<td>安装 WARP Linux Client，开启 Socks5 代理模式</td>
+</tr>
+<tr>
+<td>l</td>
+<td>安装 WARP Linux Client，开启 WARP 模式</td>
+</tr>
+<tr>
+<td>c</td>
+<td>lisence	在上面基础上把 WARP+ Lisence 添加进去，如 bash menu.sh c N5670ljg-sS9jD334-6o6g4M9F</td>
+</tr>
+<tr>
+<td>r</td>
+<td>WARP Linux Client 开关</td>
+</tr>
+<tr>
+<td>v</td>
+<td>同步脚本至最新版本</td>
+</tr>
+<tr>
+<td>i</td>
+<td>更换 WARP IP</td>
+</tr>
+<tr>
+<td>e</td>
+<td>安装 iptables + dnsmasq + ipset 分流流媒体方案</td>
+</tr>
+<tr>
+<td>w</td>
+<td>安装 WireProxy 解决方案</td>
+</tr>
+<tr>
+<td>y</td>
+<td>WireProxy 开关</td>
+</tr>
+<tr>
+<td>其他或空值</td>
+<td>菜单界面</td>
+</tr>
+</tbody></table>
+<h3 id="5-验证是否可以链接openai"><a href="#5-验证是否可以链接openai" class="headerlink" title="5.验证是否可以链接openai"></a>5.验证是否可以链接openai</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -Ls https://cpp.li/openai)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -Ls https://cdn.jsdelivr.net/gh/missuo/OpenAI-Checker/openai.sh)</span><br></pre></td></tr></table></figure>
+
+<p>如果输出如下内容，表示此步已经成功：</p>
+<p><strong>Your IP supports access to OpenAI.</strong><br><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041856594.png"
+                     
+                ></p>
+<h3 id="6-参考链接"><a href="#6-参考链接" class="headerlink" title="6.参考链接"></a>6.参考链接</h3><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/fscarmen/warp" >服务器添加IPv4&#x2F;IPv6网络<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="部署-go-chatgpt-api"><a href="#部署-go-chatgpt-api" class="headerlink" title="部署 go-chatgpt-api"></a>部署 go-chatgpt-api</h2><h3 id="1-防火墙设置（option）"><a href="#1-防火墙设置（option）" class="headerlink" title="1.防火墙设置（option）"></a>1.防火墙设置（option）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 8080/tcp comment &#x27;chatgpt &#x27; &amp;&amp; sudo ufw reload</span><br></pre></td></tr></table></figure>
+<h3 id="2-VPS可直接访问Chatgpt的docker-compose-yml配置"><a href="#2-VPS可直接访问Chatgpt的docker-compose-yml配置" class="headerlink" title="2.VPS可直接访问Chatgpt的docker-compose.yml配置"></a>2.VPS可直接访问Chatgpt的docker-compose.yml配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">services:</span><br><span class="line">  go-chatgpt-api:</span><br><span class="line">    container_name: go-chatgpt-api</span><br><span class="line">    image: linweiyuan/go-chatgpt-api</span><br><span class="line">    ports:</span><br><span class="line">      - 8080:8080</span><br><span class="line">    environment:</span><br><span class="line">      - GIN_MODE=release</span><br><span class="line">      - GO_CHATGPT_API_PROXY=</span><br><span class="line">    restart: unless-stopped</span><br></pre></td></tr></table></figure>
+<h3 id="3-VPS自建如上Warp的docker-compose-yml"><a href="#3-VPS自建如上Warp的docker-compose-yml" class="headerlink" title="3.VPS自建如上Warp的docker-compose.yml"></a>3.VPS自建如上Warp的docker-compose.yml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">services:</span><br><span class="line">  go-chatgpt-api:</span><br><span class="line">    container_name: go-chatgpt-api</span><br><span class="line">    image: linweiyuan/go-chatgpt-api</span><br><span class="line">    network_mode: &quot;host&quot;</span><br><span class="line">    ports:</span><br><span class="line">      - 8080:8080</span><br><span class="line">    environment:</span><br><span class="line">      - GIN_MODE=release</span><br><span class="line">      - GO_CHATGPT_API_PROXY=</span><br><span class="line">    restart: unless-stopped</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Docker内建Warp和API的docker-compose-yml"><a href="#4-Docker内建Warp和API的docker-compose-yml" class="headerlink" title="4.Docker内建Warp和API的docker-compose.yml"></a>4.Docker内建Warp和API的docker-compose.yml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">services:</span><br><span class="line">  go-chatgpt-api:</span><br><span class="line">    container_name: go-chatgpt-api</span><br><span class="line">    image: linweiyuan/go-chatgpt-api</span><br><span class="line">    ports:</span><br><span class="line">      - 8080:8080</span><br><span class="line">    environment:</span><br><span class="line">      - GIN_MODE=release</span><br><span class="line">      - GO_CHATGPT_API_PROXY=socks5://chatgpt-proxy-server-warp:65535</span><br><span class="line">    depends_on:</span><br><span class="line">      - chatgpt-proxy-server-warp</span><br><span class="line">    restart: unless-stopped</span><br><span class="line"></span><br><span class="line">  chatgpt-proxy-server-warp:</span><br><span class="line">    container_name: chatgpt-proxy-server-warp</span><br><span class="line">    image: linweiyuan/chatgpt-proxy-server-warp</span><br><span class="line">    environment:</span><br><span class="line">      - LOG_LEVEL=OFF</span><br><span class="line">    restart: unless-stopped</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Docker部署完后反代的地址："><a href="#5-Docker部署完后反代的地址：" class="headerlink" title="5.Docker部署完后反代的地址："></a>5.Docker部署完后反代的地址：</h3><p>5.1 如果是同一台VPS</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://172.17.0.1:8080/chatgpt/conversation</span><br></pre></td></tr></table></figure>
+<p>5.2 若交由其他VPS使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://&lt;vps-ip&gt;:8080/chatgpt/conversation</span><br></pre></td></tr></table></figure>
+<p>5.3 反代建立之后，回到api的docker查看日志：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose logs -f</span><br></pre></td></tr></table></figure>
+<p>如果输出为200则代表成功，403和404都是无法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f  go-chatgpt-api</span><br><span class="line"># [GIN] 2023/04/19 - 23:38:00 | 200 | 21.785759553s | 192.168.0.1 | POST     &quot;/conversation&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-参考链接-1"><a href="#6-参考链接-1" class="headerlink" title="6.参考链接"></a>6.参考链接</h3><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/linweiyuan/go-chatgpt-api" >go-chatgpt-api<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="部署Chatgpt-Docker"><a href="#部署Chatgpt-Docker" class="headerlink" title="部署Chatgpt Docker"></a>部署Chatgpt Docker</h2><h3 id="1-获取API或者Token"><a href="#1-获取API或者Token" class="headerlink" title="1.获取API或者Token"></a>1.获取API或者Token</h3><ul>
+<li>使用 OpenAI API Key 请填写 OPENAI_API_KEY 字段 (<a class="link"   target="_blank" rel="noopener" href="https://platform.openai.com/overview" >获取 apiKey<i class="fas fa-external-link-alt"></i></a>)</li>
+<li>使用 Web API 请填写 OPENAI_ACCESS_TOKEN 字段 ({获取 accessToken}(<a class="link"   target="_blank" rel="noopener" href="https://chat.openai.com/api/auth/session" >https://chat.openai.com/api/auth/session<i class="fas fa-external-link-alt"></i></a>))</li>
+</ul>
+<h3 id="2-Docker-compose配置"><a href="#2-Docker-compose配置" class="headerlink" title="2.Docker-compose配置"></a>2.Docker-compose配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  app:</span><br><span class="line">    image: chenzhaoyu94/chatgpt-web # 总是使用 latest ,更新时重新 pull 该 tag 镜像即可</span><br><span class="line">    network_mode: &quot;host&quot;</span><br><span class="line">    ports:</span><br><span class="line">      - 127.0.0.1:3002:3002</span><br><span class="line">    environment:</span><br><span class="line">      # 二选一</span><br><span class="line">      OPENAI_API_KEY: sk-xxx</span><br><span class="line">      # 二选一</span><br><span class="line">      OPENAI_ACCESS_TOKEN: xxx</span><br><span class="line">      # API接口地址，可选，设置 OPENAI_API_KEY 时可用</span><br><span class="line">      OPENAI_API_BASE_URL: xxx</span><br><span class="line">      # API模型，可选，设置 OPENAI_API_KEY 时可用，https://platform.openai.com/docs/models</span><br><span class="line">      # gpt-4, gpt-4-0314, gpt-4-32k, gpt-4-32k-0314, gpt-3.5-turbo, gpt-3.5-turbo-0301, text-davinci-003, text-davinci-002, code-davinci-002</span><br><span class="line">      OPENAI_API_MODEL: xxx</span><br><span class="line">      # 反向代理，可选，即为上文提到的反代</span><br><span class="line">      API_REVERSE_PROXY: xxx</span><br><span class="line">      # 访问权限密钥，可选</span><br><span class="line">      AUTH_SECRET_KEY: xxx</span><br><span class="line">      # 每小时最大请求次数，可选，默认无限</span><br><span class="line">      MAX_REQUEST_PER_HOUR: 0</span><br><span class="line">      # 超时，单位毫秒，可选</span><br><span class="line">      TIMEOUT_MS: 60000</span><br><span class="line">      # Socks代理，可选，和 SOCKS_PROXY_PORT 一起时生效</span><br><span class="line">      SOCKS_PROXY_HOST: xxx</span><br><span class="line">      # Socks代理端口，可选，和 SOCKS_PROXY_HOST 一起时生效</span><br><span class="line">      SOCKS_PROXY_PORT: xxx</span><br><span class="line">      # HTTPS 代理，可选，支持 http，https，socks5</span><br><span class="line">      HTTPS_PROXY: http://xxx:7890</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-参考链接"><a href="#3-参考链接" class="headerlink" title="3. 参考链接"></a>3. 参考链接</h3><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/Chanzhaoyu/chatgpt-web" >ChatGPT Web<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="4-备用反代方案"><a href="#4-备用反代方案" class="headerlink" title="4.备用反代方案"></a>4.备用反代方案</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">services:</span><br><span class="line">  go-chatgpt-api:</span><br><span class="line">    container_name: go-chatgpt-api</span><br><span class="line">    # legacy是依赖chatgpt-proxy-server的，我个人测试比较稳定</span><br><span class="line">    image: linweiyuan/go-chatgpt-api:legacy </span><br><span class="line">    ports:</span><br><span class="line">      - 8080:8080 # 宿主机8080端口可按需改为其它端口</span><br><span class="line">    environment:</span><br><span class="line">      - GIN_MODE=release</span><br><span class="line">      - CHATGPT_PROXY_SERVER=http://chatgpt-proxy-server:9515</span><br><span class="line">    depends_on:</span><br><span class="line">      - chatgpt-proxy-server</span><br><span class="line">    restart: unless-stopped</span><br><span class="line"> </span><br><span class="line">  chatgpt-proxy-server:</span><br><span class="line">    container_name: chatgpt-proxy-server</span><br><span class="line">    image: linweiyuan/chatgpt-proxy-server</span><br><span class="line">    environment:</span><br><span class="line">      - LOG_LEVEL=INFO</span><br><span class="line">    restart: unless-stopped</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果是同一台VPS<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://172.17.0.1:8080/conversation</span><br></pre></td></tr></table></figure></li>
+<li>若交由其他VPS使用<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http://&lt;vps-ip&gt;:8080/conversation</span><br><span class="line"></span><br><span class="line">- web配置</span><br></pre></td></tr></table></figure>
+services:<br>app:<br>  image: chenzhaoyu94&#x2F;chatgpt-web:latest # 总是使用 latest ,更新时重新 pull 该 tag 镜像即可<br>  network_mode: “host”<br>  ports:<br>- 3002:3002<br>  environment:<br># 二选一<br># OPENAI_API_KEY: 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<br># 二选一<br>OPENAI_ACCESS_TOKEN:<br># API接口地址，可选，设置 OPENAI_API_KEY 时可用<br># OPENAI_API_BASE_URL: xxx<br># API模型，可选，设置 OPENAI_API_KEY 时可用<br>OPENAI_API_MODEL: gpt-3.5-turbo<br># 反向代理，可选<br>API_REVERSE_PROXY: <a class="link"   target="_blank" rel="noopener" href="http://172.17.0.1:8080/conversation" >http://172.17.0.1:8080/conversation<i class="fas fa-external-link-alt"></i></a><br># 访问权限密钥，可选<br>AUTH_SECRET_KEY: Dhl123456,<br># 每小时最大请求次数，可选，默认无限<br>MAX_REQUEST_PER_HOUR: 0<br># 超时，单位毫秒，可选<br>TIMEOUT_MS: 60000<br>restart: unless-stopped</li>
+</ul>
+<pre><code>
+</code></pre>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    
+<div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li class="post-title">
+            <span class="type">Post title</span>: <span class="content">从无法到畅通：如何让国内用户无障碍使用ChatGPT</span>
+        </li>
+        <li class="post-author">
+            <span class="type">Post author</span>: <span class="content">Justin Ye</span>
+        </li>
+        <li class="post-time">
+            <span class="type">Create time</span>: <span class="content">2023-06-04 18:54:36</span>
+        </li>
+        <li class="post-link">
+            <span class="type">Post link</span>: <span class="content">2023/06/04/从无法到畅通：如何让国内用户无障碍使用ChatGPT/</span>
+        </li>
+        <li class="post-license">
+            <span class="type">Copyright notice</span>: <span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
+        </li>
+    </ul>
+    <div class="copy-copyright-info flex-center tooltip" data-content="Copy copyright info" data-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Docker/">#Docker</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Linux/">#Linux</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/How-to/">#How to</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Vps/">#Vps</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Script/">#Script</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Ai/">#Ai</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/06/04/%E8%87%AA%E5%8A%A8%E6%8A%A2%E6%B3%A8%E7%94%B2%E9%AA%A8%E6%96%87-ARM-VPS%EF%BC%8C%E8%AE%A9%E6%82%A8%E7%9A%84%E4%BA%91%E8%AE%A1%E7%AE%97%E4%B9%8B%E8%B7%AF%E6%9B%B4%E5%8A%A0%E4%BE%BF%E6%8D%B7/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">自动抢注甲骨文 ARM VPS，让您的云计算之路更加便捷</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%A8%E8%B6%8A%E7%BD%91%E7%BB%9C%E7%9A%84warp"><span class="nav-number">1.</span> <span class="nav-text">跨越网络的warp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Warp%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-number">1.1.</span> <span class="nav-text">1.Warp的好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Warp-%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC"><span class="nav-number">1.2.</span> <span class="nav-text">2.Warp 安装脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#option-1"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">option 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#option-2"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">option 2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Warp%E5%91%BD%E4%BB%A4"><span class="nav-number">1.3.</span> <span class="nav-text">3.Warp命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Warp-Option-%E8%A7%A3%E9%87%8A"><span class="nav-number">1.4.</span> <span class="nav-text">4.Warp Option 解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E9%93%BE%E6%8E%A5openai"><span class="nav-number">1.5.</span> <span class="nav-text">5.验证是否可以链接openai</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">1.6.</span> <span class="nav-text">6.参考链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2-go-chatgpt-api"><span class="nav-number">2.</span> <span class="nav-text">部署 go-chatgpt-api</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE%EF%BC%88option%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">1.防火墙设置（option）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-VPS%E5%8F%AF%E7%9B%B4%E6%8E%A5%E8%AE%BF%E9%97%AEChatgpt%E7%9A%84docker-compose-yml%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">2.VPS可直接访问Chatgpt的docker-compose.yml配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-VPS%E8%87%AA%E5%BB%BA%E5%A6%82%E4%B8%8AWarp%E7%9A%84docker-compose-yml"><span class="nav-number">2.3.</span> <span class="nav-text">3.VPS自建如上Warp的docker-compose.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Docker%E5%86%85%E5%BB%BAWarp%E5%92%8CAPI%E7%9A%84docker-compose-yml"><span class="nav-number">2.4.</span> <span class="nav-text">4.Docker内建Warp和API的docker-compose.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Docker%E9%83%A8%E7%BD%B2%E5%AE%8C%E5%90%8E%E5%8F%8D%E4%BB%A3%E7%9A%84%E5%9C%B0%E5%9D%80%EF%BC%9A"><span class="nav-number">2.5.</span> <span class="nav-text">5.Docker部署完后反代的地址：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5-1"><span class="nav-number">2.6.</span> <span class="nav-text">6.参考链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2Chatgpt-Docker"><span class="nav-number">3.</span> <span class="nav-text">部署Chatgpt Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%8E%B7%E5%8F%96API%E6%88%96%E8%80%85Token"><span class="nav-number">3.1.</span> <span class="nav-text">1.获取API或者Token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Docker-compose%E9%85%8D%E7%BD%AE"><span class="nav-number">3.2.</span> <span class="nav-text">2.Docker-compose配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">3.3.</span> <span class="nav-text">3. 参考链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E5%A4%87%E7%94%A8%E5%8F%8D%E4%BB%A3%E6%96%B9%E6%A1%88"><span class="nav-number">3.3.1.</span> <span class="nav-text">4.备用反代方案</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Justin Ye</a>
+            
+        </div>
+        
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+            <div class="deploy-info info-item">
+                
+                    This site is provided with deployment services by <span class="tooltip" data-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+
+</body>
+</html>

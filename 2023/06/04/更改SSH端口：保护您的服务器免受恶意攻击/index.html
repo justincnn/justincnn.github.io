@@ -9,7 +9,7 @@
     
     <title>
         
-            Docker常用命令记录 |
+            更改SSH端口：保护您的服务器免受恶意攻击 |
         
         文科生的 IT 笔记
     </title>
@@ -159,7 +159,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">Docker常用命令记录</span>
+                <span class="title-hover-animation">更改SSH端口：保护您的服务器免受恶意攻击</span>
             </div>
 
             
@@ -179,13 +179,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-06-04 17:41:53</span>
-        <span class="mobile">2023-06-04 17:41</span>
+        <span class="pc">2023-06-04 18:34:19</span>
+        <span class="mobile">2023-06-04 18:34</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-04 17:43:35</span>
+        <span class="pc">2023-06-04 18:35:16</span>
     </span>
     
     
@@ -206,7 +206,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Docker/">Docker</a>&nbsp;
+                        <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Vps/">Vps</a>&nbsp;
                     </li>
                 
             </ul>
@@ -231,21 +235,45 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <p>记一些不常用的命令是一件很麻烦的事，此文用以记录一些常用的docker命令</p>
-<h4 id="列出所有的容器-ID"><a href="#列出所有的容器-ID" class="headerlink" title="列出所有的容器 ID"></a>列出所有的容器 ID</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -aq</span><br></pre></td></tr></table></figure>
+                <p>当您在使用 VPS 时，SSH（Secure Shell）是一种重要的远程连接协议，它可以帮助您通过命令行访问您的 VPS，管理您的服务器和应用程序。然而，如果您的 SSH 端口设置为默认端口22，那么您的服务器就面临着被攻击者攻击的风险。黑客可以使用自动化的脚本扫描您的服务器并尝试使用暴力破解方法攻击您的 SSH 连接。这可能会导致安全漏洞和服务器被入侵。</p>
+<p>为了保护您的 VPS 免受这种类型的攻击，您需要更改 SSH 端口，这是一种简单而有效的安全措施。适合常见的CentOS&#x2F;Fedora&#x2F;RedHat、Debian&#x2F;Ubuntu等常见的Linux发行版。</p>
+<h4 id="1、备份原sshd配置文件"><a href="#1、备份原sshd配置文件" class="headerlink" title="1、备份原sshd配置文件"></a>1、备份原sshd配置文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/ssh/sshd_config /etc/ssh/sshd_config.backup</span><br><span class="line">~~~~</span><br><span class="line"></span><br><span class="line">#### 2、修改sshd配置文件</span><br><span class="line"></span><br><span class="line">可以使用winscp、nano、vim之类的软件编辑 </span><br></pre></td></tr></table></figure>
+<p>vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">查找Port 22，有可能 Port 22 是注释的(即前面有#号，有的话删掉 # 号)。</span><br><span class="line"></span><br><span class="line">在 Port 22 下面添加一行 Port 3322  其中3322为你更改SSH后的端口。</span><br><span class="line"></span><br><span class="line">这里建议先保留原来的22端口，待新的SSH端口测试正常工作后再删掉原Port 22 端口行。</span><br><span class="line"></span><br><span class="line">修改完成后保存。</span><br><span class="line"></span><br><span class="line">#### 3、重启SSH服务器</span><br><span class="line"></span><br><span class="line">重启SSH服务器命令：</span><br></pre></td></tr></table></figure>
+<p>systemctl restart sshd</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果没有systemctl的话可以执行：</span><br></pre></td></tr></table></figure>
+<p>&#x2F;etc&#x2F;init.d&#x2F;sshd restart </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">或 </span><br></pre></td></tr></table></figure>
+<p>&#x2F;etc&#x2F;init.d&#x2F;ssh restart</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">如果没有报错的话就生效了，可以 </span><br></pre></td></tr></table></figure>
+<p>ss -ntl </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">或 </span><br></pre></td></tr></table></figure>
+<p>netstat -ntl </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">查看一下端口。</span><br><span class="line">#### 4、防火墙、安全组规则设置</span><br><span class="line"></span><br><span class="line">iptables添加SSH新端口规则：</span><br></pre></td></tr></table></figure>
+<p>iptables -A INPUT -p tcp –dport 3322 -j ACCEPT             #3322替换为新的端口#</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">然后保存iptables规则</span><br><span class="line"></span><br><span class="line">firewalld添加SSH新端口规则：</span><br></pre></td></tr></table></figure>
+<p>firewall-cmd –permanent –zone&#x3D;public –add-port&#x3D;3322&#x2F;tcp             #3322替换为新的端口#</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~~~</span><br><span class="line">firewall-cmd --reload             #重载firewalld#</span><br></pre></td></tr></table></figure>
 
-<h4 id="停止所有的容器"><a href="#停止所有的容器" class="headerlink" title="停止所有的容器"></a>停止所有的容器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -aq)</span><br><span class="line">~~~~</span><br><span class="line"></span><br><span class="line">#### 删除所有的容器</span><br></pre></td></tr></table></figure>
-<p>docker rm $(docker ps -aq)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 删除所有不使用的镜像</span><br></pre></td></tr></table></figure>
-<p>docker image prune –force –all</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">或者</span><br></pre></td></tr></table></figure>
-<p>docker image prune -f -a&#96; : </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 删除所有停止的容器</span><br></pre></td></tr></table></figure>
-<p>docker container prune -f</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#### 复制文件</span><br></pre></td></tr></table></figure>
-<p>docker cp mycontainer:&#x2F;opt&#x2F;file.txt &#x2F;opt&#x2F;local&#x2F;<br>docker cp &#x2F;opt&#x2F;local&#x2F;file.txt mycontainer:&#x2F;opt&#x2F;</p>
-<pre><code>
-</code></pre>
+<p>阿里云之类的安全组规则添加SSH新端口规则：</p>
+<p>阿里云之类的有安全组之类设置的云服务器一定要在安全组规则里将新端口添加到“入方向”的允许规则。</p>
+<h4 id="转载文献"><a href="#转载文献" class="headerlink" title="转载文献"></a>转载文献</h4><p><a class="link"   target="_blank" rel="noopener" href="https://www.vpser.net/security/centos-debian-ubuntu-linux-change-ssh-port.html" >VPS侦探：CentOS&#x2F;Debian&#x2F;Ubuntu Linux修改SSH默认22端口<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="第二种方案：适用于oracle-linux"><a href="#第二种方案：适用于oracle-linux" class="headerlink" title="第二种方案：适用于oracle linux"></a>第二种方案：适用于oracle linux</h3><h4 id="i-查看ssh默认绑定端口"><a href="#i-查看ssh默认绑定端口" class="headerlink" title="i.查看ssh默认绑定端口"></a>i.查看ssh默认绑定端口</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">semanage port -l | grep ssh</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>ssh_port_t                     tcp      22</p>
+<h4 id="ii-添加新端口（以，12345为例）"><a href="#ii-添加新端口（以，12345为例）" class="headerlink" title="ii.添加新端口（以，12345为例）"></a>ii.添加新端口（以，12345为例）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 注意名称是 ssh_port_t</span><br><span class="line">semanage port -a -t ssh_port_t -p tcp 12345</span><br></pre></td></tr></table></figure>
+<h4 id="iii-验证下是否添加成功"><a href="#iii-验证下是否添加成功" class="headerlink" title="iii.验证下是否添加成功"></a>iii.验证下是否添加成功</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">semanage port -l | grep ssh</span><br></pre></td></tr></table></figure>
+<hr>
+<p>ssh_port_t                     tcp   12345, 22</p>
+<h4 id="iv-参数解释"><a href="#iv-参数解释" class="headerlink" title="iv.参数解释"></a>iv.参数解释</h4><ul>
+<li>-l：查看记录</li>
+<li>-a：添加</li>
+<li>-m：修改</li>
+<li>-d：删除</li>
+<li>-t：添加类型</li>
+<li>-p：指定端口类型（tcp、udp</li>
+</ul>
 
             </div>
 
@@ -255,16 +283,16 @@
 <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li class="post-title">
-            <span class="type">Post title</span>: <span class="content">Docker常用命令记录</span>
+            <span class="type">Post title</span>: <span class="content">更改SSH端口：保护您的服务器免受恶意攻击</span>
         </li>
         <li class="post-author">
             <span class="type">Post author</span>: <span class="content">Justin Ye</span>
         </li>
         <li class="post-time">
-            <span class="type">Create time</span>: <span class="content">2023-06-04 17:41:53</span>
+            <span class="type">Create time</span>: <span class="content">2023-06-04 18:34:19</span>
         </li>
         <li class="post-link">
-            <span class="type">Post link</span>: <span class="content">2023/06/04/Docker常用命令记录/</span>
+            <span class="type">Post link</span>: <span class="content">2023/06/04/更改SSH端口：保护您的服务器免受恶意攻击/</span>
         </li>
         <li class="post-license">
             <span class="type">Copyright notice</span>: <span class="content">All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.</span>
@@ -282,7 +310,11 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/Docker/">#Docker</a>&nbsp;
+                            <a href="/tags/Linux/">#Linux</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Vps/">#Vps</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -294,13 +326,13 @@
                         <div class="article-prev">
                             <a class="prev"
                                rel="prev"
-                               href="/2023/06/04/%E7%94%B2%E9%AA%A8%E6%96%87vps-ubuntu%E5%BC%80%E6%94%BE%E6%89%80%E6%9C%89%E7%AB%AF%E5%8F%A3/"
+                               href="/2023/06/04/%E5%AE%89%E5%88%A9-1panel%EF%BC%9A%E8%AE%A9%E6%82%A8%E7%9A%84-Linux-VPS-%E7%AE%A1%E7%90%86%E6%88%90%E4%B8%BA%E4%B8%80%E7%A7%8D%E7%BE%8E%E5%AD%A6/"
                             >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                                 <span class="title flex-center">
-                                <span class="post-nav-title-item">甲骨文vps ubuntu开放所有端口</span>
+                                <span class="post-nav-title-item">安利--1panel：让您的 Linux VPS 管理成为一种美学</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                             </a>
@@ -310,10 +342,10 @@
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/06/04/Omnivore%EF%BC%9A%E9%87%8A%E6%94%BE%E4%BD%A0%E7%9A%84%E5%9C%A8%E7%BA%BF%E9%98%85%E8%AF%BB%E6%BD%9C%E8%83%BD%EF%BC%8C%E7%95%85%E4%BA%AB%E7%B2%BE%E5%BD%A9%E5%86%85%E5%AE%B9/"
+                               href="/2023/06/04/%E7%A1%AC%E7%9B%98%E5%81%A5%E5%BA%B7%EF%BC%8C%E4%BB%8E%E6%A3%80%E6%9F%A5%E5%86%99%E5%85%A5%E9%87%8F%E5%BC%80%E5%A7%8B%EF%BC%9AM1-Mac%E4%B8%8A%E6%9F%A5%E7%9C%8B%E7%A1%AC%E7%9B%98%E5%86%99%E5%85%A5%E9%87%8F/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Omnivore：释放你的在线阅读潜能，畅享精彩内容</span>
+                                <span class="post-nav-title-item">硬盘健康，从检查写入量开始：M1 Mac上查看硬盘写入量</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -332,7 +364,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8-ID"><span class="nav-number">1.</span> <span class="nav-text">列出所有的容器 ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">停止所有的容器</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E5%A4%87%E4%BB%BD%E5%8E%9Fsshd%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">1、备份原sshd配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AC%E8%BD%BD%E6%96%87%E7%8C%AE"><span class="nav-number">2.</span> <span class="nav-text">转载文献</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E6%A1%88%EF%BC%9A%E9%80%82%E7%94%A8%E4%BA%8Eoracle-linux"><span class="nav-number"></span> <span class="nav-text">第二种方案：适用于oracle linux</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#i-%E6%9F%A5%E7%9C%8Bssh%E9%BB%98%E8%AE%A4%E7%BB%91%E5%AE%9A%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.</span> <span class="nav-text">i.查看ssh默认绑定端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ii-%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%AB%AF%E5%8F%A3%EF%BC%88%E4%BB%A5%EF%BC%8C12345%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">ii.添加新端口（以，12345为例）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iii-%E9%AA%8C%E8%AF%81%E4%B8%8B%E6%98%AF%E5%90%A6%E6%B7%BB%E5%8A%A0%E6%88%90%E5%8A%9F"><span class="nav-number">3.</span> <span class="nav-text">iii.验证下是否添加成功</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iv-%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A"><span class="nav-number">4.</span> <span class="nav-text">iv.参数解释</span></a></li></ol>
     </div>
 </div>
 
