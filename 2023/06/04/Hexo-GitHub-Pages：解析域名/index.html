@@ -185,7 +185,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-04 19:44:41</span>
+        <span class="pc">2023-06-04 19:53:45</span>
     </span>
     
     
@@ -241,6 +241,11 @@
 <h2 id="“GitHub-Pages”映射到“域名”"><a href="#“GitHub-Pages”映射到“域名”" class="headerlink" title="“GitHub Pages”映射到“域名”"></a>“GitHub Pages”映射到“域名”</h2><p>其实前面相当于是完成了域名到GitHub Pages的映射，接下来还需要完成 GitHub Pages到域名的映射。</p>
 <p>进入到本地Hexo源码目录，找到source文件夹并进入，在该目录下创建一个 名为CNAME但无后缀的文件，</p>
 <p>打开CNAME文件，加入域名<code>xxxx.xxx</code>，保存并退出。</p>
+<h2 id="创建-A-记录"><a href="#创建-A-记录" class="headerlink" title="创建 A 记录"></a>创建 A 记录</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-AAAA-记录"><a href="#创建-AAAA-记录" class="headerlink" title="创建 AAAA 记录"></a>创建 AAAA 记录</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2606:50c0:8000::153</span><br><span class="line">2606:50c0:8001::153</span><br><span class="line">2606:50c0:8002::153</span><br><span class="line">2606:50c0:8003::153</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="重新部署网站"><a href="#重新部署网站" class="headerlink" title="重新部署网站"></a>重新部署网站</h2><p>回到本地Hexo源码目录下，依次执行如下3条指令，完成网站的部署：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
@@ -322,7 +327,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7"><span class="nav-number">1.</span> <span class="nav-text">域名申请</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNAME%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">CNAME设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%80%9CGitHub-Pages%E2%80%9D%E6%98%A0%E5%B0%84%E5%88%B0%E2%80%9C%E5%9F%9F%E5%90%8D%E2%80%9D"><span class="nav-number">3.</span> <span class="nav-text">“GitHub Pages”映射到“域名”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99"><span class="nav-number">4.</span> <span class="nav-text">重新部署网站</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7"><span class="nav-number">1.</span> <span class="nav-text">域名申请</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNAME%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">CNAME设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%80%9CGitHub-Pages%E2%80%9D%E6%98%A0%E5%B0%84%E5%88%B0%E2%80%9C%E5%9F%9F%E5%90%8D%E2%80%9D"><span class="nav-number">3.</span> <span class="nav-text">“GitHub Pages”映射到“域名”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-A-%E8%AE%B0%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">创建 A 记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-AAAA-%E8%AE%B0%E5%BD%95"><span class="nav-number">5.</span> <span class="nav-text">创建 AAAA 记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99"><span class="nav-number">6.</span> <span class="nav-text">重新部署网站</span></a></li></ol>
     </div>
 </div>
 
