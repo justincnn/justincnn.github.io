@@ -9,7 +9,7 @@
     
     <title>
         
-            一键增加VPS虚拟内存 SWAP |
+            在Hexo博客中发布文章 |
         
         Keep Theme
     </title>
@@ -135,7 +135,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">一键增加VPS虚拟内存 SWAP</span>
+                <span class="title-hover-animation">在Hexo博客中发布文章</span>
             </div>
 
             
@@ -157,13 +157,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-06-04 13:23:16</span>
-        <span class="mobile">2023-06-04 13:23</span>
+        <span class="pc">2023-06-04 13:34:53</span>
+        <span class="mobile">2023-06-04 13:34</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-04 13:27:52</span>
+        <span class="pc">2023-06-04 13:50:02</span>
     </span>
     
     
@@ -172,7 +172,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/VPS/">VPS</a>&nbsp;
+                        <a href="/categories/Blog-Settings/">Blog Settings</a>&nbsp;
                     </li>
                 
             </ul>
@@ -188,19 +188,7 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/Linux/">Linux</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Script/">Script</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Vps/">Vps</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Docker/">Docker</a>&nbsp;
+                        | <a href="/tags/Blog/">Blog</a>&nbsp;
                     </li>
                 
             </ul>
@@ -221,16 +209,42 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>很多人的VPS服务器由于内存太小，会导致很多进程被杀掉，这时候就需要我们添加Swap虚拟内存了，这里就整了个一键脚本方便懒人或小白使用。</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hexo是一种稍微有点门槛，但是一上手就很香的博客编辑和发布工具，这里介绍下，如何发布文章</p>
 <span id="more"></span>
 <p>后面的内容在首页不显示，只显示到<!--more-->这里</p>
-<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>提示：脚本不支持OpenVZ架构，安装会自动退出</p>
-<h3 id="查看现有swap"><a href="#查看现有swap" class="headerlink" title="查看现有swap"></a>查看现有swap</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
+<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>1.在Hexo博客目录下，进入Git Bash命令窗口中，输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;在这里&quot;</span><br></pre></td></tr></table></figure>
+<p>2.在博客目录下的&#x2F;source&#x2F;_posts&#x2F; 文件夹下，可以看到已经生成了标题为(在这里.md)的博客文件</p>
+<p>3.在（在这里.md）文件中编辑自己的博客文章即可。</p>
+<h3 id="添加分类和标签"><a href="#添加分类和标签" class="headerlink" title="添加分类和标签"></a>添加分类和标签</h3><p>1.在文件中设置tags和categories属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: 在这里</span><br><span class="line">date: 2018-08-02 11:41:10</span><br><span class="line">tags:</span><br><span class="line">- 博客           //多个标签可以这样添加</span><br><span class="line">- hexo</span><br><span class="line">categories: web前端</span><br></pre></td></tr></table></figure>
 
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/zhucaidan/swap.sh/main/swap.sh &amp;&amp; bash swap.sh</span><br></pre></td></tr></table></figure>
+<h3 id="本地测试、预览博客文章"><a href="#本地测试、预览博客文章" class="headerlink" title="本地测试、预览博客文章"></a>本地测试、预览博客文章</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-<p>添加swap的时候填写纯数字，默认单位为M</p>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>感谢<a class="link"   target="_blank" rel="noopener" href="https://github.com/zhucaidan/swap.sh" >Linux VPS一键添加&#x2F;删除Swap虚拟内存<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="添加”全文阅读”按钮"><a href="#添加”全文阅读”按钮" class="headerlink" title="添加”全文阅读”按钮"></a>添加”全文阅读”按钮</h3><p>Option1:在文章任意你想添加的位置添加即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;     </span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 在这里</span><br><span class="line">date: 2018-08-02 11:41:10</span><br><span class="line">tags:</span><br><span class="line">- 博客</span><br><span class="line">- hexo</span><br><span class="line">categories: web前端</span><br><span class="line">---</span><br><span class="line">javascript是一门充满活力、简单易用的语言，又是一门具有许多复杂微妙技术的语言。即使是经验丰富的javascript开发者，如果没有认真学习的话，也无法真正理解它们，这就是javascript的矛盾之处。由于javascript不必理解就可以使用，因此通常来说很难真正理解语言本身，这就是我们面临的挑战。不满足于只是让代码正常工作，而是想要弄清楚为什么，勇于挑战这条崎岖颠簸的少有人走的路，拥抱整个javascript</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">后面的内容在首页不显示，只显示到&lt;!--more--&gt;这里</span><br></pre></td></tr></table></figure>
+
+<p>Option2:设置首页文章以摘要形式显示，打开主题配置文件，找到auto_excerpt进行修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
+<p>其中length代表显示摘要的截取字符长度。<br>注：这两种方法，在博客首页显示的效果不一样，根据自己的需要，选择自己喜欢的方法</p>
+<h3 id="在博文中添加图片"><a href="#在博文中添加图片" class="headerlink" title="在博文中添加图片"></a>在博文中添加图片</h3><p>Option1:</p>
+<ul>
+<li>在hexo目录下，安装插件：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></li>
+<li>在hexo\source 目录下新建一个img文件夹，把图片放置在里面；</li>
+<li>在xxx.md文件中引用图片：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![header]( img/header.jpg)</span><br></pre></td></tr></table></figure>
+Option2:</li>
+<li>在全局配置文件（hexo&#x2F;_config.yml)中将post_asset_folder设置为true；</li>
+<li>创建文章（在创建的时候，会在hexo&#x2F;source&#x2F;_post目录下，生成一个XXX.md文件和一个XXX的文件夹）：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;XXX&quot;</span><br></pre></td></tr></table></figure></li>
+<li>把XXX这个博文需要展示的图片放在XXX文件夹目录下；</li>
+<li>在XXX.md文件中引入图片的方式：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="发布到Github上"><a href="#发布到Github上" class="headerlink" title="发布到Github上"></a>发布到Github上</h3><p>发表的文章在本地预览无误后，在 Git Bash 命令窗口执行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+
+
 
             </div>
 
@@ -244,19 +258,7 @@
                         </li>
                     
                         <li class="tag-item">
-                            <a href="/tags/Linux/">#Linux</a>&nbsp;
-                        </li>
-                    
-                        <li class="tag-item">
-                            <a href="/tags/Script/">#Script</a>&nbsp;
-                        </li>
-                    
-                        <li class="tag-item">
-                            <a href="/tags/Vps/">#Vps</a>&nbsp;
-                        </li>
-                    
-                        <li class="tag-item">
-                            <a href="/tags/Docker/">#Docker</a>&nbsp;
+                            <a href="/tags/Blog/">#Blog</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -265,21 +267,21 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/06/04/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0/"
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/06/04/%E4%B8%80%E9%94%AE%E5%A2%9E%E5%8A%A0VPS%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98-SWAP/"
                             >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">一键增加VPS虚拟内存 SWAP</span>
+                                <span class="post-nav-item">Next posts</span>
                             </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">在Hexo博客中发布文章</span>
-                                <span class="post-nav-item">Prev posts</span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
                             </span>
                             </a>
                         </div>
-                    
                     
                 </div>
             
