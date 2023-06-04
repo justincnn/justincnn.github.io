@@ -9,7 +9,7 @@
     
     <title>
         
-            一键增加VPS虚拟内存 SWAP |
+            Github 部署 Hexo |
         
         Keep Theme
     </title>
@@ -135,7 +135,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">一键增加VPS虚拟内存 SWAP</span>
+                <span class="title-hover-animation">Github 部署 Hexo</span>
             </div>
 
             
@@ -157,13 +157,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-06-04 13:23:16</span>
-        <span class="mobile">2023-06-04 13:23</span>
+        <span class="pc">2023-06-04 14:50:46</span>
+        <span class="mobile">2023-06-04 14:50</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-04 14:35:23</span>
+        <span class="pc">2023-06-04 15:34:48</span>
     </span>
     
     
@@ -172,7 +172,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/VPS/">VPS</a>&nbsp;
+                        <a href="/categories/Blog-Settings/">Blog Settings</a>&nbsp;
                     </li>
                 
             </ul>
@@ -188,19 +188,7 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/Linux/">Linux</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Script/">Script</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Vps/">Vps</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Docker/">Docker</a>&nbsp;
+                        | <a href="/tags/Blog/">Blog</a>&nbsp;
                     </li>
                 
             </ul>
@@ -221,16 +209,61 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <p>很多人的VPS服务器由于内存太小，会导致很多进程被杀掉，这时候就需要我们添加Swap虚拟内存了，这里就整了个一键脚本方便懒人或小白使用。</p>
+                <p>你有没有想过自己搭建一个博客，分享你的知识和经验，或者记录你的生活和感想？如果你觉得这很麻烦，那么你一定要试试hexo，一个简单而强大的静态博客框架。hexo可以让你用markdown语法写文章，然后快速生成静态网页，部署到GitHub Pages或者其他平台上。hexo还有很多优秀的主题和插件，可以让你的博客更美观和个性化。hexo是一个开源的项目，有着活跃的社区和完善的文档，你可以随时找到你需要的帮助和资源。不管你是一个程序员，还是一个爱好者，hexo都能让你轻松拥有一个属于自己的博客。</p>
 <span id="more"></span>
 <p>后面的内容在首页不显示，只显示到<!--more-->这里</p>
-<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>提示：脚本不支持OpenVZ架构，安装会自动退出</p>
-<h3 id="查看现有swap"><a href="#查看现有swap" class="headerlink" title="查看现有swap"></a>查看现有swap</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
+<h3 id="Github博客申请"><a href="#Github博客申请" class="headerlink" title="Github博客申请"></a>Github博客申请</h3><h4 id="创建部署目录仓库"><a href="#创建部署目录仓库" class="headerlink" title="创建部署目录仓库"></a>创建部署目录仓库</h4><p>按照官方说明的使用规则，如果使用GitHub Pages进行网站部署的话，所建仓库必须要取名为“GitHub用户名.github.io”。因为我的GitHub用户名为justincnn，所以我的这个仓库应取名为“justincnn.github.io”。</p>
+<p>在<a class="link"   target="_blank" rel="noopener" href="https://github.com/" >GitHub官网<i class="fas fa-external-link-alt"></i></a>创建<code>repository</code><br><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041510987.png"></p>
+<p>创建页面：<br><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041515256.png"></p>
+<ul>
+<li>在上图所示的“Repository name”方框中填入仓库名称；</li>
+<li>勾选“Add a README file”；</li>
+<li>点击“Create repository”。<br>即可完成该仓库的创建（简单起见，其余所有内容均保持默认）。</li>
+</ul>
+<p><code>注意：一定要勾选“Add a README file”，不然后面会看不到GitHub Pages的域名和部署分支</code></p>
+<h4 id="GitHub-Pages设置"><a href="#GitHub-Pages设置" class="headerlink" title="GitHub Pages设置"></a>GitHub Pages设置</h4><p>该仓库创建成功后，点击<code>Settings</code>，将所进入的网页至<code>Pages</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041518384.png"></p>
+<p>致此，我们已经创建了属于自己的github博客空间：<code>justincnn.github.io</code></p>
+<h3 id="本地环境搭建"><a href="#本地环境搭建" class="headerlink" title="本地环境搭建"></a>本地环境搭建</h3><h4 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h4><ul>
+<li><p>安装Git环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装Node.js环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node.js</span><br></pre></td></tr></table></figure>
+<p>一般在安装Node.js的同时，npm也会被一起安装,如果没有安装，请继续：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install npm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装Hexo</p>
+</li>
+</ul>
+<p>在终端执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/zhucaidan/swap.sh/main/swap.sh &amp;&amp; bash swap.sh</span><br></pre></td></tr></table></figure>
+<h4 id="创建Hexo源码文件夹"><a href="#创建Hexo源码文件夹" class="headerlink" title="创建Hexo源码文件夹"></a>创建Hexo源码文件夹</h4><p>进入自己博客本地目录，执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;hexo源码文件夹&gt;</span><br></pre></td></tr></table></figure>
 
-<p>添加swap的时候填写纯数字，默认单位为M</p>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>感谢<a class="link"   target="_blank" rel="noopener" href="https://github.com/zhucaidan/swap.sh" >Linux VPS一键添加&#x2F;删除Swap虚拟内存<i class="fas fa-external-link-alt"></i></a></p>
+<p>&lt;hexo源码文件夹&gt;命名为&lt;GitHub用户名.github.io&gt;,与GitHub仓库名保持一致</p>
+<h4 id="安装依赖项"><a href="#安装依赖项" class="headerlink" title="安装依赖项"></a>安装依赖项</h4><p>进入hexo源码文件夹后，执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装一键部署插件"><a href="#安装一键部署插件" class="headerlink" title="安装一键部署插件"></a>安装一键部署插件</h4><p>进入hexo源码文件夹后，执行:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git –save</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行验证"><a href="#运行验证" class="headerlink" title="运行验证"></a>运行验证</h3><h4 id="启动Hexo服务器"><a href="#启动Hexo服务器" class="headerlink" title="启动Hexo服务器"></a>启动Hexo服务器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server -o</span><br></pre></td></tr></table></figure>
+<ul>
+<li>博客网站的允许地址为<a href="http://localhost:4000；">http://localhost:4000；</a></li>
+<li>如果要停止运行，按下Ctrl+C即可。</li>
+</ul>
+<h3 id="部署至Github"><a href="#部署至Github" class="headerlink" title="部署至Github"></a>部署至Github</h3><h4 id="本地文件修改"><a href="#本地文件修改" class="headerlink" title="本地文件修改"></a>本地文件修改</h4><p>打开根目录下面的 _config.yml 文件，并滚动到文件最后，可以看到如下图所示内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: &#x27;git&#x27;</span><br><span class="line">  repo: git@github.com:justincnn/justincnn.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+<p>Repo地址获取如下：<br><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041530254.png"></p>
+<h4 id="生成网页文件"><a href="#生成网页文件" class="headerlink" title="生成网页文件"></a>生成网页文件</h4><p>Hexo源码目录中已有的源码编译生成为静态网页文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<h4 id="部署到GitHub-Pages"><a href="#部署到GitHub-Pages" class="headerlink" title="部署到GitHub Pages"></a>部署到GitHub Pages</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>这个时候访问<code>justincnn.github.io</code>，就是生成的博客地址。</p>
+<p>如果测试发现 GitHub Pages 还是没有任何变化，不要着急，等几分钟之后再次刷新即可。</p>
+<p>至此，我们就已经成功将本地的 Hexo 仓库部署到 GitHub 上了。</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>感谢<a class="link"   target="_blank" rel="noopener" href="https://oceanwang.top/personal-website-1/" >搭建个人博客网站教程@拿破仑940911<i class="fas fa-external-link-alt"></i></a></p>
 
             </div>
 
@@ -244,19 +277,7 @@
                         </li>
                     
                         <li class="tag-item">
-                            <a href="/tags/Linux/">#Linux</a>&nbsp;
-                        </li>
-                    
-                        <li class="tag-item">
-                            <a href="/tags/Script/">#Script</a>&nbsp;
-                        </li>
-                    
-                        <li class="tag-item">
-                            <a href="/tags/Vps/">#Vps</a>&nbsp;
-                        </li>
-                    
-                        <li class="tag-item">
-                            <a href="/tags/Docker/">#Docker</a>&nbsp;
+                            <a href="/tags/Blog/">#Blog</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -265,21 +286,21 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/06/04/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0/"
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/06/04/Hexo-%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/"
                             >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Hexo 更换主题</span>
+                                <span class="post-nav-item">Next posts</span>
                             </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">在Hexo博客中发布文章</span>
-                                <span class="post-nav-item">Prev posts</span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
                             </span>
                             </a>
                         </div>
-                    
                     
                 </div>
             
