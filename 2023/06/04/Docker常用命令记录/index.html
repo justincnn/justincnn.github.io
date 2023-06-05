@@ -185,7 +185,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-05 21:34:03</span>
+        <span class="pc">2023-06-05 22:28:24</span>
     </span>
     
     
@@ -246,6 +246,17 @@
 
 <h4 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker cp mycontainer:/opt/file.txt /opt/local/</span><br><span class="line">docker cp /opt/local/file.txt mycontainer:/opt/</span><br></pre></td></tr></table></figure>
 
+<h4 id="更新docker-compose内某一镜像"><a href="#更新docker-compose内某一镜像" class="headerlink" title="更新docker compose内某一镜像"></a>更新docker compose内某一镜像</h4><p>以下面的yml为例：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">app:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">kerwin1202/chatgpt-web</span> <span class="comment"># 总是使用latest,更新时重新pull该tag镜像即可</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">chatgptwebplus</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">3002</span><span class="string">:3002</span></span><br></pre></td></tr></table></figure>
+
+<p>更新的命令为：<br>停止容器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose stop app</span><br></pre></td></tr></table></figure>
+
+<p>拉取更新</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose pull app</span><br></pre></td></tr></table></figure>
+
+<p>运行容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d app</span><br></pre></td></tr></table></figure>
             </div>
 
             
@@ -331,7 +342,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8-ID"><span class="nav-number">1.</span> <span class="nav-text">列出所有的容器 ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">停止所有的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">删除所有的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E9%95%9C%E5%83%8F"><span class="nav-number">4.</span> <span class="nav-text">删除所有不使用的镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E5%81%9C%E6%AD%A2%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">删除所有停止的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">复制文件</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8-ID"><span class="nav-number">1.</span> <span class="nav-text">列出所有的容器 ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">停止所有的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">删除所有的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E9%95%9C%E5%83%8F"><span class="nav-number">4.</span> <span class="nav-text">删除所有不使用的镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E5%81%9C%E6%AD%A2%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">删除所有停止的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">复制文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0docker-compose%E5%86%85%E6%9F%90%E4%B8%80%E9%95%9C%E5%83%8F"><span class="nav-number">7.</span> <span class="nav-text">更新docker compose内某一镜像</span></a></li></ol>
     </div>
 </div>
 
