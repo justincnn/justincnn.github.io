@@ -185,7 +185,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-04 18:42:46</span>
+        <span class="pc">2023-06-05 20:16:55</span>
     </span>
     
     
@@ -242,31 +242,23 @@
 </li>
 </ul>
 <p>本文介绍下如何在Ubuntu下安装这两者，其他Linux也可参照</p>
-<h3 id="安装Docker："><a href="#安装Docker：" class="headerlink" title="安装Docker："></a>安装Docker：</h3><p>1.1 更新包列表并安装必要的软件包：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h3 id="安装Docker："><a href="#安装Docker：" class="headerlink" title="安装Docker："></a>安装Docker：</h3><h4 id="更新包列表并安装必要的软件包："><a href="#更新包列表并安装必要的软件包：" class="headerlink" title="更新包列表并安装必要的软件包："></a>更新包列表并安装必要的软件包：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</span><br></pre></td></tr></table></figure>
 
-<p>1.2. 添加Docker的GPG密钥：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+<h4 id="添加Docker的GPG密钥："><a href="#添加Docker的GPG密钥：" class="headerlink" title="添加Docker的GPG密钥："></a>添加Docker的GPG密钥：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
 
-<p>1.3. 添加Docker的APT仓库：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="添加Docker的APT仓库："><a href="#添加Docker的APT仓库：" class="headerlink" title="添加Docker的APT仓库："></a>添加Docker的APT仓库：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br></pre></td></tr></table></figure>
 
-<p>1.4. 安装Docker CE：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h4 id="安装Docker-CE："><a href="#安装Docker-CE：" class="headerlink" title="安装Docker CE："></a>安装Docker CE：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
 
-<h3 id="安装Docker-Compose"><a href="#安装Docker-Compose" class="headerlink" title="安装Docker Compose"></a>安装Docker Compose</h3><p>2.1. 下载Docker Compose的二进制文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<h3 id="安装Docker-Compose"><a href="#安装Docker-Compose" class="headerlink" title="安装Docker Compose"></a>安装Docker Compose</h3><h4 id="下载Docker-Compose的二进制文件："><a href="#下载Docker-Compose的二进制文件：" class="headerlink" title="下载Docker Compose的二进制文件："></a>下载Docker Compose的二进制文件：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
 
-<p>2.2. 赋予docker-compose可执行权限：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<h4 id="赋予docker-compose可执行权限："><a href="#赋予docker-compose可执行权限：" class="headerlink" title="赋予docker-compose可执行权限："></a>赋予docker-compose可执行权限：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
 
-<p>2.3. 添加docker-compose到系统PATH中：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<h4 id="添加docker-compose到系统PATH中："><a href="#添加docker-compose到系统PATH中：" class="headerlink" title="添加docker-compose到系统PATH中："></a>添加docker-compose到系统PATH中：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
 
-<p>2.4. 验证Docker Compose是否安装成功：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+<h4 id="验证Docker-Compose是否安装成功："><a href="#验证Docker-Compose是否安装成功：" class="headerlink" title="验证Docker Compose是否安装成功："></a>验证Docker Compose是否安装成功：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
 
 <p>如果Docker Compose版本号被正确显示，则说明安装成功。</p>
 <h3 id="DockerGPG密钥的作用"><a href="#DockerGPG密钥的作用" class="headerlink" title="DockerGPG密钥的作用"></a>DockerGPG密钥的作用</h3><p>Docker的GPG密钥用于验证Docker软件包的真实性和完整性，以确保其未被篡改或恶意修改。当您从Docker官方仓库中下载Docker软件包时，您可以使用这个GPG密钥进行验证。如果您下载的软件包与Docker官方发布的软件包不匹配，GPG密钥验证将失败并给出警告。这有助于确保您下载的软件包是来自可信来源的，并且没有被篡改。</p>
@@ -360,7 +352,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">安装Docker：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker-Compose"><span class="nav-number">2.</span> <span class="nav-text">安装Docker Compose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DockerGPG%E5%AF%86%E9%92%A5%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">DockerGPG密钥的作用</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">安装Docker：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%8C%85%E5%88%97%E8%A1%A8%E5%B9%B6%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">更新包列表并安装必要的软件包：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0Docker%E7%9A%84GPG%E5%AF%86%E9%92%A5%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">添加Docker的GPG密钥：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0Docker%E7%9A%84APT%E4%BB%93%E5%BA%93%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">添加Docker的APT仓库：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker-CE%EF%BC%9A"><span class="nav-number">1.4.</span> <span class="nav-text">安装Docker CE：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker-Compose"><span class="nav-number">2.</span> <span class="nav-text">安装Docker Compose</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDDocker-Compose%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">下载Docker Compose的二进制文件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%8B%E4%BA%88docker-compose%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">赋予docker-compose可执行权限：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0docker-compose%E5%88%B0%E7%B3%BB%E7%BB%9FPATH%E4%B8%AD%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">添加docker-compose到系统PATH中：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81Docker-Compose%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%EF%BC%9A"><span class="nav-number">2.4.</span> <span class="nav-text">验证Docker Compose是否安装成功：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DockerGPG%E5%AF%86%E9%92%A5%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">DockerGPG密钥的作用</span></a></li></ol>
     </div>
 </div>
 
