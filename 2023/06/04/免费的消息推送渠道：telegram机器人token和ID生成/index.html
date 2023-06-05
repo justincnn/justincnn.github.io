@@ -185,7 +185,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-04 17:09:00</span>
+        <span class="pc">2023-06-05 22:33:50</span>
     </span>
     
     
@@ -233,18 +233,18 @@
 
                 <p>随着现在大家对于垃圾推送的抗拒，特别是国内一些手机厂和部分大厂app的垃圾推送。让推送开始慢慢变成一种贬义词。其实还在黑莓机的年代，推送是一种高端且舒服的信息及时获取渠道。</p>
 <p>虽然大厂的信息推送很垃圾，但是我们可以建立自己的消息推送渠道，出了bark外，推荐telegram的机器人服务。</p>
-<h3 id="1-添加机器人生成工具"><a href="#1-添加机器人生成工具" class="headerlink" title="1.添加机器人生成工具"></a>1.添加机器人生成工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@botfather</span><br></pre></td></tr></table></figure>
+<h3 id="添加机器人生成工具"><a href="#添加机器人生成工具" class="headerlink" title="添加机器人生成工具"></a>添加机器人生成工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@botfather</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-生成推送机器人"><a href="#2-生成推送机器人" class="headerlink" title="2.生成推送机器人"></a>2.生成推送机器人</h3><p>点击工具开始，输入名录：</p>
+<h3 id="生成推送机器人"><a href="#生成推送机器人" class="headerlink" title="生成推送机器人"></a>生成推送机器人</h3><p>点击工具开始，输入名录：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/newbot</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-输入ID"><a href="#3-输入ID" class="headerlink" title="3.输入ID"></a>3.输入ID</h3><p>输入你自己需要的id，必须以bot结尾，比如<br><code>telegram_bot</code></p>
-<h3 id="4-获取token"><a href="#4-获取token" class="headerlink" title="4.获取token"></a>4.获取token</h3><p>对于下面的token，需要保密<br><code> token: 1287833603:AAGmx9hQq6ViT3km0_77z8psBGqUKfdpSHY</code></p>
-<h3 id="5-获取ID"><a href="#5-获取ID" class="headerlink" title="5.获取ID"></a>5.获取ID</h3><h5 id="i-添加机器人为好友"><a href="#i-添加机器人为好友" class="headerlink" title="i 添加机器人为好友"></a>i 添加机器人为好友</h5><h5 id="ii-在浏览器打开网址"><a href="#ii-在浏览器打开网址" class="headerlink" title="ii 在浏览器打开网址"></a>ii 在浏览器打开网址</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.telegram.org/botXXX:YYYY/getUpdates</span><br></pre></td></tr></table></figure>
+<h3 id="输入ID"><a href="#输入ID" class="headerlink" title="输入ID"></a>输入ID</h3><p>输入你自己需要的id，必须以bot结尾，比如<br><code>telegram_bot</code></p>
+<h3 id="获取token"><a href="#获取token" class="headerlink" title="获取token"></a>获取token</h3><p>对于下面的token，需要保密<br><code> token: 1287833603:AAGmx9hQq6ViT3km0_77z8psBGqUKfdpSHY</code></p>
+<h3 id="获取ID"><a href="#获取ID" class="headerlink" title="获取ID"></a>获取ID</h3><h5 id="添加机器人为好友"><a href="#添加机器人为好友" class="headerlink" title="添加机器人为好友"></a>添加机器人为好友</h5><h5 id="在浏览器打开网址"><a href="#在浏览器打开网址" class="headerlink" title="在浏览器打开网址"></a>在浏览器打开网址</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.telegram.org/botXXX:YYYY/getUpdates</span><br></pre></td></tr></table></figure>
 <p>将 XXX:YYYY 替换为您的机器人令牌，如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.telegram.org/bot1287833603:AAGmx9hQq6ViT3km0_77z8psBGqUKfdpSHY/getUpdates</span><br></pre></td></tr></table></figure>
-<h5 id="iii-查找ID"><a href="#iii-查找ID" class="headerlink" title="iii 查找ID"></a>iii 查找ID</h5><p> “chat”:{“id”:-zzzzzzzzzz，-zzzzzzzzzz 是您的聊天 ID（带有负号）。</p>
-<h5 id="iv-测试"><a href="#iv-测试" class="headerlink" title="iv 测试"></a>iv 测试</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST &quot;https://api.telegram.org/botXXX:YYYY/sendMessage&quot; -d &quot;chat_id=-zzzzzzzzzz&amp;text=my sample text&quot;</span><br></pre></td></tr></table></figure>
+<h5 id="查找ID"><a href="#查找ID" class="headerlink" title="查找ID"></a>查找ID</h5><p> “chat”:{“id”:-zzzzzzzzzz，-zzzzzzzzzz 是您的聊天 ID（带有负号）。</p>
+<h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST &quot;https://api.telegram.org/botXXX:YYYY/sendMessage&quot; -d &quot;chat_id=-zzzzzzzzzz&amp;text=my sample text&quot;</span><br></pre></td></tr></table></figure>
 
             </div>
 
@@ -331,7 +331,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B7%BB%E5%8A%A0%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7"><span class="nav-number">1.</span> <span class="nav-text">1.添加机器人生成工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%94%9F%E6%88%90%E6%8E%A8%E9%80%81%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="nav-number">2.</span> <span class="nav-text">2.生成推送机器人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BE%93%E5%85%A5ID"><span class="nav-number">3.</span> <span class="nav-text">3.输入ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%8E%B7%E5%8F%96token"><span class="nav-number">4.</span> <span class="nav-text">4.获取token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%8E%B7%E5%8F%96ID"><span class="nav-number">5.</span> <span class="nav-text">5.获取ID</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#i-%E6%B7%BB%E5%8A%A0%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%BA%E5%A5%BD%E5%8F%8B"><span class="nav-number">5.0.1.</span> <span class="nav-text">i 添加机器人为好友</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ii-%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E7%BD%91%E5%9D%80"><span class="nav-number">5.0.2.</span> <span class="nav-text">ii 在浏览器打开网址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#iii-%E6%9F%A5%E6%89%BEID"><span class="nav-number">5.0.3.</span> <span class="nav-text">iii 查找ID</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#iv-%E6%B5%8B%E8%AF%95"><span class="nav-number">5.0.4.</span> <span class="nav-text">iv 测试</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7"><span class="nav-number">1.</span> <span class="nav-text">添加机器人生成工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%8E%A8%E9%80%81%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="nav-number">2.</span> <span class="nav-text">生成推送机器人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5ID"><span class="nav-number">3.</span> <span class="nav-text">输入ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96token"><span class="nav-number">4.</span> <span class="nav-text">获取token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96ID"><span class="nav-number">5.</span> <span class="nav-text">获取ID</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%BA%E5%A5%BD%E5%8F%8B"><span class="nav-number">5.0.1.</span> <span class="nav-text">添加机器人为好友</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E7%BD%91%E5%9D%80"><span class="nav-number">5.0.2.</span> <span class="nav-text">在浏览器打开网址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E6%89%BEID"><span class="nav-number">5.0.3.</span> <span class="nav-text">查找ID</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">5.0.4.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
 

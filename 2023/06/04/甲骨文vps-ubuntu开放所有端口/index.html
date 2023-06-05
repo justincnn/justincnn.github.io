@@ -185,7 +185,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-04 18:31:30</span>
+        <span class="pc">2023-06-05 22:33:21</span>
     </span>
     
     
@@ -241,19 +241,19 @@
 
                 <p>如果你想在甲骨文vps上运行一些需要网络访问的应用，比如web服务器、数据库、代理等，你可能需要开放一些端口，让外界可以访问你的vps。但是，甲骨文vps默认是不开放任何端口的，你需要在它的后台设置和操作系统上进行一些配置，才能实现端口开放。本文将介绍如何在甲骨文vps ubuntu上开放所有端口，以及如何关闭ubuntu的防火墙，让你的vps更加灵活和安全。</p>
 <p>请先在甲骨文的后台先开放所有的端口，</p>
-<h3 id="1-切换到root用户"><a href="#1-切换到root用户" class="headerlink" title="1.切换到root用户"></a>1.切换到root用户</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+<h3 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-开放所有端口"><a href="#2-开放所有端口" class="headerlink" title="2.开放所有端口"></a>2.开放所有端口</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -P INPUT ACCEPT</span><br></pre></td></tr></table></figure>
+<h3 id="开放所有端口"><a href="#开放所有端口" class="headerlink" title="开放所有端口"></a>开放所有端口</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -P INPUT ACCEPT</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -P FORWARD ACCEPT</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -P OUTPUT ACCEPT</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -F</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"><a href="#3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它" class="headerlink" title="3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"></a>3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get purge netfilter-persistent</span><br></pre></td></tr></table></figure>
+<h3 id="Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"><a href="#Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它" class="headerlink" title="Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"></a>Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get purge netfilter-persistent</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
 
-<h3 id="4-强制删除规则"><a href="#4-强制删除规则" class="headerlink" title="4.强制删除规则"></a>4.强制删除规则</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /etc/iptables &amp;&amp; reboot</span><br></pre></td></tr></table></figure>
+<h3 id="强制删除规则"><a href="#强制删除规则" class="headerlink" title="强制删除规则"></a>强制删除规则</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /etc/iptables &amp;&amp; reboot</span><br></pre></td></tr></table></figure>
 
-<h3 id="5-删除oracle-cloud-agent，防止甲骨文监控"><a href="#5-删除oracle-cloud-agent，防止甲骨文监控" class="headerlink" title="5.删除oracle-cloud-agent，防止甲骨文监控"></a>5.删除oracle-cloud-agent，防止甲骨文监控</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap remove oracle-cloud-agent</span><br></pre></td></tr></table></figure>
+<h3 id="删除oracle-cloud-agent，防止甲骨文监控"><a href="#删除oracle-cloud-agent，防止甲骨文监控" class="headerlink" title="删除oracle-cloud-agent，防止甲骨文监控"></a>删除oracle-cloud-agent，防止甲骨文监控</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap remove oracle-cloud-agent</span><br></pre></td></tr></table></figure>
 
             </div>
 
@@ -348,7 +348,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%88%87%E6%8D%A2%E5%88%B0root%E7%94%A8%E6%88%B7"><span class="nav-number">1.</span> <span class="nav-text">1.切换到root用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%80%E6%94%BE%E6%89%80%E6%9C%89%E7%AB%AF%E5%8F%A3"><span class="nav-number">2.</span> <span class="nav-text">2.开放所有端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Oracle%E8%87%AA%E5%B8%A6%E7%9A%84Ubuntu%E9%95%9C%E5%83%8F%E9%BB%98%E8%AE%A4%E8%AE%BE%E7%BD%AE%E4%BA%86Iptable%E8%A7%84%E5%88%99%EF%BC%8C%E5%85%B3%E9%97%AD%E5%AE%83"><span class="nav-number">3.</span> <span class="nav-text">3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E8%A7%84%E5%88%99"><span class="nav-number">4.</span> <span class="nav-text">4.强制删除规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%88%A0%E9%99%A4oracle-cloud-agent%EF%BC%8C%E9%98%B2%E6%AD%A2%E7%94%B2%E9%AA%A8%E6%96%87%E7%9B%91%E6%8E%A7"><span class="nav-number">5.</span> <span class="nav-text">5.删除oracle-cloud-agent，防止甲骨文监控</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0root%E7%94%A8%E6%88%B7"><span class="nav-number">1.</span> <span class="nav-text">切换到root用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%94%BE%E6%89%80%E6%9C%89%E7%AB%AF%E5%8F%A3"><span class="nav-number">2.</span> <span class="nav-text">开放所有端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle%E8%87%AA%E5%B8%A6%E7%9A%84Ubuntu%E9%95%9C%E5%83%8F%E9%BB%98%E8%AE%A4%E8%AE%BE%E7%BD%AE%E4%BA%86Iptable%E8%A7%84%E5%88%99%EF%BC%8C%E5%85%B3%E9%97%AD%E5%AE%83"><span class="nav-number">3.</span> <span class="nav-text">Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E8%A7%84%E5%88%99"><span class="nav-number">4.</span> <span class="nav-text">强制删除规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4oracle-cloud-agent%EF%BC%8C%E9%98%B2%E6%AD%A2%E7%94%B2%E9%AA%A8%E6%96%87%E7%9B%91%E6%8E%A7"><span class="nav-number">5.</span> <span class="nav-text">删除oracle-cloud-agent，防止甲骨文监控</span></a></li></ol>
     </div>
 </div>
 
