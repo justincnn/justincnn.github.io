@@ -185,7 +185,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-05 21:31:36</span>
+        <span class="pc">2023-06-05 21:34:03</span>
     </span>
     
     
@@ -238,14 +238,13 @@
 
 <h4 id="删除所有的容器"><a href="#删除所有的容器" class="headerlink" title="删除所有的容器"></a>删除所有的容器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -aq)</span><br></pre></td></tr></table></figure>
 
-<h4 id="删除所有不使用的镜像"><a href="#删除所有不使用的镜像" class="headerlink" title="删除所有不使用的镜像"></a>删除所有不使用的镜像</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker image prune --force --all</span><br><span class="line">~~~~</span><br><span class="line">或者</span><br></pre></td></tr></table></figure>
-<p>docker image prune -f -a&#96; : </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 删除所有停止的容器</span><br></pre></td></tr></table></figure>
-<p>docker container prune -f</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#### 复制文件</span><br></pre></td></tr></table></figure>
-<p>docker cp mycontainer:&#x2F;opt&#x2F;file.txt &#x2F;opt&#x2F;local&#x2F;<br>docker cp &#x2F;opt&#x2F;local&#x2F;file.txt mycontainer:&#x2F;opt&#x2F;</p>
-<pre><code>
-</code></pre>
+<h4 id="删除所有不使用的镜像"><a href="#删除所有不使用的镜像" class="headerlink" title="删除所有不使用的镜像"></a>删除所有不使用的镜像</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image prune --force --all</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image prune -f -a` : </span><br></pre></td></tr></table></figure>
+
+<h4 id="删除所有停止的容器"><a href="#删除所有停止的容器" class="headerlink" title="删除所有停止的容器"></a>删除所有停止的容器</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container prune -f</span><br></pre></td></tr></table></figure>
+
+<h4 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker cp mycontainer:/opt/file.txt /opt/local/</span><br><span class="line">docker cp /opt/local/file.txt mycontainer:/opt/</span><br></pre></td></tr></table></figure>
 
             </div>
 
@@ -332,7 +331,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8-ID"><span class="nav-number">1.</span> <span class="nav-text">列出所有的容器 ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">停止所有的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">删除所有的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E9%95%9C%E5%83%8F"><span class="nav-number">4.</span> <span class="nav-text">删除所有不使用的镜像</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8-ID"><span class="nav-number">1.</span> <span class="nav-text">列出所有的容器 ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">停止所有的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">删除所有的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E9%95%9C%E5%83%8F"><span class="nav-number">4.</span> <span class="nav-text">删除所有不使用的镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E5%81%9C%E6%AD%A2%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">删除所有停止的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">复制文件</span></a></li></ol>
     </div>
 </div>
 
