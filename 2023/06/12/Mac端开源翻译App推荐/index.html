@@ -9,7 +9,7 @@
     
     <title>
         
-            笛卡尔梦境中的容器之旅：Ubuntu上Docker和Docker Compose的安装方法 |
+            Mac端开源翻译App推荐 |
         
         文科生的 IT 笔记
     </title>
@@ -159,7 +159,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">笛卡尔梦境中的容器之旅：Ubuntu上Docker和Docker Compose的安装方法</span>
+                <span class="title-hover-animation">Mac端开源翻译App推荐</span>
             </div>
 
             
@@ -179,26 +179,15 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-06-04 18:41:41</span>
-        <span class="mobile">2023-06-04 18:41</span>
+        <span class="pc">2023-06-12 21:04:14</span>
+        <span class="mobile">2023-06-12 21:04</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-05 20:16:55</span>
+        <span class="pc">2023-06-12 21:17:51</span>
     </span>
     
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/VPS/">VPS</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -206,11 +195,15 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Linux/">Linux</a>&nbsp;
+                        <a href="/tags/App/">App</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/Docker/">Docker</a>&nbsp;
+                        | <a href="/tags/Github/">Github</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Mac/">Mac</a>&nbsp;
                     </li>
                 
             </ul>
@@ -235,33 +228,45 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <ul>
-<li><p>Docker是一种容器化技术，它能够让开发者打包应用程序和其依赖项成为一个独立的容器，并可以在任何地方运行这个容器，不受运行环境的限制。简单来说，Docker就像是一个小型的虚拟机，可以在其中运行应用程序。</p>
-</li>
-<li><p>Docker Compose是一个用于管理Docker容器的工具，它能够让开发者通过编写简单的YAML文件来定义并运行多个容器，协同工作。与Docker不同的是，Docker Compose更注重于在多个容器之间建立联系和协调，以实现更复杂的应用程序部署。它可以让开发者更方便地管理多个容器，减少容器之间的配置和交互的复杂度，从而更容易地构建和维护应用程序。</p>
-</li>
+                <p>Mac端最舒服的翻译App，非<a class="link"   target="_blank" rel="noopener" href="https://apps.apple.com/cn/app/bob-%E7%BF%BB%E8%AF%91%E5%92%8C-ocr-%E5%B7%A5%E5%85%B7/id1630034110?mt=12" >Bob<i class="fas fa-external-link-alt"></i></a>当属，无论是颜值还是功能，但是随着Bob的不开源和收费，Github上开始慢慢出现一些Bob的替代品，下面就是几个目前已经可以使用的工具给大家推荐：</p>
+<p>3款APP都可以实现翻译等基本功能，做为吹毛求疵者，从个人角度讲一些优缺点：</p>
+<h1 id="Easydict"><a href="#Easydict" class="headerlink" title="Easydict"></a><a class="link"   target="_blank" rel="noopener" href="https://github.com/tisfeng/Easydict" >Easydict<i class="fas fa-external-link-alt"></i></a></h1><p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306122110765.png"
+                     
+                ></p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>三款app中界面最为漂亮</li>
 </ul>
-<p>本文介绍下如何在Ubuntu下安装这两者，其他Linux也可参照</p>
-<h3 id="安装Docker："><a href="#安装Docker：" class="headerlink" title="安装Docker："></a>安装Docker：</h3><h4 id="更新包列表并安装必要的软件包："><a href="#更新包列表并安装必要的软件包：" class="headerlink" title="更新包列表并安装必要的软件包："></a>更新包列表并安装必要的软件包：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</span><br></pre></td></tr></table></figure>
-
-<h4 id="添加Docker的GPG密钥："><a href="#添加Docker的GPG密钥：" class="headerlink" title="添加Docker的GPG密钥："></a>添加Docker的GPG密钥：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
-
-<h4 id="添加Docker的APT仓库："><a href="#添加Docker的APT仓库：" class="headerlink" title="添加Docker的APT仓库："></a>添加Docker的APT仓库：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br></pre></td></tr></table></figure>
-
-<h4 id="安装Docker-CE："><a href="#安装Docker-CE：" class="headerlink" title="安装Docker CE："></a>安装Docker CE：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装Docker-Compose"><a href="#安装Docker-Compose" class="headerlink" title="安装Docker Compose"></a>安装Docker Compose</h3><h4 id="下载Docker-Compose的二进制文件："><a href="#下载Docker-Compose的二进制文件：" class="headerlink" title="下载Docker Compose的二进制文件："></a>下载Docker Compose的二进制文件：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-
-<h4 id="赋予docker-compose可执行权限："><a href="#赋予docker-compose可执行权限：" class="headerlink" title="赋予docker-compose可执行权限："></a>赋予docker-compose可执行权限：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-
-<h4 id="添加docker-compose到系统PATH中："><a href="#添加docker-compose到系统PATH中：" class="headerlink" title="添加docker-compose到系统PATH中："></a>添加docker-compose到系统PATH中：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
-
-<h4 id="验证Docker-Compose是否安装成功："><a href="#验证Docker-Compose是否安装成功：" class="headerlink" title="验证Docker Compose是否安装成功："></a>验证Docker Compose是否安装成功：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
-
-<p>如果Docker Compose版本号被正确显示，则说明安装成功。</p>
-<h3 id="DockerGPG密钥的作用"><a href="#DockerGPG密钥的作用" class="headerlink" title="DockerGPG密钥的作用"></a>DockerGPG密钥的作用</h3><p>Docker的GPG密钥用于验证Docker软件包的真实性和完整性，以确保其未被篡改或恶意修改。当您从Docker官方仓库中下载Docker软件包时，您可以使用这个GPG密钥进行验证。如果您下载的软件包与Docker官方发布的软件包不匹配，GPG密钥验证将失败并给出警告。这有助于确保您下载的软件包是来自可信来源的，并且没有被篡改。</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>不支持自定义API</li>
+<li>无法直接调用Mac系统翻译</li>
+</ul>
+<h1 id="TTime"><a href="#TTime" class="headerlink" title="TTime"></a><a class="link"   target="_blank" rel="noopener" href="https://github.com/InkTimeRecord/TTime" >TTime<i class="fas fa-external-link-alt"></i></a></h1><p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306122114909.png"
+                     
+                ></p>
+<h2 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h2><ul>
+<li>支持自定义API</li>
+</ul>
+<h2 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>图标和Mac系统很不搭，影响界面统一性</li>
+</ul>
+<h1 id="pot-desktop"><a href="#pot-desktop" class="headerlink" title="pot-desktop"></a><a class="link"   target="_blank" rel="noopener" href="https://github.com/pot-app/pot-desktop" >pot-desktop<i class="fas fa-external-link-alt"></i></a></h1><p> <img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306122116699.png"
+                     
+                ></p>
+<h2 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h2><ul>
+<li>更新很快，作者反馈也很及时</li>
+</ul>
+<h2 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h2><ul>
+<li>Mac ORC一直有问题</li>
+</ul>
 
             </div>
 
@@ -271,16 +276,16 @@
 <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li class="post-title">
-            <span class="type">本文标题</span>：<span class="content">笛卡尔梦境中的容器之旅：Ubuntu上Docker和Docker Compose的安装方法</span>
+            <span class="type">本文标题</span>：<span class="content">Mac端开源翻译App推荐</span>
         </li>
         <li class="post-author">
             <span class="type">本文作者</span>：<span class="content">Justin Ye</span>
         </li>
         <li class="post-time">
-            <span class="type">创建时间</span>：<span class="content">2023-06-04 18:41:41</span>
+            <span class="type">创建时间</span>：<span class="content">2023-06-12 21:04:14</span>
         </li>
         <li class="post-link">
-            <span class="type">本文链接</span>：<span class="content">2023/06/04/笛卡尔梦境中的容器之旅：Ubuntu上Docker和Docker-Compose的安装方法/</span>
+            <span class="type">本文链接</span>：<span class="content">2023/06/12/Mac端开源翻译App推荐/</span>
         </li>
         <li class="post-license">
             <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
@@ -298,11 +303,15 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/Linux/">#Linux</a>&nbsp;
+                            <a href="/tags/App/">#App</a>&nbsp;
                         </li>
                     
                         <li class="tag-item">
-                            <a href="/tags/Docker/">#Docker</a>&nbsp;
+                            <a href="/tags/Github/">#Github</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Mac/">#Mac</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -311,29 +320,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/06/04/Docker%E4%B8%AD%E8%BD%BB%E6%9D%BE%E5%AE%89%E8%A3%85Ubuntu%EF%BC%9A%E5%9C%A8Docker%E4%B8%AD%E6%8E%A2%E7%B4%A2%E6%97%A0%E9%99%90%E5%8F%AF%E8%83%BD/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">Docker中轻松安装Ubuntu：在Docker中探索无限可能</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/06/04/Gcam%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90%EF%BC%8C%E5%B0%8F%E7%B1%B311%E6%91%84%E5%83%8F%E5%A4%B4%E5%8F%82%E6%95%B0/"
+                               href="/2023/06/12/GitHub%EF%BC%9A%E5%9B%BD%E5%86%85%E5%A6%82%E4%BD%95%E6%97%A0%E9%9A%9C%E7%A2%8D%E4%BD%BF%E7%94%A8BingAI/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Gcam全方位解析，小米11摄像头参数</span>
+                                <span class="post-nav-title-item">GitHub：国内如何无障碍使用BingAI</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -352,7 +346,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">安装Docker：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%8C%85%E5%88%97%E8%A1%A8%E5%B9%B6%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">更新包列表并安装必要的软件包：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0Docker%E7%9A%84GPG%E5%AF%86%E9%92%A5%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">添加Docker的GPG密钥：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0Docker%E7%9A%84APT%E4%BB%93%E5%BA%93%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">添加Docker的APT仓库：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker-CE%EF%BC%9A"><span class="nav-number">1.4.</span> <span class="nav-text">安装Docker CE：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Docker-Compose"><span class="nav-number">2.</span> <span class="nav-text">安装Docker Compose</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDDocker-Compose%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">下载Docker Compose的二进制文件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%8B%E4%BA%88docker-compose%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">赋予docker-compose可执行权限：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0docker-compose%E5%88%B0%E7%B3%BB%E7%BB%9FPATH%E4%B8%AD%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">添加docker-compose到系统PATH中：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81Docker-Compose%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%EF%BC%9A"><span class="nav-number">2.4.</span> <span class="nav-text">验证Docker Compose是否安装成功：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DockerGPG%E5%AF%86%E9%92%A5%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">DockerGPG密钥的作用</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Easydict"><span class="nav-number">1.</span> <span class="nav-text">Easydict</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">1.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TTime"><span class="nav-number">2.</span> <span class="nav-text">TTime</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9-1"><span class="nav-number">2.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pot-desktop"><span class="nav-number">3.</span> <span class="nav-text">pot-desktop</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A-1"><span class="nav-number">3.1.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">缺点：</span></a></li></ol></li></ol>
     </div>
 </div>
 
