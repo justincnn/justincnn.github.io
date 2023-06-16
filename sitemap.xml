@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/posts/65243.html</loc>
+    
+    <lastmod>2023-06-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/posts/22067.html</loc>
     
     <lastmod>2023-06-16</lastmod>
@@ -38,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/18027.html</loc>
+    <loc>http://example.com/posts/21414.html</loc>
     
     <lastmod>2023-06-16</lastmod>
     
@@ -47,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/21414.html</loc>
+    <loc>http://example.com/posts/18027.html</loc>
     
     <lastmod>2023-06-16</lastmod>
     
@@ -74,15 +83,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/64105.html</loc>
-    
-    <lastmod>2023-06-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/posts/53912.html</loc>
     
     <lastmod>2023-06-16</lastmod>
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/10523.html</loc>
+    <loc>http://example.com/posts/64105.html</loc>
     
     <lastmod>2023-06-16</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/2635.html</loc>
+    <loc>http://example.com/posts/10523.html</loc>
     
     <lastmod>2023-06-16</lastmod>
     
@@ -120,6 +120,15 @@
   
   <url>
     <loc>http://example.com/posts/2153.html</loc>
+    
+    <lastmod>2023-06-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/posts/2635.html</loc>
     
     <lastmod>2023-06-16</lastmod>
     
@@ -228,15 +237,6 @@
   
   <url>
     <loc>http://example.com/posts/45947.html</loc>
-    
-    <lastmod>2023-06-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/posts/65243.html</loc>
     
     <lastmod>2023-06-16</lastmod>
     
@@ -371,7 +371,28 @@
 
   
   <url>
+    <loc>http://example.com/tags/App/</loc>
+    <lastmod>2023-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Github/</loc>
+    <lastmod>2023-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/How-to/</loc>
+    <lastmod>2023-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Clash/</loc>
     <lastmod>2023-06-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -406,13 +427,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/App/</loc>
-    <lastmod>2023-06-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/Android/</loc>
     <lastmod>2023-06-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -421,13 +435,6 @@
   
   <url>
     <loc>http://example.com/tags/Pixel/</loc>
-    <lastmod>2023-06-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Github/</loc>
     <lastmod>2023-06-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -456,13 +463,6 @@
   
   <url>
     <loc>http://example.com/tags/Blog/</loc>
-    <lastmod>2023-06-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Clash/</loc>
     <lastmod>2023-06-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -534,14 +534,14 @@
 
   
   <url>
-    <loc>http://example.com/categories/VPS/</loc>
+    <loc>http://example.com/categories/APP/</loc>
     <lastmod>2023-06-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/APP/</loc>
+    <loc>http://example.com/categories/VPS/</loc>
     <lastmod>2023-06-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
