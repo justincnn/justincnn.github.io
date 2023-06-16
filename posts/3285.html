@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Justin">
+    
+    <title>
+        
+            Docker中轻松安装Ubuntu：在Docker中探索无限可能 |
+        
+        文科生的 IT 笔记
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066cc","logo":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","favicon":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","avatar":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041600338.png","description":"Never stop creating and never stop adoring, || for you are the star that lights up the sky of my soul.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDX73SYDQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-EJDX73SYDQ');
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               文科生的 IT 笔记
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">Docker中轻松安装Ubuntu：在Docker中探索无限可能</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Justin</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-06-04 18:43:36</span>
+        <span class="mobile">2023-06-04 18:43</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-06-16 20:48:40</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/VPS/">VPS</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Docker/">Docker</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <p>Docker是一种软件容器平台，它允许您将应用程序和它们的所有依赖项打包在一起，以便在不同的计算机上运行。安装Docker有以下几个好处：</p>
+<ul>
+<li><p>更轻松的应用程序部署：使用Docker容器打包应用程序和所有依赖项，可以减少应用程序部署的工作量和时间，同时还可以减少出错的可能性。</p>
+</li>
+<li><p>更高效的资源利用：Docker容器与传统虚拟机相比，消耗更少的资源，因此在同一物理机器上可以运行更多的Docker容器，从而更高效地利用硬件资源。</p>
+</li>
+<li><p>更易于管理的环境：使用Docker可以轻松地管理和维护应用程序的不同版本和配置。例如，可以轻松地在不同环境中运行相同的应用程序，例如开发、测试和生产环境。</p>
+</li>
+</ul>
+<p>总之，Docker可以简化应用程序开发和部署的流程，并提高系统的可移植性和可维护性。接下来简单介绍下如何安装Docker版Ubuntu。</p>
+<h3 id="1-拉取Ubuntu系统的镜像"><a href="#1-拉取Ubuntu系统的镜像" class="headerlink" title="1.拉取Ubuntu系统的镜像"></a>1.拉取Ubuntu系统的镜像</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-查看拉取是否成功"><a href="#2-查看拉取是否成功" class="headerlink" title="2.查看拉取是否成功"></a>2.查看拉取是否成功</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-运行容器"><a href="#3-运行容器" class="headerlink" title="3.运行容器"></a>3.运行容器</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name ubuntu -ti -v /data/projects:/var/www/html -d -p 3316:22 ubuntu</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>宿主机根目录中的AAA文件夹就映射到了容器中去了，两者之间能够共享</li>
+<li>–name 指定生成的容器的名称</li>
+<li>i: 以交互模式运行容器，保证容器中STDIN是开启的。通常与 -t 同时使用；</li>
+<li>t: 为容器重新分配一个伪tty终端，通常与 -i 同时使用；</li>
+<li>d: 后台运行容器，并返回容器ID；</li>
+<li>p:可以指定要映射的IP和端口，但是在一个指定端口上只可以绑定一个容器。支持的格式有 hostPort:containerPort、ip:hostPort:containerPort、 ip::containerPort。</li>
+<li>ubuntu 则是镜像名称，镜像ID也可以的。</li>
+</ul>
+<h3 id="4-查看容器是否运行成功"><a href="#4-查看容器是否运行成功" class="headerlink" title="4.查看容器是否运行成功"></a>4.查看容器是否运行成功</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a # 查看所有的容器，包含启动和挂起的容器</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-进入ubuntu系统"><a href="#5-进入ubuntu系统" class="headerlink" title="5.进入ubuntu系统"></a>5.进入ubuntu系统</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -t -i ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>这是一个极度精简的系统，连最基本的wget命令都没有；所以先要apt-get update升级系统和安装apt-get install wget命令</p>
+</li>
+<li><p>正确退出系统方式：先按，ctrl+p；再按，ctrl+q。绝对不能使用exit或者ctrl+d来退出，这样整个系统就退出了。具体到MAC电脑应该使用control代替ctrl键</p>
+</li>
+<li><p>退出后 再进入ubuntu1、首先用docker ps -a 查找到该CONTAINER ID对应编号（比如：0a3309a3b29e）2、进入该系统，使用命令：docker attach 0a3309a3b29e</p>
+</li>
+</ul>
+<h3 id="6-安装ssh-client、ssh-server"><a href="#6-安装ssh-client、ssh-server" class="headerlink" title="6.安装ssh-client、ssh-server"></a>6.安装ssh-client、ssh-server</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get install openssh-client</span><br><span class="line">apt-get install openssh-server</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-安装完成之后，就可以启动服务"><a href="#7-安装完成之后，就可以启动服务" class="headerlink" title="7.安装完成之后，就可以启动服务"></a>7.安装完成之后，就可以启动服务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh start</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-查看是否启动成功"><a href="#8-查看是否启动成功" class="headerlink" title="8.查看是否启动成功"></a>8.查看是否启动成功</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -e|grep ssh</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-编辑sshd-config文件"><a href="#9-编辑sshd-config文件" class="headerlink" title="9.编辑sshd_config文件"></a>9.编辑sshd_config文件</h3><ul>
+<li>需要先安装vim编辑器 apt-get install vim</li>
+<li>编辑sshd_config文件，添加一行 PermitRootLogin yes ，使用Esc + ：输入WQ保存修改，退出文件编辑界面</li>
+</ul>
+<h3 id="10-重启SSH服务"><a href="#10-重启SSH服务" class="headerlink" title="10.重启SSH服务"></a>10.重启SSH服务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-设置SSH的密码"><a href="#11-设置SSH的密码" class="headerlink" title="11.设置SSH的密码"></a>11.设置SSH的密码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd root  # 这个过程需要输入两遍</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-查看容器的IP地址"><a href="#12-查看容器的IP地址" class="headerlink" title="12.查看容器的IP地址"></a>12.查看容器的IP地址</h3><ul>
+<li>先安装net-tools的安装包<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install net-tools</span><br></pre></td></tr></table></figure></li>
+<li>查看ip地址<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="13-保存修改的镜像"><a href="#13-保存修改的镜像" class="headerlink" title="13.保存修改的镜像"></a>13.保存修改的镜像</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit [容器ID/容器名] [REPOSITORY:TAG]</span><br></pre></td></tr></table></figure>
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    
+<div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li class="post-title">
+            <span class="type">本文标题</span>：<span class="content">Docker中轻松安装Ubuntu：在Docker中探索无限可能</span>
+        </li>
+        <li class="post-author">
+            <span class="type">本文作者</span>：<span class="content">Justin</span>
+        </li>
+        <li class="post-time">
+            <span class="type">创建时间</span>：<span class="content">2023-06-04 18:43:36</span>
+        </li>
+        <li class="post-link">
+            <span class="type">本文链接</span>：<span class="content">posts/3285.html</span>
+        </li>
+        <li class="post-license">
+            <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
+        </li>
+    </ul>
+    <div class="copy-copyright-info flex-center tooltip" data-content="复制版权信息" data-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Docker/">#Docker</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Linux/">#Linux</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/posts/33632.html"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">自动抢注甲骨文 ARM VPS，让您的云计算之路更加便捷</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/posts/22067.html"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">笛卡尔梦境中的容器之旅：Ubuntu上Docker和Docker Compose的安装方法</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%8B%89%E5%8F%96Ubuntu%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%95%9C%E5%83%8F"><span class="nav-number">1.</span> <span class="nav-text">1.拉取Ubuntu系统的镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9F%A5%E7%9C%8B%E6%8B%89%E5%8F%96%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="nav-number">2.</span> <span class="nav-text">2.查看拉取是否成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">3.运行容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E6%98%AF%E5%90%A6%E8%BF%90%E8%A1%8C%E6%88%90%E5%8A%9F"><span class="nav-number">4.</span> <span class="nav-text">4.查看容器是否运行成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%BF%9B%E5%85%A5ubuntu%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.</span> <span class="nav-text">5.进入ubuntu系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%AE%89%E8%A3%85ssh-client%E3%80%81ssh-server"><span class="nav-number">6.</span> <span class="nav-text">6.安装ssh-client、ssh-server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">7.</span> <span class="nav-text">7.安装完成之后，就可以启动服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E5%90%AF%E5%8A%A8%E6%88%90%E5%8A%9F"><span class="nav-number">8.</span> <span class="nav-text">8.查看是否启动成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E7%BC%96%E8%BE%91sshd-config%E6%96%87%E4%BB%B6"><span class="nav-number">9.</span> <span class="nav-text">9.编辑sshd_config文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E9%87%8D%E5%90%AFSSH%E6%9C%8D%E5%8A%A1"><span class="nav-number">10.</span> <span class="nav-text">10.重启SSH服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E8%AE%BE%E7%BD%AESSH%E7%9A%84%E5%AF%86%E7%A0%81"><span class="nav-number">11.</span> <span class="nav-text">11.设置SSH的密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E7%9A%84IP%E5%9C%B0%E5%9D%80"><span class="nav-number">12.</span> <span class="nav-text">12.查看容器的IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-%E4%BF%9D%E5%AD%98%E4%BF%AE%E6%94%B9%E7%9A%84%E9%95%9C%E5%83%8F"><span class="nav-number">13.</span> <span class="nav-text">13.保存修改的镜像</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Justin</a>
+            
+        </div>
+        
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+            <div class="deploy-info info-item">
+                
+                    本站由 <span class="tooltip" data-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span> 提供部署服务
+                
+            </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+
+</body>
+</html>

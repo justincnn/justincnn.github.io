@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Justin">
+    
+    <title>
+        
+            Clash:创建自己的订阅和懒人规则 |
+        
+        文科生的 IT 笔记
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066cc","logo":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","favicon":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","avatar":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041600338.png","description":"Never stop creating and never stop adoring, || for you are the star that lights up the sky of my soul.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDX73SYDQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-EJDX73SYDQ');
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               文科生的 IT 笔记
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">Clash:创建自己的订阅和懒人规则</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Justin</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-06-15 21:30:23</span>
+        <span class="mobile">2023-06-15 21:30</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-06-16 20:48:40</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/APP/">APP</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/How-to/">How to</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/App/">App</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Github/">Github</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Clash/">Clash</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <p>Clash强大的分流和自定义规则是很多魔法上网人士的最爱的App之一，但是也是其较高的入门门槛，特别是规则的配置把很多人拦在外面。</p>
+<p>本文介绍一下如何编辑自己的规则，以及创建私密订阅链接：</p>
+<h1 id="Clash-规则创建"><a href="#Clash-规则创建" class="headerlink" title="Clash 规则创建"></a>Clash 规则创建</h1><h2 id="适用性："><a href="#适用性：" class="headerlink" title="适用性："></a>适用性：</h2><p>适用于 <a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash/releases/tag/premium"><strong>Clash Premium 内核</strong></a>的规则集（RULE-SET），同时适用于所有使用 Clash Premium 内核的 Clash 图形用户界面（GUI）客户端。</p>
+<h2 id="Clash下载地址"><a href="#Clash下载地址" class="headerlink" title="Clash下载地址"></a>Clash下载地址</h2><ul>
+<li><p>Clash Premium <strong>命令行</strong>版（适用于 Windows、macOS、Linux、OpenWRT 等多种平台）：<a class="link"   target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash/releases/tag/premium" >https://github.com/Dreamacro/clash/releases/tag/premium<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>Clash Premium <strong>图形用户界面</strong>版：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public" >ClashX Pro<i class="fas fa-external-link-alt"></i></a>（适用于 macOS）</li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/Fndroid/clash_for_windows_pkg/releases" >Clash for Windows<i class="fas fa-external-link-alt"></i></a>（适用于 Windows、macOS、Linux）</li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/Kr328/ClashForAndroid/releases" >Clash for Android<i class="fas fa-external-link-alt"></i></a>（适用于 Android）</li>
+</ul>
+</li>
+</ul>
+<h2 id="规则地址"><a href="#规则地址" class="headerlink" title="规则地址"></a>规则地址</h2><p>在线地址（URL）</p>
+<blockquote>
+<p>如果无法访问域名 <code>raw.githubusercontent.com</code>，可以使用第二个地址（<code>cdn.jsdelivr.net</code>），但是内容更新会有 12 小时的延迟。以下地址填写在 Clash 配置文件里的 <code>rule-providers</code> 里的 <code>url</code> 配置项中。</p>
+</blockquote>
+<ul>
+<li><p><strong>直连域名列表 direct.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>代理域名列表 proxy.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>广告域名列表 reject.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>私有网络专用域名列表 private.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>Apple 在中国大陆可直连的域名列表 apple.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>iCloud 域名列表 icloud.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>[慎用]Google 在中国大陆可直连的域名列表 google.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>GFWList 域名列表 gfw.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>非中国大陆使用的顶级域名列表 tld-not-cn.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>Telegram 使用的 IP 地址列表 telegramcidr.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>局域网 IP 及保留 IP 地址列表 lancidr.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>中国大陆 IP 地址列表 cncidr.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+<li><p><strong>需要直连的常见软件列表 applications.txt</strong>：</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt" >https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt" >https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p> Rule Providers 配置方式</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rule-providers:</span></span><br><span class="line">  <span class="attr">reject:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/reject.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">icloud:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/icloud.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">apple:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/apple.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">google:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/google.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">proxy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/proxy.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">direct:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/direct.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">private:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/private.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">gfw:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/gfw.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">tld-not-cn:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">domain</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/tld-not-cn.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">telegramcidr:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/telegramcidr.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">cncidr:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/cncidr.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">lancidr:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">ipcidr</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/lancidr.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">applications:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">behavior:</span> <span class="string">classical</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt&quot;</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">./ruleset/applications.yaml</span></span><br><span class="line">    <span class="attr">interval:</span> <span class="number">86400</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="白名单模式-Rules-配置方式"><a href="#白名单模式-Rules-配置方式" class="headerlink" title="白名单模式 Rules 配置方式"></a>白名单模式 Rules 配置方式</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rules:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,applications,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,clash.razord.top,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,yacd.haishan.me,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,private,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,reject,REJECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,icloud,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,apple,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,google,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,proxy,PROXY</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,direct,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,lancidr,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,cncidr,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,telegramcidr,PROXY</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOIP,LAN,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GEOIP,CN,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">MATCH,PROXY</span></span><br></pre></td></tr></table></figure>
+<h3 id="黑名单模式-Rules-配置方式"><a href="#黑名单模式-Rules-配置方式" class="headerlink" title="黑名单模式 Rules 配置方式"></a>黑名单模式 Rules 配置方式</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rules:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,applications,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,clash.razord.top,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DOMAIN,yacd.haishan.me,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,private,DIRECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,reject,REJECT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,tld-not-cn,PROXY</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,gfw,PROXY</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">RULE-SET,telegramcidr,PROXY</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">MATCH,DIRECT</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Clash订阅创建"><a href="#Clash订阅创建" class="headerlink" title="Clash订阅创建"></a>Clash订阅创建</h1><ul>
+<li>打开 <a class="link"   target="_blank" rel="noopener" href="https://gist.github.com/" >GitHub Gist<i class="fas fa-external-link-alt"></i></a>，<code>Gist description</code> 不用填，<code>Filename including extension...</code> 填入包括拓展名的文件全名，如 <code>myconfig.yaml</code>，将配置文件的全部内容粘贴进去，最后点右下角绿色按钮发布。</li>
+</ul>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306152147062.png"
+                     
+                ></p>
+<ul>
+<li>打开刚刚发布的 Gist，点击右上角的 <code>Raw</code>，复制当前的的地址，如：</li>
+</ul>
+<p><code>https://gist.githubusercontent.com/githubusername/1234567890/raw/0987654321/myconfig.yaml</code></p>
+<p>将 <code>/raw/</code> 之后的第二串随机数删除，得到形如：</p>
+<p><code>https://gist.githubusercontent.com/githubusername/1234567890/raw/myconfig.yaml</code></p>
+<p>的 URL。</p>
+<ul>
+<li>在任意使用 Clash Premium 或 Meta 内核的 Clash 图形化客户端中（如果你不知道你用的是哪种内核，那极大概率就是 Premium）添加这一订阅链接，等所需文件下载完成后就可以正常使用了。</li>
+</ul>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p> 感谢<a class="link"   target="_blank" rel="noopener" href="https://yizhimengxin.me/2022/10/27/%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%9A%84Clash%E9%85%8D%E7%BD%AE%E5%B9%B6%E6%8F%90%E4%BE%9B%E8%AE%A2%E9%98%85/" ># 打造自己的 Clash 配置并提供订阅<i class="fas fa-external-link-alt"></i></a></p>
+<p> 感谢<a class="link"   target="_blank" rel="noopener" href="https://github.com/Loyalsoldier" >Loyalsoldier<i class="fas fa-external-link-alt"></i></a>&#x2F;<a class="link"   target="_blank" rel="noopener" href="https://github.com/Loyalsoldier/clash-rules" >clash-rules<i class="fas fa-external-link-alt"></i></a></p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    
+<div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li class="post-title">
+            <span class="type">本文标题</span>：<span class="content">Clash:创建自己的订阅和懒人规则</span>
+        </li>
+        <li class="post-author">
+            <span class="type">本文作者</span>：<span class="content">Justin</span>
+        </li>
+        <li class="post-time">
+            <span class="type">创建时间</span>：<span class="content">2023-06-15 21:30:23</span>
+        </li>
+        <li class="post-link">
+            <span class="type">本文链接</span>：<span class="content">posts/56963.html</span>
+        </li>
+        <li class="post-license">
+            <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
+        </li>
+    </ul>
+    <div class="copy-copyright-info flex-center tooltip" data-content="复制版权信息" data-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/How-to/">#How to</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/App/">#App</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Github/">#Github</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Clash/">#Clash</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/posts/65243.html"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">Hexo:自动转换中文标题</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/posts/59849.html"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Github:Mac 清理脚本</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Clash-%E8%A7%84%E5%88%99%E5%88%9B%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">Clash 规则创建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E6%80%A7%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">适用性：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clash%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="nav-number">1.2.</span> <span class="nav-text">Clash下载地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%84%E5%88%99%E5%9C%B0%E5%9D%80"><span class="nav-number">1.3.</span> <span class="nav-text">规则地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BD%E5%90%8D%E5%8D%95%E6%A8%A1%E5%BC%8F-Rules-%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.1.</span> <span class="nav-text">白名单模式 Rules 配置方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95%E6%A8%A1%E5%BC%8F-Rules-%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">黑名单模式 Rules 配置方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Clash%E8%AE%A2%E9%98%85%E5%88%9B%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">Clash订阅创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Justin</a>
+            
+        </div>
+        
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+            <div class="deploy-info info-item">
+                
+                    本站由 <span class="tooltip" data-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span> 提供部署服务
+                
+            </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+
+</body>
+</html>
