@@ -46,13 +46,13 @@ http://example.com/tags/Github/
 http://example.com/tags/Clash/
 http://example.com/tags/Linux/
 http://example.com/tags/Docker/
+http://example.com/tags/Cloud/
+http://example.com/tags/Ai/
 http://example.com/tags/Android/
 http://example.com/tags/Pixel/
-http://example.com/tags/Ai/
-http://example.com/tags/Cloud/
+http://example.com/tags/Blog/
 http://example.com/tags/Mac/
 http://example.com/tags/Script/
-http://example.com/tags/Blog/
 http://example.com/tags/Life-Style/
 http://example.com/tags/Safari/
 http://example.com/tags/Chrome/

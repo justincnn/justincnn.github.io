@@ -420,6 +420,20 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/Cloud/</loc>
+    <lastmod>2023-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Ai/</loc>
+    <lastmod>2023-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/Android/</loc>
     <lastmod>2023-06-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -434,14 +448,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Ai/</loc>
-    <lastmod>2023-06-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Cloud/</loc>
+    <loc>http://example.com/tags/Blog/</loc>
     <lastmod>2023-06-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -456,13 +463,6 @@
   
   <url>
     <loc>http://example.com/tags/Script/</loc>
-    <lastmod>2023-06-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Blog/</loc>
     <lastmod>2023-06-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
