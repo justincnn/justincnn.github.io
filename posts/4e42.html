@@ -9,7 +9,7 @@
     
     <title>
         
-            Github:Mac 清理脚本 |
+            H3C NX30Pro 刷 openwrt |
         
         文科生的 IT 笔记
     </title>
@@ -169,7 +169,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">Github:Mac 清理脚本</span>
+                <span class="title-hover-animation">H3C NX30Pro 刷 openwrt</span>
             </div>
 
             
@@ -189,13 +189,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-06-13 21:16:42</span>
-        <span class="mobile">2023-06-13 21:16</span>
+        <span class="pc">2023-06-17 20:48:58</span>
+        <span class="mobile">2023-06-17 20:48</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-16 20:53:20</span>
+        <span class="pc">2023-06-17 21:06:49</span>
     </span>
     
     
@@ -204,7 +204,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/APP/">APP</a>&nbsp;
+                        <a href="/categories/Openwrt/">Openwrt</a>&nbsp;
                     </li>
                 
             </ul>
@@ -220,19 +220,7 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/App/">App</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Github/">Github</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Mac/">Mac</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Script/">Script</a>&nbsp;
+                        | <a href="/tags/Openwrt/">Openwrt</a>&nbsp;
                     </li>
                 
             </ul>
@@ -257,32 +245,108 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <p>都2023年了，Mac的硬盘还是卖的金子一样的贵，很多人还是坚持着256G的硬盘，谁叫Mac的Silicon处理器那么香呢，一开始就开闸放水，导致那么多年过去了，依旧很够用。</p>
-<p>256G的硬盘终究还是熬不过岁月的痕迹，清理还是必须的，下面介绍一个Github的Mac清理脚本—Mac-cleanup</p>
+                <p>趁着京东2013年618大促，买入了路由神器H3C NX30 Pro，关键词就是性价比高，可刷Openwrt。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>H3C NX30 Pro 路由器</li>
+<li>有网口的 Windows 电脑（主要用 telnet、ssh，别的系统也行）</li>
+<li>下载需要的文件（包含了 termius、winscp、和固件）</li>
+</ul>
+<h1 id="开启SSH"><a href="#开启SSH" class="headerlink" title="开启SSH"></a>开启SSH</h1><p><strong>确保路由器可以联网</strong></p>
+<p> NX30 Pro 默认开启了 telnet，默认的地址是 192.168.124.1，用户名是 H3C（全大写），密码就你设置的路由器后台密码，端口是 99。</p>
+<ul>
+<li><p>打开 termius 选择 New Host 添加，Address 填写 192.168.124.1，取消勾选 SSH，勾选 Telnet，Port 端口填写上 99<br><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306172056046.png"
+                     
+                ></p>
+</li>
+<li><p>输入用户名和密码，输入密码不会显示，回车即可连上 Telnet。</p>
+</li>
+</ul>
 <p><img  
                      lazyload
                      alt="image"
-                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306132111748.gif"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306172057421.png"
                      
                 ></p>
-<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ul>
-<li>清理回收站</li>
-<li>清理缓存</li>
-<li>清理无用的文件和日志</li>
+<ul>
+<li>复制下面的代码到终端里执行即可开启 SSH：</li>
 </ul>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>HomeBrew方式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap mac-cleanup/mac-cleanup-py</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o /tmp/dropbear.ipk https://downloads.openwrt.org/releases/packages-19.07/aarch64_cortex-a53/base/dropbear_2019.78-2_aarch64_cortex-a53.ipk</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg install /tmp/dropbear.ipk</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/dropbear <span class="built_in">enable</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/dropbear start</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mac-cleanup-py</span><br></pre></td></tr></table></figure>
-
-<p>第一次安装会同时安装Python，gdbm, mpdecimal, readline, sqlite, xz and <a class="link"   href="mailto:&#x70;&#121;&#116;&#104;&#111;&#110;&#x40;&#51;&#x2e;&#49;" >&#x70;&#121;&#116;&#104;&#111;&#110;&#x40;&#51;&#x2e;&#49;<i class="fas fa-external-link-alt"></i></a> 时间会比较久</p>
-<h1 id="使用和帮助菜单"><a href="#使用和帮助菜单" class="headerlink" title="使用和帮助菜单"></a>使用和帮助菜单</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">$</span> <span class="string">mac-cleanup</span> <span class="string">-h</span></span><br><span class="line"></span><br><span class="line"><span class="attr">usage:</span> <span class="string">mac-cleanup</span> [<span class="string">-h</span>] [<span class="string">-n</span>] [<span class="string">-u</span>] [<span class="string">-c</span>] [<span class="string">-p</span>]</span><br><span class="line"></span><br><span class="line">    <span class="string">A</span> <span class="string">Mac</span> <span class="string">Cleanup</span> <span class="string">Utility</span> <span class="string">in</span> <span class="string">Python</span></span><br><span class="line">    <span class="number">3.0</span><span class="number">.3</span></span><br><span class="line">    <span class="string">https://github.com/mac-cleanup/mac-cleanup-py</span>    </span><br><span class="line"></span><br><span class="line"><span class="attr">options:</span></span><br><span class="line">  <span class="string">-h,</span> <span class="string">--help</span>         <span class="string">show</span> <span class="string">this</span> <span class="string">help</span> <span class="string">message</span> <span class="string">and</span> <span class="string">exit</span></span><br><span class="line">  <span class="string">-n,</span> <span class="string">--dry-run</span>      <span class="string">Dry</span> <span class="string">run</span> <span class="string">without</span> <span class="string">deleting</span> <span class="string">stuff</span></span><br><span class="line">  <span class="string">-u,</span> <span class="string">--update</span>       <span class="string">Update</span> <span class="string">HomeBrew</span> <span class="string">on</span> <span class="string">cleanup</span></span><br><span class="line">  <span class="string">-c,</span> <span class="string">--configure</span>    <span class="string">Configure</span> <span class="string">default</span> <span class="string">and</span> <span class="string">custom</span> <span class="string">modules</span></span><br><span class="line">  <span class="string">-p,</span> <span class="string">--custom-path</span>  <span class="string">Specify</span> <span class="string">path</span> <span class="string">for</span> <span class="string">custom</span> <span class="string">modules</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew uninstall mac-cleanup-py</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew untap mac-cleanup/mac-cleanup-py</span><br></pre></td></tr></table></figure>
-
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>感谢<a class="link"   target="_blank" rel="noopener" href="https://github.com/mac-cleanup/mac-cleanup-py" >mac-cleanup-py@Github<i class="fas fa-external-link-alt"></i></a></p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306172058010.png"
+                     
+                ></p>
+<h1 id="备份系统"><a href="#备份系统" class="headerlink" title="备份系统"></a>备份系统</h1><ul>
+<li><p>在终端里执行这命令，将系统备份到  tmp 路径下，备份的过程比较慢，需要 1-2 分钟。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/mtd5 of=/tmp/backup.img</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306172059129.png"
+                     
+                ></p>
+</li>
+<li><p>将NX30Pro tmp 路径下的 backup.img 文件拖到左边电脑上保存，刷回官方固件需要用到</p>
+</li>
+</ul>
+<h1 id="刷写-uboot"><a href="#刷写-uboot" class="headerlink" title="刷写 uboot"></a>刷写 uboot</h1><h2 id="离线刷机"><a href="#离线刷机" class="headerlink" title="离线刷机"></a>离线刷机</h2><ul>
+<li>下载好的 uboot.bin 文件从左边电脑拖进右侧路由器 tmp 路径下。</li>
+<li>执行命令，如图所示完成了写入 uboot。（请确保MD5 校验结果和图中相同，再敲回车执行，否则会变砖）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">md5sum</span> uboot.bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mtd write /tmp/uboot.bin FIP</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306172101972.png"
+                     
+                ></p>
+<h2 id="在线刷机"><a href="#在线刷机" class="headerlink" title="在线刷机"></a>在线刷机</h2><ul>
+<li>终端直接复制执行，就能完成 uboot 的写入。（请确保MD5 校验结果和图中相同，再敲回车执行，否则会变砖）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://share.qust.me/d/%E8%B7%AF%E7%94%B1%E5%99%A8/NX30Pro/uboot.bin -o uboot.bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">md5sum</span> uboot.bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mtd write /tmp/uboot.bin FIP</span><br></pre></td></tr></table></figure>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306172102028.png"
+                     
+                ></li>
+</ul>
+<h1 id="刷写-openwrt"><a href="#刷写-openwrt" class="headerlink" title="刷写 openwrt"></a>刷写 openwrt</h1><ul>
+<li>路由器断电后，先按住背后 Reset 恢复按钮不放，再插电，等待 10s 左右松开背后 Reset</li>
+<li>路由器就进入了 uboot，电脑用网线连接路由器 LAN1，并设置好静态 IP：IP地址填 192.168.1.2，子网掩码 255.255.255.0，网关 192.168.1.1，DNS 192.168.1.1。<br><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306172103351.png"
+                     
+                ></li>
+<li>192.168.1.1 就能打开 uboot 后台。<br><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306172104742.png"
+                     
+                ></li>
+<li>选择下载好的 NX30pro 的固件，upload 上传后，update 更新，写入即可。<br><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306172104487.png"
+                     
+                ></li>
+<li>更新完成后系统会重启进入 openwrt 的系统，默认的 WiFi 是 MTK 开头没有密码，后台地址 192.168.6.1，用户名 root，密码 password。</li>
+</ul>
+<h1 id="刷回官方"><a href="#刷回官方" class="headerlink" title="刷回官方"></a>刷回官方</h1><ul>
+<li>进入 uboot 后选择之前备份的 backup.img 文件更新即可，系统就会重启进入官方的系统。</li>
+</ul>
+<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p>感谢<a class="link"   target="_blank" rel="noopener" href="https://blog.qust.me/nx30pro" >酱紫表<i class="fas fa-external-link-alt"></i></a></p>
 
             </div>
 
@@ -292,16 +356,16 @@
 <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li class="post-title">
-            <span class="type">本文标题</span>：<span class="content">Github:Mac 清理脚本</span>
+            <span class="type">本文标题</span>：<span class="content">H3C NX30Pro 刷 openwrt</span>
         </li>
         <li class="post-author">
             <span class="type">本文作者</span>：<span class="content">Justin</span>
         </li>
         <li class="post-time">
-            <span class="type">创建时间</span>：<span class="content">2023-06-13 21:16:42</span>
+            <span class="type">创建时间</span>：<span class="content">2023-06-17 20:48:58</span>
         </li>
         <li class="post-link">
-            <span class="type">本文链接</span>：<span class="content">posts/59849.html</span>
+            <span class="type">本文链接</span>：<span class="content">posts/4e42.html</span>
         </li>
         <li class="post-license">
             <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
@@ -323,19 +387,7 @@
                         </li>
                     
                         <li class="tag-item">
-                            <a href="/tags/App/">#App</a>&nbsp;
-                        </li>
-                    
-                        <li class="tag-item">
-                            <a href="/tags/Github/">#Github</a>&nbsp;
-                        </li>
-                    
-                        <li class="tag-item">
-                            <a href="/tags/Mac/">#Mac</a>&nbsp;
-                        </li>
-                    
-                        <li class="tag-item">
-                            <a href="/tags/Script/">#Script</a>&nbsp;
+                            <a href="/tags/Openwrt/">#Openwrt</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -344,29 +396,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/posts/56963.html"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">Clash:创建自己的订阅和懒人规则</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/posts/3849.html"
+                               href="/posts/65243.html"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">google voice保号：自动订阅广告</span>
+                                <span class="post-nav-title-item">Hexo:自动转换中文标题</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -385,7 +422,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%92%8C%E5%B8%AE%E5%8A%A9%E8%8F%9C%E5%8D%95"><span class="nav-number">3.</span> <span class="nav-text">使用和帮助菜单</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD"><span class="nav-number">4.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%90%AFSSH"><span class="nav-number">2.</span> <span class="nav-text">开启SSH</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.</span> <span class="nav-text">备份系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%B7%E5%86%99-uboot"><span class="nav-number">4.</span> <span class="nav-text">刷写 uboot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%BB%E7%BA%BF%E5%88%B7%E6%9C%BA"><span class="nav-number">4.1.</span> <span class="nav-text">离线刷机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%BA%BF%E5%88%B7%E6%9C%BA"><span class="nav-number">4.2.</span> <span class="nav-text">在线刷机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%B7%E5%86%99-openwrt"><span class="nav-number">5.</span> <span class="nav-text">刷写 openwrt</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%B7%E5%9B%9E%E5%AE%98%E6%96%B9"><span class="nav-number">6.</span> <span class="nav-text">刷回官方</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%84%9F%E8%B0%A2"><span class="nav-number">7.</span> <span class="nav-text">感谢</span></a></li></ol>
     </div>
 </div>
 
