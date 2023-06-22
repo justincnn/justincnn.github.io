@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Justin">
+    
+    <title>
+        
+            Github:监控自己关注的项目、关键词和user |
+        
+        文科生的 IT 笔记
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066cc","logo":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","favicon":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","avatar":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041600338.png","description":"Never stop creating and never stop adoring, || for you are the star that lights up the sky of my soul.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"center","copyright_info":true},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDX73SYDQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-EJDX73SYDQ');
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               文科生的 IT 笔记
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">Github:监控自己关注的项目、关键词和user</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Justin</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-06-22 13:29:37</span>
+        <span class="mobile">2023-06-22 13:29</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-06-22 13:57:10</span>
+    </span>
+    
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Github/">Github</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/How-to/">How to</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Vps/">Vps</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Script/">Script</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <p>在如今充满信息的数字世界中，我们时常需要跟踪感兴趣的项目、关键词或者领域的最新动态。对于软件开发者、技术爱好者或者项目管理者来说，GitHub无疑是一个不可或缺的平台，拥有众多优秀的开源项目和活跃的技术社区。</p>
+<p>但是，随着信息的爆炸式增长，我们可能会错过一些重要的更新或者有关自己关注领域的精彩内容。幸运的是，GitHub上出现了一款强大的工具，它能够帮助我们解决这个问题，实现定时关注我们所关心的关键词、项目等。</p>
+<p>这个工具的名字是yhy0&#x2F;github-cve-monitor，它为GitHub用户提供了便捷的定时关注功能。无论你是开发者、研究人员还是项目经理，这个工具都能够帮助你更高效地获取你关注的信息，并在第一时间获取最新的更新。</p>
+<h1 id="同步文件"><a href="#同步文件" class="headerlink" title="同步文件"></a>同步文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/yhy0/github-cve-monitor.git /opt/cve</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置运行脚本"><a href="#配置运行脚本" class="headerlink" title="配置运行脚本"></a>配置运行脚本</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/env sh</span></span><br><span class="line"></span><br><span class="line"><span class="string">set</span> <span class="string">-ex</span></span><br><span class="line"></span><br><span class="line"><span class="string">if</span> <span class="string">!</span> [ <span class="string">&quot;$(cat /etc/timezone)&quot;</span> <span class="string">=</span> <span class="string">&quot;$TZ&quot;</span> ]<span class="string">;then</span></span><br><span class="line">	<span class="string">apt</span> <span class="string">update</span> <span class="string">-y</span></span><br><span class="line">	<span class="string">ln</span> <span class="string">-fs</span> <span class="string">/usr/share/zoneinfo/$&#123;TZ&#125;</span> <span class="string">/etc/localtime</span></span><br><span class="line">	<span class="string">echo</span> <span class="string">$&#123;TZ&#125;</span> <span class="string">&gt;</span> <span class="string">/etc/timezone</span></span><br><span class="line">	<span class="string">apt</span> <span class="string">install</span> <span class="string">-y</span> <span class="string">tzdata</span></span><br><span class="line">	<span class="string">dpkg-reconfigure</span> <span class="string">--frontend</span> <span class="string">noninteractive</span> <span class="string">tzdata</span></span><br><span class="line">	<span class="string">apt</span> <span class="string">install</span> <span class="string">-y</span> <span class="string">python3.9</span> <span class="string">python3-pip</span></span><br><span class="line">	<span class="string">pip</span> <span class="string">install</span> <span class="string">-r</span> <span class="string">/opt/cve/requirements.txt</span></span><br><span class="line">	<span class="string">rm</span> <span class="string">-rf</span> <span class="string">/var/lib/apt/lists/*</span></span><br><span class="line"><span class="string">fi</span></span><br><span class="line"></span><br><span class="line"><span class="string">cd</span> <span class="string">/opt/cve/</span></span><br><span class="line"><span class="string">python3</span> <span class="string">/opt/cve/github_cve_monitor.py</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="python3安装"><a href="#python3安装" class="headerlink" title="python3安装"></a>python3安装</h2><ul>
+<li>按如下方法安装:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3.9 python3.9-dev</span><br></pre></td></tr></table></figure>
+安装完成后，您可以通过运行以下命令来验证 Python 3.9 是否成功安装：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3.9 --version</span><br></pre></td></tr></table></figure></li>
+<li>如果软件源没有包含 Python 3.9 的安装包<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:deadsnakes/ppa</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3.9</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="telegram推送插件安装"><a href="#telegram推送插件安装" class="headerlink" title="telegram推送插件安装"></a>telegram推送插件安装</h2><ul>
+<li>如果出现如下错误<code>RuntimeWarning: coroutine &#39;Bot.send_message&#39; was never awaited</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install python-telegram-bot==13.15</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="配置tools-list-yaml"><a href="#配置tools-list-yaml" class="headerlink" title="配置tools_list.yaml"></a>配置tools_list.yaml</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tools_list:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/BeichenDream/Godzilla</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/rebeyond/Behinder</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/AntSwordProject/antSword</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/j1anFen/shiro_attack</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/yhy0/github-cve-monitor</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/gentilkiwi/mimikatz</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/ehang-io/nps</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/chaitin/xray</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/FunnyWolf/pystinger</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/L-codes/Neo-reGeorg</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/shadow1ng/fscan</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/SafeGroceryStore/MDUT</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://api.github.com/repos/EdgeSecurityTeam/Vulnerability</span></span><br><span class="line"></span><br><span class="line"><span class="attr">keyword_list:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">Sql注入</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">cnvd</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">未授权</span></span><br><span class="line"></span><br><span class="line"><span class="attr">user_list:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">yhy0</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">su18</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">BeichenDream</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">phith0n</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">zhzyker</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">lijiejie</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">projectdiscovery</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">HavocFramework</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="配置config-yaml"><a href="#配置config-yaml" class="headerlink" title="配置config.yaml"></a>配置config.yaml</h1> <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">all_config:</span></span><br><span class="line"><span class="attr">github_token:</span> <span class="string">xxxxxx</span></span><br><span class="line"><span class="attr">dingding:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">enable:</span> <span class="number">1</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">webhook:</span> <span class="string">xxxxxxx</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">secretKey:</span> <span class="string">xxxxxxx</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">app_name:</span> <span class="string">dingding</span></span><br><span class="line"><span class="attr">feishu:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">enable:</span> <span class="number">0</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">webhook:</span> <span class="string">xxx</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">app_name:</span> <span class="string">feishu</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">enable:</span> <span class="number">0</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">sckey:</span> <span class="number">123123</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">app_name:</span> <span class="string">server</span></span><br><span class="line"><span class="attr">tgbot:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">enable:</span> <span class="number">0</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">token:</span> <span class="number">123</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">group_id:</span> <span class="number">123</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">app_name:</span> <span class="string">tgbot</span></span><br><span class="line"><span class="attr">pushplus:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">enable:</span> <span class="number">0</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">token:</span> <span class="number">123456</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">app_name:</span> <span class="string">pushplus</span></span><br><span class="line"><span class="attr">translate:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="attr">enable:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">black_user:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">AlAIAL90</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>github_token:<ul>
+<li>生成地址:<a class="link"   target="_blank" rel="noopener" href="https://github.com/settings/tokens/new" >https://github.com/settings/tokens/new<i class="fas fa-external-link-alt"></i></a></li>
+<li>token有效期：设置为不过期</li>
+</ul>
+</li>
+<li>在需要启用的推送修改 enable为：1，其他为0</li>
+<li>填入直接对应的id等信息</li>
+</ul>
+<h1 id="试运行"><a href="#试运行" class="headerlink" title="试运行"></a>试运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./start.sh</span><br></pre></td></tr></table></figure>
+<p>如果未跳错，可以将此脚本设为系统服务</p>
+<h1 id="设为系统服务并开机自动启动"><a href="#设为系统服务并开机自动启动" class="headerlink" title="设为系统服务并开机自动启动"></a>设为系统服务并开机自动启动</h1><ul>
+<li><p>创建Systemd服务单元文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/systemd/system/yourprogram.service</span><br></pre></td></tr></table></figure></li>
+<li><p>输入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Your Program</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/path/to/yourprogram.sh</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=3</span><br><span class="line">User=&lt;your_username&gt;</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=default.target</span><br></pre></td></tr></table></figure>
+<p>请将&#x2F;path&#x2F;to&#x2F;yourprogram.sh替换为您实际的.sh程序路径，将<your_username>替换为您的用户名。</p>
+</li>
+<li><p>保存并关闭文件：按下Ctrl + X，然后输入Y保存文件，最后按下Enter关闭编辑器。</p>
+</li>
+<li><p>启用并启动服务：运行以下命令启用和启动服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> yourprogram.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start yourprogram.service</span><br></pre></td></tr></table></figure>
+<p>这将使您的.sh程序在开机时自动启动，并在意外退出时自动重启。</p>
+</li>
+<li><p>您可以通过以下命令来管理服务：</p>
+<ul>
+<li>启动服务：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop yourprogram.service</span><br></pre></td></tr></table></figure></li>
+<li>停止服务:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop yourprogram.service</span><br></pre></td></tr></table></figure></li>
+<li>重启服务  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart yourprogram.service</span><br></pre></td></tr></table></figure></li>
+<li>禁用服务  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">disable</span> yourprogram.service</span><br></pre></td></tr></table></figure>
+  请确保将上述命令中的yourprogram.service替换为您实际的服务单元文件名。</li>
+</ul>
+</li>
+</ul>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>感谢<a class="link"   target="_blank" rel="noopener" href="https://github.com/yhy0/github-cve-monitor" >github-cve-monitor<i class="fas fa-external-link-alt"></i></a><br>感谢<a class="link"   target="_blank" rel="noopener" href="https://github.com/yhy0/github-cve-monitor/issues/62" >telegram推送问题解决方法<i class="fas fa-external-link-alt"></i></a><br>感谢<a class="link"   target="_blank" rel="noopener" href="https://github.com/yhy0/github-cve-monitor/issues/36" >Docker start <i class="fas fa-external-link-alt"></i></a></p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    
+<div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li class="post-title">
+            <span class="type">本文标题</span>：<span class="content">Github:监控自己关注的项目、关键词和user</span>
+        </li>
+        <li class="post-author">
+            <span class="type">本文作者</span>：<span class="content">Justin</span>
+        </li>
+        <li class="post-time">
+            <span class="type">创建时间</span>：<span class="content">2023-06-22 13:29:37</span>
+        </li>
+        <li class="post-link">
+            <span class="type">本文链接</span>：<span class="content">posts/f30.html</span>
+        </li>
+        <li class="post-license">
+            <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
+        </li>
+    </ul>
+    <div class="copy-copyright-info flex-center tooltip" data-content="复制版权信息" data-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Github/">#Github</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/How-to/">#How to</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Vps/">#Vps</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Linux/">#Linux</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Script/">#Script</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/posts/4e42.html"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">H3C NX30Pro 刷 openwrt</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">同步文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="nav-number">2.</span> <span class="nav-text">配置运行脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#python3%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">python3安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#telegram%E6%8E%A8%E9%80%81%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.2.</span> <span class="nav-text">telegram推送插件安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEtools-list-yaml"><span class="nav-number">3.</span> <span class="nav-text">配置tools_list.yaml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEconfig-yaml"><span class="nav-number">4.</span> <span class="nav-text">配置config.yaml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%95%E8%BF%90%E8%A1%8C"><span class="nav-number">5.</span> <span class="nav-text">试运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E4%B8%BA%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E5%B9%B6%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8"><span class="nav-number">6.</span> <span class="nav-text">设为系统服务并开机自动启动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Justin</a>
+            
+        </div>
+        
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+            <div class="deploy-info info-item">
+                
+                    本站由 <span class="tooltip" data-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span> 提供部署服务
+                
+            </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+
+</body>
+</html>
