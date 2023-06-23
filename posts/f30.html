@@ -182,7 +182,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-22 13:57:35</span>
+        <span class="pc">2023-06-23 22:53:58</span>
     </span>
     
     
@@ -271,7 +271,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/systemd/system/yourprogram.service</span><br></pre></td></tr></table></figure></li>
 <li><p>输入以下内容</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Your Program</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/path/to/yourprogram.sh</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=3</span><br><span class="line">User=&lt;your_username&gt;</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=default.target</span><br></pre></td></tr></table></figure>
-<p>请将&#x2F;path&#x2F;to&#x2F;yourprogram.sh替换为您实际的.sh程序路径，将<your_username>替换为您的用户名。</p>
+<p>请将&#x2F;path&#x2F;to&#x2F;yourprogram.sh替换为您实际的.sh程序路径，将<your_username>替换为您的用户名（比如：cve）。</p>
 </li>
 <li><p>保存并关闭文件：按下Ctrl + X，然后输入Y保存文件，最后按下Enter关闭编辑器。</p>
 </li>
