@@ -9,8 +9,6 @@
     
     <title>
         
-            一键增加VPS虚拟内存 SWAP |
-        
         文科生的 IT 笔记
     </title>
     
@@ -54,11 +52,11 @@
 
     
 
-    <div class="page-main-content">
+    <div class="page-main-content is-home">
 
         <div class="page-main-content-top">
             
-<header class="header-wrapper">
+<header class="header-wrapper transparent-1">
 
     <div class="header-content">
         <div class="left">
@@ -77,7 +75,7 @@
                 <ul class="menu-list">
                     
                         <li class="menu-item">
-                            <a class=""
+                            <a class="active"
                                href="/"
                             >
                                 首页
@@ -122,7 +120,7 @@
         <ul class="drawer-menu-list">
             
                 <li class="drawer-menu-item flex-center">
-                    <a class=""
+                    <a class="active"
                        href="/">首页</a>
                 </li>
             
@@ -151,202 +149,99 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="post-page-container">
-        <div class="article-content-container">
-
-            <div class="article-title">
-                <span class="title-hover-animation">一键增加VPS虚拟内存 SWAP</span>
-            </div>
-
-            
-                <div class="article-header">
-                    <div class="avatar">
-                        <img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306041544254.svg">
-                    </div>
-                    <div class="info">
-                        <div class="author">
-                            <span class="name">Justin</span>
-                            
-                        </div>
-                        <div class="meta-info">
-                            
-<div class="article-meta-info">
-    <span class="article-date article-meta-item">
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
         
-            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/posts/3111.html">
+                        一键增加VPS虚拟内存 SWAP
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        <p>很多人的VPS服务器由于内存太小，会导致很多进程被杀掉，这时候就需要我们添加Swap虚拟内存了，这里就整了个一键脚本方便懒人或小白使用。</p>
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Fri Jun 16 2023 20:53:20 GMT+0800">
+                2023-06-16
+            </span>
+        </span>
         
-        <span class="pc">2023-06-04 13:23:16</span>
-        <span class="mobile">2023-06-04 13:23</span>
-    </span>
-    
-        <span class="article-update-date article-meta-item">
-        <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-16 20:53:20</span>
-    </span>
-    
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/VPS/">VPS</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/How-to/">How to</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Vps/">Vps</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Docker/">Docker</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Linux/">Linux</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/Script/">Script</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            
-
-            <div class="article-content keep-markdown-body">
-                
-
-                <p>很多人的VPS服务器由于内存太小，会导致很多进程被杀掉，这时候就需要我们添加Swap虚拟内存了，这里就整了个一键脚本方便懒人或小白使用。</p>
-<span id="more"></span>
-<p>后面的内容在首页不显示，只显示到<!--more-->这里</p>
-<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>提示：脚本不支持OpenVZ架构，安装会自动退出</p>
-<h3 id="查看现有swap"><a href="#查看现有swap" class="headerlink" title="查看现有swap"></a>查看现有swap</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
-
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/zhucaidan/swap.sh/main/swap.sh &amp;&amp; bash swap.sh</span><br></pre></td></tr></table></figure>
-
-<p>添加swap的时候填写纯数字，默认单位为M</p>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>感谢<a class="link"   target="_blank" rel="noopener" href="https://github.com/zhucaidan/swap.sh" >Linux VPS一键添加&#x2F;删除Swap虚拟内存<i class="fas fa-external-link-alt"></i></a></p>
-
-            </div>
-
-            
-                <div class="post-copyright-info">
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
                     
-<div class="article-copyright-info-container">
-    <ul class="copyright-info-content">
-        <li class="post-title">
-            <span class="type">本文标题</span>：<span class="content">一键增加VPS虚拟内存 SWAP</span>
-        </li>
-        <li class="post-author">
-            <span class="type">本文作者</span>：<span class="content">Justin</span>
-        </li>
-        <li class="post-time">
-            <span class="type">创建时间</span>：<span class="content">2023-06-04 13:23:16</span>
-        </li>
-        <li class="post-link">
-            <span class="type">本文链接</span>：<span class="content">posts/3111.html</span>
-        </li>
-        <li class="post-license">
-            <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
-        </li>
-    </ul>
-    <div class="copy-copyright-info flex-center tooltip" data-content="复制版权信息" data-offset-y="-2px">
-        <i class="fa-solid fa-copy"></i>
-    </div>
-</div>
-
-                </div>
-            
-
-            
-                <ul class="post-tags-box">
-                    
-                        <li class="tag-item">
-                            <a href="/tags/How-to/">#How to</a>&nbsp;
+                        <li>
+                            
+                            <a href="/categories/VPS/">VPS</a>&nbsp;
                         </li>
                     
-                        <li class="tag-item">
-                            <a href="/tags/Vps/">#Vps</a>&nbsp;
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/How-to/">How to</a>&nbsp;
                         </li>
                     
-                        <li class="tag-item">
-                            <a href="/tags/Docker/">#Docker</a>&nbsp;
+                        <li>
+                            | 
+                            <a href="/tags/Vps/">Vps</a>&nbsp;
                         </li>
                     
-                        <li class="tag-item">
-                            <a href="/tags/Linux/">#Linux</a>&nbsp;
+                        <li>
+                            | 
+                            <a href="/tags/Docker/">Docker</a>&nbsp;
                         </li>
                     
-                        <li class="tag-item">
-                            <a href="/tags/Script/">#Script</a>&nbsp;
+                        <li>
+                            | 
+                            <a href="/tags/Linux/">Linux</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Script/">Script</a>&nbsp;
                         </li>
                     
                 </ul>
-            
-
-            
-                <div class="article-nav">
-                    
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/posts/6308.html"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">Hexo:发布文章</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                            </a>
-                        </div>
-                    
-                    
-                </div>
-            
-
-            
-        </div>
-
+            </span>
         
-            <div class="toc-content-container">
-                <div class="post-toc-wrap">
-    <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%8E%B0%E6%9C%89swap"><span class="nav-number">2.</span> <span class="nav-text">查看现有swap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol>
     </div>
+
+    <a class="read-more" href="/posts/3111.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
-            </div>
+            </li>
         
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
+    
+        <a class="prev btn"
+           href="/page/4/"
+        >上一页</a>
+    
+
+    
+</div>
+
     </div>
 </div>
 
@@ -400,23 +295,6 @@
         </div>
     </div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-    </ul>
-</div>
-
-        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -499,6 +377,7 @@
 
 
 
+
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
 
 
@@ -516,14 +395,6 @@
 
 
 <div class="post-scripts">
-    
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
-        
-            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
-        
-        
-            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
-        
     
 </div>
 
