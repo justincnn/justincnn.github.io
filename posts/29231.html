@@ -182,7 +182,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-06-22 14:13:27</span>
+        <span class="pc">2023-06-24 14:51:42</span>
     </span>
     
     
@@ -248,8 +248,15 @@
 <p>查了原因，可能是SSHkey的问题，按网上的教程具体操作如下：</p>
 <h1 id="本地生成ssh-key"><a href="#本地生成ssh-key" class="headerlink" title="本地生成ssh key"></a>本地生成ssh key</h1><ul>
 <li><p>生成ssh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xx@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&#x27;github登录的邮箱&#x27;</span> -f ~/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure>
 <p>然后一路<code>yes</code>或者<code>回车</code>就会生成新的ssh key</p>
+<ul>
+<li>-t指定秘钥类型，默认rsa</li>
+<li>-C 设置注释文字，比如邮箱</li>
+<li>-f 指定秘钥文件名称</li>
+<li>按enter，不输入用户名与密码</li>
+<li>会生成文件名为id_rsa_github与id_rsa_github.pub两个文件</li>
+</ul>
 </li>
 <li><p>输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent -s</span><br></pre></td></tr></table></figure>
@@ -259,12 +266,28 @@
 <p>如出现错误，则：执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> \ssh-agent -s\</span><br></pre></td></tr></table></figure>
 <p>再执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置.ssh文件下的config文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim config</span><br></pre></td></tr></table></figure></li>
+<li><p>在config文件中输入下面内容，注意文件名id_rsa_github写为自己的文件名</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#github</span></span><br><span class="line">  <span class="string">Host</span> <span class="string">github</span></span><br><span class="line">          <span class="string">AddKeysToAgent</span> <span class="literal">yes</span></span><br><span class="line">          <span class="string">UseKeychain</span> <span class="literal">yes</span></span><br><span class="line">          <span class="string">HostName</span> <span class="string">github.com</span></span><br><span class="line">          <span class="string">PreferredAuthentications</span> <span class="string">publickey</span></span><br><span class="line">          <span class="string">IdentityFile</span> <span class="string">~/.ssh/id_rsa_github</span></span><br></pre></td></tr></table></figure></li>
+<li><p>输入结束后按esc，退出vim编辑模式，按i进入vim编辑模式</p>
+</li>
 </ul>
 <h1 id="Github配置key"><a href="#Github配置key" class="headerlink" title="Github配置key"></a>Github配置key</h1><p>在<a class="link"   target="_blank" rel="noopener" href="https://github.com/settings/keys" >链接<i class="fas fa-external-link-alt"></i></a>中，将刚才生成的文件id_rsa.pub内容全部复制进去，并点击完成后Add SSH Key。<br>id_rsa.pub文件在Mac系统的~&#x2F;.ssh目录下。</p>
+<p>-运行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ssh-add ~/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure>
+
 <h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><p>输入命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 <p>出现如下提示就表示已经OK。</p>
+<p><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306122157070.png"
+                     
+                ></p>
 <h1 id="ssh-keys过期解决"><a href="#ssh-keys过期解决" class="headerlink" title="ssh keys过期解决"></a>ssh keys过期解决</h1><ul>
 <li>进入key存放目录,mac 一般在 ~&#x2F;.ssh<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure></li>
 <li>执行以下指令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br></pre></td></tr></table></figure>
@@ -272,13 +295,14 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa_github</span><br></pre></td></tr></table></figure>
 如果出现:<code>Already up to date</code><br>即表示更新成功</li>
 </ul>
-<p><img  
-                     lazyload
-                     alt="image"
-                     data-src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202306122157070.png"
-                     
-                ></p>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>感谢<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40047019/article/details/122898308" >tony康<i class="fas fa-external-link-alt"></i></a><br>感谢<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/Leo_Franklin/article/details/108858285" >Leo_Franklin<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><p>感谢<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40047019/article/details/122898308" >tony康<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>感谢<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/Leo_Franklin/article/details/108858285" >Leo_Franklin<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>感谢 <a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/sk-3/p/12960793.html" >小菜菜<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+</ul>
 
             </div>
 
