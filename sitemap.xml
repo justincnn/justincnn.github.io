@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://newchato.eu.org/404.html</loc>
+    
+    <lastmod>2023-07-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://newchato.eu.org/tags/index.html</loc>
     
     <lastmod>2023-07-09</lastmod>
@@ -12,27 +19,6 @@
     <loc>https://newchato.eu.org/categories/index.html</loc>
     
     <lastmod>2023-07-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newchato.eu.org/404.html</loc>
-    
-    <lastmod>2023-07-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newchato.eu.org/en/Hexo-Theme-LiveMyLife/</loc>
-    
-    <lastmod>2020-04-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://newchato.eu.org/cn/Hexo-Theme-LiveMyLife/</loc>
-    
-    <lastmod>2020-04-16</lastmod>
     
   </url>
   
@@ -59,20 +45,6 @@
   </url>
 
   
-  <url>
-    <loc>https://newchato.eu.org/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2023-07-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
-  
-  <url>
-    <loc>https://newchato.eu.org/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2023-07-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
   
 </urlset>
