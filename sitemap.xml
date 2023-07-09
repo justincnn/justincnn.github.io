@@ -2,49 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://newchato.eu.org/tags/index.html</loc>
+    <loc>https://newchato.eu.org/tags/index.html</loc>
     
     <lastmod>2023-07-09</lastmod>
     
   </url>
   
   <url>
-    <loc>http://newchato.eu.org/categories/index.html</loc>
+    <loc>https://newchato.eu.org/categories/index.html</loc>
     
     <lastmod>2023-07-09</lastmod>
     
   </url>
   
   <url>
-    <loc>http://newchato.eu.org/404.html</loc>
+    <loc>https://newchato.eu.org/404.html</loc>
     
     <lastmod>2023-07-09</lastmod>
     
   </url>
   
   <url>
-    <loc>http://newchato.eu.org/cn/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://newchato.eu.org/en/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
   </url>
   
   <url>
-    <loc>http://newchato.eu.org/en/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://newchato.eu.org/cn/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
   </url>
   
   <url>
-    <loc>http://newchato.eu.org/archive/index.html</loc>
+    <loc>https://newchato.eu.org/archive/index.html</loc>
     
     <lastmod>2017-03-20</lastmod>
     
   </url>
   
   <url>
-    <loc>http://newchato.eu.org/about/index.html</loc>
+    <loc>https://newchato.eu.org/about/index.html</loc>
     
     <lastmod>2016-04-20</lastmod>
     
@@ -52,7 +52,7 @@
   
 
   <url>
-    <loc>http://newchato.eu.org/</loc>
+    <loc>https://newchato.eu.org/</loc>
     <lastmod>2023-07-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -60,7 +60,7 @@
 
   
   <url>
-    <loc>http://newchato.eu.org/tags/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://newchato.eu.org/tags/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2023-07-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -69,7 +69,7 @@
 
   
   <url>
-    <loc>http://newchato.eu.org/categories/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://newchato.eu.org/categories/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2023-07-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
