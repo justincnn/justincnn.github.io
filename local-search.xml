@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>Block Ads on Apple Devices</title>
+    <link href="/2024/02/09/Block-Ads-on-Apple-Devices/"/>
+    <url>/2024/02/09/Block-Ads-on-Apple-Devices/</url>
+    
+    <content type="html"><![CDATA[<h2 id="uBlacklist-简介"><a href="#uBlacklist-简介" class="headerlink" title="uBlacklist 简介"></a>uBlacklist 简介</h2><p>uBlacklist 是一款浏览器扩展程序，可以帮助您屏蔽 Google 搜索结果中的垃圾网站和广告。它支持 Chrome、Firefox、Edge、Opera 和 Safari 浏览器。</p><p><img src="https://s2.loli.net/2024/02/09/IYWzPvqtybh75wL.png" alt="preview2"></p><h3 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h3><ul><li>屏蔽 Google 搜索结果中的垃圾网站和广告</li><li>支持自定义规则，可以根据您的需要屏蔽特定网站或内容</li><li>支持订阅黑名单列表，可以一键导入来自社区的优质规则</li><li>支持导出规则，可以将您创建的规则分享给其他人</li></ul><h3 id="安装链接"><a href="#安装链接" class="headerlink" title="安装链接"></a>安装链接</h3><p><a href="https://apps.apple.com/cn/app/ublacklist-for-safari/id1547912640">Mac Safari</a></p><h2 id="常规设置"><a href="#常规设置" class="headerlink" title="常规设置"></a>常规设置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">*：//*/so.php</span><br><span class="hljs-string">*：//*/so.php?s=*</span><br><span class="hljs-string">*：//*/cha.php?s=*</span><br><span class="hljs-string">*：//*/list.php?s=*</span><br><span class="hljs-string">*：//*/？S=*</span><br><span class="hljs-string">*：//*/50/*</span><br><span class="hljs-string">title/^小.（百科|知识）网$/</span><br><span class="hljs-string">title/^.*［</span> <span class="hljs-string">］-［</span> <span class="hljs-string">］小.（百科|知识）网$/</span> <span class="hljs-string">title/.*点击一次就可以出国/</span> <span class="hljs-string">title/.*一键访问国外网站/</span><br><span class="hljs-string">title/（网赌|赌博|凤楼|可以约附近的人|外围女|全城上门）/</span><br><span class="hljs-string">*：//*.douyin.com/*</span><br><span class="hljs-string">*：//*.tiktok.com/*</span><br><span class="hljs-string">*：//*.baidu.com/*</span><br><span class="hljs-string">*：//*.baike.com/*</span><br><span class="hljs-string">*：//*.baike.com/*</span><br></code></pre></td></tr></table></figure><p><img src="https://s2.loli.net/2024/02/09/lUBAnvpIKwm7dfJ.png" alt="截屏2024-02-09 14.33.50"></p><h3 id="订阅"><a href="#订阅" class="headerlink" title="订阅"></a>订阅</h3><ul><li><p><a href="https://github.com/cobaltdisco/Google-Chinese-Results-Blocklist">Google Hit Hider by Domain</a></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">https://raw.githubusercontent.com/cobaltdisco/Google-Chinese-Results-Blocklist/master/GHHbD_perma_ban_list.txt</span><br></code></pre></td></tr></table></figure></li><li><p><a href="https://github.com/quenhus/uBlock-Origin-dev-filter">uBlock-Origin-dev-filter</a></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">https://raw.githubusercontent.com/quenhus/uBlock-Origin-dev-filter/main/dist/other_format/uBlacklist/global.txt</span><br></code></pre></td></tr></table></figure></li></ul><p><img src="https://s2.loli.net/2024/02/09/kPc18IY7ECFxehW.png" alt="截屏2024-02-09 14.30.09"></p><h2 id="Safari的福音"><a href="#Safari的福音" class="headerlink" title="Safari的福音"></a>Safari的福音</h2><p>终于在Mac Safari下可以快乐的使用google了</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>How to</tag>
+      
+      <tag>Mac</tag>
+      
+      <tag>Adblock</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Chatgpt Prompt</title>
     <link href="/2024/02/08/Chatgpt-Prompt/"/>
     <url>/2024/02/08/Chatgpt-Prompt/</url>
@@ -223,9 +246,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>Docker</tag>
+      
+      <tag>How to</tag>
       
     </tags>
     
@@ -339,7 +362,7 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -605,15 +628,15 @@
     
     <tags>
       
-      <tag>ChatGpt</tag>
-      
-      <tag>AI</tag>
+      <tag>Docker</tag>
       
       <tag>VPS</tag>
       
-      <tag>Docker</tag>
-      
       <tag>Script</tag>
+      
+      <tag>ChatGpt</tag>
+      
+      <tag>AI</tag>
       
       <tag>Linux</tag>
       

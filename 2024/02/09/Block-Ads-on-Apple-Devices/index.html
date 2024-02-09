@@ -18,30 +18,30 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="利用Docker部署应用非常方便，随着镜像的更新，我们的应用也需要及时更新，这就来简单给大家介绍三种更新Docker镜像的方法。 更新用Docker命令部署的应用利用docker ps命令确定容器的名字1docker ps    这边圆圈圈起来的就是容器的名字啦。 Halo里面的容器名字就是halo 备份数据(重要)，并停止容器利用 1docker inspect &#96;容器的名字&#96;    找出你容器">
+    <meta name="description" content="uBlacklist 简介uBlacklist 是一款浏览器扩展程序，可以帮助您屏蔽 Google 搜索结果中的垃圾网站和广告。它支持 Chrome、Firefox、Edge、Opera 和 Safari 浏览器。  主要功能 屏蔽 Google 搜索结果中的垃圾网站和广告 支持自定义规则，可以根据您的需要屏蔽特定网站或内容 支持订阅黑名单列表，可以一键导入来自社区的优质规则 支持导出规则，可以将">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker更新容器镜像的三种方法">
-<meta property="og:url" content="http://example.com/2023/08/07/3-ways-for-Docker-to-update-container-images/index.html">
+<meta property="og:title" content="Block Ads on Apple Devices">
+<meta property="og:url" content="http://example.com/2024/02/09/Block-Ads-on-Apple-Devices/index.html">
 <meta property="og:site_name" content="文 科 生 的 IT 笔 记">
-<meta property="og:description" content="利用Docker部署应用非常方便，随着镜像的更新，我们的应用也需要及时更新，这就来简单给大家介绍三种更新Docker镜像的方法。 更新用Docker命令部署的应用利用docker ps命令确定容器的名字1docker ps    这边圆圈圈起来的就是容器的名字啦。 Halo里面的容器名字就是halo 备份数据(重要)，并停止容器利用 1docker inspect &#96;容器的名字&#96;    找出你容器">
+<meta property="og:description" content="uBlacklist 简介uBlacklist 是一款浏览器扩展程序，可以帮助您屏蔽 Google 搜索结果中的垃圾网站和广告。它支持 Chrome、Firefox、Edge、Opera 和 Safari 浏览器。  主要功能 屏蔽 Google 搜索结果中的垃圾网站和广告 支持自定义规则，可以根据您的需要屏蔽特定网站或内容 支持订阅黑名单列表，可以一键导入来自社区的优质规则 支持导出规则，可以将">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071050586.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071052602.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071109086.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071111851.png">
-<meta property="article:published_time" content="2023-08-07T02:31:18.000Z">
-<meta property="article:modified_time" content="2023-08-07T03:26:19.768Z">
+<meta property="og:image" content="https://s2.loli.net/2024/02/09/IYWzPvqtybh75wL.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/09/lUBAnvpIKwm7dfJ.png">
+<meta property="og:image" content="https://s2.loli.net/2024/02/09/kPc18IY7ECFxehW.png">
+<meta property="article:published_time" content="2024-02-09T06:20:29.000Z">
+<meta property="article:modified_time" content="2024-02-09T06:34:13.779Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="Docker">
 <meta property="article:tag" content="How to">
+<meta property="article:tag" content="Mac">
+<meta property="article:tag" content="Adblock">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071050586.png">
+<meta name="twitter:image" content="https://s2.loli.net/2024/02/09/IYWzPvqtybh75wL.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Docker更新容器镜像的三种方法 - 文 科 生 的 IT 笔 记</title>
+  <title>Block Ads on Apple Devices - 文 科 生 的 IT 笔 记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Docker更新容器镜像的三种方法"></span>
+            <span id="subtitle" data-typed-text="Block Ads on Apple Devices"></span>
           
         </div>
 
@@ -206,8 +206,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-07 10:31" pubdate>
-          2023年8月7日 上午
+        <time datetime="2024-02-09 14:20" pubdate>
+          2024年2月9日 下午
         </time>
       </span>
     
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          423 字
+          266 字
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          4 分钟
+          3 分钟
         
       </span>
     
@@ -274,60 +274,38 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Docker更新容器镜像的三种方法</h1>
+            <h1 id="seo-header">Block Ads on Apple Devices</h1>
             
             
               <div class="markdown-body">
                 
-                <p>利用Docker部署应用非常方便，随着镜像的更新，我们的应用也需要及时更新，这就来简单给大家介绍三种更新Docker镜像的方法。</p>
-<h1 id="更新用Docker命令部署的应用"><a href="#更新用Docker命令部署的应用" class="headerlink" title="更新用Docker命令部署的应用"></a>更新用Docker命令部署的应用</h1><h2 id="利用docker-ps命令确定容器的名字"><a href="#利用docker-ps命令确定容器的名字" class="headerlink" title="利用docker ps命令确定容器的名字"></a>利用<code>docker ps</code>命令确定容器的名字</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker ps <br></code></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071050586.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p>这边圆圈圈起来的就是容器的名字啦。</p>
-<p>Halo里面的容器名字就是<code>halo</code></p>
-<h2 id="备份数据-重要-，并停止容器"><a href="#备份数据-重要-，并停止容器" class="headerlink" title="备份数据(重要)，并停止容器"></a>备份数据(重要)，并停止容器</h2><p>利用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker inspect `容器的名字`<br></code></pre></td></tr></table></figure>
-
-
-
-<p>找出你容器的映射到本地的文件路径，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071052602.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p>图片里就是：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cp</span> -r /root/.halo /root/.halo.1.4.15  <span class="hljs-comment"># 备份并重命名为.halo.1.4.15	</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="拉取最新的容器镜像"><a href="#拉取最新的容器镜像" class="headerlink" title="拉取最新的容器镜像"></a>拉取最新的容器镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull halohub/halo:1.4.16<br></code></pre></td></tr></table></figure>
-
-<p><code>halohub/halo:1.4.16</code>这部分替换成你需要更新的镜像的名字和版本号</p>
-<p>很多是类似这种<code>xxxxx/xxxxx:latest</code></p>
-<h2 id="重新创建容器"><a href="#重新创建容器" class="headerlink" title="重新创建容器"></a>重新创建容器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ba">docker run -it -d --name halo -p 8090:8090 -v ~/.halo:/root/.halo --restart=unless-stopped halohub/halo:1.4.16<br></code></pre></td></tr></table></figure>
-
-<p>这部分的命令可以保存在了自己对应文件夹下的<code>config.txt</code>文件里，下次更新，直接粘贴出来，修改最后面镜像的部分（这里是<code>halohub/halo:1.4.16</code>）重新部署就ok了。</p>
-<h1 id="更新用Docker-compose部署的应用"><a href="#更新用Docker-compose部署的应用" class="headerlink" title="更新用Docker-compose部署的应用"></a>更新用Docker-compose部署的应用</h1><h2 id="进入docker-compose文件夹"><a href="#进入docker-compose文件夹" class="headerlink" title="进入docker-compose文件夹"></a>进入docker-compose文件夹</h2><p>​	执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose pull<br></code></pre></td></tr></table></figure>
-
-<h2 id="重启你的容器"><a href="#重启你的容器" class="headerlink" title="重启你的容器"></a>重启你的容器</h2><p>执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up -d --remove-orphans<br></code></pre></td></tr></table></figure>
-
-<h2 id="删除掉旧的镜像"><a href="#删除掉旧的镜像" class="headerlink" title="删除掉旧的镜像"></a>删除掉旧的镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker image prune <br></code></pre></td></tr></table></figure>
+                <h2 id="uBlacklist-简介"><a href="#uBlacklist-简介" class="headerlink" title="uBlacklist 简介"></a>uBlacklist 简介</h2><p>uBlacklist 是一款浏览器扩展程序，可以帮助您屏蔽 Google 搜索结果中的垃圾网站和广告。它支持 Chrome、Firefox、Edge、Opera 和 Safari 浏览器。</p>
+<p><img src="https://s2.loli.net/2024/02/09/IYWzPvqtybh75wL.png" srcset="/img/loading.gif" lazyload alt="preview2"></p>
+<h3 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h3><ul>
+<li>屏蔽 Google 搜索结果中的垃圾网站和广告</li>
+<li>支持自定义规则，可以根据您的需要屏蔽特定网站或内容</li>
+<li>支持订阅黑名单列表，可以一键导入来自社区的优质规则</li>
+<li>支持导出规则，可以将您创建的规则分享给其他人</li>
+</ul>
+<h3 id="安装链接"><a href="#安装链接" class="headerlink" title="安装链接"></a>安装链接</h3><p><a target="_blank" rel="noopener" href="https://apps.apple.com/cn/app/ublacklist-for-safari/id1547912640">Mac Safari</a></p>
+<h2 id="常规设置"><a href="#常规设置" class="headerlink" title="常规设置"></a>常规设置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">*：//*/so.php</span><br><span class="hljs-string">*：//*/so.php?s=*</span><br><span class="hljs-string">*：//*/cha.php?s=*</span><br><span class="hljs-string">*：//*/list.php?s=*</span><br><span class="hljs-string">*：//*/？S=*</span><br><span class="hljs-string">*：//*/50/*</span><br><span class="hljs-string">title/^小.（百科|知识）网$/</span><br><span class="hljs-string">title/^.*［</span> <span class="hljs-string">］-［</span> <span class="hljs-string">］小.（百科|知识）网$/</span> <span class="hljs-string">title/.*点击一次就可以出国/</span> <span class="hljs-string">title/.*一键访问国外网站/</span><br><span class="hljs-string">title/（网赌|赌博|凤楼|可以约附近的人|外围女|全城上门）/</span><br><span class="hljs-string">*：//*.douyin.com/*</span><br><span class="hljs-string">*：//*.tiktok.com/*</span><br><span class="hljs-string">*：//*.baidu.com/*</span><br><span class="hljs-string">*：//*.baike.com/*</span><br><span class="hljs-string">*：//*.baike.com/*</span><br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="更新Docker-compose的单个Docker镜像"><a href="#更新Docker-compose的单个Docker镜像" class="headerlink" title="更新Docker-compose的单个Docker镜像"></a>更新Docker-compose的单个Docker镜像</h2><p>假设有一服务名为<code>AAA</code>（基于镜像<code>AAA</code>）</p>
-<h3 id="Stop容器"><a href="#Stop容器" class="headerlink" title="Stop容器"></a>Stop容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose stop AAA<br></code></pre></td></tr></table></figure>
-
-<h3 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose <span class="hljs-built_in">rm</span> -f AAA<br></code></pre></td></tr></table></figure>
-
-<h3 id="更新镜像"><a href="#更新镜像" class="headerlink" title="更新镜像"></a>更新镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose pull AAA<br></code></pre></td></tr></table></figure>
-
-<h2 id="重启容器"><a href="#重启容器" class="headerlink" title="重启容器"></a>重启容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up AAA -d<br></code></pre></td></tr></table></figure>
 
 
+<p><img src="https://s2.loli.net/2024/02/09/lUBAnvpIKwm7dfJ.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-09 14.33.50"></p>
+<h3 id="订阅"><a href="#订阅" class="headerlink" title="订阅"></a>订阅</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/cobaltdisco/Google-Chinese-Results-Blocklist">Google Hit Hider by Domain</a></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">https://raw.githubusercontent.com/cobaltdisco/Google-Chinese-Results-Blocklist/master/GHHbD_perma_ban_list.txt</span><br></code></pre></td></tr></table></figure>
 
-<h1 id="直接利用Portainer更新"><a href="#直接利用Portainer更新" class="headerlink" title="直接利用Portainer更新"></a>直接利用Portainer更新</h1><h2 id="登陆Portainer面板"><a href="#登陆Portainer面板" class="headerlink" title="登陆Portainer面板"></a>登陆Portainer面板</h2><p>选择容器</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071109086.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<h2 id="更新容器"><a href="#更新容器" class="headerlink" title="更新容器"></a>更新容器</h2><p>点击<code>Recreate</code>，然后点击<code>Pull latest images</code>，最后点击<code>Recreate</code></p>
-<p>等待完成就ok了。<img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071111851.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2086860">Docker更新容器镜像的三种方法</a></p>
+
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/quenhus/uBlock-Origin-dev-filter">uBlock-Origin-dev-filter</a></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">https://raw.githubusercontent.com/quenhus/uBlock-Origin-dev-filter/main/dist/other_format/uBlacklist/global.txt</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="https://s2.loli.net/2024/02/09/kPc18IY7ECFxehW.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-09 14.30.09"></p>
+<h2 id="Safari的福音"><a href="#Safari的福音" class="headerlink" title="Safari的福音"></a>Safari的福音</h2><p>终于在Mac Safari下可以快乐的使用google了</p>
 
                 
               </div>
@@ -340,9 +318,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Docker/" class="print-no-link">#Docker</a>
-      
         <a href="/tags/How-to/" class="print-no-link">#How to</a>
+      
+        <a href="/tags/Mac/" class="print-no-link">#Mac</a>
+      
+        <a href="/tags/Adblock/" class="print-no-link">#Adblock</a>
       
     </div>
   
@@ -354,8 +334,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Docker更新容器镜像的三种方法</div>
-      <div>http://example.com/2023/08/07/3-ways-for-Docker-to-update-container-images/</div>
+      <div>Block Ads on Apple Devices</div>
+      <div>http://example.com/2024/02/09/Block-Ads-on-Apple-Devices/</div>
     </div>
     <div class="license-meta">
       
@@ -367,7 +347,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月7日</div>
+          <div>2024年2月9日</div>
         </div>
       
       
@@ -399,18 +379,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/06/wapr%E6%8F%90%E5%8F%96clash%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="warp提取clash配置文件">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">warp提取clash配置文件</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/05/The-Cloister-of-Justice/" title="正义回廊">
-                        <span class="hidden-mobile">正义回廊</span>
+                      <a href="/2024/02/08/Chatgpt-Prompt/" title="Chatgpt Prompt">
+                        <span class="hidden-mobile">Chatgpt Prompt</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
