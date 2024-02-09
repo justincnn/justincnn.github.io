@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Mac APP:Easydict</title>
+    <link href="/2024/02/09/Mac-APP-Easydict/"/>
+    <url>/2024/02/09/Mac-APP-Easydict/</url>
+    
+    <content type="html"><![CDATA[<h1 id="谁是-EasyDict"><a href="#谁是-EasyDict" class="headerlink" title="谁是 EasyDict"></a>谁是 EasyDict</h1><p>Easydict 是一个简洁易用的词典翻译 macOS App，能够轻松优雅地查找单词或翻译文本。Easydict 开箱即用，能自动识别输入文本语言，支持输入翻译，划词翻译和 OCR 截图翻译，可同时查询多个翻译服务结果，目前支持 有道词典，🍎 苹果系统词典，🍎 苹果系统翻译，OpenAI (ChatGPT)，Gemini，DeepL，Google，腾讯，Bing，百度，小牛翻译，彩云小译，阿里翻译 和 火山翻译。</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092149306.gif"></p><h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><ul><li>开箱即用，便捷查询单词或翻译文本。</li><li>自动识别输入语言，自动查询目标偏好语言。</li><li>自动划词查询，划词后自动显示查询图标，鼠标悬浮即可查询。</li><li>支持为不同窗口配置不同的服务。</li><li>支持智能查询模式。</li><li>支持系统 OCR 截图翻译，静默截图 OCR。</li><li>支持系统 TTS，支持 Bing，Google，有道和百度在线 TTS 服务。</li><li>支持 🍎 苹果系统词典，支持第三方词典，可手动导入 mdict 词典。</li><li>支持 macOS 系统翻译。</li><li>支持有道词典，OpenAI (ChatGPT)，DeepL，Google，Bing，腾讯，百度，小牛，彩云，阿里和火山翻译。<br>支持 48 种语言。</li><li>支持 API 接入，特别是 OpenAI 和 Gemini，懂的自然懂</li></ul><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="无法打开“Easydict-dmg”，因为它来自身份不明的开发者。"><a href="#无法打开“Easydict-dmg”，因为它来自身份不明的开发者。" class="headerlink" title="无法打开“Easydict.dmg”，因为它来自身份不明的开发者。"></a>无法打开“Easydict.dmg”，因为它来自身份不明的开发者。</h2><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092151102.png"></p><h2 id="Easydict”已损坏，无法打开。"><a href="#Easydict”已损坏，无法打开。" class="headerlink" title="Easydict”已损坏，无法打开。"></a>Easydict”已损坏，无法打开。</h2><p>执行如下命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo xattr -rd com.apple.quarantine /Applications/Easydict.app<br></code></pre></td></tr></table></figure><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://github.com/tisfeng/Easydict?tab=readme-ov-file">开发者的 Github</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Mac</tag>
+      
+      <tag>App</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>make EDGE more user-friendly</title>
     <link href="/2024/02/09/make-EDGE-more-user-friendly/"/>
     <url>/2024/02/09/make-EDGE-more-user-friendly/</url>
@@ -129,9 +150,9 @@
     
     <tags>
       
-      <tag>Tips</tag>
-      
       <tag>Blog</tag>
+      
+      <tag>Tips</tag>
       
     </tags>
     
@@ -179,9 +200,9 @@
       
       <tag>Mac</tag>
       
-      <tag>Blog</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Blog</tag>
       
     </tags>
     
@@ -204,9 +225,9 @@
       
       <tag>Github</tag>
       
-      <tag>Cloudflare</tag>
-      
       <tag>Clash</tag>
+      
+      <tag>Cloudflare</tag>
       
     </tags>
     
@@ -383,7 +404,7 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;">&#x67;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#111;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -437,9 +458,9 @@
       
       <tag>How to</tag>
       
-      <tag>Blog</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Blog</tag>
       
     </tags>
     
@@ -651,11 +672,11 @@
       
       <tag>Docker</tag>
       
+      <tag>VPS</tag>
+      
       <tag>ChatGpt</tag>
       
       <tag>AI</tag>
-      
-      <tag>VPS</tag>
       
       <tag>Script</tag>
       
