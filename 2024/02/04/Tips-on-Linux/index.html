@@ -26,8 +26,9 @@
 <meta property="og:description" content="前言记录一些常用或者不常用的Linux命令，给记忆上把锁。 查看进程1top    查询某个特定程序是否还在运行 1ps aux | grep &lt;程序名称&gt;    运行命令并输出日志1nohup &lt;程序名称&gt; &amp;  备注  nohup: 这是一个缩写，表示 “no hang up”。它用于运行命令，即使用户注销或终端关闭，命令也会继续运行。nohup 会将程序的标准">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-04T09:32:46.000Z">
-<meta property="article:modified_time" content="2024-02-04T11:18:35.678Z">
+<meta property="article:modified_time" content="2024-02-06T11:13:29.079Z">
 <meta property="article:author" content="Justin">
+<meta property="article:tag" content="VPS">
 <meta property="article:tag" content="Tips">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Ubuntu">
@@ -214,7 +215,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          282 字
+          413 字
         
       </span>
     
@@ -225,7 +226,7 @@
         
         
         
-          3 分钟
+          4 分钟
         
       </span>
     
@@ -294,6 +295,14 @@
 <li><code>&amp;</code>: 在命令末尾使用 <code>&amp;</code> 符号，将命令放入后台运行，这样你可以继续使用终端输入其他命令，而不必等待程序执行完毕。</li>
 <li>整个命令的目的是在后台运行 <code>&lt;程序名称&gt;</code> 程序，并使用 <code>nohup</code> 保证即使终端关闭，程序也能够持续运行。请注意，如果程序本身有日志输出，可以通过查看 <code>nohup.out</code> 文件来查看输出信息。</li>
 </ul>
+<h1 id="解决ssh登录后闲置时间过长而断开连接"><a href="#解决ssh登录后闲置时间过长而断开连接" class="headerlink" title="解决ssh登录后闲置时间过长而断开连接"></a>解决ssh登录后闲置时间过长而断开连接</h1><ul>
+<li><p>找到所在用户的.<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ssh&spm=1001.2101.3001.7020">ssh</a>目录，如root用户该目录在：<code>/root/.ssh/</code>，在该目录创建config文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vi /root/.ssh/config<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>加入下面一句：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ServerAliveInterval</span> <span class="hljs-number">60</span><br></code></pre></td></tr></table></figure>
+
+<p>保存退出，重新开启root用户的shell，则再ssh远程服务器的时候，不会因为长时间操作断开。应该是加入这句之后，ssh客户端会每隔一段时间自动与ssh服务器通信一次，所以长时间操作不会断开。</p>
 
                 
               </div>
@@ -305,6 +314,8 @@
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/VPS/" class="print-no-link">#VPS</a>
       
         <a href="/tags/Tips/" class="print-no-link">#Tips</a>
       
