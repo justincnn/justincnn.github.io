@@ -18,29 +18,28 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前提在甲骨文的后台先开放所有的端口  1.切换到root用户1sudo -i  2.开放所有端口1sudo iptables -P INPUT ACCEPT 1sudo iptables -P FORWARD ACCEPT 1sudo iptables -P OUTPUT ACCEPT 1sudo iptables -F  3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它">
+    <meta name="description" content="由来汤圆起源于中国宋朝。当时明州（现为浙江省宁波市）兴起吃一种新奇的食品 [2]，即用黑芝麻、白砂糖为原料，首先把黑芝麻磨制成粉末状，然后猪油、白砂糖相继放入混合物揉成团做馅，外面用糯米粉搓成圆形，煮熟后，吃起来香甜可口。 介绍一个盛行于华人界的美食及甜点，由于制作方便又美味，因此广为流传，是上元与冬至应景的一种食品，寓意团团圆圆。吴语称之为“汤团”、“圆子”；泉漳话（含台湾话）称之为“圆仔”、“">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle：如何开放Ubuntu VPS全部端口">
-<meta property="og:url" content="http://example.com/2023/07/23/Oracle-open-all-ports-of-Ubuntu/index.html">
+<meta property="og:title" content="Cook Tangyuan In Chinese New Year">
+<meta property="og:url" content="http://example.com/2024/02/10/Cook-Tangyuan-In-Chinese-New-Year/index.html">
 <meta property="og:site_name" content="文 科 生 的 IT 笔 记">
-<meta property="og:description" content="前提在甲骨文的后台先开放所有的端口  1.切换到root用户1sudo -i  2.开放所有端口1sudo iptables -P INPUT ACCEPT 1sudo iptables -P FORWARD ACCEPT 1sudo iptables -P OUTPUT ACCEPT 1sudo iptables -F  3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它">
+<meta property="og:description" content="由来汤圆起源于中国宋朝。当时明州（现为浙江省宁波市）兴起吃一种新奇的食品 [2]，即用黑芝麻、白砂糖为原料，首先把黑芝麻磨制成粉末状，然后猪油、白砂糖相继放入混合物揉成团做馅，外面用糯米粉搓成圆形，煮熟后，吃起来香甜可口。 介绍一个盛行于华人界的美食及甜点，由于制作方便又美味，因此广为流传，是上元与冬至应景的一种食品，寓意团团圆圆。吴语称之为“汤团”、“圆子”；泉漳话（含台湾话）称之为“圆仔”、“">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png">
-<meta property="article:published_time" content="2023-07-23T08:14:40.000Z">
-<meta property="article:modified_time" content="2024-02-04T10:24:31.820Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402101912431.jpg">
+<meta property="article:published_time" content="2024-02-10T11:07:27.000Z">
+<meta property="article:modified_time" content="2024-02-10T11:16:59.253Z">
 <meta property="article:author" content="Justin">
 <meta property="article:tag" content="How to">
-<meta property="article:tag" content="VPS">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Food">
+<meta property="article:tag" content="Life">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402101912431.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Oracle：如何开放Ubuntu VPS全部端口 - 文 科 生 的 IT 笔 记</title>
+  <title>Cook Tangyuan In Chinese New Year - 文 科 生 的 IT 笔 记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -194,7 +193,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Oracle：如何开放Ubuntu VPS全部端口"></span>
+            <span id="subtitle" data-typed-text="Cook Tangyuan In Chinese New Year"></span>
           
         </div>
 
@@ -205,8 +204,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-23 16:14" pubdate>
-          2023年7月23日 下午
+        <time datetime="2024-02-10 19:07" pubdate>
+          2024年2月10日 晚上
         </time>
       </span>
     
@@ -217,7 +216,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          83 字
+          429 字
         
       </span>
     
@@ -228,7 +227,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -273,26 +272,19 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Oracle：如何开放Ubuntu VPS全部端口</h1>
+            <h1 id="seo-header">Cook Tangyuan In Chinese New Year</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>在甲骨文的后台先开放所有的端口</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="1-切换到root用户"><a href="#1-切换到root用户" class="headerlink" title="1.切换到root用户"></a>1.切换到root用户</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo -<span class="hljs-selector-tag">i</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="2-开放所有端口"><a href="#2-开放所有端口" class="headerlink" title="2.开放所有端口"></a>2.开放所有端口</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo iptables -<span class="hljs-selector-tag">P</span> <span class="hljs-selector-tag">INPUT</span> ACCEPT<br></code></pre></td></tr></table></figure>
-<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tp">sudo iptables -<span class="hljs-keyword">P</span> FORWARD <span class="hljs-keyword">ACC</span>EPT<br></code></pre></td></tr></table></figure>
-<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tp">sudo iptables -<span class="hljs-keyword">P</span> OUTPUT <span class="hljs-keyword">ACC</span>EPT<br></code></pre></td></tr></table></figure>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo iptables -F</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"><a href="#3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它" class="headerlink" title="3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"></a>3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> purge netfilter-persistent<br></code></pre></td></tr></table></figure>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">reboot</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="4-强制删除规则"><a href="#4-强制删除规则" class="headerlink" title="4.强制删除规则"></a>4.强制删除规则</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">rm -rf <span class="hljs-regexp">/etc/i</span>ptables &amp;&amp; reboot<br></code></pre></td></tr></table></figure>
-
-<h3 id="5-删除oracle-cloud-agent，防止甲骨文监控"><a href="#5-删除oracle-cloud-agent，防止甲骨文监控" class="headerlink" title="5.删除oracle-cloud-agent，防止甲骨文监控"></a>5.删除oracle-cloud-agent，防止甲骨文监控</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">snap <span class="hljs-built_in">remove</span> oracle-cloud-agent<br></code></pre></td></tr></table></figure>
+                <h1 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h1><p>汤圆起源于中国宋朝。当时明州（现为浙江省宁波市）兴起吃一种新奇的食品 [2]，即用黑芝麻、白砂糖为原料，首先把黑芝麻磨制成粉末状，然后猪油、白砂糖相继放入混合物揉成团做馅，外面用糯米粉搓成圆形，煮熟后，吃起来香甜可口。</p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>一个盛行于华人界的美食及甜点，由于制作方便又美味，因此广为流传，是上元与冬至应景的一种食品，寓意团团圆圆。吴语称之为“汤团”、“圆子”；泉漳话（含台湾话）称之为“圆仔”、“米圆”；潮州话称之为“鸭母捻”、“圆”；兴化话称之为“丸囝”；马祖话称之为“汤丸”；福州话称之为“元宵丸”；客家语称之为“惜圆”、“粄圆”、“雪圆仔”、“圆粄仔”。</p>
+<p>汤圆大多为糯米制成，也有少部分以黄米制成，内馅较为常见的有芝麻、枣子、水果及鲜肉、菜肉等；也有小而无馅者，唤“小圆子”，以吴地最为人识。汤圆内馅可甜馅或咸馅或是无馅，相对于元宵只能甜馅而言丰富许多。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402101912431.jpg" srcset="/img/loading.gif" lazyload></p>
+<h1 id="煮法"><a href="#煮法" class="headerlink" title="煮法"></a>煮法</h1><h2 id="解冻"><a href="#解冻" class="headerlink" title="解冻"></a>解冻</h2><p>冷冻的汤圆先放入水中浸泡 10 ～ 20 秒，去除表面冰霜和面粉</p>
+<h2 id="入水"><a href="#入水" class="headerlink" title="入水"></a>入水</h2><p>锅中水底面起泡之后，先加一勺白糖，融化之后，将汤圆下水</p>
+<h2 id="搅拌"><a href="#搅拌" class="headerlink" title="搅拌"></a>搅拌</h2><p>在煮过程中，需要用勺子不断轻轻推汤圆，防止粘锅，等水开之后，调小火，慢慢煮，</p>
+<h2 id="乘出"><a href="#乘出" class="headerlink" title="乘出"></a>乘出</h2><p>再煮开之后，可以加入少量冷水，煮开之后再放入汤圆慢煮，直至汤圆漂浮于水面</p>
 
                 
               </div>
@@ -307,11 +299,9 @@
       
         <a href="/tags/How-to/" class="print-no-link">#How to</a>
       
-        <a href="/tags/VPS/" class="print-no-link">#VPS</a>
+        <a href="/tags/Food/" class="print-no-link">#Food</a>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
-      
-        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
+        <a href="/tags/Life/" class="print-no-link">#Life</a>
       
     </div>
   
@@ -323,8 +313,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Oracle：如何开放Ubuntu VPS全部端口</div>
-      <div>http://example.com/2023/07/23/Oracle-open-all-ports-of-Ubuntu/</div>
+      <div>Cook Tangyuan In Chinese New Year</div>
+      <div>http://example.com/2024/02/10/Cook-Tangyuan-In-Chinese-New-Year/</div>
     </div>
     <div class="license-meta">
       
@@ -336,7 +326,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年7月23日</div>
+          <div>2024年2月10日</div>
         </div>
       
       
@@ -368,18 +358,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/23/Docker-common-command-record/" title="Docker:常用命令（不定期更新）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Docker:常用命令（不定期更新）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/23/Cloudflare-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E4%BB%A3%E7%90%86%E4%BD%A0%E7%9A%84VPS-IP/" title="Cloudflare:如何利用代理你的VPS IP">
-                        <span class="hidden-mobile">Cloudflare:如何利用代理你的VPS IP</span>
+                      <a href="/2024/02/10/%E5%AD%A6%E4%B9%A0/Amazon%20%E7%88%AC%E8%99%AB/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
