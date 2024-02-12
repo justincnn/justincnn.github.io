@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Updating Docker containers</title>
+    <link href="/2024/02/12/Updating-Docker-containers/"/>
+    <url>/2024/02/12/Updating-Docker-containers/</url>
+    
+    <content type="html"><![CDATA[<p>利用Docker部署应用非常方便，随着镜像的更新，我们的应用也需要及时更新，这就来简单给大家介绍三种更新Docker镜像的方法。</p><h1 id="更新用Docker命令部署的应用"><a href="#更新用Docker命令部署的应用" class="headerlink" title="更新用Docker命令部署的应用"></a>更新用Docker命令部署的应用</h1><h2 id="利用docker-ps命令确定容器的名字"><a href="#利用docker-ps命令确定容器的名字" class="headerlink" title="利用docker ps命令确定容器的名字"></a>利用<code>docker ps</code>命令确定容器的名字</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker ps <br></code></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071050586.png" alt="img"></p><p>这边圆圈圈起来的就是容器的名字啦。</p><p>Halo里面的容器名字就是<code>halo</code></p><h2 id="备份数据-重要-，并停止容器"><a href="#备份数据-重要-，并停止容器" class="headerlink" title="备份数据(重要)，并停止容器"></a>备份数据(重要)，并停止容器</h2><p>利用</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker inspect `容器的名字`<br></code></pre></td></tr></table></figure><p>找出你容器的映射到本地的文件路径，</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071052602.png" alt="img"></p><p>图片里就是：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cp</span> -r /root/.halo /root/.halo.1.4.15  <span class="hljs-comment"># 备份并重命名为.halo.1.4.15</span><br></code></pre></td></tr></table></figure><h2 id="拉取最新的容器镜像"><a href="#拉取最新的容器镜像" class="headerlink" title="拉取最新的容器镜像"></a>拉取最新的容器镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull halohub/halo:1.4.16<br></code></pre></td></tr></table></figure><p><code>halohub/halo:1.4.16</code>这部分替换成你需要更新的镜像的名字和版本号</p><p>很多是类似这种<code>xxxxx/xxxxx:latest</code></p><h2 id="重新创建容器"><a href="#重新创建容器" class="headerlink" title="重新创建容器"></a>重新创建容器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ba">docker run -it -d --name halo -p 8090:8090 -v ~/.halo:/root/.halo --restart=unless-stopped halohub/halo:1.4.16<br></code></pre></td></tr></table></figure><p>这部分的命令可以保存在了自己对应文件夹下的<code>config.txt</code>文件里，下次更新，直接粘贴出来，修改最后面镜像的部分（这里是<code>halohub/halo:1.4.16</code>）重新部署就ok了。</p><h1 id="更新用Docker-compose部署的应用"><a href="#更新用Docker-compose部署的应用" class="headerlink" title="更新用Docker-compose部署的应用"></a>更新用Docker-compose部署的应用</h1><h2 id="进入docker-compose文件夹"><a href="#进入docker-compose文件夹" class="headerlink" title="进入docker-compose文件夹"></a>进入docker-compose文件夹</h2><p>​执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose pull<br></code></pre></td></tr></table></figure><h2 id="重启你的容器"><a href="#重启你的容器" class="headerlink" title="重启你的容器"></a>重启你的容器</h2><p>执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up -d --remove-orphans<br></code></pre></td></tr></table></figure><h2 id="删除掉旧的镜像"><a href="#删除掉旧的镜像" class="headerlink" title="删除掉旧的镜像"></a>删除掉旧的镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker image prune <br></code></pre></td></tr></table></figure><h2 id="更新Docker-compose的单个Docker镜像"><a href="#更新Docker-compose的单个Docker镜像" class="headerlink" title="更新Docker-compose的单个Docker镜像"></a>更新Docker-compose的单个Docker镜像</h2><p>假设有一服务名为<code>AAA</code>（基于镜像<code>AAA</code>）</p><h3 id="Stop容器"><a href="#Stop容器" class="headerlink" title="Stop容器"></a>Stop容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose stop AAA<br></code></pre></td></tr></table></figure><h3 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose <span class="hljs-built_in">rm</span> -f AAA<br></code></pre></td></tr></table></figure><h3 id="更新镜像"><a href="#更新镜像" class="headerlink" title="更新镜像"></a>更新镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose pull AAA<br></code></pre></td></tr></table></figure><h2 id="重启容器"><a href="#重启容器" class="headerlink" title="重启容器"></a>重启容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up AAA -d<br></code></pre></td></tr></table></figure><h1 id="直接利用Portainer更新"><a href="#直接利用Portainer更新" class="headerlink" title="直接利用Portainer更新"></a>直接利用Portainer更新</h1><h2 id="登陆Portainer面板"><a href="#登陆Portainer面板" class="headerlink" title="登陆Portainer面板"></a>登陆Portainer面板</h2><p>选择容器</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071109086.png" alt="img"></p><h2 id="更新容器"><a href="#更新容器" class="headerlink" title="更新容器"></a>更新容器</h2><p>点击<code>Recreate</code>，然后点击<code>Pull latest images</code>，最后点击<code>Recreate</code></p><p>等待完成就ok了。<img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071111851.png" alt="img"></p><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://cloud.tencent.com/developer/article/2086860">Docker更新容器镜像的三种方法</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>How to</tag>
+      
+      <tag>Docker</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Cook Tangyuan In Chinese New Year</title>
     <link href="/2024/02/10/Cook-Tangyuan-In-Chinese-New-Year/"/>
     <url>/2024/02/10/Cook-Tangyuan-In-Chinese-New-Year/</url>
@@ -140,9 +161,9 @@
       
       <tag>VPS</tag>
       
-      <tag>Tips</tag>
-      
       <tag>Oracle</tag>
+      
+      <tag>Tips</tag>
       
     </tags>
     
@@ -163,11 +184,11 @@
       
       <tag>VPS</tag>
       
+      <tag>Tips</tag>
+      
       <tag>Linux</tag>
       
       <tag>Ubuntu</tag>
-      
-      <tag>Tips</tag>
       
     </tags>
     
@@ -211,9 +232,9 @@
       
       <tag>VPS</tag>
       
-      <tag>Script</tag>
-      
       <tag>Amazon</tag>
+      
+      <tag>Script</tag>
       
     </tags>
     
@@ -306,27 +327,6 @@
       <tag>How to</tag>
       
       <tag>Clash</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Docker更新容器镜像的三种方法</title>
-    <link href="/2023/08/07/3-ways-for-Docker-to-update-container-images/"/>
-    <url>/2023/08/07/3-ways-for-Docker-to-update-container-images/</url>
-    
-    <content type="html"><![CDATA[<p>利用Docker部署应用非常方便，随着镜像的更新，我们的应用也需要及时更新，这就来简单给大家介绍三种更新Docker镜像的方法。</p><h1 id="更新用Docker命令部署的应用"><a href="#更新用Docker命令部署的应用" class="headerlink" title="更新用Docker命令部署的应用"></a>更新用Docker命令部署的应用</h1><h2 id="利用docker-ps命令确定容器的名字"><a href="#利用docker-ps命令确定容器的名字" class="headerlink" title="利用docker ps命令确定容器的名字"></a>利用<code>docker ps</code>命令确定容器的名字</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker ps <br></code></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071050586.png" alt="img"></p><p>这边圆圈圈起来的就是容器的名字啦。</p><p>Halo里面的容器名字就是<code>halo</code></p><h2 id="备份数据-重要-，并停止容器"><a href="#备份数据-重要-，并停止容器" class="headerlink" title="备份数据(重要)，并停止容器"></a>备份数据(重要)，并停止容器</h2><p>利用</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker inspect `容器的名字`<br></code></pre></td></tr></table></figure><p>找出你容器的映射到本地的文件路径，</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071052602.png" alt="img"></p><p>图片里就是：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cp</span> -r /root/.halo /root/.halo.1.4.15  <span class="hljs-comment"># 备份并重命名为.halo.1.4.15</span><br></code></pre></td></tr></table></figure><h2 id="拉取最新的容器镜像"><a href="#拉取最新的容器镜像" class="headerlink" title="拉取最新的容器镜像"></a>拉取最新的容器镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull halohub/halo:1.4.16<br></code></pre></td></tr></table></figure><p><code>halohub/halo:1.4.16</code>这部分替换成你需要更新的镜像的名字和版本号</p><p>很多是类似这种<code>xxxxx/xxxxx:latest</code></p><h2 id="重新创建容器"><a href="#重新创建容器" class="headerlink" title="重新创建容器"></a>重新创建容器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ba">docker run -it -d --name halo -p 8090:8090 -v ~/.halo:/root/.halo --restart=unless-stopped halohub/halo:1.4.16<br></code></pre></td></tr></table></figure><p>这部分的命令可以保存在了自己对应文件夹下的<code>config.txt</code>文件里，下次更新，直接粘贴出来，修改最后面镜像的部分（这里是<code>halohub/halo:1.4.16</code>）重新部署就ok了。</p><h1 id="更新用Docker-compose部署的应用"><a href="#更新用Docker-compose部署的应用" class="headerlink" title="更新用Docker-compose部署的应用"></a>更新用Docker-compose部署的应用</h1><h2 id="进入docker-compose文件夹"><a href="#进入docker-compose文件夹" class="headerlink" title="进入docker-compose文件夹"></a>进入docker-compose文件夹</h2><p>​执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose pull<br></code></pre></td></tr></table></figure><h2 id="重启你的容器"><a href="#重启你的容器" class="headerlink" title="重启你的容器"></a>重启你的容器</h2><p>执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up -d --remove-orphans<br></code></pre></td></tr></table></figure><h2 id="删除掉旧的镜像"><a href="#删除掉旧的镜像" class="headerlink" title="删除掉旧的镜像"></a>删除掉旧的镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker image prune <br></code></pre></td></tr></table></figure><h2 id="更新Docker-compose的单个Docker镜像"><a href="#更新Docker-compose的单个Docker镜像" class="headerlink" title="更新Docker-compose的单个Docker镜像"></a>更新Docker-compose的单个Docker镜像</h2><p>假设有一服务名为<code>AAA</code>（基于镜像<code>AAA</code>）</p><h3 id="Stop容器"><a href="#Stop容器" class="headerlink" title="Stop容器"></a>Stop容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose stop AAA<br></code></pre></td></tr></table></figure><h3 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose <span class="hljs-built_in">rm</span> -f AAA<br></code></pre></td></tr></table></figure><h3 id="更新镜像"><a href="#更新镜像" class="headerlink" title="更新镜像"></a>更新镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose pull AAA<br></code></pre></td></tr></table></figure><h2 id="重启容器"><a href="#重启容器" class="headerlink" title="重启容器"></a>重启容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up AAA -d<br></code></pre></td></tr></table></figure><h1 id="直接利用Portainer更新"><a href="#直接利用Portainer更新" class="headerlink" title="直接利用Portainer更新"></a>直接利用Portainer更新</h1><h2 id="登陆Portainer面板"><a href="#登陆Portainer面板" class="headerlink" title="登陆Portainer面板"></a>登陆Portainer面板</h2><p>选择容器</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071109086.png" alt="img"></p><h2 id="更新容器"><a href="#更新容器" class="headerlink" title="更新容器"></a>更新容器</h2><p>点击<code>Recreate</code>，然后点击<code>Pull latest images</code>，最后点击<code>Recreate</code></p><p>等待完成就ok了。<img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202308071111851.png" alt="img"></p><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://cloud.tencent.com/developer/article/2086860">Docker更新容器镜像的三种方法</a></p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>How to</tag>
-      
-      <tag>Docker</tag>
       
     </tags>
     
@@ -440,7 +440,7 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#109;">&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#99;&#x6f;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -706,13 +706,13 @@
     
     <tags>
       
-      <tag>Docker</tag>
-      
-      <tag>VPS</tag>
-      
       <tag>ChatGpt</tag>
       
       <tag>AI</tag>
+      
+      <tag>VPS</tag>
+      
+      <tag>Docker</tag>
       
       <tag>Script</tag>
       
