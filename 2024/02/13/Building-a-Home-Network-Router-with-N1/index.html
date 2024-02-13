@@ -1,0 +1,1015 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Justin">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前言在互联网时代，信息获取和网络连接已成为日常生活不可或缺的一部分。然而，网络防火墙和广告弹窗却困扰着许多用户。为了突破限制，提升网络体验，搭建个人旁路由成为了一个值得考虑的方案。 旁路由，顾名思义，是指在主路由之外，额外建立一条网络连接路径。通过旁路由，我们可以将特定流量（例如翻墙或去广告）单独处理，而不影响家庭其他成员的正常网络使用。 以下是搭建个人旁路由的主要优势：  不可说: 访问被限制的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building a Home Network Router with N1">
+<meta property="og:url" content="http://example.com/2024/02/13/Building-a-Home-Network-Router-with-N1/index.html">
+<meta property="og:site_name" content="文 科 生 的 IT 笔 记">
+<meta property="og:description" content="前言在互联网时代，信息获取和网络连接已成为日常生活不可或缺的一部分。然而，网络防火墙和广告弹窗却困扰着许多用户。为了突破限制，提升网络体验，搭建个人旁路由成为了一个值得考虑的方案。 旁路由，顾名思义，是指在主路由之外，额外建立一条网络连接路径。通过旁路由，我们可以将特定流量（例如翻墙或去广告）单独处理，而不影响家庭其他成员的正常网络使用。 以下是搭建个人旁路由的主要优势：  不可说: 访问被限制的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131520715.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131528294.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131537908.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131541167.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131543326.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131544478.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131546637.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131547938.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131550929.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131550328.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131554758.png">
+<meta property="article:published_time" content="2024-02-13T07:08:43.000Z">
+<meta property="article:modified_time" content="2024-02-13T07:55:05.306Z">
+<meta property="article:author" content="Justin">
+<meta property="article:tag" content="How to">
+<meta property="article:tag" content="Adblock">
+<meta property="article:tag" content="Clash">
+<meta property="article:tag" content="Openwrt">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131520715.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Building a Home Network Router with N1 - 文 科 生 的 IT 笔 记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>文科生的 IT 笔记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Building a Home Network Router with N1"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-13 15:08" pubdate>
+          2024年2月13日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Building a Home Network Router with N1</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在互联网时代，信息获取和网络连接已成为日常生活不可或缺的一部分。然而，网络防火墙和广告弹窗却困扰着许多用户。为了突破限制，提升网络体验，搭建个人旁路由成为了一个值得考虑的方案。</p>
+<p>旁路由，顾名思义，是指<strong>在主路由之外，额外建立一条网络连接路径</strong>。通过旁路由，我们可以将特定流量（例如翻墙或去广告）单独处理，而<strong>不影响家庭其他成员的正常网络使用</strong>。</p>
+<p><strong>以下是搭建个人旁路由的主要优势：</strong></p>
+<ul>
+<li><p><strong>不可说</strong>: 访问被限制的网站和内容。</p>
+</li>
+<li><p><strong>去广告</strong>: 过滤烦人的广告弹窗，提升网页浏览体验。</p>
+</li>
+<li><p><strong>隐私保护</strong>: 隐藏您的真实 IP 地址，保护您的网络隐私。</p>
+</li>
+<li><p><strong>安全上网</strong>: 抵御网络攻击，提高网络安全防护能力</p>
+</li>
+</ul>
+<h1 id="OpenWrt系统"><a href="#OpenWrt系统" class="headerlink" title="OpenWrt系统"></a>OpenWrt系统</h1><h2 id="系统来源"><a href="#系统来源" class="headerlink" title="系统来源"></a>系统来源</h2><h3 id="从论坛下载固件"><a href="#从论坛下载固件" class="headerlink" title="从论坛下载固件"></a>从论坛下载固件</h3><p>推荐<a target="_blank" rel="noopener" href="http://right.com.cn/">恩山论坛</a>,论坛有各种网友编译的固件，可以根据自己的设备和需求，按需下载</p>
+<h3 id="按需定制化"><a href="#按需定制化" class="headerlink" title="按需定制化"></a>按需定制化</h3><h4 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h4><p><a href="https://openwrt.ai/?target=armsr/armv8&id=box#downloads1">OPENWRT</a></p>
+<h4 id="功能和参数定制"><a href="#功能和参数定制" class="headerlink" title="功能和参数定制"></a>功能和参数定制</h4><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131520715.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>选择设备型号和名称：这里以我的N1为例</p>
+</li>
+<li><p>自定义构建固件</p>
+<ul>
+<li>出厂软件包：建议不要动</li>
+<li>常用软件包：可以按需选择，如果列表中没有，直接在输入框内键入关键词，即可选择</li>
+<li>互联网：Clash必备 （建议再选择一个备用）</li>
+<li>后台地址：建议直接固定局域网IP，接下来设置和安装就需要直接输入此IP</li>
+<li>Docker：作为玩具，怎么可以少的了这个</li>
+<li>假装IstoreOS：作为玩具，怎么可以少的了这个</li>
+<li>IPv6：打开</li>
+<li>旁路由模式：为的就是这个，这里打开，省去接下来设置的步骤</li>
+<li>IPv4网关：家庭主路由网关</li>
+</ul>
+<p><code>非赞助用户，一天只有一次构建过程，务必认真填写，如有可能建议赞助</code></p>
+</li>
+</ul>
+<h4 id="构建和下载固件"><a href="#构建和下载固件" class="headerlink" title="构建和下载固件"></a>构建和下载固件</h4><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131528294.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-13 15.28.50"></p>
+<h4 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h4><p>推荐<a target="_blank" rel="noopener" href="https://etcher.balena.io/">balenaEtcher</a>：只为全平台推荐，话说什么时候可以出apple silicon的版本</p>
+<h3 id="系统烧录"><a href="#系统烧录" class="headerlink" title="系统烧录"></a>系统烧录</h3><h4 id="刷机流程"><a href="#刷机流程" class="headerlink" title="刷机流程"></a>刷机流程</h4><ul>
+<li>将刻录的U盘插入N1，再接电源</li>
+<li>等待几分钟之后，🛜可以发现openwrt的热点，无密码直接链接</li>
+<li>电脑IP直接按刚才配置，设置固定IP，否则无法登陆</li>
+<li>打开Openwrt的网页，刷机：<ul>
+<li>系统–晶晨宝盒–安装OpenWrt–选择设备型号–安装（具体入下图）</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131537908.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-13 15.37.02"></p>
+<h1 id="Clash设置"><a href="#Clash设置" class="headerlink" title="Clash设置"></a>Clash设置</h1><h2 id="插件Bug"><a href="#插件Bug" class="headerlink" title="插件Bug"></a>插件Bug</h2><p><code>由于Clash部分版本的问题，导致无法更新和安装插件，需要执行如下命令：</code></p>
+<p>SSH进入Openwrt</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs BASH"><span class="hljs-built_in">rm</span> <span class="hljs-built_in">rm</span> /etc/openclash/core<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="DNS设置"><a href="#DNS设置" class="headerlink" title="DNS设置"></a>DNS设置</h2><p>为AdGuard Home起作用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131541167.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-13 15.41.25"></p>
+<h1 id="Adguard-Home"><a href="#Adguard-Home" class="headerlink" title="Adguard Home"></a>Adguard Home</h1><h2 id="更新核心"><a href="#更新核心" class="headerlink" title="更新核心"></a>更新核心</h2><p>6060重定向设置为：作dnsmasq的上游服务器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131543326.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-13 15.43.02"></p>
+<h2 id="更新密码"><a href="#更新密码" class="headerlink" title="更新密码"></a>更新密码</h2><ul>
+<li>更多选项：改变网页登陆密码</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131544478.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-13 15.44.16"></p>
+<ul>
+<li><p>更改网页登陆密码：输入需设置的密码</p>
+<p>载入计算模块</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131546637.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-13 15.45.58"></p>
+</li>
+<li><p>将计算结果填入：手动设置</p>
+<p>保存并应用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131547938.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-13 15.47.28"></p>
+</li>
+<li><p>Adguard设置</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131550929.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-13 15.49.34"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131550328.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-13 15.50.24"></p>
+<ul>
+<li><p>Adguard Home 配置：</p>
+<ul>
+<li><pre><code class="yaml">http:
+  pprof:
+    port: 6060
+    enabled: false
+  address: 0.0.0.0:3000
+  session_ttl: 720h
+users:
+  - name: ****
+    password: *****
+auth_attempts: 99
+block_auth_min: 0
+http_proxy: &quot;&quot;
+language: &quot;&quot;
+theme: auto
+dns:
+  bind_hosts:
+    - 0.0.0.0
+  port: 5354
+  anonymize_client_ip: false
+  ratelimit: 0
+  ratelimit_subnet_len_ipv4: 24
+  ratelimit_subnet_len_ipv6: 56
+  ratelimit_whitelist: []
+  refuse_any: true
+  upstream_dns:
+    - 127.0.0.1:7874
+    - 127.0.0.1:7890
+  upstream_dns_file: &quot;&quot;
+  bootstrap_dns:
+    - 221.12.1.227
+  fallback_dns: []
+  upstream_mode: parallel
+  fastest_timeout: 1s
+  allowed_clients: []
+  disallowed_clients: []
+  blocked_hosts:
+    - version.bind
+    - id.server
+    - hostname.bind
+  trusted_proxies:
+    - 127.0.0.0/8
+    - ::1/128
+  cache_size: 4194304
+  cache_ttl_min: 0
+  cache_ttl_max: 0
+  cache_optimistic: false
+  bogus_nxdomain: []
+  aaaa_disabled: false
+  enable_dnssec: false
+  edns_client_subnet:
+    custom_ip: &quot;&quot;
+    enabled: false
+    use_custom: false
+  max_goroutines: 300
+  handle_ddr: true
+  ipset: []
+  ipset_file: &quot;&quot;
+  bootstrap_prefer_ipv6: false
+  upstream_timeout: 10s
+  private_networks: []
+  use_private_ptr_resolvers: true
+  local_ptr_upstreams: []
+  use_dns64: false
+  dns64_prefixes: []
+  serve_http3: false
+  use_http3_upstreams: false
+  serve_plain_dns: true
+tls:
+  enabled: false
+  server_name: &quot;&quot;
+  force_https: false
+  port_https: 443
+  port_dns_over_tls: 853
+  port_dns_over_quic: 784
+  port_dnscrypt: 0
+  dnscrypt_config_file: &quot;&quot;
+  allow_unencrypted_doh: false
+  certificate_chain: &quot;&quot;
+  private_key: &quot;&quot;
+  certificate_path: &quot;&quot;
+  private_key_path: &quot;&quot;
+  strict_sni_check: false
+querylog:
+  ignored: []
+  interval: 6h
+  size_memory: 1000
+  enabled: true
+  file_enabled: true
+statistics:
+  ignored: []
+  interval: 24h
+  enabled: true
+filters:
+  - enabled: true
+    url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+    name: AdGuard DNS filter
+    id: 1
+  - enabled: true
+    url: https://adaway.org/hosts.txt
+    name: AdAway Default Blocklist
+    id: 2
+  - enabled: true
+    url: https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt
+    name: 乘风广告过滤规则
+    id: 1649483422
+  - enabled: true
+    url: https://anti-ad.net/easylist.txt
+    name: &#39;CHN: anti-AD&#39;
+    id: 1649484084
+  - enabled: true
+    url: https://easylist-downloads.adblockplus.org/easylistchina.txt
+    name: EasyList China
+    id: 1649484085
+  - enabled: true
+    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt
+    name: anti-ad-adguard
+    id: 1649484198
+  - enabled: true
+    url: https://easylist-downloads.adblockplus.org/easyprivacy.txt
+    name: easyprivacy
+    id: 1649954258
+  - enabled: true
+    url: https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
+    name: 大圣净化
+    id: 1650076290
+  - enabled: true
+    url: https://raw.githubusercontent.com/vokins/yhosts/master/hosts
+    name: yhosts
+    id: 1650076291
+  - enabled: true
+    url: https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
+    name: a1d
+    id: 1654089502
+  - enabled: true
+    url: https://raw.githubusercontent.com/Goooler/1024_hosts/master/hosts
+    name: googler
+    id: 1654089509
+  - enabled: true
+    url: https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt
+    name: ee
+    id: 1654089510
+  - enabled: true
+    url: http://sub.adtchrome.com/adt-chinalist-easylist.txt
+    name: cw
+    id: 1654089511
+  - enabled: true
+    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/adblock-for-dnsmasq.conf
+    name: ec1
+    id: 1654089512
+  - enabled: true
+    url: https://raw.githubusercontent.com/rentianyu/Ad-set-hosts/master/adguard
+    name: rentianyu / Ad-set-hosts
+    id: 1687449634
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_12.txt
+    name: Dandelion Sprout&#39;s Anti-Malware List
+    id: 1687578182
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_42.txt
+    name: ShadowWhisperer&#39;s Malware List
+    id: 1687578183
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_10.txt
+    name: Scam Blocklist by DurableNapkin
+    id: 1687578184
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_8.txt
+    name: NoCoin Filter List
+    id: 1687578185
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_31.txt
+    name: Stalkerware Indicators List
+    id: 1687578186
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_30.txt
+    name: Phishing URL Blocklist (PhishTank and OpenPhish)
+    id: 1687578187
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt
+    name: The Big List of Hacked Malware Web Sites
+    id: 1687578188
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt
+    name: Malicious URL Blocklist (URLHaus)
+    id: 1687578189
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt
+    name: &#39;CHN: AdRules DNS List&#39;
+    id: 1707799154
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_21.txt
+    name: &#39;CHN: anti-AD&#39;
+    id: 1707799155
+  - enabled: true
+    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdns.txt
+    name: https://github.com/217heidai/adblockfilters
+    id: 1707799156
+whitelist_filters: []
+user_rules:
+  - &#39;@@||vk.com^$important&#39;
+  - &#39;@@||twitter.com^$important&#39;
+  - &#39;@@||twitter.com^$client=&#39;&#39;127.0.0.1&#39;&#39;&#39;
+  - &#39;@@||www.similarweb.com^$important&#39;
+  - &#39;@@||similarweb.com^$important&#39;
+  - &#39;@@||t.co^$important&#39;
+  - &#39;@@||mercadolibre.com^$important&#39;
+  - &#39;@@||mercadolibre.com^$client=&#39;&#39;127.0.0.1&#39;&#39;&#39;
+  - &#39;@@||dc.services.visualstudio.com^$important&#39;
+  - &#39;@@||dc.services.visualstudio.com^$client=&#39;&#39;127.0.0.1&#39;&#39;&#39;
+  - &#39;@@||northeurope-2.in.applicationinsights.azure.com^$client=&#39;&#39;127.0.0.1&#39;&#39;&#39;
+  - &#39;@@||northeurope-2.in.applicationinsights.azure.com^$important&#39;
+  - &#39;@@||wabi-north-europe-g-primary-redirect.analysis.windows.net^$important&#39;
+  - &#39;@@||wabi-north-europe-g-primary-redirect.analysis.windows.net^$client=&#39;&#39;127.0.0.1&#39;&#39;&#39;
+  - &#39;@@||mon.us.tiktokv.com^$important&#39;
+  - &#39;@@||mcs.us.tiktokv.com^$client=&#39;&#39;127.0.0.1&#39;&#39;&#39;
+  - &#39;@@||s.click.aliexpress.com^$important&#39;
+  - &#39;@@||s.click.aliexpress.com^$client=&#39;&#39;127.0.0.1&#39;&#39;&#39;
+  - &#39;@@||analytics.google.com^$client=&#39;&#39;127.0.0.1&#39;&#39;&#39;
+  - &#39;@@||analytics.google.com^$important&#39;
+  - &#39;@@||wl.spotify.com^$important&#39;
+  - &#39;@@||advertising.amazon.com^$client=&#39;&#39;127.0.0.1&#39;&#39;&#39;
+  - &#39;@@||*.amazon.com^$important&#39;
+  - &quot;&quot;
+dhcp:
+  enabled: false
+  interface_name: &quot;&quot;
+  local_domain_name: lan
+  dhcpv4:
+    gateway_ip: &quot;&quot;
+    subnet_mask: &quot;&quot;
+    range_start: &quot;&quot;
+    range_end: &quot;&quot;
+    lease_duration: 86400
+    icmp_timeout_msec: 1000
+    options: []
+  dhcpv6:
+    range_start: &quot;&quot;
+    lease_duration: 86400
+    ra_slaac_only: false
+    ra_allow_slaac: false
+filtering:
+  blocking_ipv4: &quot;&quot;
+  blocking_ipv6: &quot;&quot;
+  blocked_services:
+    schedule:
+      time_zone: UTC
+    ids: []
+  protection_disabled_until: null
+  safe_search:
+    enabled: false
+    bing: true
+    duckduckgo: true
+    google: true
+    pixabay: true
+    yandex: true
+    youtube: true
+  blocking_mode: default
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  rewrites: []
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  filters_update_interval: 24
+  blocked_response_ttl: 10
+  filtering_enabled: true
+  parental_enabled: false
+  safebrowsing_enabled: false
+  protection_enabled: true
+clients:
+  runtime_sources:
+    whois: true
+    arp: true
+    rdns: true
+    dhcp: true
+    hosts: true
+  persistent: []
+log:
+  file: &quot;&quot;
+  max_backups: 0
+  max_size: 100
+  max_age: 3
+  compress: false
+  local_time: false
+  verbose: false
+os:
+  group: &quot;&quot;
+  user: &quot;&quot;
+  rlimit_nofile: 0
+schema_version: 28
+</code></pre>
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131554758.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-13 15.54.33"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/How-to/" class="print-no-link">#How to</a>
+      
+        <a href="/tags/Adblock/" class="print-no-link">#Adblock</a>
+      
+        <a href="/tags/Clash/" class="print-no-link">#Clash</a>
+      
+        <a href="/tags/Openwrt/" class="print-no-link">#Openwrt</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Building a Home Network Router with N1</div>
+      <div>http://example.com/2024/02/13/Building-a-Home-Network-Router-with-N1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Justin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年2月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/12/Updating-Docker-containers/" title="Updating Docker containers">
+                        <span class="hidden-mobile">Updating Docker containers</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
