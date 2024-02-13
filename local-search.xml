@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Using Git and GitHub on Mac.</title>
+    <link href="/2024/02/13/Using-Git-and-GitHub-on-Mac/"/>
+    <url>/2024/02/13/Using-Git-and-GitHub-on-Mac/</url>
+    
+    <content type="html"><![CDATA[<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="http://jintongyao.github.io/2014/use-git-and-github/">在Mac上使用Git与Github</a></p><h1 id="创建本地的Gitlab"><a href="#创建本地的Gitlab" class="headerlink" title="创建本地的Gitlab"></a>创建本地的Gitlab</h1><hr><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>在shell中安装Git。使用Homebrew直接安装Git即可，命令为： <code>$ brew install git</code></p><h3 id="将自己的程序加入Git进行管理"><a href="#将自己的程序加入Git进行管理" class="headerlink" title="将自己的程序加入Git进行管理"></a>将自己的程序加入Git进行管理</h3><ol><li><p>进入到自己程序的根目录。</p></li><li><p>初始化Git目录。使用命令：<code>$ git init</code> 进行初始化。</p></li><li><p>设置自己的git信息</p><p><code>$ git config --global user.name &quot;yourname&quot;</code></p><p><code>$ git config --global user.email &quot;youremail&quot;&quot;</code></p></li><li><p>编写**.gitignore<strong>文件。<code>touch .gitignore</code> <strong>.gitignore</strong>文件的作用是，设置不需要提交的文件。如IDE的配置文件，编译后的文件等，都需要加入到</strong>.gitignore**文件中管理以确保不提交。详细的配置可自行查询，或者使用<a href="https://github.com/jintongyao/HelloBlocks/blob/master/.gitignore">我的</a>。</p></li><li><p>向git仓库中添加源文件。</p><p><code>$ git add .</code></p><p><code>$ git commit -m &quot;Initial commit&quot;</code></p></li><li><p>这样应该就完成了向本地Gitlab的第一次提交。重启Xcode后，<strong>Source Control</strong>下的选项应该都可用了。</p></li></ol><h1 id="关联Github"><a href="#关联Github" class="headerlink" title="关联Github"></a>关联Github</h1><hr><p>由于我之前在本地配置过一次Github，昨天换了新账号后再使用，一直各种出错，查询了各种官方文档，折腾了很久才最终搞定，所以这部分写的详尽一些。</p><p>与Github关联，有两种方式，SSH方式与HTTP方式。SSH使用证书进行管理，配置好后，每次提交无需再输入用户名密码，本文主要讲解<strong>SSH方式</strong>的配置。</p><p>这一步的操作前，需要先完成上一步的<strong>创建本地的Gitlab</strong>。</p><h3 id="注册Github并创建自己的repository"><a href="#注册Github并创建自己的repository" class="headerlink" title="注册Github并创建自己的repository"></a>注册Github并创建自己的repository</h3><p>在<a href="https://github.com/">官方网站</a>注册Github账号。</p><p>注册完成后，点击右上角的 <strong>+</strong> ，选择<strong>New repository</strong>创建自己的repository。</p><p>创建完成后，进入创建的repository，记住自己的Github id与repository id。</p><h3 id="生成并关联本地的SSH密钥"><a href="#生成并关联本地的SSH密钥" class="headerlink" title="生成并关联本地的SSH密钥"></a>生成并关联本地的SSH密钥</h3><p>需要在本地生成RSA密钥，并与Github网站进行配对。</p><p>这一步比较关键，主要参考的是<a href="https://help.github.com/articles/generating-ssh-keys#step-3-add-your-ssh-key-to-github">官方指南</a>。</p><ol><li><p>查看是否已有SSH key。执行命令： <code>$ ls -al ~/.ssh</code> ，如有，则备份删除。如无，则继续执行。</p></li><li><p>生成密钥。执行命令： <code>$ ssh-keygen -t rsa -C &quot;your_email@your_email.com&quot;</code>，注意替换。</p></li><li><p>会提示输入保存文件的名字，以及密码。文件名字可不选直接回车，系统会默认生成名为<strong>id_rsa</strong>的相关文件。</p></li><li><p>将生成的密钥添加到<strong>ssh-agent</strong>，使用如下两个命令：</p><p><code>$ eval &quot;$(ssh-agent -s)&quot;</code></p><p><code>$ ssh-add ~/.ssh/id_rsa</code></p></li><li><p>执行命令： <code>$ ls -al ~/.ssh</code> ，可以看到有<strong>id_rsa</strong>和<strong>id_rsa.pub</strong>两个文件。</p></li><li><p>打开<strong>id_rsa.pub</strong>文件，并复制下全部内容（注意不要多复制空格）。也可以使用这个命令进行复制： <code>$ pbcopy &lt; ~/.ssh/id_rsa.pub</code></p></li><li><p>登录<a href="https://github.com/">Github网站</a>，登录后，进入<strong>Setting—SSH keys—Add SSH Key</strong>，将复制的内容添加至此。即可完成SSH key的添加。</p></li><li><p>测试一下。输入命令： <code>$ ssh -T git@github.com</code> ，如果出现如下提示，则说明成功了。<strong>Hi username! You’ve successfully authenticated, but GitHub does not provide shell access.</strong></p></li></ol><h3 id="提交代码至Github"><a href="#提交代码至Github" class="headerlink" title="提交代码至Github"></a>提交代码至Github</h3><p>最后一步，终于可以将代码提交到Github了。</p><ol><li><p>添加你的Git地址。在终端中执行如下命令，注意替换your-github-id与your-repository-id</p><p><code>$ git remote add origin git@github.com:your-github-id/your-repository-id.git</code></p></li><li><p>上面的origin是为远程的Github repository在本地定义的用于关联的别名。添加完成后，可以在Xcode的<strong>Source Control—your project name—Configure your project name—Remotes</strong>看到已经添加的Remote repository。</p></li><li><p>提交至Github的master分支。执行如下命令： <code>$ git push origin master</code></p></li><li><p>上一步提交时如果失败，提示冲突，则先将远程的内容先pull下来后再重新push。很多教程没有提到这一点，我就是在这里耽误了很久。</p><p><code>$ git pull origin master</code></p><p><code>$ git push origin master</code></p></li></ol><p>这样，我们就完成了至Github的提交。进入网站中查看自己的repository，应该就可以看到自己的源代码了。</p><h3 id="日后的提交"><a href="#日后的提交" class="headerlink" title="日后的提交"></a>日后的提交</h3><p>可以通过命令行提交：</p><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elixir"><span class="hljs-variable">$ </span>git add *<br><span class="hljs-variable">$ </span>git commit -m <span class="hljs-string">&quot;write comment here&quot;</span><br><span class="hljs-variable">$ </span>git push origin master<br></code></pre></td></tr></table></figure><p>也可以通过Xcode的Source Control中的Pull与Push命令同步或提交。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>How to</tag>
+      
+      <tag>Github</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Building a Home Network Router with N1</title>
     <link href="/2024/02/13/Building-a-Home-Network-Router-with-N1/"/>
     <url>/2024/02/13/Building-a-Home-Network-Router-with-N1/</url>
@@ -198,9 +219,9 @@
       
       <tag>Tips</tag>
       
-      <tag>Linux</tag>
-      
       <tag>Ubuntu</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
@@ -219,9 +240,9 @@
     
     <tags>
       
-      <tag>Blog</tag>
-      
       <tag>Tips</tag>
+      
+      <tag>Blog</tag>
       
     </tags>
     
@@ -452,7 +473,7 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#x6f;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#103;&#105;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -613,9 +634,9 @@
       
       <tag>VPS</tag>
       
-      <tag>Linux</tag>
-      
       <tag>Ubuntu</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
@@ -718,15 +739,15 @@
     
     <tags>
       
-      <tag>VPS</tag>
-      
       <tag>ChatGpt</tag>
       
       <tag>AI</tag>
       
-      <tag>Docker</tag>
+      <tag>VPS</tag>
       
       <tag>Script</tag>
+      
+      <tag>Docker</tag>
       
       <tag>Linux</tag>
       
@@ -749,9 +770,9 @@
       
       <tag>How to</tag>
       
-      <tag>Linux</tag>
-      
       <tag>Ubuntu</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
