@@ -37,9 +37,9 @@
       
       <tag>How to</tag>
       
-      <tag>Food</tag>
-      
       <tag>Life</tag>
+      
+      <tag>Food</tag>
       
     </tags>
     
@@ -100,9 +100,9 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Adblock</tag>
       
@@ -217,11 +217,11 @@
       
       <tag>How to</tag>
       
-      <tag>Amazon</tag>
-      
       <tag>VPS</tag>
       
       <tag>Script</tag>
+      
+      <tag>Amazon</tag>
       
     </tags>
     
@@ -240,11 +240,11 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
       
       <tag>Github</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Blog</tag>
       
@@ -284,7 +284,7 @@
     <link href="/2024/01/06/How%20to%20Move%20Your%20Favorite%20Playlists%20from%20Music%20Platforms%20to%20Apple%20Music/"/>
     <url>/2024/01/06/How%20to%20Move%20Your%20Favorite%20Playlists%20from%20Music%20Platforms%20to%20Apple%20Music/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>音乐是人类的共同语言，它能带给我们无尽的欢乐和感动。然而，对于许多使用Apple Music的用户来说，音乐的选择却并不那么丰富。Apple Music的歌单数量有限，而且很多国内的优秀歌单无法直接导入，这让很多用户感到失望和无奈。虽然以前有一些方法可以实现国内歌单的导入，但是都非常繁琐和耗时，让人望而却步。那么，有没有一种简单快捷的方式，可以让我们在Apple Music上享受国内的歌单呢？答案是肯定的！在本文中，我将向你介绍一个神奇的小工具，它可以帮助你轻松地把国内的歌单导入到Apple Music，让你的音乐体验更加丰富和多彩。</p><h1 id="歌单准备"><a href="#歌单准备" class="headerlink" title="歌单准备"></a>歌单准备</h1><h2 id="进入163或者qq-music的主页，选择你喜欢的歌单，复制浏览器地址，"><a href="#进入163或者qq-music的主页，选择你喜欢的歌单，复制浏览器地址，" class="headerlink" title="进入163或者qq music的主页，选择你喜欢的歌单，复制浏览器地址，"></a>进入163或者qq music的主页，选择你喜欢的歌单，复制浏览器地址，</h2><p><img src="https://s2.loli.net/2024/01/06/oP57U1Hc6DRpmBA.png"></p><h2 id="将地址复制进如下-工具，点击获取歌单，待结果出来之后，复制结果"><a href="#将地址复制进如下-工具，点击获取歌单，待结果出来之后，复制结果" class="headerlink" title="将地址复制进如下 工具，点击获取歌单，待结果出来之后，复制结果"></a>将地址复制进如下 <a href="https://music.unmeta.cn/">工具</a>，点击获取歌单，待结果出来之后，复制结果</h2><p><img src="https://s2.loli.net/2024/01/06/jlbihg572PpnCX9.png"></p><h2 id="点击复制结果"><a href="#点击复制结果" class="headerlink" title="点击复制结果"></a>点击复制结果</h2><h1 id="转换歌单，并导入apple-music"><a href="#转换歌单，并导入apple-music" class="headerlink" title="转换歌单，并导入apple music"></a>转换歌单，并导入apple music</h1><h2 id="打开工具地址，并进入-FREE-TEXT"><a href="#打开工具地址，并进入-FREE-TEXT" class="headerlink" title="打开工具地址，并进入 FREE TEXT"></a>打开<a href="https://www.tunemymusic.com/transfer">工具地址</a>，并进入 <code>FREE TEXT</code></h2><p><img src="https://s2.loli.net/2024/01/06/VFOqktyJaUmGdPA.png"></p><h2 id="将刚才复制的内容，贴如表单，并点击-COVERT-SONG-LIST"><a href="#将刚才复制的内容，贴如表单，并点击-COVERT-SONG-LIST" class="headerlink" title="将刚才复制的内容，贴如表单，并点击 COVERT SONG LIST"></a>将刚才复制的内容，贴如表单，并点击 <code>COVERT SONG LIST</code></h2><p><img src="https://s2.loli.net/2024/01/06/CRdBnWvQSLTH8Vh.png"></p><h2 id="在生成歌单之后，点击Choose-Destination"><a href="#在生成歌单之后，点击Choose-Destination" class="headerlink" title="在生成歌单之后，点击Choose Destination"></a>在生成歌单之后，点击<code>Choose Destination</code></h2><p><img src="https://s2.loli.net/2024/01/06/NonIsU2QkX58zwy.png"></p><h2 id="按你的需求点击需要导入的歌单，这里以apple-music为例："><a href="#按你的需求点击需要导入的歌单，这里以apple-music为例：" class="headerlink" title="按你的需求点击需要导入的歌单，这里以apple music为例："></a>按你的需求点击需要导入的歌单，这里以apple music为例：</h2><p><img src="https://s2.loli.net/2024/01/06/WqXc23T9snBI5JV.png"></p><h2 id="编辑歌单名称"><a href="#编辑歌单名称" class="headerlink" title="编辑歌单名称"></a>编辑歌单名称</h2><p><img src="https://s2.loli.net/2024/01/06/g53xnaALNpJw9Wd.png"></p><h2 id="开始转换"><a href="#开始转换" class="headerlink" title="开始转换"></a>开始转换</h2><p><img src="https://s2.loli.net/2024/01/06/DsVtymr8gMSvlUw.png"></p><h2 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h2><p><img src="https://s2.loli.net/2024/01/06/DzTZUkprIxes3qv.png"></p><p>歌单创建成功，其中11首由于apple music没有收录，导致导入失败</p><h1 id="开始享受apple-music的高品质音乐吧"><a href="#开始享受apple-music的高品质音乐吧" class="headerlink" title="开始享受apple music的高品质音乐吧"></a>开始享受apple music的高品质音乐吧</h1><p><img src="https://s2.loli.net/2024/01/06/nY9rf5NwHW6eOMt.png"></p><h1 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h1><p><a href="https://www.appinn.com/bistutu-gomusic">小众软件链接</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>音乐是人类的共同语言，它能带给我们无尽的欢乐和感动。然而，对于许多使用Apple Music的用户来说，音乐的选择却并不那么丰富。Apple Music的歌单数量有限，而且很多国内的优秀歌单无法直接导入，这让很多用户感到失望和无奈。虽然以前有一些方法可以实现国内歌单的导入，但是都非常繁琐和耗时，让人望而却步。那么，有没有一种简单快捷的方式，可以让我们在Apple Music上享受国内的歌单呢？答案是肯定的！在本文中，我将向你介绍一个神奇的小工具，它可以帮助你轻松地把国内的歌单导入到Apple Music，让你的音乐体验更加丰富和多彩。</p><h1 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402131220644.png"></h1><h1 id="歌单准备"><a href="#歌单准备" class="headerlink" title="歌单准备"></a>歌单准备</h1><h2 id="进入163或者qq-music的主页，选择你喜欢的歌单，复制浏览器地址，"><a href="#进入163或者qq-music的主页，选择你喜欢的歌单，复制浏览器地址，" class="headerlink" title="进入163或者qq music的主页，选择你喜欢的歌单，复制浏览器地址，"></a>进入163或者qq music的主页，选择你喜欢的歌单，复制浏览器地址，</h2><p><img src="https://s2.loli.net/2024/01/06/oP57U1Hc6DRpmBA.png"></p><h2 id="将地址复制进如下-工具，点击获取歌单，待结果出来之后，复制结果"><a href="#将地址复制进如下-工具，点击获取歌单，待结果出来之后，复制结果" class="headerlink" title="将地址复制进如下 工具，点击获取歌单，待结果出来之后，复制结果"></a>将地址复制进如下 <a href="https://music.unmeta.cn/">工具</a>，点击获取歌单，待结果出来之后，复制结果</h2><p><img src="https://s2.loli.net/2024/01/06/jlbihg572PpnCX9.png"></p><h2 id="点击复制结果"><a href="#点击复制结果" class="headerlink" title="点击复制结果"></a>点击复制结果</h2><h1 id="转换歌单，并导入apple-music"><a href="#转换歌单，并导入apple-music" class="headerlink" title="转换歌单，并导入apple music"></a>转换歌单，并导入apple music</h1><h2 id="打开工具地址，并进入-FREE-TEXT"><a href="#打开工具地址，并进入-FREE-TEXT" class="headerlink" title="打开工具地址，并进入 FREE TEXT"></a>打开<a href="https://www.tunemymusic.com/transfer">工具地址</a>，并进入 <code>FREE TEXT</code></h2><p><img src="https://s2.loli.net/2024/01/06/VFOqktyJaUmGdPA.png"></p><h2 id="将刚才复制的内容，贴如表单，并点击-COVERT-SONG-LIST"><a href="#将刚才复制的内容，贴如表单，并点击-COVERT-SONG-LIST" class="headerlink" title="将刚才复制的内容，贴如表单，并点击 COVERT SONG LIST"></a>将刚才复制的内容，贴如表单，并点击 <code>COVERT SONG LIST</code></h2><p><img src="https://s2.loli.net/2024/01/06/CRdBnWvQSLTH8Vh.png"></p><h2 id="在生成歌单之后，点击Choose-Destination"><a href="#在生成歌单之后，点击Choose-Destination" class="headerlink" title="在生成歌单之后，点击Choose Destination"></a>在生成歌单之后，点击<code>Choose Destination</code></h2><p><img src="https://s2.loli.net/2024/01/06/NonIsU2QkX58zwy.png"></p><h2 id="按你的需求点击需要导入的歌单，这里以apple-music为例："><a href="#按你的需求点击需要导入的歌单，这里以apple-music为例：" class="headerlink" title="按你的需求点击需要导入的歌单，这里以apple music为例："></a>按你的需求点击需要导入的歌单，这里以apple music为例：</h2><p><img src="https://s2.loli.net/2024/01/06/WqXc23T9snBI5JV.png"></p><h2 id="编辑歌单名称"><a href="#编辑歌单名称" class="headerlink" title="编辑歌单名称"></a>编辑歌单名称</h2><p><img src="https://s2.loli.net/2024/01/06/g53xnaALNpJw9Wd.png"></p><h2 id="开始转换"><a href="#开始转换" class="headerlink" title="开始转换"></a>开始转换</h2><p><img src="https://s2.loli.net/2024/01/06/DsVtymr8gMSvlUw.png"></p><h2 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h2><p><img src="https://s2.loli.net/2024/01/06/DzTZUkprIxes3qv.png"></p><p>歌单创建成功，其中11首由于apple music没有收录，导致导入失败</p><h1 id="开始享受apple-music的高品质音乐吧"><a href="#开始享受apple-music的高品质音乐吧" class="headerlink" title="开始享受apple music的高品质音乐吧"></a>开始享受apple music的高品质音乐吧</h1><p><img src="https://s2.loli.net/2024/01/06/nY9rf5NwHW6eOMt.png"></p><h1 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h1><p><a href="https://www.appinn.com/bistutu-gomusic">小众软件链接</a></p>]]></content>
     
     
     
@@ -427,17 +427,17 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#103;&#105;&#116;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
       
       <tag>Github</tag>
+      
+      <tag>Mac</tag>
       
     </tags>
     
@@ -502,9 +502,9 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Script</tag>
       
@@ -630,9 +630,9 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Script</tag>
       
@@ -693,13 +693,13 @@
     
     <tags>
       
-      <tag>ChatGpt</tag>
-      
-      <tag>AI</tag>
+      <tag>VPS</tag>
       
       <tag>Docker</tag>
       
-      <tag>VPS</tag>
+      <tag>ChatGpt</tag>
+      
+      <tag>AI</tag>
       
       <tag>Script</tag>
       
