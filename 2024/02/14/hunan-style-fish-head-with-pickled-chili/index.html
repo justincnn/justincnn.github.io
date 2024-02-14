@@ -18,29 +18,27 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前提在甲骨文的后台先开放所有的端口  1.切换到root用户1sudo -i  2.开放所有端口1sudo iptables -P INPUT ACCEPT 1sudo iptables -P FORWARD ACCEPT 1sudo iptables -P OUTPUT ACCEPT 1sudo iptables -F  3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它">
+    <meta name="description" content="前言鱼一直以来都是江南人的最爱，鱼头又是美食中的佳品，湖南鱼头的做法简直就是人间极品  食材 主菜：鱼头 将鱼头从脑袋处劈开，洗净铺在盘子里；在鱼头肉多的地方用刀划开，方便入味   佐料：葱、姜、蒜、剁椒、盐、糖、生抽、料酒、食用油、小米辣  剁椒 将小米辣、姜、蒜切碎 起锅倒油烧热，加入小米辣、姜、蒜翻炒 加入剁椒再次炒出香味 加入盐、味精、蒸鱼豉油、生抽继续翻炒  蒸锅 蒸锅水烧开 将炒制的剁">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle：如何开放Ubuntu VPS全部端口">
-<meta property="og:url" content="http://example.com/2023/07/23/Oracle-open-all-ports-of-Ubuntu/index.html">
+<meta property="og:title" content="湖南剁椒鱼头做法">
+<meta property="og:url" content="http://example.com/2024/02/14/hunan-style-fish-head-with-pickled-chili/index.html">
 <meta property="og:site_name" content="文 科 生 的 IT 笔 记">
-<meta property="og:description" content="前提在甲骨文的后台先开放所有的端口  1.切换到root用户1sudo -i  2.开放所有端口1sudo iptables -P INPUT ACCEPT 1sudo iptables -P FORWARD ACCEPT 1sudo iptables -P OUTPUT ACCEPT 1sudo iptables -F  3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它">
+<meta property="og:description" content="前言鱼一直以来都是江南人的最爱，鱼头又是美食中的佳品，湖南鱼头的做法简直就是人间极品  食材 主菜：鱼头 将鱼头从脑袋处劈开，洗净铺在盘子里；在鱼头肉多的地方用刀划开，方便入味   佐料：葱、姜、蒜、剁椒、盐、糖、生抽、料酒、食用油、小米辣  剁椒 将小米辣、姜、蒜切碎 起锅倒油烧热，加入小米辣、姜、蒜翻炒 加入剁椒再次炒出香味 加入盐、味精、蒸鱼豉油、生抽继续翻炒  蒸锅 蒸锅水烧开 将炒制的剁">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png">
-<meta property="article:published_time" content="2023-07-23T08:14:40.000Z">
-<meta property="article:modified_time" content="2024-02-04T10:24:31.820Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402141139639.jpg">
+<meta property="article:published_time" content="2024-02-14T03:49:14.000Z">
+<meta property="article:modified_time" content="2024-02-14T03:50:10.976Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="How to">
-<meta property="article:tag" content="VPS">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Food">
+<meta property="article:tag" content="Life">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402141139639.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Oracle：如何开放Ubuntu VPS全部端口 - 文 科 生 的 IT 笔 记</title>
+  <title>湖南剁椒鱼头做法 - 文 科 生 的 IT 笔 记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -194,7 +192,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Oracle：如何开放Ubuntu VPS全部端口"></span>
+            <span id="subtitle" data-typed-text="湖南剁椒鱼头做法"></span>
           
         </div>
 
@@ -205,8 +203,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-23 16:14" pubdate>
-          2023年7月23日 下午
+        <time datetime="2024-02-14 11:49" pubdate>
+          2024年2月14日 中午
         </time>
       </span>
     
@@ -217,7 +215,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          83 字
+          201 字
         
       </span>
     
@@ -228,7 +226,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -273,26 +271,33 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Oracle：如何开放Ubuntu VPS全部端口</h1>
+            <h1 id="seo-header">湖南剁椒鱼头做法</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>在甲骨文的后台先开放所有的端口</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="1-切换到root用户"><a href="#1-切换到root用户" class="headerlink" title="1.切换到root用户"></a>1.切换到root用户</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo -<span class="hljs-selector-tag">i</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="2-开放所有端口"><a href="#2-开放所有端口" class="headerlink" title="2.开放所有端口"></a>2.开放所有端口</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo iptables -<span class="hljs-selector-tag">P</span> <span class="hljs-selector-tag">INPUT</span> ACCEPT<br></code></pre></td></tr></table></figure>
-<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tp">sudo iptables -<span class="hljs-keyword">P</span> FORWARD <span class="hljs-keyword">ACC</span>EPT<br></code></pre></td></tr></table></figure>
-<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tp">sudo iptables -<span class="hljs-keyword">P</span> OUTPUT <span class="hljs-keyword">ACC</span>EPT<br></code></pre></td></tr></table></figure>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo iptables -F</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"><a href="#3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它" class="headerlink" title="3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"></a>3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> purge netfilter-persistent<br></code></pre></td></tr></table></figure>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">reboot</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="4-强制删除规则"><a href="#4-强制删除规则" class="headerlink" title="4.强制删除规则"></a>4.强制删除规则</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">rm -rf <span class="hljs-regexp">/etc/i</span>ptables &amp;&amp; reboot<br></code></pre></td></tr></table></figure>
-
-<h3 id="5-删除oracle-cloud-agent，防止甲骨文监控"><a href="#5-删除oracle-cloud-agent，防止甲骨文监控" class="headerlink" title="5.删除oracle-cloud-agent，防止甲骨文监控"></a>5.删除oracle-cloud-agent，防止甲骨文监控</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">snap <span class="hljs-built_in">remove</span> oracle-cloud-agent<br></code></pre></td></tr></table></figure>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>鱼一直以来都是江南人的最爱，鱼头又是美食中的佳品，湖南鱼头的做法简直就是人间极品</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402141139639.jpg" srcset="/img/loading.gif" lazyload></p>
+<h1 id="食材"><a href="#食材" class="headerlink" title="食材"></a>食材</h1><ul>
+<li>主菜：鱼头<ul>
+<li>将鱼头从脑袋处劈开，洗净铺在盘子里；在鱼头肉多的地方用刀划开，方便入味</li>
+</ul>
+</li>
+<li>佐料：葱、姜、蒜、剁椒、盐、糖、生抽、料酒、食用油、小米辣</li>
+</ul>
+<h1 id="剁椒"><a href="#剁椒" class="headerlink" title="剁椒"></a>剁椒</h1><ul>
+<li>将小米辣、姜、蒜切碎</li>
+<li>起锅倒油烧热，加入小米辣、姜、蒜翻炒</li>
+<li>加入剁椒再次炒出香味</li>
+<li>加入盐、味精、蒸鱼豉油、生抽继续翻炒</li>
+</ul>
+<h1 id="蒸锅"><a href="#蒸锅" class="headerlink" title="蒸锅"></a>蒸锅</h1><ul>
+<li>蒸锅水烧开</li>
+<li>将炒制的剁椒料倒在鱼头身上</li>
+<li>放入鱼肉（在鱼头下面放一根筷子，受热均匀）</li>
+<li>蒸10分钟</li>
+<li>撒葱花装饰，油烧热，浇在鱼上</li>
+</ul>
 
                 
               </div>
@@ -305,13 +310,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/How-to/" class="print-no-link">#How to</a>
+        <a href="/tags/Food/" class="print-no-link">#Food</a>
       
-        <a href="/tags/VPS/" class="print-no-link">#VPS</a>
-      
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
-      
-        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
+        <a href="/tags/Life/" class="print-no-link">#Life</a>
       
     </div>
   
@@ -323,8 +324,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Oracle：如何开放Ubuntu VPS全部端口</div>
-      <div>http://example.com/2023/07/23/Oracle-open-all-ports-of-Ubuntu/</div>
+      <div>湖南剁椒鱼头做法</div>
+      <div>http://example.com/2024/02/14/hunan-style-fish-head-with-pickled-chili/</div>
     </div>
     <div class="license-meta">
       
@@ -336,7 +337,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年7月23日</div>
+          <div>2024年2月14日</div>
         </div>
       
       
@@ -368,18 +369,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/23/Docker-common-command-record/" title="Docker:常用命令（不定期更新）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Docker:常用命令（不定期更新）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/23/Cloudflare-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E4%BB%A3%E7%90%86%E4%BD%A0%E7%9A%84VPS-IP/" title="Cloudflare:如何利用代理你的VPS IP">
-                        <span class="hidden-mobile">Cloudflare:如何利用代理你的VPS IP</span>
+                      <a href="/2024/02/13/Using-Git-and-GitHub-on-Mac/" title="Using Git and GitHub on Mac.">
+                        <span class="hidden-mobile">Using Git and GitHub on Mac.</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
