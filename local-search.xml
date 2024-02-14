@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Keywords search in Amazon</title>
+    <link href="/2024/02/14/Keywords-search-in-Amazon/"/>
+    <url>/2024/02/14/Keywords-search-in-Amazon/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="ec271b15da76d21cc268c28c897b1549e42648b9b136bd2a55493d2bdaf6b0e8">8d6c1f2613362fcfdd17c167c6e17f59faa0d5324f7c9d6bd8cff08b9fcf45a65543a69702337205bcf33d8cc5bc2186ac34793e76e91581052b6faab49c2806082f0846acc37bd215e94d0ce311c5fa4eaa972fce89b41d9d14eaf370d833e28b74b0dd69fac50a7c7bfb4487e5c0a8537a84cbd5dc7b937099e75829409947dc47dbb41514de7b5d4b5abd74b0e495af46cfa3b67705695ceab25249ac2465a7fe32a3390cc8bd3505aa49bb5464b3ac88e69e783774ddc4f641beaafb19b9c21e4df687db909bc82f2164bac7b9aee48cf4dd396a216ecfa4bd5f3355e5ad23e75be93695c32e63f7626202f6fb8eac538a04373e7941d90ab4fc000b36844cbbd36d361eb587583f007feabd4950f01b8a88ca42eaf1f0a406cdac8d4b94bc5287bbcbc7292d79258c085a8f81f50d4a076b72c917e98dbc903593718c2f7f2e78446d820e4468981319d1f97fc7caa4fc91ca851bfb96e67febf36d7ae5177bc8cb719cbc88ce1c920c38178426236efecddcd6451c22bf5937979f3400404c4d849b98687fa946a83c2d248adc2adc1bc15d5127b75f5ee3089a091f225fbb3622a8815ff68cdcd8228b0a8401ac8dbe37a047177d8c5d753a6dcf59e827cc452dc1856cc8b1596375b6ce174bc1c8ff710bf718de5ee2cfa29bf646d9d4f88ed8b0429e5d08cf91b8dbe5122467aaa0f84f9b4761c3baf81ff5053570e5e7691dc81448a0f271816b275593045b6e60750ffc829b5ec5e60c244e1a54</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Amazon</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>湖南剁椒鱼头做法</title>
     <link href="/2024/02/14/hunan-style-fish-head-with-pickled-chili/"/>
     <url>/2024/02/14/hunan-style-fish-head-with-pickled-chili/</url>
@@ -58,9 +77,9 @@
       
       <tag>How to</tag>
       
-      <tag>Openwrt</tag>
-      
       <tag>Clash</tag>
+      
+      <tag>Openwrt</tag>
       
       <tag>Adblock</tag>
       
@@ -211,9 +230,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>How to</tag>
       
       <tag>Oracle</tag>
       
@@ -282,9 +301,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>How to</tag>
       
       <tag>Amazon</tag>
       
@@ -334,9 +353,9 @@
       
       <tag>How to</tag>
       
-      <tag>Clash</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Clash</tag>
       
       <tag>Cloudflare</tag>
       
@@ -479,9 +498,9 @@
       
       <tag>How to</tag>
       
-      <tag>Clash</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Clash</tag>
       
     </tags>
     
@@ -494,7 +513,7 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -523,9 +542,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>How to</tag>
       
       <tag>Cloudflare</tag>
       
@@ -651,9 +670,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>How to</tag>
       
       <tag>Linux</tag>
       
@@ -676,9 +695,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>How to</tag>
       
     </tags>
     
@@ -760,11 +779,11 @@
     
     <tags>
       
-      <tag>VPS</tag>
-      
       <tag>ChatGpt</tag>
       
       <tag>AI</tag>
+      
+      <tag>VPS</tag>
       
       <tag>Docker</tag>
       
