@@ -861,7 +861,7 @@ i.iconfont {
     --color-mode: "dark";
   }
   :root:not([data-user-color-scheme]) {
-    --body-bg-color: #292929;
+    --body-bg-color: #3C3C3C;
     --board-bg-color: #292929;
     --text-color: #c4c6c9;
     --sec-text-color: #a7a9ad;
@@ -899,7 +899,7 @@ i.iconfont {
 }
 @media not print {
   [data-user-color-scheme="dark"] {
-    --body-bg-color: #292929;
+    --body-bg-color: #3C3C3C;
     --board-bg-color: #292929;
     --text-color: #c4c6c9;
     --sec-text-color: #a7a9ad;
