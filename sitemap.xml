@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2024/02/21/hexo-deploy%EF%BC%9Aunable-to-auto-detect-email-address/</loc>
+    
+    <lastmod>2024-02-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2024/02/03/How-to-Download-Seller-List-on-Amazon-Using-Keywords/</loc>
     
     <lastmod>2024-02-21</lastmod>
@@ -414,13 +423,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/App/</loc>
-    <lastmod>2024-02-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/How-to/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -435,7 +437,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Openwrt/</loc>
+    <loc>http://example.com/tags/Github/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -443,6 +445,13 @@
   
   <url>
     <loc>http://example.com/tags/Clash/</loc>
+    <lastmod>2024-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Openwrt/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -457,13 +466,6 @@
   
   <url>
     <loc>http://example.com/tags/AI/</loc>
-    <lastmod>2024-02-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Github/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -498,14 +500,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Docker/</loc>
-    <lastmod>2024-02-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Android/</loc>
+    <loc>http://example.com/tags/App/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -519,14 +514,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Oracle/</loc>
-    <lastmod>2024-02-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Tips/</loc>
+    <loc>http://example.com/tags/Android/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -534,6 +522,13 @@
   
   <url>
     <loc>http://example.com/tags/Amazon/</loc>
+    <lastmod>2024-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Docker/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -554,7 +549,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Linux/</loc>
+    <loc>http://example.com/tags/Oracle/</loc>
+    <lastmod>2024-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Tips/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -562,6 +564,13 @@
   
   <url>
     <loc>http://example.com/tags/Ubuntu/</loc>
+    <lastmod>2024-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Linux/</loc>
     <lastmod>2024-02-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
