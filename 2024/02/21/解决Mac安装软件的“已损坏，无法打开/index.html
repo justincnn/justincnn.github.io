@@ -18,29 +18,27 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="问题在git bush中使用hexo clean &amp;&amp; hexo g &amp;&amp; hexo d后未能成功部署到github上。  回到 git bush 中发现给出如下提示：  提示分析提示中出现了“unable to auto-detect email address”，也就是说他“无法自动检测电子邮件地址”。,并给出了解决方案：  解决问题 12git config">
+    <meta name="description" content="苹果的安全政策，导致很多开源的app无法运行，那么如何解决呢： 允许“任何来源”开启打开【系统偏好设置】，选择【安全性与隐私】，选择【通用】，可以看到【任何来源】已经选定。  处理“已损坏，无法打开。 您应该将它移到废纸篓” 在终端粘贴复制输入命令（注意最后有一个空格）：  1sudo xattr -r -d com.apple.quarantine   先不要按回车！先不要按回车！先不要按回车！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo deploy：unable to auto-detect email address">
-<meta property="og:url" content="http://example.com/2024/02/21/hexo-deploy%EF%BC%9Aunable-to-auto-detect-email-address/index.html">
+<meta property="og:title" content="解决Mac安装软件的“已损坏，无法打开">
+<meta property="og:url" content="http://example.com/2024/02/21/%E8%A7%A3%E5%86%B3Mac%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E2%80%9C%E5%B7%B2%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80/index.html">
 <meta property="og:site_name" content="文科生的IT笔记">
-<meta property="og:description" content="问题在git bush中使用hexo clean &amp;&amp; hexo g &amp;&amp; hexo d后未能成功部署到github上。  回到 git bush 中发现给出如下提示：  提示分析提示中出现了“unable to auto-detect email address”，也就是说他“无法自动检测电子邮件地址”。,并给出了解决方案：  解决问题 12git config">
+<meta property="og:description" content="苹果的安全政策，导致很多开源的app无法运行，那么如何解决呢： 允许“任何来源”开启打开【系统偏好设置】，选择【安全性与隐私】，选择【通用】，可以看到【任何来源】已经选定。  处理“已损坏，无法打开。 您应该将它移到废纸篓” 在终端粘贴复制输入命令（注意最后有一个空格）：  1sudo xattr -r -d com.apple.quarantine   先不要按回车！先不要按回车！先不要按回车！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402210952936.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402210953670.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402210954329.png">
-<meta property="article:published_time" content="2024-02-21T01:50:00.000Z">
-<meta property="article:modified_time" content="2024-02-21T01:55:28.493Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402212046761.png">
+<meta property="article:published_time" content="2024-02-21T12:43:22.000Z">
+<meta property="article:modified_time" content="2024-02-21T12:57:01.394Z">
 <meta property="article:author" content="Justin">
+<meta property="article:tag" content="Mac">
 <meta property="article:tag" content="How to">
-<meta property="article:tag" content="Blog">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402210952936.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402212046761.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>hexo deploy：unable to auto-detect email address - 文科生的IT笔记</title>
+  <title>解决Mac安装软件的“已损坏，无法打开 - 文科生的IT笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -221,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hexo deploy：unable to auto-detect email address"></span>
+            <span id="subtitle" data-typed-text="解决Mac安装软件的“已损坏，无法打开"></span>
           
         </div>
 
@@ -232,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-21 09:50" pubdate>
-          2024年2月21日 上午
+        <time datetime="2024-02-21 20:43" pubdate>
+          2024年2月21日 晚上
         </time>
       </span>
     
@@ -244,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          86 字
+          200 字
         
       </span>
     
@@ -255,7 +253,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -300,19 +298,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">hexo deploy：unable to auto-detect email address</h1>
+            <h1 id="seo-header">解决Mac安装软件的“已损坏，无法打开</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在git bush中使用<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>后未能成功部署到github上。 </p>
-<p>回到 git bush 中发现给出如下提示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402210952936.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-21 09.50.32"></p>
-<h1 id="提示分析"><a href="#提示分析" class="headerlink" title="提示分析"></a>提示分析</h1><p>提示中出现了“unable to auto-detect email address”，也就是说他“无法自动检测电子邮件地址”。,并给出了解决方案：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402210953670.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-21 09.53.31"></p>
-<h1 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h1><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402210954329.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-21 09.54.05"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.email <span class="hljs-string">&quot;***@***.com&quot;</span><br>git config --global user.name <span class="hljs-string">&quot;***&quot;</span><br></code></pre></td></tr></table></figure>
+                <p>苹果的安全政策，导致很多开源的app无法运行，那么如何解决呢：</p>
+<h1 id="允许“任何来源”开启"><a href="#允许“任何来源”开启" class="headerlink" title="允许“任何来源”开启"></a>允许“任何来源”开启</h1><p>打开【系统偏好设置】，选择【安全性与隐私】，选择【通用】，可以看到【任何来源】已经选定。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402212046761.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-21 20.44.45"></p>
+<h1 id="处理“已损坏，无法打开。-您应该将它移到废纸篓”"><a href="#处理“已损坏，无法打开。-您应该将它移到废纸篓”" class="headerlink" title="处理“已损坏，无法打开。 您应该将它移到废纸篓”"></a>处理“已损坏，无法打开。 您应该将它移到废纸篓”</h1><ul>
+<li>在终端粘贴复制输入命令（注意最后有一个空格）：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo xattr -r -d com.apple.quarantine <br></code></pre></td></tr></table></figure>
 
+<p><code>先不要按回车！先不要按回车！先不要按回车！先不要按回车！</code></p>
+<ul>
+<li><p>打开 <strong>“访达”（Finder）</strong>进入 <strong>“应用程序”</strong> 目录，找到该软件图标，将图标拖到刚才的终端窗口里面，会得到如下组合(如图所示)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo xattr -r -d com.apple.quarantine /Applications/WebStrom.app<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>接着重新打开安装软件，</p>
+<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/135948430">huazai</a></p>
 
                 
               </div>
@@ -325,9 +330,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/How-to/" class="print-no-link">#How to</a>
+        <a href="/tags/Mac/" class="print-no-link">#Mac</a>
       
-        <a href="/tags/Blog/" class="print-no-link">#Blog</a>
+        <a href="/tags/How-to/" class="print-no-link">#How to</a>
       
     </div>
   
@@ -339,8 +344,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hexo deploy：unable to auto-detect email address</div>
-      <div>http://example.com/2024/02/21/hexo-deploy：unable-to-auto-detect-email-address/</div>
+      <div>解决Mac安装软件的“已损坏，无法打开</div>
+      <div>http://example.com/2024/02/21/解决Mac安装软件的“已损坏，无法打开/</div>
     </div>
     <div class="license-meta">
       
@@ -384,18 +389,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/21/%E8%A7%A3%E5%86%B3Mac%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E2%80%9C%E5%B7%B2%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80/" title="解决Mac安装软件的“已损坏，无法打开">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">解决Mac安装软件的“已损坏，无法打开</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/17/Explore-the-online-stores-of-your-competition/" title="Explore the online stores of your competition">
-                        <span class="hidden-mobile">Explore the online stores of your competition</span>
+                      <a href="/2024/02/21/hexo-deploy%EF%BC%9Aunable-to-auto-detect-email-address/" title="hexo deploy：unable to auto-detect email address">
+                        <span class="hidden-mobile">hexo deploy：unable to auto-detect email address</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
