@@ -18,28 +18,25 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言 Docker是一种容器化技术，它能够让开发者打包应用程序和其依赖项成为一个独立的容器，并可以在任何地方运行这个容器，不受运行环境的限制。简单来说，Docker就像是一个小型的虚拟机，可以在其中运行应用程序。  Docker Compose是一个用于管理Docker容器的工具，它能够让开发者通过编写简单的YAML文件来定义并运行多个容器，协同工作。与Docker不同的是，Docker Comp">
+    <meta name="description" content="前言收集目前可用的反代搭建工具 2024-02-24maxduke&#x2F;go-chatgpt-ap 123456789101112services:  go-chatgpt-api:    image: maxduke&#x2F;go-chatgpt-api:latest    container_name: go-chatgpt-api    network_mode: host		### 用于vp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu:如何安装 Docker and Docker Compose">
-<meta property="og:url" content="http://example.com/2023/07/23/Ubuntu-How-to-install-Docker-and-Docker-Compose/index.html">
+<meta property="og:title" content="Irregular updates:Reverse engineered ChatGPT proxy">
+<meta property="og:url" content="http://example.com/2024/02/24/Irregular-updates-Reverse-engineered-ChatGPT-proxy/index.html">
 <meta property="og:site_name" content="文科生的IT笔记">
-<meta property="og:description" content="前言 Docker是一种容器化技术，它能够让开发者打包应用程序和其依赖项成为一个独立的容器，并可以在任何地方运行这个容器，不受运行环境的限制。简单来说，Docker就像是一个小型的虚拟机，可以在其中运行应用程序。  Docker Compose是一个用于管理Docker容器的工具，它能够让开发者通过编写简单的YAML文件来定义并运行多个容器，协同工作。与Docker不同的是，Docker Comp">
+<meta property="og:description" content="前言收集目前可用的反代搭建工具 2024-02-24maxduke&#x2F;go-chatgpt-ap 123456789101112services:  go-chatgpt-api:    image: maxduke&#x2F;go-chatgpt-api:latest    container_name: go-chatgpt-api    network_mode: host		### 用于vp">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231517150.png">
-<meta property="article:published_time" content="2023-07-23T07:14:39.000Z">
-<meta property="article:modified_time" content="2023-07-23T12:47:58.676Z">
+<meta property="article:published_time" content="2024-02-24T04:03:16.000Z">
+<meta property="article:modified_time" content="2024-02-24T05:12:49.038Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="How to">
-<meta property="article:tag" content="Ubuntu">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ai">
+<meta property="article:tag" content="Script">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231517150.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Ubuntu:如何安装 Docker and Docker Compose - 文科生的IT笔记</title>
+  <title>Irregular updates:Reverse engineered ChatGPT proxy - 文科生的IT笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -220,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Ubuntu:如何安装 Docker and Docker Compose"></span>
+            <span id="subtitle" data-typed-text="Irregular updates:Reverse engineered ChatGPT proxy"></span>
           
         </div>
 
@@ -231,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-23 15:14" pubdate>
-          2023年7月23日 下午
+        <time datetime="2024-02-24 12:03" pubdate>
+          2024年2月24日 中午
         </time>
       </span>
     
@@ -243,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          555 字
+          74 字
         
       </span>
     
@@ -254,7 +251,7 @@
         
         
         
-          5 分钟
+          1 分钟
         
       </span>
     
@@ -299,47 +296,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Ubuntu:如何安装 Docker and Docker Compose</h1>
+            <h1 id="seo-header">Irregular updates:Reverse engineered ChatGPT proxy</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
-<li><p>Docker是一种容器化技术，它能够让开发者打包应用程序和其依赖项成为一个独立的容器，并可以在任何地方运行这个容器，不受运行环境的限制。简单来说，Docker就像是一个小型的虚拟机，可以在其中运行应用程序。</p>
-</li>
-<li><p>Docker Compose是一个用于管理Docker容器的工具，它能够让开发者通过编写简单的YAML文件来定义并运行多个容器，协同工作。与Docker不同的是，Docker Compose更注重于在多个容器之间建立联系和协调，以实现更复杂的应用程序部署。它可以让开发者更方便地管理多个容器，减少容器之间的配置和交互的复杂度，从而更容易地构建和维护应用程序。</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231517150.png" srcset="/img/loading.gif" lazyload></p>
-<p>本文介绍下如何在Ubuntu下安装这两者，其他Linux也可参照</p>
-<h3 id="安装Docker："><a href="#安装Docker：" class="headerlink" title="安装Docker："></a>安装Docker：</h3><p>1.1 更新包列表并安装必要的软件包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common<br></code></pre></td></tr></table></figure>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>收集目前可用的反代搭建工具</p>
+<h1 id="2024-02-24"><a href="#2024-02-24" class="headerlink" title="2024-02-24"></a>2024-02-24</h1><p><a target="_blank" rel="noopener" href="https://github.com/maxduke/go-chatgpt-api">maxduke&#x2F;go-chatgpt-ap</a></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">go-chatgpt-api:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">maxduke/go-chatgpt-api:latest</span><br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">go-chatgpt-api</span><br>    <span class="hljs-attr">network_mode:</span> <span class="hljs-string">host</span>		<span class="hljs-comment">### 用于vps已经搭建warp通道</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;8080:8080&quot;</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">/var/run/docker.sock:/var/run/docker.sock:ro</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">TZ=Asia/Shanghai</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">unless-stopped</span><br></code></pre></td></tr></table></figure>
 
-<p>1.2. 添加Docker的GPG密钥：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -<br></code></pre></td></tr></table></figure>
+<p>easydict的接口地址：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">http://*.*.*.*:8080/imitate/v1/chat/completions</span><br></code></pre></td></tr></table></figure>
 
-<p>1.3. 添加Docker的APT仓库：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo add-apt-repository <span class="hljs-string">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>1.4. 安装Docker CE：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install docker-ce docker-ce-cli containerd.io<br></code></pre></td></tr></table></figure>
-
-<h3 id="安装Docker-Compose"><a href="#安装Docker-Compose" class="headerlink" title="安装Docker Compose"></a>安装Docker Compose</h3><p>2.1. 下载Docker Compose的二进制文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo curl -L <span class="hljs-string">&quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-<span class="hljs-subst">$(uname -s)</span>-<span class="hljs-subst">$(uname -m)</span>&quot;</span> -o /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
-
-<p>2.2. 赋予docker-compose可执行权限：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">chmod</span> +x /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
-
-<p>2.3. 添加docker-compose到系统PATH中：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">ln</span> -s /usr/local/bin/docker-compose /usr/bin/docker-compose<br></code></pre></td></tr></table></figure>
-
-<p>2.4. 验证Docker Compose是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose --version<br></code></pre></td></tr></table></figure>
-
-<p>如果Docker Compose版本号被正确显示，则说明安装成功。</p>
-<h3 id="DockerGPG密钥的作用"><a href="#DockerGPG密钥的作用" class="headerlink" title="DockerGPG密钥的作用"></a>DockerGPG密钥的作用</h3><p>Docker的GPG密钥用于验证Docker软件包的真实性和完整性，以确保其未被篡改或恶意修改。当您从Docker官方仓库中下载Docker软件包时，您可以使用这个GPG密钥进行验证。如果您下载的软件包与Docker官方发布的软件包不匹配，GPG密钥验证将失败并给出警告。这有助于确保您下载的软件包是来自可信来源的，并且没有被篡改。</p>
 
                 
               </div>
@@ -352,11 +320,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/How-to/" class="print-no-link">#How to</a>
+        <a href="/tags/Ai/" class="print-no-link">#Ai</a>
       
-        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
-      
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/tags/Script/" class="print-no-link">#Script</a>
       
     </div>
   
@@ -368,8 +334,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Ubuntu:如何安装 Docker and Docker Compose</div>
-      <div>http://example.com/2023/07/23/Ubuntu-How-to-install-Docker-and-Docker-Compose/</div>
+      <div>Irregular updates:Reverse engineered ChatGPT proxy</div>
+      <div>http://example.com/2024/02/24/Irregular-updates-Reverse-engineered-ChatGPT-proxy/</div>
     </div>
     <div class="license-meta">
       
@@ -381,7 +347,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年7月23日</div>
+          <div>2024年2月24日</div>
         </div>
       
       
@@ -413,18 +379,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/23/OPENAI-How-to-Make-ChatGPT-Accessible-to-Domestic-Users/" title="OPENAI:国内用户如何无墙访问">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">OPENAI:国内用户如何无墙访问</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/10/MiTV-How-to-remove-ADs-by-host/" title="MiTV:Hosts去广告大法">
-                        <span class="hidden-mobile">MiTV:Hosts去广告大法</span>
+                      <a href="/2024/02/21/%E8%A7%A3%E5%86%B3Mac%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E7%9A%84%E2%80%9C%E5%B7%B2%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80/" title="解决Mac安装软件的“已损坏，无法打开">
+                        <span class="hidden-mobile">解决Mac安装软件的“已损坏，无法打开</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
