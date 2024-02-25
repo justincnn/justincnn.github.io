@@ -8,7 +8,7 @@
     <link href="/2024/02/25/Snatch-Moutai-at-N1/"/>
     <url>/2024/02/25/Snatch-Moutai-at-N1/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>发现N1有很多好玩的地方，今天发现一个可以用来抢茅台的脚本。需确保N1已经安装Openwrt或者Linux系统，且已经配置docker和docker compse。</p><h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p><a href="https://github.com/oddfar/campus-imaotai/blob/master/doc/docker-compose.zip">下载地址</a></p><p>将文件下载，解压放入N1目录</p><h1 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h1><p>利用 <code>GitHub</code> 的 <code>Actions</code> 自动构建文件，步骤如下：</p><ul><li><p><code>Fork</code> <a href="https://github.com/oddfar/campus">项目</a></p></li><li><p>打开自己项目的写入权限</p><p>在 settings -&gt; actions -&gt; General</p><p>Workflow permissions 中选择 <code>Read and write permissions</code></p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251829328.png" alt="截屏2024-02-25 18.29.42"></p></li><li><p>运行任务</p></li></ul><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251846362.png" alt="截屏2024-02-25 18.46.23"></p><p>运行完之后在本项目的 <code>releases</code> 下，有打包好的文件</p><p><code>dist_xxx.tar.gz</code> ：前端</p><p><code>campus-modular_xxx.jar</code> ：后端</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251831764.png" alt="截屏2024-02-25 18.31.45"></p><h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>可参考 <a href="https://github.com/oddfar/campus-imaotai/releases/download/V1.0.11/campus-imt-V1.0.11.zip">campus-imt-V1.0.11.zip (opens new window)</a>文件</p><ul><li><p>解压 <a href="https://github.com/oddfar/campus-imaotai/blob/master/doc/docker-compose.zip">docker-compose.zip(opens new window)</a></p></li><li><p>放置需要的的文件</p><p><code>/db</code> 目录下放置 <code>sql</code> 文件（在本项目 <code>/doc/sql</code> 目录下 ）</p><p><code>/jar</code> 目录下换成最新的 <code>jar</code> 包</p><p><code>/html</code> 目录下换成最新的 <code>dist</code> 文件夹（不是压缩包）</p></li></ul><h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><p><code>N1是arm64的cpu，配置文件默认是x86，需要把sql的镜像改为arm，mysql-dockerfile、docker-compose.yml里面的镜像名称更改为biarms/mysql</code></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">campus-mysql:</span><br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">campus-mysql</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">biarms/mysql</span><br></code></pre></td></tr></table></figure><h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><ul><li><p>进入目录：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> 压缩文件名<br></code></pre></td></tr></table></figure></li><li><p>构建docker服务：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose build<br></code></pre></td></tr></table></figure></li><li><p>启动docker容器：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up -d<br></code></pre></td></tr></table></figure></li></ul><p>打开浏览器，输入：<a href="http://localhost/">http://localhost:80 (opens new window)</a>，若能正确展示页面，则表明环境搭建成功。一共4个服务</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果80端口已经被占用，将下面的docker compose前面的<code>80</code>端口修改为其他空闲端口</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">campus-nginx:</span><br>  <span class="hljs-attr">container_name:</span> <span class="hljs-string">campus-nginx</span><br>  <span class="hljs-attr">image:</span> <span class="hljs-string">nginx</span><br>  <span class="hljs-attr">build:</span><br>    <span class="hljs-attr">context:</span> <span class="hljs-string">.</span><br>    <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">nginx-dockerfile</span><br>  <span class="hljs-attr">ports:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;80:80&quot;</span><br></code></pre></td></tr></table></figure><h1 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h1><p>把 <code>/jar</code> 目录下换成最新的 <code>jar</code> 包，<code>/html</code> 目录下换成最新的 <code>dist</code> 文件夹</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">#1、删除容器：</span><br>docker <span class="hljs-built_in">rm</span> -f campus-server campus-nginx<br><span class="hljs-comment">#2、删除旧镜像</span><br>docker rmi campus-imt-vxxx_campus-server<br><span class="hljs-comment">#3、启动项目，项目根目录下执行</span><br>docker-compose up -d<br></code></pre></td></tr></table></figure><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://oddfar.github.io/campus-doc/">Campus</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>发现N1有很多好玩的地方，今天发现一个可以用来抢茅台的脚本。需确保N1已经安装Openwrt或者Linux系统，且已经配置docker和docker compse。</p><h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p><a href="https://github.com/oddfar/campus-imaotai/blob/master/doc/docker-compose.zip">下载地址</a></p><p>将文件下载，解压放入N1目录</p><h1 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h1><p>利用 <code>GitHub</code> 的 <code>Actions</code> 自动构建文件，步骤如下：</p><ul><li><p><code>Fork</code> <a href="https://github.com/oddfar/campus">项目</a></p></li><li><p>打开自己项目的写入权限</p><p>在 settings -&gt; actions -&gt; General</p><p>Workflow permissions 中选择 <code>Read and write permissions</code></p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251829328.png" alt="截屏2024-02-25 18.29.42"></p></li><li><p>运行任务</p></li></ul><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251846362.png" alt="截屏2024-02-25 18.46.23"></p><p>运行完之后在本项目的 <code>releases</code> 下，有打包好的文件</p><p><code>dist_xxx.tar.gz</code> ：前端</p><p><code>campus-modular_xxx.jar</code> ：后端</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251831764.png" alt="截屏2024-02-25 18.31.45"></p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251850521.png" alt="截屏2024-02-25 18.49.42"></p><h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>可参考 <a href="https://github.com/oddfar/campus-imaotai/releases/download/V1.0.11/campus-imt-V1.0.11.zip">campus-imt-V1.0.11.zip (opens new window)</a>文件</p><ul><li><p>解压 <a href="https://github.com/oddfar/campus-imaotai/blob/master/doc/docker-compose.zip">docker-compose.zip(opens new window)</a></p></li><li><p>放置需要的的文件</p><p><code>/db</code> 目录下放置 <code>sql</code> 文件（在本项目 <code>/doc/sql</code> 目录下 ）</p><p><code>/jar</code> 目录下换成最新的 <code>jar</code> 包</p><p><code>/html</code> 目录下换成最新的 <code>dist</code> 文件夹（不是压缩包）</p></li></ul><h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><p><code>N1是arm64的cpu，配置文件默认是x86，需要把sql的镜像改为arm，mysql-dockerfile、docker-compose.yml里面的镜像名称更改为biarms/mysql</code></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">campus-mysql:</span><br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">campus-mysql</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">biarms/mysql</span><br></code></pre></td></tr></table></figure><h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><ul><li><p>进入目录：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> 压缩文件名<br></code></pre></td></tr></table></figure></li><li><p>构建docker服务：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose build<br></code></pre></td></tr></table></figure></li><li><p>启动docker容器：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up -d<br></code></pre></td></tr></table></figure></li></ul><p>打开浏览器，输入：<a href="http://localhost/">http://localhost:80 (opens new window)</a>，若能正确展示页面，则表明环境搭建成功。一共4个服务</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果80端口已经被占用，将下面的docker compose前面的<code>80</code>端口修改为其他空闲端口</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">campus-nginx:</span><br>  <span class="hljs-attr">container_name:</span> <span class="hljs-string">campus-nginx</span><br>  <span class="hljs-attr">image:</span> <span class="hljs-string">nginx</span><br>  <span class="hljs-attr">build:</span><br>    <span class="hljs-attr">context:</span> <span class="hljs-string">.</span><br>    <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">nginx-dockerfile</span><br>  <span class="hljs-attr">ports:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;80:80&quot;</span><br></code></pre></td></tr></table></figure><h1 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h1><p>把 <code>/jar</code> 目录下换成最新的 <code>jar</code> 包，<code>/html</code> 目录下换成最新的 <code>dist</code> 文件夹</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">#1、删除容器：</span><br>docker <span class="hljs-built_in">rm</span> -f campus-server campus-nginx<br><span class="hljs-comment">#2、删除旧镜像</span><br>docker rmi campus-imt-vxxx_campus-server<br><span class="hljs-comment">#3、启动项目，项目根目录下执行</span><br>docker-compose up -d<br></code></pre></td></tr></table></figure><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://oddfar.github.io/campus-doc/">Campus</a></p>]]></content>
     
     
     
@@ -247,9 +247,9 @@
       
       <tag>Adblock</tag>
       
-      <tag>Openwrt</tag>
-      
       <tag>Clash</tag>
+      
+      <tag>Openwrt</tag>
       
     </tags>
     
@@ -377,9 +377,9 @@
     
     <tags>
       
-      <tag>Ai</tag>
-      
       <tag>ChatGpt</tag>
+      
+      <tag>Ai</tag>
       
     </tags>
     
@@ -427,9 +427,9 @@
       
       <tag>Tips</tag>
       
-      <tag>Linux</tag>
-      
       <tag>Ubuntu</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
@@ -473,9 +473,9 @@
       
       <tag>VPS</tag>
       
-      <tag>App</tag>
-      
       <tag>Amazon</tag>
+      
+      <tag>App</tag>
       
     </tags>
     
@@ -498,9 +498,9 @@
       
       <tag>How to</tag>
       
-      <tag>Blog</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Blog</tag>
       
     </tags>
     
@@ -521,9 +521,9 @@
       
       <tag>How to</tag>
       
-      <tag>Clash</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Clash</tag>
       
       <tag>Cloudflare</tag>
       
@@ -666,9 +666,9 @@
       
       <tag>How to</tag>
       
-      <tag>Clash</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Clash</tag>
       
     </tags>
     
@@ -681,7 +681,7 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -735,9 +735,9 @@
       
       <tag>How to</tag>
       
-      <tag>Blog</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Blog</tag>
       
     </tags>
     
@@ -842,9 +842,9 @@
       
       <tag>VPS</tag>
       
-      <tag>Linux</tag>
-      
       <tag>Ubuntu</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
@@ -949,13 +949,13 @@
       
       <tag>VPS</tag>
       
-      <tag>Docker</tag>
+      <tag>ChatGpt</tag>
       
       <tag>Ai</tag>
       
-      <tag>Script</tag>
+      <tag>Docker</tag>
       
-      <tag>ChatGpt</tag>
+      <tag>Script</tag>
       
       <tag>Linux</tag>
       
@@ -978,9 +978,9 @@
       
       <tag>How to</tag>
       
-      <tag>Linux</tag>
-      
       <tag>Ubuntu</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
