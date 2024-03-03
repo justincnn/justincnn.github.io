@@ -18,29 +18,28 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前提在甲骨文的后台先开放所有的端口  1.切换到root用户1sudo -i  2.开放所有端口1sudo iptables -P INPUT ACCEPT 1sudo iptables -P FORWARD ACCEPT 1sudo iptables -P OUTPUT ACCEPT 1sudo iptables -F  3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它">
+    <meta name="description" content="前言同行在邮件营销方面的做法令人震惊，我从未想过邮件可以如此丰富多彩。我之前对邮件营销的理解只是冰山一角。自动化邮件只是基本配置，在构建整个生态链时，与国内围绕微信建立的体系不相上下。  海外还是以邮件为主，短信最近这两年也开始兴起，但是和邮件比起来还差很多。 首先自然是成本问题，以 Twillio 的价格来看，1 万封邮件的成本只有 $4 差不多；而 1 万条短信，差不多要 $80。 然后是各种">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle：如何开放Ubuntu VPS全部端口">
-<meta property="og:url" content="http://example.com/2023/07/23/Oracle-open-all-ports-of-Ubuntu/index.html">
+<meta property="og:title" content="邮件营销">
+<meta property="og:url" content="http://example.com/2024/03/03/Email-marketing/index.html">
 <meta property="og:site_name" content="文科生的IT笔记">
-<meta property="og:description" content="前提在甲骨文的后台先开放所有的端口  1.切换到root用户1sudo -i  2.开放所有端口1sudo iptables -P INPUT ACCEPT 1sudo iptables -P FORWARD ACCEPT 1sudo iptables -P OUTPUT ACCEPT 1sudo iptables -F  3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它">
+<meta property="og:description" content="前言同行在邮件营销方面的做法令人震惊，我从未想过邮件可以如此丰富多彩。我之前对邮件营销的理解只是冰山一角。自动化邮件只是基本配置，在构建整个生态链时，与国内围绕微信建立的体系不相上下。  海外还是以邮件为主，短信最近这两年也开始兴起，但是和邮件比起来还差很多。 首先自然是成本问题，以 Twillio 的价格来看，1 万封邮件的成本只有 $4 差不多；而 1 万条短信，差不多要 $80。 然后是各种">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png">
-<meta property="article:published_time" content="2023-07-23T08:14:40.000Z">
-<meta property="article:modified_time" content="2024-02-22T03:34:02.280Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202403031032144.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202403031034738.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202403031038916.png">
+<meta property="article:published_time" content="2024-03-03T02:21:18.000Z">
+<meta property="article:modified_time" content="2024-03-03T02:45:46.200Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="How to">
-<meta property="article:tag" content="VPS">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Ecommerce">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202403031032144.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Oracle：如何开放Ubuntu VPS全部端口 - 文科生的IT笔记</title>
+  <title>邮件营销 - 文科生的IT笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -221,7 +220,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Oracle：如何开放Ubuntu VPS全部端口"></span>
+            <span id="subtitle" data-typed-text="邮件营销"></span>
           
         </div>
 
@@ -232,8 +231,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-23 16:14" pubdate>
-          2023年7月23日 下午
+        <time datetime="2024-03-03 10:21" pubdate>
+          2024年3月3日 上午
         </time>
       </span>
     
@@ -244,7 +243,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          83 字
+          1.4k 字
         
       </span>
     
@@ -255,7 +254,7 @@
         
         
         
-          1 分钟
+          12 分钟
         
       </span>
     
@@ -300,26 +299,32 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Oracle：如何开放Ubuntu VPS全部端口</h1>
+            <h1 id="seo-header">邮件营销</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>在甲骨文的后台先开放所有的端口</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="1-切换到root用户"><a href="#1-切换到root用户" class="headerlink" title="1.切换到root用户"></a>1.切换到root用户</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo -<span class="hljs-selector-tag">i</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="2-开放所有端口"><a href="#2-开放所有端口" class="headerlink" title="2.开放所有端口"></a>2.开放所有端口</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo iptables -<span class="hljs-selector-tag">P</span> <span class="hljs-selector-tag">INPUT</span> ACCEPT<br></code></pre></td></tr></table></figure>
-<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tp">sudo iptables -<span class="hljs-keyword">P</span> FORWARD <span class="hljs-keyword">ACC</span>EPT<br></code></pre></td></tr></table></figure>
-<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tp">sudo iptables -<span class="hljs-keyword">P</span> OUTPUT <span class="hljs-keyword">ACC</span>EPT<br></code></pre></td></tr></table></figure>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo iptables -F</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"><a href="#3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它" class="headerlink" title="3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"></a>3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> purge netfilter-persistent<br></code></pre></td></tr></table></figure>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">reboot</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="4-强制删除规则"><a href="#4-强制删除规则" class="headerlink" title="4.强制删除规则"></a>4.强制删除规则</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">rm -rf <span class="hljs-regexp">/etc/i</span>ptables &amp;&amp; reboot<br></code></pre></td></tr></table></figure>
-
-<h3 id="5-删除oracle-cloud-agent，防止甲骨文监控"><a href="#5-删除oracle-cloud-agent，防止甲骨文监控" class="headerlink" title="5.删除oracle-cloud-agent，防止甲骨文监控"></a>5.删除oracle-cloud-agent，防止甲骨文监控</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">snap <span class="hljs-built_in">remove</span> oracle-cloud-agent<br></code></pre></td></tr></table></figure>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>同行在邮件营销方面的做法令人震惊，我从未想过邮件可以如此丰富多彩。我之前对邮件营销的理解只是冰山一角。自动化邮件只是基本配置，在构建整个生态链时，与国内围绕微信建立的体系不相上下。</p>
+<ul>
+<li><p>海外还是以邮件为主，短信最近这两年也开始兴起，但是和邮件比起来还差很多。 首先自然是成本问题，以 Twillio 的价格来看，1 万封邮件的成本只有 $4 差不多；而 1 万条短信，差不多要 $80。 然后是各种法律法规，美国运营商对于短信营销这两年也开始严格审查，预注册就要交一定的手续费。</p>
+</li>
+<li><p>短信的模板也需要先提交审核，意味着你不能随便改内容，营销最关键的个性化在短信模板这里就被卡死，所以转化非常有限。 个性化上，邮件内容的丰富程度短信更是没法比，所以 toB 和 toC 都还是以邮件为主。</p>
+</li>
+</ul>
+<h1 id="邮箱来源"><a href="#邮箱来源" class="headerlink" title="邮箱来源"></a>邮箱来源</h1><h2 id="In-bound"><a href="#In-bound" class="headerlink" title="In-bound"></a>In-bound</h2><p>就是客户来到你的网站，然后留下了邮箱，或者之前买过你的产品，也会留下邮箱。 to B 的玩法基本上就是下载白皮书，参加 Webinar 之类的，收集大把邮箱。 to C 就是留个邮箱，我发几个优惠券给你之类。</p>
+<h2 id="Out-bound"><a href="#Out-bound" class="headerlink" title="Out-bound"></a>Out-bound</h2><p>与 In bound 相反，客户不是主动来的，而是销售主动找过去的。听起来就像是上门销售那种，或者国内的地推。但这里说的还是邮件营销。 那第一个问题还是，邮箱从哪儿来？这里的门路就很多了，但简单来说，就是买。海外有大把这种「出售」邮箱的服务。</p>
+<p>做的最大的自然就是 <a target="_blank" rel="noopener" href="https://www.zoominfo.com/">ZoomInfo</a>，已经上市了。这里主要说的是 to B 的方向，to C 直接卖邮箱应该是违法的。ZoomInfo 对销售来说最关键的就是你输入一个公司的网站，它就可以提供这个公司的人员架构以及邮箱。当然价格不菲。 但是对比如果能成一单的 ROI 来看，很多公司还是愿意投入的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202403031032144.png" srcset="/img/loading.gif" lazyload alt="截屏2024-03-03 10.32.04"></p>
+<p>基本上 to B 来说，你很清楚自己的目标客户，也知道哪些公司是你的目标客户，直接把这些公司的域名导出来通过 ZoomInfo 就可以拿到大把邮箱。 获取目标客户的方式也可以再上一层，毕竟你已知的客群总是有限的，总是会存在一些我们上不知道，但对也是目标客户的人。这个就是从网站流量去分析。</p>
+<p>，海外也有一大批倒卖 IP 的服务，比较成熟的应该算是 <a target="_blank" rel="noopener" href="https://6sense.com/">6Sense</a>，据说也在准备 IPO，22 年的时候估值已经超过 $50 亿了，和 KVYO差不多了。 6Sense 能根据访问网站的 IP 推断出这个 IP 属于哪个公司，这些数据同样可以扩充目标客户的清单。<img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202403031034738.png" srcset="/img/loading.gif" lazyload alt="截屏2024-03-03 10.34.37"></p>
+<p>补充说一下 ZoomInfo 的数据（我猜测）大部分是 LinkedIn 来的，LinkedIn 没有直接提供这些数据，我还没有看到相应的接口，但其实围绕 LinkedIn 也有一批服务来做相应的事情。</p>
+<h1 id="邮件发送"><a href="#邮件发送" class="headerlink" title="邮件发送"></a>邮件发送</h1><h2 id="发送邮件的邮箱选择"><a href="#发送邮件的邮箱选择" class="headerlink" title="发送邮件的邮箱选择"></a>发送邮件的邮箱选择</h2><p>如果用个人邮箱，群发邮件给几百号人，大概率会被封号，Gmail Outlook 都有对应的机制，如果你的邮箱是 Gmail，发送大量垃圾邮件会被直接封号。 用企业邮箱发？如果是 Google Workspace 的话，照样封号。</p>
+<p>另外企业邮箱同样会损害企业声誉，这点更是得不尝试，而且海外企业通常很在意品牌形象，所以也不可选。 最佳的方式就是新注册一个域名，和品牌看不出半毛钱关系，就是单纯用来发垃圾邮件的，有动手能力的直接调用 SendGrid 接口发送邮件，便宜。或者使用第三方提供的解决方案。</p>
+<p>但新注册邮箱同样存在问题，虽然 Google 不能封你号，但是可以把你邮件直接都进来垃圾邮件里面，或者某些企业邮箱会直接拒收来路不明的邮件，垃圾邮件以及安全机制。所以即使是新注册的域名，也需要有得先有声誉。 这就是一个商机，海外同样有大把公司干这个事情，给邮箱提升声誉。</p>
+<h2 id="Email-warm-up"><a href="#Email-warm-up" class="headerlink" title="Email warm-up"></a>Email warm-up</h2><p>Hubspot 的竞争对手 <a target="_blank" rel="noopener" href="http://snov.io/">Snov</a> 就有类似的服务。这个 email warm-up 就俩是一个「僵尸网络」，这些服务商几百万或者上千万的活跃邮箱，这些邮箱每天相互直接总是在发送大量的邮件，还会有回复、互动这些。<img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202403031038916.png" srcset="/img/loading.gif" lazyload alt="截屏2024-03-03 10.38.12"></p>
+<p>所以对于 Gmail 来说，这个邮箱每天都给这么多人发邮件，而且还有人回复，那这个邮箱的声誉大概率不错，于是你的邮件才不会进入垃圾邮件，而是出现在客户的收件箱里，这样才能提升转化率。 而 email warm-up 基本上要先跑个半年才能有效果，而一个公司也不可能只有一个域名，同时注册好几个都先养着。</p>
+<p>万一一个被封，还有很多备份的可以用。到此为止，你的一封营销邮件（垃圾邮件）才真正的进入了你的目标客户的收件箱里面。 然后怎么吸引客户打开和点击还有很多黑科技，有空再继续。</p>
+<h1 id="TO-do"><a href="#TO-do" class="headerlink" title="TO do"></a>TO do</h1><p>研究instantly，leadfinder </p>
 
                 
               </div>
@@ -332,13 +337,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/How-to/" class="print-no-link">#How to</a>
-      
-        <a href="/tags/VPS/" class="print-no-link">#VPS</a>
-      
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
-      
-        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
+        <a href="/tags/Ecommerce/" class="print-no-link">#Ecommerce</a>
       
     </div>
   
@@ -350,8 +349,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Oracle：如何开放Ubuntu VPS全部端口</div>
-      <div>http://example.com/2023/07/23/Oracle-open-all-ports-of-Ubuntu/</div>
+      <div>邮件营销</div>
+      <div>http://example.com/2024/03/03/Email-marketing/</div>
     </div>
     <div class="license-meta">
       
@@ -363,7 +362,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年7月23日</div>
+          <div>2024年3月3日</div>
         </div>
       
       
@@ -395,18 +394,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/23/Docker-common-command-record/" title="Docker:常用命令（不定期更新）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Docker:常用命令（不定期更新）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/23/Cloudflare-%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8%E4%BB%A3%E7%90%86%E4%BD%A0%E7%9A%84VPS-IP/" title="Cloudflare:如何利用代理你的VPS IP">
-                        <span class="hidden-mobile">Cloudflare:如何利用代理你的VPS IP</span>
+                      <a href="/2024/02/26/Cut-and-Move-Files-in-OS-X/" title="MacOS 剪切+移动文件">
+                        <span class="hidden-mobile">MacOS 剪切+移动文件</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
