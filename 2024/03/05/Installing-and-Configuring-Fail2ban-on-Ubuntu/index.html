@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202403052024077.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202403052039536.png">
 <meta property="article:published_time" content="2024-03-05T10:20:58.000Z">
-<meta property="article:modified_time" content="2024-03-05T13:05:10.864Z">
+<meta property="article:modified_time" content="2024-03-05T13:38:58.869Z">
 <meta property="article:author" content="Justin">
 <meta property="article:tag" content="Oracle">
 <meta property="article:tag" content="Linux">
@@ -257,7 +257,7 @@
         
         
         
-          21 分钟
+          22 分钟
         
       </span>
     
@@ -436,7 +436,7 @@
 <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">sudo fail2ban-<span class="hljs-keyword">client</span> status sshd<br></code></pre></td></tr></table></figure>
 
 <p>如果您手动禁止某个 IP 地址，请确保该 IP 地址在禁止 IP 地址列表中可用。但是，如果您取消禁止某个 IP 地址，请确保该 IP 地址从禁止 IP 地址列表中消失。</p>
-<h1 id="配置Fail2ban-telegram-机器人通知"><a href="#配置Fail2ban-telegram-机器人通知" class="headerlink" title="配置Fail2ban telegram 机器人通知"></a>配置Fail2ban telegram 机器人通知</h1><p><em>创建Telegram 机器人为关注<code>Botfather</code>，按提示操作即可，</em> </p>
+<h1 id="配置Fail2ban-telegram-机器人通知（待验证）"><a href="#配置Fail2ban-telegram-机器人通知（待验证）" class="headerlink" title="配置Fail2ban telegram 机器人通知（待验证）"></a>配置Fail2ban telegram 机器人通知（待验证）</h1><p><em>创建Telegram 机器人为关注<code>Botfather</code>，按提示操作即可，</em> </p>
 <p>可查找机器人Token，添加<code>userinfobot</code>查找自己聊天ID</p>
 <p>在&#x2F;etc&#x2F;fail2ban&#x2F;action.d&#x2F;中新建telegram.conf文件并写入</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml">[<span class="hljs-string">Definition</span>]<br><span class="hljs-string">actionstart</span> <span class="hljs-string">=</span> <span class="hljs-string">/etc/fail2ban/scripts/send_telegram_notif.sh</span> <span class="hljs-string">-a</span> <span class="hljs-string">start</span><br><span class="hljs-string">actionstop</span> <span class="hljs-string">=</span> <span class="hljs-string">/etc/fail2ban/scripts/send_telegram_notif.sh</span> <span class="hljs-string">-a</span> <span class="hljs-string">stop</span><br><span class="hljs-string">actioncheck</span> <span class="hljs-string">=</span><br><span class="hljs-string">actionban</span> <span class="hljs-string">=</span> <span class="hljs-string">/etc/fail2ban/scripts/send_telegram_notif.sh</span> <span class="hljs-string">-n</span> <span class="hljs-string">&lt;name&gt;</span> <span class="hljs-string">-b</span> <span class="hljs-string">&lt;ip&gt;</span><br><span class="hljs-string">actionunban</span> <span class="hljs-string">=</span> <span class="hljs-string">/etc/fail2ban/scripts/send_telegram_notif.sh</span> <span class="hljs-string">-n</span> <span class="hljs-string">&lt;name&gt;</span> <span class="hljs-string">-u</span> <span class="hljs-string">&lt;ip&gt;</span><br>[<span class="hljs-string">Init</span>]<br><span class="hljs-string">init</span> <span class="hljs-string">=</span> <span class="hljs-number">123</span><br></code></pre></td></tr></table></figure>
