@@ -26,7 +26,7 @@
 <meta property="og:description" content="在如今充满信息的数字世界中，我们时常需要跟踪感兴趣的项目、关键词或者领域的最新动态。对于软件开发者、技术爱好者或者项目管理者来说，GitHub无疑是一个不可或缺的平台，拥有众多优秀的开源项目和活跃的技术社区。 但是，随着信息的爆炸式增长，我们可能会错过一些重要的更新或者有关自己关注领域的精彩内容。幸运的是，GitHub上出现了一款强大的工具，它能够帮助我们解决这个问题，实现定时关注我们所关心的关键">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-05T13:45:01.000Z">
-<meta property="article:modified_time" content="2024-03-05T13:46:00.735Z">
+<meta property="article:modified_time" content="2024-03-05T13:54:48.136Z">
 <meta property="article:author" content="Justin">
 <meta property="article:tag" content="Github">
 <meta property="article:tag" content="Script">
@@ -362,24 +362,30 @@
 <p>这将使您的.sh程序在开机时自动启动，并在意外退出时自动重启。</p>
 <ul>
 <li><p>您可以通过以下命令来管理服务：</p>
+<ul>
+<li>停止服务</li>
+</ul>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">sudo systemctl stop yourprogram.service<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">sudo systemctl stop yourprogram.service<br></code></pre></td></tr></table></figure>
+<ul>
+<li>启动服务</li>
+</ul>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">sudo systemctl <span class="hljs-literal">start</span> yourprogram.service<br></code></pre></td></tr></table></figure>
 
+<ul>
+<li>重启服务</li>
+</ul>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">sudo systemctl <span class="hljs-built_in">restart</span> yourprogram.service<br></code></pre></td></tr></table></figure>
 
+<ul>
+<li>禁用服务</li>
+</ul>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo systemctl <span class="hljs-built_in">disable</span> yourprogram.service<br></code></pre></td></tr></table></figure>
 
 <p>请确保将上述命令中的yourprogram.service替换为您实际的服务单元文件名。</p>
-<ul>
-<li>禁用服务</li>
-<li>重启服务</li>
-<li>停止服务:</li>
-<li>启动服务：</li>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1></li>
 </ul>
-</li>
-</ul>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>感谢github-cve-monitor<br>感谢telegram推送问题解决方法<br>感谢Docker start</p>
+<p>感谢<a target="_blank" rel="noopener" href="https://github.com/JMousqueton/github-cve-monitor">github-cve-monitor</a><br>感谢telegram推送问题解决方法<br>感谢Docker start</p>
 
                 
               </div>
