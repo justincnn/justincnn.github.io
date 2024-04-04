@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Configuring vless + reality: Enhancing Proxy Server Performance</title>
+    <link href="/2024/04/04/Configuring-vless-reality-Enhancing-Proxy-Server-Performance/"/>
+    <url>/2024/04/04/Configuring-vless-reality-Enhancing-Proxy-Server-Performance/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>每年总会有那么几天，自己搭建的工具会莫名其妙地受到影响，导致无法正常浏览一些国外网站。在这种情况下，拥有可靠的解决方案变得至关重要。Vless+Reality方案可能是一个较为安全的选择，以下是配置方法：</p><h1 id="X-UI"><a href="#X-UI" class="headerlink" title="X-UI"></a>X-UI</h1><p>图形化的xray工具，推荐用<a href="https://github.com/MHSanaei/3x-ui">3X-UI</a>.</p><h2 id="安装和升级"><a href="#安装和升级" class="headerlink" title="安装和升级"></a>安装和升级</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)<br></code></pre></td></tr></table></figure><h2 id="SSL安装（Optional）"><a href="#SSL安装（Optional）" class="headerlink" title="SSL安装（Optional）"></a>SSL安装（Optional）</h2><p>可以通过VPS面板或者X-UI自带的ssl工具安装，略</p><h1 id="Vless-设置"><a href="#Vless-设置" class="headerlink" title="Vless 设置"></a>Vless 设置</h1><h2 id="X-UI设置"><a href="#X-UI设置" class="headerlink" title="X-UI设置"></a>X-UI设置</h2><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202404040830604.png"></p><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>Vless</p><h3 id="Flow"><a href="#Flow" class="headerlink" title="Flow"></a>Flow</h3><p>xtls-rprx-vision</p><h3 id="传输"><a href="#传输" class="headerlink" title="传输"></a>传输</h3><p>TCP</p><h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>Reality</p><h3 id="uTLS"><a href="#uTLS" class="headerlink" title="uTLS"></a>uTLS</h3><p>chrome</p><h3 id="Dest"><a href="#Dest" class="headerlink" title="Dest"></a>Dest</h3><p>Yahoo.com:443</p><h4 id="可选Dest"><a href="#可选Dest" class="headerlink" title="可选Dest"></a>可选Dest</h4><p>gateway.icloud.com</p><p>itunes.apple.com</p><p>download-installer.cdn.mozilla.net</p><p>addons.mozilla.org</p><p><a href="http://www.microsoft.com/">www.microsoft.com</a></p><p><a href="http://www.lovelive-anime.jp/">www.lovelive-anime.jp</a></p><p><a href="http://www.speedtest.net/">www.speedtest.net</a></p><p><a href="http://www.speedtest.org/">www.speedtest.org</a></p><p>swdist.apple.com</p><p>swcdn.apple.com</p><p>updates.cdn-apple.com</p><p>mensura.cdn-apple.com</p><p>osxapps.itunes.apple.com</p><p>aod.itunes.apple.com</p><p>cdn-dynmedia-1.microsoft.com</p><p>update.microsoft</p><p>software.download.prss.microsoft.com</p><p>s0.awsstatic.com</p><p>d1.awsstatic.com</p><p>images-na.ssl-images-amazon.com</p><p>m.media-amazon.com</p><p>player.live-video.net</p><h3 id="SNI"><a href="#SNI" class="headerlink" title="SNI"></a>SNI</h3><p>yahoo.com,<a href="http://www.yahoo.com/">www.yahoo.com</a></p><h3 id="私钥和公钥"><a href="#私钥和公钥" class="headerlink" title="私钥和公钥"></a>私钥和公钥</h3><p>自动生成</p><h2 id="Clash配置"><a href="#Clash配置" class="headerlink" title="Clash配置"></a>Clash配置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">proxies:</span><br><span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">&quot;&quot;</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">vless</span><br>  <span class="hljs-attr">server:</span> <span class="hljs-string">ip</span> <span class="hljs-string">or</span> <span class="hljs-string">域名</span><br>  <span class="hljs-attr">port:</span> <span class="hljs-string">***</span><br>  <span class="hljs-attr">uuid:</span> <span class="hljs-string">***</span><br>  <span class="hljs-attr">network:</span> <span class="hljs-string">tcp</span><br>  <span class="hljs-attr">tls:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">udp:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">flow:</span> <span class="hljs-string">xtls-rprx-vision</span><br>  <span class="hljs-attr">servername:</span> <span class="hljs-string">yahoo.com</span> <span class="hljs-comment"># REALITY servername</span><br>  <span class="hljs-attr">reality-opts:</span><br>    <span class="hljs-attr">public-key:</span> <span class="hljs-string">*****</span><br>    <span class="hljs-attr">short-id:</span> <span class="hljs-string">***</span> <span class="hljs-comment"># optional</span><br>  <span class="hljs-attr">client-fingerprint:</span> <span class="hljs-string">chrome</span> <span class="hljs-comment"># cannot be empty</span><br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>How to</tag>
+      
+      <tag>Clash</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Github:监控自己关注的项目、关键词和user</title>
     <link href="/2024/03/05/Github-%E7%9B%91%E6%8E%A7%E8%87%AA%E5%B7%B1%E5%85%B3%E6%B3%A8%E7%9A%84%E9%A1%B9%E7%9B%AE%E3%80%81%E5%85%B3%E9%94%AE%E8%AF%8D%E5%92%8Cuser/"/>
     <url>/2024/03/05/Github-%E7%9B%91%E6%8E%A7%E8%87%AA%E5%B7%B1%E5%85%B3%E6%B3%A8%E7%9A%84%E9%A1%B9%E7%9B%AE%E3%80%81%E5%85%B3%E9%94%AE%E8%AF%8D%E5%92%8Cuser/</url>
@@ -35,11 +56,11 @@
     
     <tags>
       
-      <tag>Oracle</tag>
+      <tag>Ubuntu</tag>
       
       <tag>Linux</tag>
       
-      <tag>Ubuntu</tag>
+      <tag>Oracle</tag>
       
     </tags>
     
@@ -140,9 +161,9 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Mac</tag>
       
     </tags>
     
@@ -203,11 +224,11 @@
     
     <tags>
       
+      <tag>How to</tag>
+      
       <tag>Mac</tag>
       
       <tag>App</tag>
-      
-      <tag>How to</tag>
       
     </tags>
     
@@ -329,11 +350,11 @@
       
       <tag>How to</tag>
       
-      <tag>Adblock</tag>
+      <tag>Clash</tag>
       
       <tag>Openwrt</tag>
       
-      <tag>Clash</tag>
+      <tag>Adblock</tag>
       
     </tags>
     
@@ -438,9 +459,9 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Adblock</tag>
       
@@ -509,11 +530,11 @@
       
       <tag>VPS</tag>
       
-      <tag>Tips</tag>
+      <tag>Ubuntu</tag>
       
       <tag>Linux</tag>
       
-      <tag>Ubuntu</tag>
+      <tag>Tips</tag>
       
     </tags>
     
@@ -553,11 +574,11 @@
     
     <tags>
       
-      <tag>App</tag>
-      
       <tag>How to</tag>
       
       <tag>VPS</tag>
+      
+      <tag>App</tag>
       
       <tag>Amazon</tag>
       
@@ -578,11 +599,11 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
       
       <tag>Github</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Blog</tag>
       
@@ -605,9 +626,9 @@
       
       <tag>How to</tag>
       
-      <tag>Clash</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Clash</tag>
       
       <tag>Cloudflare</tag>
       
@@ -750,9 +771,9 @@
       
       <tag>How to</tag>
       
-      <tag>Clash</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Clash</tag>
       
     </tags>
     
@@ -765,17 +786,17 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
       
       <tag>Github</tag>
+      
+      <tag>Mac</tag>
       
     </tags>
     
@@ -840,9 +861,9 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Script</tag>
       
@@ -926,9 +947,9 @@
       
       <tag>VPS</tag>
       
-      <tag>Linux</tag>
-      
       <tag>Ubuntu</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
@@ -968,9 +989,9 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Script</tag>
       
@@ -993,9 +1014,9 @@
       
       <tag>VPS</tag>
       
-      <tag>Oracle</tag>
-      
       <tag>Linux</tag>
+      
+      <tag>Oracle</tag>
       
     </tags>
     
@@ -1033,13 +1054,13 @@
     
     <tags>
       
-      <tag>ChatGpt</tag>
-      
-      <tag>Ai</tag>
-      
       <tag>VPS</tag>
       
       <tag>Docker</tag>
+      
+      <tag>ChatGpt</tag>
+      
+      <tag>Ai</tag>
       
       <tag>Script</tag>
       
@@ -1064,9 +1085,9 @@
       
       <tag>How to</tag>
       
-      <tag>Linux</tag>
-      
       <tag>Ubuntu</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
@@ -1085,9 +1106,9 @@
     
     <tags>
       
-      <tag>Android</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Android</tag>
       
     </tags>
     
