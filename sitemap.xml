@@ -518,7 +518,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Openwrt/</loc>
+    <loc>http://example.com/tags/Github/</loc>
     <lastmod>2024-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -539,7 +539,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Github/</loc>
+    <loc>http://example.com/tags/Openwrt/</loc>
+    <lastmod>2024-04-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/VPS/</loc>
     <lastmod>2024-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -553,28 +560,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Docker/</loc>
-    <lastmod>2024-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Food/</loc>
-    <lastmod>2024-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Life/</loc>
-    <lastmod>2024-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/Blog/</loc>
+    <lastmod>2024-04-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Docker/</loc>
     <lastmod>2024-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -595,14 +588,21 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Cloudflare/</loc>
+    <loc>http://example.com/tags/Life/</loc>
     <lastmod>2024-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/VPS/</loc>
+    <loc>http://example.com/tags/Oracle/</loc>
+    <lastmod>2024-04-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Tips/</loc>
     <lastmod>2024-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -623,14 +623,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Amazon/</loc>
-    <lastmod>2024-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Oracle/</loc>
+    <loc>http://example.com/tags/Cloudflare/</loc>
     <lastmod>2024-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -651,7 +644,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Tips/</loc>
+    <loc>http://example.com/tags/Amazon/</loc>
+    <lastmod>2024-04-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Food/</loc>
     <lastmod>2024-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
