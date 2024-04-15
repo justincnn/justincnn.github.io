@@ -33,6 +33,8 @@
     
     <tags>
       
+      <tag>Wechat</tag>
+      
       <tag>Ai</tag>
       
       <tag>Chrome</tag>
@@ -73,8 +75,6 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>Clash</tag>
       
     </tags>
@@ -94,9 +94,9 @@
     
     <tags>
       
-      <tag>Github</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Github</tag>
       
       <tag>Script</tag>
       
@@ -184,11 +184,11 @@
     
     <tags>
       
-      <tag>Life</tag>
-      
       <tag>Wechat</tag>
       
       <tag>Openwrt</tag>
+      
+      <tag>Life</tag>
       
       <tag>Script</tag>
       
@@ -249,7 +249,7 @@
     
     <tags>
       
-      <tag>How to</tag>
+      <tag>Wechat</tag>
       
       <tag>Blog</tag>
       
@@ -270,7 +270,7 @@
     
     <tags>
       
-      <tag>How to</tag>
+      <tag>Wechat</tag>
       
       <tag>Ecommerce</tag>
       
@@ -314,9 +314,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>Openwrt</tag>
+      
+      <tag>How to</tag>
       
     </tags>
     
@@ -394,9 +394,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>Github</tag>
+      
+      <tag>How to</tag>
       
     </tags>
     
@@ -415,13 +415,11 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>Clash</tag>
       
-      <tag>Adblock</tag>
-      
       <tag>Openwrt</tag>
+      
+      <tag>Adblock</tag>
       
     </tags>
     
@@ -460,8 +458,6 @@
     
     
     <tags>
-      
-      <tag>How to</tag>
       
       <tag>Food</tag>
       
@@ -528,9 +524,9 @@
       
       <tag>Mac</tag>
       
-      <tag>Browser</tag>
-      
       <tag>Adblock</tag>
+      
+      <tag>Browser</tag>
       
     </tags>
     
@@ -570,7 +566,7 @@
     
     <tags>
       
-      <tag>How to</tag>
+      <tag>Wechat</tag>
       
       <tag>VPS</tag>
       
@@ -620,9 +616,9 @@
     
     <tags>
       
-      <tag>Tips</tag>
-      
       <tag>Blog</tag>
+      
+      <tag>Tips</tag>
       
     </tags>
     
@@ -640,8 +636,6 @@
     
     
     <tags>
-      
-      <tag>How to</tag>
       
       <tag>App</tag>
       
@@ -666,11 +660,9 @@
     
     <tags>
       
-      <tag>How to</tag>
+      <tag>Mac</tag>
       
       <tag>Github</tag>
-      
-      <tag>Mac</tag>
       
       <tag>Blog</tag>
       
@@ -691,11 +683,11 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>Github</tag>
       
       <tag>Clash</tag>
+      
+      <tag>How to</tag>
       
       <tag>Cloudflare</tag>
       
@@ -716,7 +708,7 @@
     
     <tags>
       
-      <tag>How to</tag>
+      <tag>Wechat</tag>
       
       <tag>Life</tag>
       
@@ -737,9 +729,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>Clash</tag>
+      
+      <tag>How to</tag>
       
     </tags>
     
@@ -830,13 +822,11 @@
     <link href="/2023/07/29/Build-a-gist-based-clash-subscription/"/>
     <url>/2023/07/29/Build-a-gist-based-clash-subscription/</url>
     
-    <content type="html"><![CDATA[<p>Clash是一个开源的网络代理，具有强大的功能和易于使用。它支持各种协议，包括Socks5、HTTP和HTTPS，可以用于绕过防火墙、隐藏IP地址和保护隐私。Clash还支持各种功能，例如广告过滤、DNS解析和代理切换。</p><p>Clash的好处包括：</p><ul><li>强大的功能：Clash支持各种协议和功能，可以满足各种需求。</li><li>易于使用：Clash的用户界面简单直观，易于上手。</li><li>开源：Clash是开源的，这意味着任何人都可以查看其源代码，确保其安全和可靠。</li></ul><p>Clash的不便之处包括：</p><ul><li>需要订阅配置：Clash需要订阅配置才能使用。这些配置可以从各种来源获得，例如GitHub、论坛和私人服务器。</li><li>需要学习曲线：Clash具有强大的功能，因此需要一定的学习时间才能熟悉所有功能。</li></ul><p>尽管存在一些不便之处，但Clash仍然是一个功能强大且易于使用的网络代理。本文介绍如何使用gist打造自己的私有订阅。</p><h1 id="GitHub-Gist-配置"><a href="#GitHub-Gist-配置" class="headerlink" title="GitHub Gist 配置"></a><a href="https://gist.github.com/">GitHub Gist</a> 配置</h1><ul><li><p>Gist description 不用填，</p></li><li><p>Filename including extension… 填入包括拓展名的文件全名，如 myconfig.yaml，</p></li><li><p>Create secret gist  不要选择Create public gist</p></li></ul><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307291111002.webp"></p><p> Gist，点击右上角的 Raw，复制当前的的地址，如：</p><p><a href="https://gist.githubusercontent.com/github/bf480acnew747d25e59/raw/1cc5824c712a0c8fe0aaa7ee6fa644cc26e9fb31/gistfile1.txt">https://gist.githubusercontent.com/github/bf480acnew747d25e59/raw/1cc5824c712a0c8fe0aaa7ee6fa644cc26e9fb31/gistfile1.txt</a></p><p>将 &#x2F;raw&#x2F; 之后的第二串随机数删除，得到形如：</p><p><a href="https://gist.githubusercontent.com/github/bf480sacf31a969e3acbc7ea2df4747ed25e59/raw/gistfile1.txt">https://gist.githubusercontent.com/github/bf480sacf31a969e3acbc7ea2df4747ed25e59/raw/gistfile1.txt</a></p><p>的 URL。在任意使用 Clash Premium 或 Meta 内核的 Clash 图形化客户端中</p><h1 id="Clash-分流规则"><a href="#Clash-分流规则" class="headerlink" title="Clash 分流规则"></a>Clash 分流规则</h1><h2 id="在线地址（URL）"><a href="#在线地址（URL）" class="headerlink" title="在线地址（URL）"></a>在线地址（URL）</h2><p><code>如果无法访问域名 raw.githubusercontent.com，可以使用第二个地址（cdn.jsdelivr.net），但是内容更新会有 12 小时的延迟。以下地址填写在 Clash 配置文件里的 rule-providers 里的 url 配置项中。</code></p><ul><li>直连域名列表 direct.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt</a></li><li>代理域名列表 proxy.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt</a></li><li>广告域名列表 reject.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt</a></li><li>私有网络专用域名列表 private.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt</a></li><li>Apple 在中国大陆可直连的域名列表 apple.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt</a></li><li>iCloud 域名列表 icloud.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt</a></li><li>[慎用]Google 在中国大陆可直连的域名列表 google.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt</a></li><li>GFWList 域名列表 gfw.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt</a></li><li>非中国大陆使用的顶级域名列表 tld-not-cn.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt</a></li><li>Telegram 使用的 IP 地址列表 telegramcidr.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt</a></li><li>局域网 IP 及保留 IP 地址列表 lancidr.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt</a></li><li>中国大陆 IP 地址列表 cncidr.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt</a></li><li>需要直连的常见软件列表 applications.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt</a></li></ul><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>Rule Providers 配置方式</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">rule-providers:</span><br>  <span class="hljs-attr">reject:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/reject.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">icloud:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/icloud.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">apple:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/apple.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">google:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/google.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">proxy:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/proxy.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">direct:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/direct.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">private:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/private.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">gfw:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/gfw.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">tld-not-cn:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/tld-not-cn.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">telegramcidr:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">ipcidr</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/telegramcidr.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">cncidr:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">ipcidr</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/cncidr.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">lancidr:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">ipcidr</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/lancidr.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">applications:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">classical</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/applications.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br></code></pre></td></tr></table></figure><h3 id="白名单模式-Rules-配置方式（推荐）"><a href="#白名单模式-Rules-配置方式（推荐）" class="headerlink" title="白名单模式 Rules 配置方式（推荐）"></a>白名单模式 Rules 配置方式（推荐）</h3><ul><li>白名单模式，意为「没有命中规则的网络流量，统统使用代理」，适用于服务器线路网络质量稳定、快速，不缺服务器流量的用户。</li><li>以下配置中，除了 DIRECT 和 REJECT 是默认存在于 Clash 中的 policy（路由策略&#x2F;流量处理策略），其余均为自定义 policy，对应配置文件中 proxies 或 proxy-groups 中的 name。如你直接使用下面的 rules 规则，则需要在 proxies 或 proxy-groups 中手动配置一个 name 为 PROXY 的 policy。</li><li>如你希望 Apple、iCloud 和 Google 列表中的域名使用代理，则把 policy 由 DIRECT 改为 PROXY，以此类推，举一反三。</li><li>如你不希望进行 DNS 解析，可在 GEOIP 规则的最后加上 ,no-resolve，如 GEOIP,CN,DIRECT,no-resolve。</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">rules:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,applications,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">DOMAIN,clash.razord.top,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">DOMAIN,yacd.haishan.me,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,private,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,reject,REJECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,icloud,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,apple,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,google,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,proxy,PROXY</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,direct,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,lancidr,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,cncidr,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,telegramcidr,PROXY</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">GEOIP,LAN,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">GEOIP,CN,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">MATCH,PROXY</span><br></code></pre></td></tr></table></figure><h3 id="黑名单模式-Rules-配置方式"><a href="#黑名单模式-Rules-配置方式" class="headerlink" title="黑名单模式 Rules 配置方式"></a>黑名单模式 Rules 配置方式</h3><ul><li>黑名单模式，意为「只有命中规则的网络流量，才使用代理」，适用于服务器线路网络质量不稳定或不够快，或服务器流量紧缺的用户。通常也是软路由用户、家庭网关用户的常用模式。</li><li>以下配置中，除了 DIRECT 和 REJECT 是默认存在于 Clash 中的 policy（路由策略&#x2F;流量处理策略），其余均为自定义 policy，对应配置文件中 proxies 或 proxy-groups 中的 name。如你直接使用下面的 rules 规则，则需要在 proxies 或 proxy-groups 中手动配置一个 name 为 PROXY 的 policy。<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">rules:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,applications,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">DOMAIN,clash.razord.top,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">DOMAIN,yacd.haishan.me,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,private,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,reject,REJECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,tld-not-cn,PROXY</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,gfw,PROXY</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,telegramcidr,PROXY</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">MATCH,DIRECT</span><br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Clash是一个开源的网络代理，具有强大的功能和易于使用。它支持各种协议，包括Socks5、HTTP和HTTPS，可以用于绕过防火墙、隐藏IP地址和保护隐私。Clash还支持各种功能，例如广告过滤、DNS解析和代理切换。</p><p>Clash的好处包括：</p><ul><li>强大的功能：Clash支持各种协议和功能，可以满足各种需求。</li><li>易于使用：Clash的用户界面简单直观，易于上手。</li><li>开源：Clash是开源的，这意味着任何人都可以查看其源代码，确保其安全和可靠。</li></ul><p>Clash的不便之处包括：</p><ul><li>需要订阅配置：Clash需要订阅配置才能使用。这些配置可以从各种来源获得，例如GitHub、论坛和私人服务器。</li><li>需要学习曲线：Clash具有强大的功能，因此需要一定的学习时间才能熟悉所有功能。</li></ul><p>尽管存在一些不便之处，但Clash仍然是一个功能强大且易于使用的网络代理。本文介绍如何使用gist打造自己的私有订阅。</p><h1 id="GitHub-Gist-配置"><a href="#GitHub-Gist-配置" class="headerlink" title="GitHub Gist 配置"></a><a href="https://gist.github.com/">GitHub Gist</a> 配置</h1><ul><li><p>Gist description 不用填，</p></li><li><p>Filename including extension… 填入包括拓展名的文件全名，如 myconfig.yaml，</p></li><li><p>Create secret gist  不要选择Create public gist</p></li></ul><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307291111002.webp"></p><p> Gist，点击右上角的 Raw，复制当前的的地址，如：</p><p><a href="https://gist.githubusercontent.com/github/bf480acnew747d25e59/raw/1cc5824c712a0c8fe0aaa7ee6fa644cc26e9fb31/gistfile1.txt">https://gist.githubusercontent.com/github/bf480acnew747d25e59/raw/1cc5824c712a0c8fe0aaa7ee6fa644cc26e9fb31/gistfile1.txt</a></p><p>将 &#x2F;raw&#x2F; 之后的第二串随机数删除，得到形如：</p><p><a href="https://gist.githubusercontent.com/github/bf480sacf31a969e3acbc7ea2df4747ed25e59/raw/gistfile1.txt">https://gist.githubusercontent.com/github/bf480sacf31a969e3acbc7ea2df4747ed25e59/raw/gistfile1.txt</a></p><p>的 URL。在任意使用 Clash Premium 或 Meta 内核的 Clash 图形化客户端中</p><h1 id="Clash-分流规则"><a href="#Clash-分流规则" class="headerlink" title="Clash 分流规则"></a>Clash 分流规则</h1><h2 id="在线地址（URL）"><a href="#在线地址（URL）" class="headerlink" title="在线地址（URL）"></a>在线地址（URL）</h2><p><code>如果无法访问域名 raw.githubusercontent.com，可以使用第二个地址（cdn.jsdelivr.net），但是内容更新会有 12 小时的延迟。以下地址填写在 Clash 配置文件里的 rule-providers 里的 url 配置项中。</code></p><ul><li>直连域名列表 direct.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt</a></li><li>代理域名列表 proxy.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt</a></li><li>广告域名列表 reject.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt</a></li><li>私有网络专用域名列表 private.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt</a></li><li>Apple 在中国大陆可直连的域名列表 apple.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt</a></li><li>iCloud 域名列表 icloud.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt</a></li><li>[慎用]Google 在中国大陆可直连的域名列表 google.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt</a></li><li>GFWList 域名列表 gfw.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt</a></li><li>非中国大陆使用的顶级域名列表 tld-not-cn.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt</a></li><li>Telegram 使用的 IP 地址列表 telegramcidr.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt</a></li><li>局域网 IP 及保留 IP 地址列表 lancidr.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt</a></li><li>中国大陆 IP 地址列表 cncidr.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt</a></li><li>需要直连的常见软件列表 applications.txt：<br><a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt">https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt</a><br><a href="https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt">https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt</a></li></ul><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>Rule Providers 配置方式</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">rule-providers:</span><br>  <span class="hljs-attr">reject:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/reject.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">icloud:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/icloud.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">apple:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/apple.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">google:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/google.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">proxy:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/proxy.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">direct:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/direct.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">private:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/private.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">gfw:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/gfw.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">tld-not-cn:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">domain</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/tld-not-cn.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">telegramcidr:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">ipcidr</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/telegramcidr.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">cncidr:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">ipcidr</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/cncidr.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">lancidr:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">ipcidr</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/lancidr.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br><br>  <span class="hljs-attr">applications:</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attr">behavior:</span> <span class="hljs-string">classical</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt&quot;</span><br>    <span class="hljs-attr">path:</span> <span class="hljs-string">./ruleset/applications.yaml</span><br>    <span class="hljs-attr">interval:</span> <span class="hljs-number">86400</span><br></code></pre></td></tr></table></figure><h3 id="白名单模式-Rules-配置方式（推荐）"><a href="#白名单模式-Rules-配置方式（推荐）" class="headerlink" title="白名单模式 Rules 配置方式（推荐）"></a>白名单模式 Rules 配置方式（推荐）</h3><ul><li>白名单模式，意为「没有命中规则的网络流量，统统使用代理」，适用于服务器线路网络质量稳定、快速，不缺服务器流量的用户。</li><li>以下配置中，除了 DIRECT 和 REJECT 是默认存在于 Clash 中的 policy（路由策略&#x2F;流量处理策略），其余均为自定义 policy，对应配置文件中 proxies 或 proxy-groups 中的 name。如你直接使用下面的 rules 规则，则需要在 proxies 或 proxy-groups 中手动配置一个 name 为 PROXY 的 policy。</li><li>如你希望 Apple、iCloud 和 Google 列表中的域名使用代理，则把 policy 由 DIRECT 改为 PROXY，以此类推，举一反三。</li><li>如你不希望进行 DNS 解析，可在 GEOIP 规则的最后加上 ,no-resolve，如 GEOIP,CN,DIRECT,no-resolve。</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">rules:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,applications,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">DOMAIN,clash.razord.top,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">DOMAIN,yacd.haishan.me,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,private,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,reject,REJECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,icloud,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,apple,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,google,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,proxy,PROXY</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,direct,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,lancidr,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,cncidr,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,telegramcidr,PROXY</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">GEOIP,LAN,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">GEOIP,CN,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">MATCH,PROXY</span><br></code></pre></td></tr></table></figure><h3 id="黑名单模式-Rules-配置方式"><a href="#黑名单模式-Rules-配置方式" class="headerlink" title="黑名单模式 Rules 配置方式"></a>黑名单模式 Rules 配置方式</h3><ul><li>黑名单模式，意为「只有命中规则的网络流量，才使用代理」，适用于服务器线路网络质量不稳定或不够快，或服务器流量紧缺的用户。通常也是软路由用户、家庭网关用户的常用模式。</li><li>以下配置中，除了 DIRECT 和 REJECT 是默认存在于 Clash 中的 policy（路由策略&#x2F;流量处理策略），其余均为自定义 policy，对应配置文件中 proxies 或 proxy-groups 中的 name。如你直接使用下面的 rules 规则，则需要在 proxies 或 proxy-groups 中手动配置一个 name 为 PROXY 的 policy。<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">rules:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,applications,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">DOMAIN,clash.razord.top,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">DOMAIN,yacd.haishan.me,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,private,DIRECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,reject,REJECT</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,tld-not-cn,PROXY</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,gfw,PROXY</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">RULE-SET,telegramcidr,PROXY</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">MATCH,DIRECT</span><br></code></pre></td></tr></table></figure></li></ul>]]></content>
     
     
     
     <tags>
-      
-      <tag>How to</tag>
       
       <tag>Github</tag>
       
@@ -853,17 +843,17 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
     <tags>
       
-      <tag>How to</tag>
+      <tag>Mac</tag>
       
       <tag>Github</tag>
       
-      <tag>Mac</tag>
+      <tag>How to</tag>
       
     </tags>
     
@@ -882,7 +872,7 @@
     
     <tags>
       
-      <tag>How to</tag>
+      <tag>Wechat</tag>
       
       <tag>VPS</tag>
       
@@ -905,9 +895,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>Github</tag>
+      
+      <tag>How to</tag>
       
       <tag>Blog</tag>
       
@@ -928,9 +918,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>Mac</tag>
+      
+      <tag>How to</tag>
       
       <tag>Script</tag>
       
@@ -1010,9 +1000,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>How to</tag>
       
       <tag>Linux</tag>
       
@@ -1035,9 +1025,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>How to</tag>
       
     </tags>
     
@@ -1056,9 +1046,9 @@
     
     <tags>
       
-      <tag>How to</tag>
-      
       <tag>Mac</tag>
+      
+      <tag>How to</tag>
       
       <tag>Script</tag>
       
@@ -1121,13 +1111,13 @@
     
     <tags>
       
-      <tag>VPS</tag>
-      
-      <tag>Docker</tag>
-      
       <tag>Ai</tag>
       
       <tag>ChatGpt</tag>
+      
+      <tag>VPS</tag>
+      
+      <tag>Docker</tag>
       
       <tag>Script</tag>
       
