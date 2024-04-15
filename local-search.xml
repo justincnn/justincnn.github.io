@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Mac下实现微信双开甚至多开</title>
+    <link href="/2024/04/15/Mac%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E5%8F%8C%E5%BC%80%E7%94%9A%E8%87%B3%E5%A4%9A%E5%BC%80/"/>
+    <url>/2024/04/15/Mac%E4%B8%8B%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E5%8F%8C%E5%BC%80%E7%94%9A%E8%87%B3%E5%A4%9A%E5%BC%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在 macOS 系统下，微信默认无法实现双开功能，这给拥有多个微信账号的用户带来了不少麻烦。无法同时登录多个账号意味着在处理工作、社交和个人事务时需要不断切换账号，增加了操作的复杂度，影响了工作效率和用户体验。对于那些需要同时管理多个微信账号的人来说，这无疑是一种挑战。</p><p>然而，幸运的是，技术的发展总是为解决问题提供了新的途径。现在，有一些方法可以绕过微信默认的限制，让 macOS 用户也能够轻松实现微信双开。在本文中，我们将探索一些解决方案，帮助那些拥有多个微信账号的用户摆脱这一困扰，提升工作和生活的便利性。让我们一起来了解如何摆脱 macOS 下微信无法双开的烦恼吧！</p><h1 id="需要的工具"><a href="#需要的工具" class="headerlink" title="需要的工具"></a>需要的工具</h1><ul><li>自动操作</li></ul><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/%E6%88%AA%E5%B1%8F2024-04-15%2017.43.56.png" alt="截屏2024-04-15 17.43.56"></p><h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><ul><li>新建应用程序</li></ul><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/%E6%88%AA%E5%B1%8F2024-04-15%2017.44.33.png" alt="截屏2024-04-15 17.44.33"></p><ul><li>实用工具—运行shell脚本</li></ul><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/%E6%88%AA%E5%B1%8F2024-04-15%2017.44.59.png" alt="截屏2024-04-15 17.44.59"></p><ul><li><p>shell脚本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">nohup</span> /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;<br></code></pre></td></tr></table></figure></li><li><p>存储…</p><p>可以直接放在应用程序的目录</p></li><li><p>美化</p><p><a href="https://macosicons.com/">ICON下载链接</a></p></li></ul><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://www.xeath.cc/2021/06/10/archives-453/">macOS 通过自动操作实现微信双开</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Mac</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Chrome插件推荐：ELMO, Ai网页总结工具</title>
     <link href="/2024/04/14/Chrome%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90%EF%BC%9AELMO-Ai%E7%BD%91%E9%A1%B5%E6%80%BB%E7%BB%93%E5%B7%A5%E5%85%B7/"/>
     <url>/2024/04/14/Chrome%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90%EF%BC%9AELMO-Ai%E7%BD%91%E9%A1%B5%E6%80%BB%E7%BB%93%E5%B7%A5%E5%85%B7/</url>
@@ -165,11 +184,11 @@
     
     <tags>
       
-      <tag>Openwrt</tag>
-      
       <tag>Life</tag>
       
       <tag>Wechat</tag>
+      
+      <tag>Openwrt</tag>
       
       <tag>Script</tag>
       
@@ -212,8 +231,6 @@
     <tags>
       
       <tag>Mac</tag>
-      
-      <tag>How to</tag>
       
     </tags>
     
@@ -268,7 +285,7 @@
     <link href="/2024/02/17/Banish-the-ultimate-x86-App-from-the-apple-silicon-Mac/"/>
     <url>/2024/02/17/Banish-the-ultimate-x86-App-from-the-apple-silicon-Mac/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>既然silicon了，就要全部silicon，今天终于把最后一个x86程序删除了，打印机的状态监控器。</p><h1 id="打印机程序删除"><a href="#打印机程序删除" class="headerlink" title="打印机程序删除"></a>打印机程序删除</h1><ul><li><p>打开[系统偏好设置]-[打印机与扫描仪]，选择要删除的打印机，。</p></li><li><p>打开Finder，将位于<a href="%E7%B3%BB%E7%BB%9F%E7%A1%AC%E7%9B%98">Macintosh HD</a>-[资源库&#x2F;Printers&#x2F;PPDs&#x2F;contents&#x2F;Resources 上的“打印机名称（品牌）”开头的文件全部“移到废纸篓”。</p></li><li><p>将位于[资源库&#x2F;Printers&#x2F;打印机名称（品牌）]文件夹“移到废纸篓”</p></li></ul><h1 id="确认是否安装-Rosetta2"><a href="#确认是否安装-Rosetta2" class="headerlink" title="确认是否安装 Rosetta2"></a>确认是否安装 Rosetta2</h1><ul><li>Open an app built only for an Intel Mac. If Rosetta 2 is installed on your Mac, you won’t be required to install it again.</li><li>Execute the command below in <a href="https://iboysoft.com/wiki/mac-terminal.html">Terminal</a>. If it returns an error like “Bad CPU type in executable,” Rosetta 2 isn’t present on your Mac. If it changes the shell to bash, Rosetta 2 is on your Mac.</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">arch</span> -x86_64 bash<br></code></pre></td></tr></table></figure><ul><li><p>Check if the oahd process is running by executing the following command in the Terminal. Rosetta is known as OAH internally. If the command shows you a process ID, you know Rosetta 2 is installed.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pgrep oahd<br></code></pre></td></tr></table></figure></li></ul><h1 id="删除-Rosetta2"><a href="#删除-Rosetta2" class="headerlink" title="删除 Rosetta2"></a>删除 Rosetta2</h1><p>If you need to uninstall Rosetta 2, follow these steps:</p><ul><li><p>Shut down your Mac.</p></li><li><p>Press and hold the power button until the startup options appear.</p></li><li><p>Click Options &gt; Continue.</p></li><li><p>Select your account and enter your password.</p></li><li><p>Click Utilities &gt; Terminal.</p></li><li><p>Copy and paste the command below, and press Enter to disable <a href="https://iboysoft.com/wiki/sip-mac.html">SIP</a> on your Mac.</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">csrutil <span class="hljs-built_in">disable</span><br></code></pre></td></tr></table></figure><ul><li><p>Type in your username and password.</p></li><li><p>Click the Apple logo and choose Restart.</p></li><li><p>Open Terminal from Launchpad &gt; Other.</p></li><li><p>Copy and paste the command below, and press Enter to obtain a list of files, directories, and LaunchAgents you need to delete.pkgutil –files com.apple.pkg.RosettaUpdateAuto</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402171338136.webp"></p></li><li><p>Open Finder and click Go &gt; Go to Folder.</p></li><li><p>Input <strong>&#x2F;Library&#x2F;Apple&#x2F;usr&#x2F;</strong> and hit Enter.</p></li><li><p>Navigate to &#x2F;Library&#x2F;Apple&#x2F;usr&#x2F;lib&#x2F;libRosettaAot.dylib, right-click on it and choose Move to Trash.</p></li><li><p>Enter your password and press OK.</p></li><li><p>Navigate to <strong>&#x2F;Library&#x2F;Apple&#x2F;usr&#x2F;libexec</strong> and <strong>&#x2F;Library&#x2F;Apple&#x2F;usr&#x2F;share&#x2F;rosetta</strong>, delete these two folders as well.</p></li><li><p>Empty your Trash.</p></li><li><p>Repeat steps 1 to 5.</p></li><li><p>Execute the command below to re-enable SIP on Mac.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">csrutil <span class="hljs-built_in">enable</span><br></code></pre></td></tr></table></figure></li></ul><p>Now that Rosetta 2 is uninstalled from your M1 Mac, it will pop up the notification asking you to install Rosetta before running an app designed only for Intel Macs in the future.</p><p>Click the button below to help your comrades uninstall Rosetta 2!</p><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p>资料收集于<a href="https://iboysoft.com/news/uninstall-rosetta-2.html#how-to-uninstall-rosetta-2-from-your-m1-mac?">Iboysoft</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>既然silicon了，就要全部silicon，今天终于把最后一个x86程序删除了，打印机的状态监控器。</p><h1 id="打印机程序删除"><a href="#打印机程序删除" class="headerlink" title="打印机程序删除"></a><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/Antares-Software-Is-Now-Apple-Silicon-Native_Square.webp" alt="Antares Software Is Now Apple Silicon Native">打印机程序删除</h1><ul><li><p>打开[系统偏好设置]-[打印机与扫描仪]，选择要删除的打印机，。</p></li><li><p>打开Finder，将位于<a href="%E7%B3%BB%E7%BB%9F%E7%A1%AC%E7%9B%98">Macintosh HD</a>-[资源库&#x2F;Printers&#x2F;PPDs&#x2F;contents&#x2F;Resources 上的“打印机名称（品牌）”开头的文件全部“移到废纸篓”。</p></li><li><p>将位于[资源库&#x2F;Printers&#x2F;打印机名称（品牌）]文件夹“移到废纸篓”</p></li></ul><h1 id="确认是否安装-Rosetta2"><a href="#确认是否安装-Rosetta2" class="headerlink" title="确认是否安装 Rosetta2"></a>确认是否安装 Rosetta2</h1><ul><li>Open an app built only for an Intel Mac. If Rosetta 2 is installed on your Mac, you won’t be required to install it again.</li><li>Execute the command below in <a href="https://iboysoft.com/wiki/mac-terminal.html">Terminal</a>. If it returns an error like “Bad CPU type in executable,” Rosetta 2 isn’t present on your Mac. If it changes the shell to bash, Rosetta 2 is on your Mac.</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">arch</span> -x86_64 bash<br></code></pre></td></tr></table></figure><ul><li><p>Check if the oahd process is running by executing the following command in the Terminal. Rosetta is known as OAH internally. If the command shows you a process ID, you know Rosetta 2 is installed.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pgrep oahd<br></code></pre></td></tr></table></figure></li></ul><h1 id="删除-Rosetta2"><a href="#删除-Rosetta2" class="headerlink" title="删除 Rosetta2"></a>删除 Rosetta2</h1><p>If you need to uninstall Rosetta 2, follow these steps:</p><ul><li><p>Shut down your Mac.</p></li><li><p>Press and hold the power button until the startup options appear.</p></li><li><p>Click Options &gt; Continue.</p></li><li><p>Select your account and enter your password.</p></li><li><p>Click Utilities &gt; Terminal.</p></li><li><p>Copy and paste the command below, and press Enter to disable <a href="https://iboysoft.com/wiki/sip-mac.html">SIP</a> on your Mac.</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">csrutil <span class="hljs-built_in">disable</span><br></code></pre></td></tr></table></figure><ul><li><p>Type in your username and password.</p></li><li><p>Click the Apple logo and choose Restart.</p></li><li><p>Open Terminal from Launchpad &gt; Other.</p></li><li><p>Copy and paste the command below, and press Enter to obtain a list of files, directories, and LaunchAgents you need to delete.pkgutil –files com.apple.pkg.RosettaUpdateAuto</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402171338136.webp"></p></li><li><p>Open Finder and click Go &gt; Go to Folder.</p></li><li><p>Input <strong>&#x2F;Library&#x2F;Apple&#x2F;usr&#x2F;</strong> and hit Enter.</p></li><li><p>Navigate to &#x2F;Library&#x2F;Apple&#x2F;usr&#x2F;lib&#x2F;libRosettaAot.dylib, right-click on it and choose Move to Trash.</p></li><li><p>Enter your password and press OK.</p></li><li><p>Navigate to <strong>&#x2F;Library&#x2F;Apple&#x2F;usr&#x2F;libexec</strong> and <strong>&#x2F;Library&#x2F;Apple&#x2F;usr&#x2F;share&#x2F;rosetta</strong>, delete these two folders as well.</p></li><li><p>Empty your Trash.</p></li><li><p>Repeat steps 1 to 5.</p></li><li><p>Execute the command below to re-enable SIP on Mac.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">csrutil <span class="hljs-built_in">enable</span><br></code></pre></td></tr></table></figure></li></ul><p>Now that Rosetta 2 is uninstalled from your M1 Mac, it will pop up the notification asking you to install Rosetta before running an app designed only for Intel Macs in the future.</p><p>Click the button below to help your comrades uninstall Rosetta 2!</p><h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p>资料收集于<a href="https://iboysoft.com/news/uninstall-rosetta-2.html#how-to-uninstall-rosetta-2-from-your-m1-mac?">Iboysoft</a></p>]]></content>
     
     
     
@@ -278,7 +295,7 @@
       
       <tag>App</tag>
       
-      <tag>How to</tag>
+      <tag>Wechat</tag>
       
     </tags>
     
@@ -400,9 +417,9 @@
       
       <tag>How to</tag>
       
-      <tag>Adblock</tag>
-      
       <tag>Clash</tag>
+      
+      <tag>Adblock</tag>
       
       <tag>Openwrt</tag>
       
@@ -511,7 +528,7 @@
       
       <tag>Mac</tag>
       
-      <tag>How to</tag>
+      <tag>Browser</tag>
       
       <tag>Adblock</tag>
       
@@ -532,9 +549,9 @@
     
     <tags>
       
-      <tag>ChatGpt</tag>
-      
       <tag>Ai</tag>
+      
+      <tag>ChatGpt</tag>
       
     </tags>
     
@@ -603,9 +620,9 @@
     
     <tags>
       
-      <tag>Blog</tag>
-      
       <tag>Tips</tag>
+      
+      <tag>Blog</tag>
       
     </tags>
     
@@ -624,9 +641,9 @@
     
     <tags>
       
-      <tag>App</tag>
-      
       <tag>How to</tag>
+      
+      <tag>App</tag>
       
       <tag>VPS</tag>
       
@@ -649,11 +666,11 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
       
       <tag>Github</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Blog</tag>
       
@@ -836,17 +853,17 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#x6d;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
       
       <tag>Github</tag>
+      
+      <tag>Mac</tag>
       
     </tags>
     
@@ -911,9 +928,9 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Script</tag>
       
@@ -1039,9 +1056,9 @@
     
     <tags>
       
-      <tag>Mac</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Mac</tag>
       
       <tag>Script</tag>
       
@@ -1104,13 +1121,13 @@
     
     <tags>
       
-      <tag>ChatGpt</tag>
-      
-      <tag>Ai</tag>
-      
       <tag>VPS</tag>
       
       <tag>Docker</tag>
+      
+      <tag>Ai</tag>
+      
+      <tag>ChatGpt</tag>
       
       <tag>Script</tag>
       
