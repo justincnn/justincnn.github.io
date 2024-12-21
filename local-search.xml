@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Serv00 部署案例和常用命令</title>
+    <link href="/2024/12/15/Serv00-%E9%83%A8%E7%BD%B2%E6%A1%88%E4%BE%8B%E5%92%8C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <url>/2024/12/15/Serv00-%E9%83%A8%E7%BD%B2%E6%A1%88%E4%BE%8B%E5%92%8C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2024/12/15/RYW8X1luNdMVyAP.png"></p><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="Serv00重置系统命令"><a href="#Serv00重置系统命令" class="headerlink" title="Serv00重置系统命令"></a>Serv00重置系统命令</h3><ol><li><p>更改权限：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">find ~ -<span class="hljs-built_in">type</span> f -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">chmod</span> 644 &#123;&#125; \; 2&gt;/dev/null<br>find ~ -<span class="hljs-built_in">type</span> d -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">chmod</span> 755 &#123;&#125; \; 2&gt;/dev/null<br></code></pre></td></tr></table></figure></li><li><p>删除文件：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">find ~ -<span class="hljs-built_in">type</span> f -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rm</span> -f &#123;&#125; \; 2&gt;/dev/null<br></code></pre></td></tr></table></figure></li><li><p>删除空目录：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">find ~ -<span class="hljs-built_in">type</span> d -empty -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rmdir</span> &#123;&#125; \; 2&gt;/dev/null<br></code></pre></td></tr></table></figure></li><li><p>再次尝试删除剩余的文件和目录：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">find ~ -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rm</span> -rf &#123;&#125; \; 2&gt;/dev/null<br></code></pre></td></tr></table></figure></li></ol><h2 id="Serv00重启命令"><a href="#Serv00重启命令" class="headerlink" title="Serv00重启命令"></a>Serv00重启命令</h2><ol><li><p>命令：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">pkill -<span class="hljs-built_in">kill</span> -u &lt;username&gt;<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>VPS</tag>
+      
+      <tag>Serv00</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Openwrt旁路由下openclash adguard home配置</title>
     <link href="/2024/12/15/Openwrt%E6%97%81%E8%B7%AF%E7%94%B1%E4%B8%8Bopencal-adguard-home%E9%85%8D%E7%BD%AE/"/>
     <url>/2024/12/15/Openwrt%E6%97%81%E8%B7%AF%E7%94%B1%E4%B8%8Bopencal-adguard-home%E9%85%8D%E7%BD%AE/</url>
@@ -75,9 +96,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>Mac</tag>
+      
+      <tag>Wechat</tag>
       
     </tags>
     
@@ -98,9 +119,9 @@
       
       <tag>Ai</tag>
       
-      <tag>Chrome</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Chrome</tag>
       
     </tags>
     
@@ -159,9 +180,9 @@
     
     <tags>
       
-      <tag>Github</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Github</tag>
       
       <tag>Script</tag>
       
@@ -228,9 +249,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>Mac</tag>
+      
+      <tag>Wechat</tag>
       
     </tags>
     
@@ -249,11 +270,11 @@
     
     <tags>
       
-      <tag>Openwrt</tag>
-      
       <tag>Wechat</tag>
       
       <tag>Life</tag>
+      
+      <tag>Openwrt</tag>
       
       <tag>Script</tag>
       
@@ -358,11 +379,11 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>Mac</tag>
       
       <tag>App</tag>
+      
+      <tag>Wechat</tag>
       
     </tags>
     
@@ -381,9 +402,9 @@
     
     <tags>
       
-      <tag>Openwrt</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Openwrt</tag>
       
     </tags>
     
@@ -461,9 +482,9 @@
     
     <tags>
       
-      <tag>Github</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Github</tag>
       
     </tags>
     
@@ -482,11 +503,11 @@
     
     <tags>
       
+      <tag>Adblock</tag>
+      
       <tag>Clash</tag>
       
       <tag>Openwrt</tag>
-      
-      <tag>Adblock</tag>
       
     </tags>
     
@@ -547,11 +568,11 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>Mac</tag>
       
       <tag>App</tag>
+      
+      <tag>Wechat</tag>
       
     </tags>
     
@@ -570,9 +591,9 @@
     
     <tags>
       
-      <tag>Chrome</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Chrome</tag>
       
       <tag>Tips</tag>
       
@@ -593,11 +614,11 @@
     
     <tags>
       
-      <tag>Adblock</tag>
-      
       <tag>Mac</tag>
       
       <tag>Browser</tag>
+      
+      <tag>Adblock</tag>
       
     </tags>
     
@@ -664,11 +685,11 @@
       
       <tag>VPS</tag>
       
+      <tag>Tips</tag>
+      
       <tag>Linux</tag>
       
       <tag>Ubuntu</tag>
-      
-      <tag>Tips</tag>
       
     </tags>
     
@@ -712,9 +733,9 @@
       
       <tag>VPS</tag>
       
-      <tag>Amazon</tag>
-      
       <tag>App</tag>
+      
+      <tag>Amazon</tag>
       
     </tags>
     
@@ -733,11 +754,11 @@
     
     <tags>
       
-      <tag>Github</tag>
+      <tag>Mac</tag>
       
       <tag>Wechat</tag>
       
-      <tag>Mac</tag>
+      <tag>Github</tag>
       
       <tag>Blog</tag>
       
@@ -758,11 +779,11 @@
     
     <tags>
       
+      <tag>How to</tag>
+      
       <tag>Github</tag>
       
       <tag>Clash</tag>
-      
-      <tag>How to</tag>
       
       <tag>Cloudflare</tag>
       
@@ -804,9 +825,9 @@
     
     <tags>
       
-      <tag>Clash</tag>
-      
       <tag>How to</tag>
+      
+      <tag>Clash</tag>
       
     </tags>
     
@@ -918,17 +939,17 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#109;">&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
     <tags>
       
-      <tag>Github</tag>
+      <tag>Mac</tag>
       
       <tag>Wechat</tag>
       
-      <tag>Mac</tag>
+      <tag>Github</tag>
       
     </tags>
     
@@ -970,9 +991,9 @@
     
     <tags>
       
-      <tag>Github</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Github</tag>
       
       <tag>Blog</tag>
       
@@ -1067,19 +1088,17 @@
   
   
   <entry>
-    <title>Oracle：如何开放Ubuntu VPS全部端口</title>
+    <title>Oracle：新申请VPS必要设置</title>
     <link href="/2023/07/23/Oracle-open-all-ports-of-Ubuntu/"/>
     <url>/2023/07/23/Oracle-open-all-ports-of-Ubuntu/</url>
     
-    <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>在甲骨文的后台先开放所有的端口</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png"></p><h3 id="1-切换到root用户"><a href="#1-切换到root用户" class="headerlink" title="1.切换到root用户"></a>1.切换到root用户</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo -<span class="hljs-selector-tag">i</span><br></code></pre></td></tr></table></figure><h3 id="2-开放所有端口"><a href="#2-开放所有端口" class="headerlink" title="2.开放所有端口"></a>2.开放所有端口</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo iptables -<span class="hljs-selector-tag">P</span> <span class="hljs-selector-tag">INPUT</span> ACCEPT<br></code></pre></td></tr></table></figure><figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tp">sudo iptables -<span class="hljs-keyword">P</span> FORWARD <span class="hljs-keyword">ACC</span>EPT<br></code></pre></td></tr></table></figure><figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tp">sudo iptables -<span class="hljs-keyword">P</span> OUTPUT <span class="hljs-keyword">ACC</span>EPT<br></code></pre></td></tr></table></figure><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo iptables -F</span><br></code></pre></td></tr></table></figure><h3 id="3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"><a href="#3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它" class="headerlink" title="3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"></a>3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> purge netfilter-persistent<br></code></pre></td></tr></table></figure><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">reboot</span><br></code></pre></td></tr></table></figure><h3 id="4-强制删除规则"><a href="#4-强制删除规则" class="headerlink" title="4.强制删除规则"></a>4.强制删除规则</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">rm -rf <span class="hljs-regexp">/etc/i</span>ptables &amp;&amp; reboot<br></code></pre></td></tr></table></figure><h3 id="5-删除oracle-cloud-agent，防止甲骨文监控"><a href="#5-删除oracle-cloud-agent，防止甲骨文监控" class="headerlink" title="5.删除oracle-cloud-agent，防止甲骨文监控"></a>5.删除oracle-cloud-agent，防止甲骨文监控</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">snap <span class="hljs-built_in">remove</span> oracle-cloud-agent<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="所有的端口"><a href="#所有的端口" class="headerlink" title="所有的端口"></a>所有的端口</h2><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231616878.png"></p><h3 id="1-切换到root用户"><a href="#1-切换到root用户" class="headerlink" title="1.切换到root用户"></a>1.切换到root用户</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo -<span class="hljs-selector-tag">i</span><br></code></pre></td></tr></table></figure><h3 id="2-开放所有端口"><a href="#2-开放所有端口" class="headerlink" title="2.开放所有端口"></a>2.开放所有端口</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo iptables -<span class="hljs-selector-tag">P</span> <span class="hljs-selector-tag">INPUT</span> ACCEPT<br></code></pre></td></tr></table></figure><figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tp">sudo iptables -<span class="hljs-keyword">P</span> FORWARD <span class="hljs-keyword">ACC</span>EPT<br></code></pre></td></tr></table></figure><figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tp">sudo iptables -<span class="hljs-keyword">P</span> OUTPUT <span class="hljs-keyword">ACC</span>EPT<br></code></pre></td></tr></table></figure><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo iptables -F</span><br></code></pre></td></tr></table></figure><h3 id="3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"><a href="#3-Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它" class="headerlink" title="3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它"></a>3.Oracle自带的Ubuntu镜像默认设置了Iptable规则，关闭它</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> purge netfilter-persistent<br></code></pre></td></tr></table></figure><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">reboot</span><br></code></pre></td></tr></table></figure><h3 id="4-强制删除规则"><a href="#4-强制删除规则" class="headerlink" title="4.强制删除规则"></a>4.强制删除规则</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">rm -rf <span class="hljs-regexp">/etc/i</span>ptables &amp;&amp; reboot<br></code></pre></td></tr></table></figure><h2 id="删除oracle-cloud-agent，防止甲骨文监控"><a href="#删除oracle-cloud-agent，防止甲骨文监控" class="headerlink" title="删除oracle-cloud-agent，防止甲骨文监控"></a>删除oracle-cloud-agent，防止甲骨文监控</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">snap <span class="hljs-built_in">remove</span> oracle-cloud-agent<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
     <tags>
       
       <tag>VPS</tag>
-      
-      <tag>Wechat</tag>
       
       <tag>Linux</tag>
       
@@ -1123,9 +1142,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>Mac</tag>
+      
+      <tag>Wechat</tag>
       
       <tag>Script</tag>
       
@@ -1140,7 +1159,7 @@
     <link href="/2023/07/23/SSH-Change-Port-to-Protect-Your-Server-From-Malicious-Attacks/"/>
     <url>/2023/07/23/SSH-Change-Port-to-Protect-Your-Server-From-Malicious-Attacks/</url>
     
-    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>当您在使用 VPS 时，SSH（Secure Shell）是一种重要的远程连接协议，它可以帮助您通过命令行访问您的 VPS，管理您的服务器和应用程序。然而，如果您的 SSH 端口设置为默认端口22，那么您的服务器就面临着被攻击者攻击的风险。黑客可以使用自动化的脚本扫描您的服务器并尝试使用暴力破解方法攻击您的 SSH 连接。这可能会导致安全漏洞和服务器被入侵。</p><p>为了保护您的 VPS 免受这种类型的攻击，您需要更改 SSH 端口，这是一种简单而有效的安全措施。适合常见的CentOS&#x2F;Fedora&#x2F;RedHat、Debian&#x2F;Ubuntu等常见的Linux发行版。</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231603742.png"></p><h4 id="1、备份原sshd配置文件"><a href="#1、备份原sshd配置文件" class="headerlink" title="1、备份原sshd配置文件"></a>1、备份原sshd配置文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cp</span> /etc/ssh/sshd_config /etc/ssh/sshd_config.backup<br>~~~~<br><br><span class="hljs-comment">#### 2、修改sshd配置文件</span><br><br>可以使用winscp、nano、vim之类的软件编辑 <br>~~~bash<br>vi /etc/ssh/sshd_config<br></code></pre></td></tr></table></figure><p>查找Port 22，有可能 Port 22 是注释的(即前面有#号，有的话删掉 # 号)。</p><p>在 Port 22 下面添加一行 Port 3322  其中3322为你更改SSH后的端口。</p><p>这里建议先保留原来的22端口，待新的SSH端口测试正常工作后再删掉原Port 22 端口行。</p><p>修改完成后保存。</p><h4 id="3、重启SSH服务器"><a href="#3、重启SSH服务器" class="headerlink" title="3、重启SSH服务器"></a>3、重启SSH服务器</h4><p>重启SSH服务器命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl restart sshd<br></code></pre></td></tr></table></figure><p>如果没有systemctl的话可以执行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/etc/init.d/sshd restart <br></code></pre></td></tr></table></figure><p>或 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/etc/init.d/ssh restart<br></code></pre></td></tr></table></figure><p>如果没有报错的话就生效了，可以 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ss -ntl <br></code></pre></td></tr></table></figure><p>或 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">netstat -ntl <br></code></pre></td></tr></table></figure><p>查看一下端口。</p><h4 id="4、防火墙、安全组规则设置"><a href="#4、防火墙、安全组规则设置" class="headerlink" title="4、防火墙、安全组规则设置"></a>4、防火墙、安全组规则设置</h4><p>iptables添加SSH新端口规则：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">iptables -A INPUT -p tcp --dport 3322 -j ACCEPT             <span class="hljs-comment">#3322替换为新的端口#</span><br></code></pre></td></tr></table></figure><p>然后保存iptables规则</p><p>firewalld添加SSH新端口规则：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">firewall-cmd --permanent --zone=public --add-port=3322/tcp             <span class="hljs-comment">#3322替换为新的端口#</span><br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">firewall-cmd --reload             <span class="hljs-comment">#重载firewalld#</span><br></code></pre></td></tr></table></figure><p>阿里云之类的安全组规则添加SSH新端口规则：</p><p>阿里云之类的有安全组之类设置的云服务器一定要在安全组规则里将新端口添加到“入方向”的允许规则。</p><h4 id="转载文献"><a href="#转载文献" class="headerlink" title="转载文献"></a>转载文献</h4><p><a href="https://www.vpser.net/security/centos-debian-ubuntu-linux-change-ssh-port.html">VPS侦探：CentOS&#x2F;Debian&#x2F;Ubuntu Linux修改SSH默认22端口</a></p><h3 id="第二种方案：适用于oracle-linux"><a href="#第二种方案：适用于oracle-linux" class="headerlink" title="第二种方案：适用于oracle linux"></a>第二种方案：适用于oracle linux</h3><h4 id="i-查看ssh默认绑定端口"><a href="#i-查看ssh默认绑定端口" class="headerlink" title="i.查看ssh默认绑定端口"></a>i.查看ssh默认绑定端口</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">semanage port -l | grep ssh<br></code></pre></td></tr></table></figure><hr><p>ssh_port_t                     tcp      22</p><h4 id="ii-添加新端口（以，12345为例）"><a href="#ii-添加新端口（以，12345为例）" class="headerlink" title="ii.添加新端口（以，12345为例）"></a>ii.添加新端口（以，12345为例）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 注意名称是 ssh_port_t</span><br>semanage port -a -t ssh_port_t -p tcp 12345<br></code></pre></td></tr></table></figure><h4 id="iii-验证下是否添加成功"><a href="#iii-验证下是否添加成功" class="headerlink" title="iii.验证下是否添加成功"></a>iii.验证下是否添加成功</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">semanage port -l | grep ssh<br></code></pre></td></tr></table></figure><hr><p>ssh_port_t                     tcp   12345, 22</p><h4 id="iv-参数解释"><a href="#iv-参数解释" class="headerlink" title="iv.参数解释"></a>iv.参数解释</h4><ul><li>-l：查看记录</li><li>-a：添加</li><li>-m：修改</li><li>-d：删除</li><li>-t：添加类型</li><li>-p：指定端口类型（tcp、udp</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当您在使用 VPS 时，SSH（Secure Shell）是一种重要的远程连接协议，它可以帮助您通过命令行访问您的 VPS，管理您的服务器和应用程序。然而，如果您的 SSH 端口设置为默认端口22，那么您的服务器就面临着被攻击者攻击的风险。黑客可以使用自动化的脚本扫描您的服务器并尝试使用暴力破解方法攻击您的 SSH 连接。这可能会导致安全漏洞和服务器被入侵。</p><p>为了保护您的 VPS 免受这种类型的攻击，您需要更改 SSH 端口，这是一种简单而有效的安全措施。适合常见的CentOS&#x2F;Fedora&#x2F;RedHat、Debian&#x2F;Ubuntu等常见的Linux发行版。</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202307231603742.png"></p><h4 id="1、备份原sshd配置文件"><a href="#1、备份原sshd配置文件" class="headerlink" title="1、备份原sshd配置文件"></a>1、备份原sshd配置文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cp</span> /etc/ssh/sshd_config /etc/ssh/sshd_config.backup<br></code></pre></td></tr></table></figure><h4 id="2、修改sshd配置文件"><a href="#2、修改sshd配置文件" class="headerlink" title="2、修改sshd配置文件"></a>2、修改sshd配置文件</h4><p>可以使用winscp、nano、vim之类的软件编辑 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vi /etc/ssh/sshd_config<br></code></pre></td></tr></table></figure><p>查找Port 22，有可能 Port 22 是注释的(即前面有#号，有的话删掉 # 号)。</p><p>在 Port 22 下面添加一行 Port 3322  其中3322为你更改SSH后的端口。</p><p>这里建议先保留原来的22端口，待新的SSH端口测试正常工作后再删掉原Port 22 端口行。</p><p>修改完成后保存。</p><h4 id="3、重启SSH服务器"><a href="#3、重启SSH服务器" class="headerlink" title="3、重启SSH服务器"></a>3、重启SSH服务器</h4><p>重启SSH服务器命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl restart sshd<br></code></pre></td></tr></table></figure><p>如果没有systemctl的话可以执行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/etc/init.d/sshd restart <br></code></pre></td></tr></table></figure><p>或 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/etc/init.d/ssh restart<br></code></pre></td></tr></table></figure><p>如果没有报错的话就生效了，可以 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ss -ntl <br></code></pre></td></tr></table></figure><p>或 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">netstat -ntl <br></code></pre></td></tr></table></figure><p>查看一下端口。</p><h4 id="4、防火墙、安全组规则设置"><a href="#4、防火墙、安全组规则设置" class="headerlink" title="4、防火墙、安全组规则设置"></a>4、防火墙、安全组规则设置</h4><p>iptables添加SSH新端口规则：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">iptables -A INPUT -p tcp --dport 3322 -j ACCEPT             <span class="hljs-comment">#3322替换为新的端口#</span><br></code></pre></td></tr></table></figure><p>然后保存iptables规则</p><p>firewalld添加SSH新端口规则：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">firewall-cmd --permanent --zone=public --add-port=3322/tcp             <span class="hljs-comment">#3322替换为新的端口#</span><br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">firewall-cmd --reload             <span class="hljs-comment">#重载firewalld#</span><br></code></pre></td></tr></table></figure><p>阿里云之类的安全组规则添加SSH新端口规则：</p><p>阿里云之类的有安全组之类设置的云服务器一定要在安全组规则里将新端口添加到“入方向”的允许规则。</p><h4 id="转载文献"><a href="#转载文献" class="headerlink" title="转载文献"></a>转载文献</h4><p><a href="https://www.vpser.net/security/centos-debian-ubuntu-linux-change-ssh-port.html">VPS侦探：CentOS&#x2F;Debian&#x2F;Ubuntu Linux修改SSH默认22端口</a></p><h3 id="第二种方案：适用于oracle-linux"><a href="#第二种方案：适用于oracle-linux" class="headerlink" title="第二种方案：适用于oracle linux"></a>第二种方案：适用于oracle linux</h3><h4 id="i-查看ssh默认绑定端口"><a href="#i-查看ssh默认绑定端口" class="headerlink" title="i.查看ssh默认绑定端口"></a>i.查看ssh默认绑定端口</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">semanage port -l | grep ssh<br></code></pre></td></tr></table></figure><hr><p>ssh_port_t                     tcp      22</p><h4 id="ii-添加新端口（以，12345为例）"><a href="#ii-添加新端口（以，12345为例）" class="headerlink" title="ii.添加新端口（以，12345为例）"></a>ii.添加新端口（以，12345为例）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 注意名称是 ssh_port_t</span><br>semanage port -a -t ssh_port_t -p tcp 12345<br></code></pre></td></tr></table></figure><h4 id="iii-验证下是否添加成功"><a href="#iii-验证下是否添加成功" class="headerlink" title="iii.验证下是否添加成功"></a>iii.验证下是否添加成功</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">semanage port -l | grep ssh<br></code></pre></td></tr></table></figure><hr><p>ssh_port_t                     tcp   12345, 22</p><h4 id="iv-参数解释"><a href="#iv-参数解释" class="headerlink" title="iv.参数解释"></a>iv.参数解释</h4><ul><li>-l：查看记录</li><li>-a：添加</li><li>-m：修改</li><li>-d：删除</li><li>-t：添加类型</li><li>-p：指定端口类型（tcp、udp</li></ul>]]></content>
     
     
     
@@ -1190,11 +1209,11 @@
     
     <tags>
       
-      <tag>VPS</tag>
-      
       <tag>ChatGpt</tag>
       
       <tag>Ai</tag>
+      
+      <tag>VPS</tag>
       
       <tag>Docker</tag>
       
