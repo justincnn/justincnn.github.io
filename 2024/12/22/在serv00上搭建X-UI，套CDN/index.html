@@ -18,43 +18,42 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言除去当前浏览器的兼容性都没有啥问题了，包括在安全这一块大家也都差不多，那么对于我来说一个好用的浏览器应该具备哪些特性呢？ 轻快放第一位： 打开网页的速度必须要快，这个是第一要义，同时不能太卡，有一种猎豹之感。 几乎都可配置： 可以将我不需要的东西都关闭掉，即使默认初始化效果一般，但是需要都可以关闭掉。 简单易用漂亮： 一定要简单易用，有确定性，想要的东西可以立马找到，同时窗口展示不能太丑。">
+    <meta name="description" content="获取Serv00的IPV4路径：主页–DNS zones  在Cloudflare创建子域名路径：域名–DNS–记录，并打开小黄云  Serv00开放两个端口路径：主页–Port reseration  Serv00添加子域名路径：主页–WWW websites   X-UI 安装下载进入 public_html 文件下 1cd &#x2F;usr&#x2F;home&#x2F;你的serv名字&#x2F;domains&#x2F;域名&#x2F;publ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="make EDGE more user-friendly">
-<meta property="og:url" content="http://example.com/2024/02/09/make-EDGE-more-user-friendly/index.html">
+<meta property="og:title" content="在serv00上搭建X-UI，套CDN">
+<meta property="og:url" content="http://example.com/2024/12/22/%E5%9C%A8serv00%E4%B8%8A%E6%90%AD%E5%BB%BAX-UI%EF%BC%8C%E5%A5%97CDN/index.html">
 <meta property="og:site_name" content="文科生的IT笔记">
-<meta property="og:description" content="前言除去当前浏览器的兼容性都没有啥问题了，包括在安全这一块大家也都差不多，那么对于我来说一个好用的浏览器应该具备哪些特性呢？ 轻快放第一位： 打开网页的速度必须要快，这个是第一要义，同时不能太卡，有一种猎豹之感。 几乎都可配置： 可以将我不需要的东西都关闭掉，即使默认初始化效果一般，但是需要都可以关闭掉。 简单易用漂亮： 一定要简单易用，有确定性，想要的东西可以立马找到，同时窗口展示不能太丑。">
+<meta property="og:description" content="获取Serv00的IPV4路径：主页–DNS zones  在Cloudflare创建子域名路径：域名–DNS–记录，并打开小黄云  Serv00开放两个端口路径：主页–Port reseration  Serv00添加子域名路径：主页–WWW websites   X-UI 安装下载进入 public_html 文件下 1cd &#x2F;usr&#x2F;home&#x2F;你的serv名字&#x2F;domains&#x2F;域名&#x2F;publ">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092050492.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092056906.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092057197.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092055627.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092058723.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092059864.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092100413.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092101447.jpg">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092103526.gif">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092105190.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092106210.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092109943.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092113288.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092115380.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092117635.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092120668.png">
-<meta property="article:published_time" content="2024-02-09T12:40:53.000Z">
-<meta property="article:modified_time" content="2024-04-16T07:54:54.251Z">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/7hDmEAbRjBklSga.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/fa37CitegwPFzSG.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/IFCSkDprcwP6v5X.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/JvWymqacs7TU9QK.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/Xz893JU7nDtioMF.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/GnRsa8PE96B7TQH.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/itb7zFYWDS5j8Va.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/j1iaEHOFuD6yz4c.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/hbaGRedufoANsjv.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/A1crfIpTsMmEQFP.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/NvrOwodEfkBVD6g.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/HS5uMapIYENAOTo.png">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/GJY8F5NIr7uRjlH.jpg">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/5GSL6Cv29RWhMYH.jpg">
+<meta property="og:image" content="https://s2.loli.net/2024/12/22/a69ZMTyzqXrYfQD.png">
+<meta property="article:published_time" content="2024-12-22T03:32:19.000Z">
+<meta property="article:modified_time" content="2024-12-22T04:55:24.647Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="Chrome">
-<meta property="article:tag" content="Wechat">
-<meta property="article:tag" content="Tips">
+<meta property="article:tag" content="VPS">
+<meta property="article:tag" content="How to">
+<meta property="article:tag" content="Serv00">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092050492.png">
+<meta name="twitter:image" content="https://s2.loli.net/2024/12/22/7hDmEAbRjBklSga.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>make EDGE more user-friendly - 文科生的IT笔记</title>
+  <title>在serv00上搭建X-UI，套CDN - 文科生的IT笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -235,7 +234,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="make EDGE more user-friendly"></span>
+            <span id="subtitle" data-typed-text="在serv00上搭建X-UI，套CDN"></span>
           
         </div>
 
@@ -246,8 +245,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-09 20:40" pubdate>
-          2024年2月9日 晚上
+        <time datetime="2024-12-22 11:32" pubdate>
+          2024年12月22日 中午
         </time>
       </span>
     
@@ -258,7 +257,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          645 字
+          525 字
         
       </span>
     
@@ -269,7 +268,7 @@
         
         
         
-          6 分钟
+          5 分钟
         
       </span>
     
@@ -314,35 +313,95 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">make EDGE more user-friendly</h1>
+            <h1 id="seo-header">在serv00上搭建X-UI，套CDN</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>除去当前浏览器的兼容性都没有啥问题了，包括在安全这一块大家也都差不多，那么对于我来说一个好用的浏览器应该具备哪些特性呢？</p>
-<p><strong>轻快放第一位：</strong> 打开网页的速度必须要快，这个是第一要义，同时不能太卡，有一种猎豹之感。</p>
-<p><strong>几乎都可配置：</strong> 可以将我不需要的东西都关闭掉，即使默认初始化效果一般，但是需要都可以关闭掉。</p>
-<p><strong>简单易用漂亮：</strong> 一定要简单易用，有确定性，想要的东西可以立马找到，同时窗口展示不能太丑。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092050492.png" srcset="/img/loading.gif" lazyload></p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="关闭多余设置"><a href="#关闭多余设置" class="headerlink" title="关闭多余设置"></a>关闭多余设置</h2><ul>
-<li>Command+. 进入设置页面，在<code>个人资料</code>里面关闭 Microsoft Rewards，少去一些干扰。</li>
-<li>选择<code>隐私、搜索和服务</code>，除去<code>防止跟踪</code> &#x2F; <code>Microsoft Defender Smartscreen</code> 这两个打开之外，其他的全部关闭。<br><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092056906.png" srcset="/img/loading.gif" lazyload></li>
-<li>继续在 <code>隐私、搜索和服务</code> 最下面，找到 <code>地址栏和搜索</code>，将地址栏中的<code>搜索引擎</code>修改成 Google，相比 Bing 要好用不少。<br><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092057197.png" srcset="/img/loading.gif" lazyload></li>
-<li>选择<code>外观</code>，将<code>试用 Microsoft Edge 的全新外观</code>、在<code>标题栏</code>中显示<code>个人资料图标</code>、在<code>配置文件</code>按钮中<code>显示配置文件类型</code>全部打开，页面缩放修改到 110%（假如你是高分辨率的 Mac 建议放大一点会更舒服），在<code>自定义工具栏</code>中打开在<code>垂直选项卡中隐藏标题栏</code>、启用<code>显示当前所有浏览器窗口的垂直标签</code>，全部关闭<code>选择要在工具栏上显示的按钮</code>，全部关闭<code>上下文菜单</code>，<code>自定义浏览器</code>中打开<code>在网页上按 Tab 将突出显示链接和表单域</code>、使用<code>双击关闭浏览器选项卡</code>，其他的都关闭，最终配置如下。<br><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092055627.png" srcset="/img/loading.gif" lazyload></li>
-<li>继续在<code>外观</code>最下面，选择<code>自定义字体</code>，默认应该是空的，可以将字体都修改成 <code>Helvetica Neue</code>，等宽字体可以配置成<code>JetBrains Mono</code>。<br><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092058723.png" srcset="/img/loading.gif" lazyload></li>
-<li>继续在<code>外观</code>，找到<code>悬浮菜单</code>，可以把里面的都给关闭了。<br><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092059864.png" srcset="/img/loading.gif" lazyload></li>
-<li>选择<code>侧栏</code>，假如你是一个强迫症患者，建议这里全部都给关闭了，然后点击<code>Discover</code>进去将显示必应聊天给给关闭了。<br><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092100413.png" srcset="/img/loading.gif" lazyload><br>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/">https://cdn.jsdelivr.net/gh/justincnn/pictures/img/</a></li>
-<li>选择<code>系统和性能</code>，可以根据自己的情况去配置好对应的优化，可以参考如下。<br><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092101447.jpg" srcset="/img/loading.gif" lazyload></li>
+                <h2 id="获取Serv00的IPV4"><a href="#获取Serv00的IPV4" class="headerlink" title="获取Serv00的IPV4"></a>获取Serv00的IPV4</h2><p>路径：主页–DNS zones</p>
+<p><img src="https://s2.loli.net/2024/12/22/7hDmEAbRjBklSga.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="在Cloudflare创建子域名"><a href="#在Cloudflare创建子域名" class="headerlink" title="在Cloudflare创建子域名"></a>在Cloudflare创建子域名</h2><p>路径：域名–DNS–记录，并打开小黄云</p>
+<p><img src="https://s2.loli.net/2024/12/22/fa37CitegwPFzSG.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="Serv00开放两个端口"><a href="#Serv00开放两个端口" class="headerlink" title="Serv00开放两个端口"></a>Serv00开放两个端口</h2><p>路径：主页–Port reseration</p>
+<p><img src="https://s2.loli.net/2024/12/22/IFCSkDprcwP6v5X.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="Serv00添加子域名"><a href="#Serv00添加子域名" class="headerlink" title="Serv00添加子域名"></a>Serv00添加子域名</h2><p>路径：主页–WWW websites</p>
+<p><img src="https://s2.loli.net/2024/12/22/JvWymqacs7TU9QK.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://s2.loli.net/2024/12/22/Xz893JU7nDtioMF.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="X-UI-安装"><a href="#X-UI-安装" class="headerlink" title="X-UI 安装"></a>X-UI 安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>进入 <code>public_html</code> 文件下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /usr/home/你的serv名字/domains/域名/public_html<br></code></pre></td></tr></table></figure>
+
+<p>下载xui</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/zjmkkk/xui-serv00.git &amp;&amp; <span class="hljs-built_in">mv</span> xui-serv00/x-ui.sh ./ &amp;&amp; <span class="hljs-built_in">rm</span> -rf xui-serv00<br></code></pre></td></tr></table></figure>
+
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>赋权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x /usr/home/serv00名字/domains/域名/public_html/x-ui.sh<br></code></pre></td></tr></table></figure>
+
+<p>运行sui</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./x-ui.sh<br></code></pre></td></tr></table></figure>
+
+<p><strong>选1</strong></p>
+<p><img src="https://s2.loli.net/2024/12/22/GnRsa8PE96B7TQH.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>请输入面板访问端口：刚才设置的xui端口</li>
+<li>用户名和密码：随意</li>
+<li>出现如下的情况说明已经安装成功</li>
 </ul>
-<h2 id="常用插件分享"><a href="#常用插件分享" class="headerlink" title="常用插件分享"></a>常用插件分享</h2><h3 id="沉浸式翻译"><a href="#沉浸式翻译" class="headerlink" title="沉浸式翻译"></a><a target="_blank" rel="noopener" href="https://immersivetranslate.com/">沉浸式翻译</a></h3><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092103526.gif" srcset="/img/loading.gif" lazyload></p>
-<h3 id="uBlock-Origin"><a href="#uBlock-Origin" class="headerlink" title="uBlock Origin"></a><a target="_blank" rel="noopener" href="https://github.com/gorhill/uBlock">uBlock Origin</a></h3><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092105190.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="暴力猴"><a href="#暴力猴" class="headerlink" title="暴力猴"></a><a target="_blank" rel="noopener" href="https://violentmonkey.github.io/">暴力猴</a></h3><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092106210.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="Bypass-Paywalls"><a href="#Bypass-Paywalls" class="headerlink" title="Bypass Paywalls"></a><a target="_blank" rel="noopener" href="https://github.com/iamadamdev/bypass-paywalls-chrome">Bypass Paywalls</a></h3><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092109943.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="Surfingkeys"><a href="#Surfingkeys" class="headerlink" title="Surfingkeys"></a><a target="_blank" rel="noopener" href="https://github.com/brookhong/Surfingkeys">Surfingkeys</a></h3><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092113288.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="Cookie-Editor"><a href="#Cookie-Editor" class="headerlink" title="Cookie-Editor"></a><a target="_blank" rel="noopener" href="https://cookie-editor.com/">Cookie-Editor</a></h3><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092115380.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="AITDK"><a href="#AITDK" class="headerlink" title="AITDK"></a><a target="_blank" rel="noopener" href="https://aitdk.com/zh-CN/">AITDK</a></h3><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092117635.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="Bitwarden"><a href="#Bitwarden" class="headerlink" title="Bitwarden"></a><a target="_blank" rel="noopener" href="https://bitwarden.com/">Bitwarden</a></h3><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402092120668.png" srcset="/img/loading.gif" lazyload></p>
-<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a target="_blank" rel="noopener" href="https://tw93.fun/2023-08-20/edge.html">2023 我的浏览器折腾之旅</a></p>
+<p><img src="https://s2.loli.net/2024/12/22/itb7zFYWDS5j8Va.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="Cloudflare添加自定义规则"><a href="#Cloudflare添加自定义规则" class="headerlink" title="Cloudflare添加自定义规则"></a>Cloudflare添加自定义规则</h2><ul>
+<li><p>规则改为灵活</p>
+<p>路径：域名–SSL&#x2F;TLS–概述</p>
+<p><img src="https://s2.loli.net/2024/12/22/j1iaEHOFuD6yz4c.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>创建自定义规则</p>
+<p>路径：域名–规则–Origin Rules</p>
+<p><img src="https://s2.loli.net/2024/12/22/hbaGRedufoANsjv.png" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li><p>X-UI规则</p>
+<p><img src="https://s2.loli.net/2024/12/22/A1crfIpTsMmEQFP.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>节点规则</p>
+<p><img src="https://s2.loli.net/2024/12/22/NvrOwodEfkBVD6g.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ol>
+<h2 id="节点设置"><a href="#节点设置" class="headerlink" title="节点设置"></a>节点设置</h2><ul>
+<li><p>访问域名</p>
+</li>
+<li><p>创建节点</p>
+<p><img src="https://s2.loli.net/2024/12/22/HS5uMapIYENAOTo.png" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li>端口：刚才设置的节点端口</li>
+<li>传输：ws</li>
+</ol>
+</li>
+<li><p>节点客户端设置</p>
+<ul>
+<li>端口改为：443</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/12/22/GJY8F5NIr7uRjlH.jpg" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>打开TLS</p>
+<p><img src="https://s2.loli.net/2024/12/22/5GSL6Cv29RWhMYH.jpg" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="保活脚本"><a href="#保活脚本" class="headerlink" title="保活脚本"></a>保活脚本</h2><p>由于serv00不定期杀后台，所以需要创建一个保活脚本使xui稳定运行</p>
+<p>在<code>public_html</code>目录下创建<code>start.sh</code>文本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><br><span class="hljs-comment"># 进入指定目录</span><br><span class="hljs-built_in">cd</span> /usr/home/serv00账号/domains/你的xui域名/public_html<br><br><span class="hljs-comment"># 运行 x-ui.sh 并自动选择 8 和 0</span><br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;8\n0&quot;</span> | ./x-ui.sh<br></code></pre></td></tr></table></figure>
+
+<p>在<code>public_html</code>目录下创建<code>restart.sh</code>文本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><br><span class="hljs-comment"># 设置脚本路径</span><br>SCRIPT_PATH=<span class="hljs-string">&quot;/usr/home/serv00账号/domains/你的xui域名/public_html/start.sh&quot;</span><br>WORK_DIR=<span class="hljs-string">&quot;/usr/home/serv00账号/domains/你的xui域名/public_html&quot;</span><br>PORT=你的xui端口<br><br><span class="hljs-comment"># 检查端口是否被占用</span><br><span class="hljs-keyword">if</span> ! sockstat -4 -l | grep -q <span class="hljs-string">&quot;:<span class="hljs-variable">$PORT</span>&quot;</span><br><span class="hljs-keyword">then</span><br>    <span class="hljs-comment"># 如果端口没有被占用，则重新启动脚本</span><br>    <span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;<span class="hljs-variable">$WORK_DIR</span>&quot;</span><br>    <span class="hljs-built_in">nohup</span> ./start.sh &gt; /dev/null 2&gt;&amp;1 &amp;<br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Restarted start.sh at <span class="hljs-subst">$(date)</span>&quot;</span> &gt;&gt; <span class="hljs-string">&quot;<span class="hljs-variable">$WORK_DIR</span>/restart_log.txt&quot;</span><br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>
+
+<p>将上面的<code>serv00账号</code>，<code>你的xui域名</code>和<code>你的xui端口</code>替换为自己的</p>
+<p>赋权脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x /usr/home/serv00名字/domains/域名/public_html/start.sh<br><br><span class="hljs-built_in">chmod</span> +x /usr/home/serv00名字/domains/域名/public_html/restart.sh<br></code></pre></td></tr></table></figure>
+
+<p><strong>先自己在SSH运行下是否出错</strong></p>
+<p>在Cron Jobs下创建如下命令：</p>
+<p><img src="https://s2.loli.net/2024/12/22/a69ZMTyzqXrYfQD.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><a target="_blank" rel="noopener" href="https://linux.do/u/xjfkkk">xjfkkk</a>@LinuxDo的方案和内容，本文大部分为借鉴此大神。</p>
 
                 
               </div>
@@ -355,11 +414,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Chrome/" class="print-no-link">#Chrome</a>
+        <a href="/tags/VPS/" class="print-no-link">#VPS</a>
       
-        <a href="/tags/Wechat/" class="print-no-link">#Wechat</a>
+        <a href="/tags/How-to/" class="print-no-link">#How to</a>
       
-        <a href="/tags/Tips/" class="print-no-link">#Tips</a>
+        <a href="/tags/Serv00/" class="print-no-link">#Serv00</a>
       
     </div>
   
@@ -371,8 +430,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>make EDGE more user-friendly</div>
-      <div>http://example.com/2024/02/09/make-EDGE-more-user-friendly/</div>
+      <div>在serv00上搭建X-UI，套CDN</div>
+      <div>http://example.com/2024/12/22/在serv00上搭建X-UI，套CDN/</div>
     </div>
     <div class="license-meta">
       
@@ -384,7 +443,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月9日</div>
+          <div>2024年12月22日</div>
         </div>
       
       
@@ -416,18 +475,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/09/Mac-APP-Easydict/" title="Mac APP:Easydict">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Mac APP:Easydict</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/09/Block-Ads-on-Apple-Devices/" title="Block Ads on Apple Devices">
-                        <span class="hidden-mobile">Block Ads on Apple Devices</span>
+                      <a href="/2024/12/15/Serv00-%E9%83%A8%E7%BD%B2%E6%A1%88%E4%BE%8B%E5%92%8C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Serv00 部署案例和常用命令">
+                        <span class="hidden-mobile">Serv00 部署案例和常用命令</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
