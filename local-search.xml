@@ -8,7 +8,7 @@
     <link href="/2024/12/23/%E5%B0%8F%E7%B1%B3%E6%89%8B%E6%9C%BA%E5%8D%87%E7%BA%A7%E6%BE%8E%E6%8B%9C%E4%B9%8B%E5%90%8E%E5%A6%82%E4%BD%95%E8%A7%A3BL/"/>
     <url>/2024/12/23/%E5%B0%8F%E7%B1%B3%E6%89%8B%E6%9C%BA%E5%8D%87%E7%BA%A7%E6%BE%8E%E6%8B%9C%E4%B9%8B%E5%90%8E%E5%A6%82%E4%BD%95%E8%A7%A3BL/</url>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>理论上可以解小米13之前、目前已经升级为澎湃系统的手机BL</p><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol><li><p>从 <a href="https://www.php.net/downloads">官方网站</a> 下载并安装适用于您操作系统的 PHP 8.0+。</p></li><li><p>在 <code>php.ini</code> 中启用 OpenSSL 和 Curl 扩展。（如果脚本未正常工作，请将 <code>extension_dir</code> 设置为 PHP 的 <code>ext</code> 文件夹路径。）</p></li><li><p>将 <a href="https://github.com/MlgmXyysd/php-adb">php-adb</a> 中的 <code>adb.php</code> 放到目录中。</p></li><li><p>下载 <a href="https://developer.android.com/studio/releases/platform-tools">platform-tools</a>，并将其放入 <code>libraries</code>。*注意：Mac OS 需要将 <code>adb</code> 重命名为 <code>adb-darwin</code>。</p></li><li><p>打开终端，使用 PHP 解释器执行 <a href="https://github.com/MlgmXyysd/Xiaomi-HyperOS-BootLoader-Bypass/blob/master/bypass.php">脚本</a>。</p></li><li><p>多次点击<code>设置 - 关于手机 - MIUI 版本</code>启用<code>开发者选项</code>。</p></li><li><p>在<code>设置 - 附加设置 - 开发者选项</code>中启用<code>OEM 解锁</code>、<code>USB 调试</code>和<code>USB 调试（安全设置）</code>。</p></li><li><p>登录一个_有效_*的小米账号。</p></li><li><p>通过有线方式将设备连接到电脑。</p></li><li><p>选中<code>始终允许来自此计算机的调试</code>，然后单击<code>确定</code>。</p></li><li><p>等待并按脚本提示操作。如出现下面提示就表示解锁ok</p><p><img src="https://s2.loli.net/2024/12/23/a7Co4MPv5cYOUpB.png"></p></li><li><p>绑定成功后，您可以使用 <a href="https://www.miui.com/unlock/index.html">官方解锁工具</a> 查看需要等待的时间。</p></li><li><p>在等待期间，请正常使用设备，保持 SIM 卡插入，不要登出小米账号或关闭”查找我的手机”，不要重新绑定设备，直到成功解锁。设备将每隔一段时间自动向服务器发送 <code>HeartBeat</code> 数据包。</p></li></ol><h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><ul><li><p>Q: 为什么解锁工具仍然提醒我等待 168&#x2F;360（或更长）小时？</p></li><li><p>A: 根据原理，该 PoC 只绕过了小米为 HyperOS 额外添加的限制。您仍然需要遵循 MIUI 的限制。   </p></li><li><p>Q: 设备显示 “验证失败，请稍后再试”。</p></li><li><p>A: 这是正常现象，设备端的绑定请求已被脚本拦截。实际绑定结果以脚本提示为准。</p></li><li><p>Q: 绑定失败，错误代码为 <code>401</code>。</p></li><li><p>A: 您的小米账号凭据已过期，您需要在设备中登出账号并重新登录。</p></li><li><p>Q: 绑定失败，错误代码为 <code>20086</code>。</p></li><li><p>A: 您的设备凭据已过期，您可能需要重新启动设备。</p></li><li><p>Q: 绑定失败，错误代码为 <code>20090</code> 或 <code>20091</code>。</p></li><li><p>A: 设备的 <code>Security Device Credential Manager</code> 功能已损坏，请联系售后服务寻求支持。</p></li><li><p>Q: 绑定失败，错误代码为 <code>30001</code>。</p></li><li><p>A: 您的设备已被小米强制验证账户资格。小米早就抛弃了”极客”精神，我们对此无能为力。</p></li><li><p>Q: 绑定失败，错误代码为 <code>86015</code>。</p></li><li><p>A: 服务器拒绝了本次绑定请求，请重试。</p></li><li><p>Q: 错误代码为 <code>10000</code>。</p></li><li><p>A: 下载 ‘<a href="https://github.com/MlgmXyysd/Xiaomi-HyperOS-BootLoader-Bypass/releases/download/1.0-fix/Settings_Redmi_marble_V816.0.5.0.UMRINXM.zip'%E5%B9%B6%E5%AE%89%E8%A3%85">https://github.com/MlgmXyysd/Xiaomi-HyperOS-BootLoader-Bypass/releases/download/1.0-fix/Settings_Redmi_marble_V816.0.5.0.UMRINXM.zip&#39;并安装</a></p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>理论上可以解小米13之前、目前已经升级为澎湃系统的手机BL</p><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol><li><p>从 <a href="https://www.php.net/downloads">官方网站</a> 下载并安装适用于您操作系统的 PHP 8.0+。</p></li><li><p>在 <code>php.ini</code> 中启用 OpenSSL 和 Curl 扩展。（如果脚本未正常工作，请将 <code>extension_dir</code> 设置为 PHP 的 <code>ext</code> 文件夹路径。）</p></li><li><p>将 <a href="https://github.com/MlgmXyysd/php-adb">php-adb</a> 中的 <code>adb.php</code> 放到目录中。</p></li><li><p>下载 <a href="https://developer.android.com/studio/releases/platform-tools">platform-tools</a>，并将其放入 <code>libraries</code>。*注意：Mac OS 需要将 <code>adb</code> 重命名为 <code>adb-darwin</code>。</p></li><li><p>打开终端，使用 PHP 解释器执行 <a href="https://github.com/MlgmXyysd/Xiaomi-HyperOS-BootLoader-Bypass/blob/master/bypass.php">脚本</a>。</p></li><li><p>多次点击<code>设置 - 关于手机 - MIUI 版本</code>启用<code>开发者选项</code>。</p></li><li><p>在<code>设置 - 附加设置 - 开发者选项</code>中启用<code>OEM 解锁</code>、<code>USB 调试</code>和<code>USB 调试（安全设置）</code>。</p></li><li><p>登录一个_有效_*的小米账号。</p></li><li><p>通过有线方式将设备连接到电脑。</p></li><li><p>选中<code>始终允许来自此计算机的调试</code>，然后单击<code>确定</code>。</p></li><li><p>等待并按脚本提示操作。如出现下面提示就表示解锁ok</p><p><img src="https://s2.loli.net/2024/12/23/a7Co4MPv5cYOUpB.png"></p></li><li><p>绑定成功后，您可以使用 <a href="https://www.miui.com/unlock/index.html">官方解锁工具</a> 查看需要等待的时间。</p></li><li><p>在等待期间，请正常使用设备，保持 SIM 卡插入，不要登出小米账号或关闭”查找我的手机”，不要重新绑定设备，直到成功解锁。设备将每隔一段时间自动向服务器发送 <code>HeartBeat</code> 数据包。</p></li></ol><h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><ul><li><p>Q: 为什么解锁工具仍然提醒我等待 168&#x2F;360（或更长）小时？</p></li><li><p>A: 根据原理，该 PoC 只绕过了小米为 HyperOS 额外添加的限制。您仍然需要遵循 MIUI 的限制。   </p></li><li><p>Q: 设备显示 “验证失败，请稍后再试”。</p></li><li><p>A: 这是正常现象，设备端的绑定请求已被脚本拦截。实际绑定结果以脚本提示为准。</p></li><li><p>Q: 绑定失败，错误代码为 <code>401</code>。</p></li><li><p>A: 您的小米账号凭据已过期，您需要在设备中登出账号并重新登录。</p></li><li><p>Q: 绑定失败，错误代码为 <code>20086</code>。</p></li><li><p>A: 您的设备凭据已过期，您可能需要重新启动设备。</p></li><li><p>Q: 绑定失败，错误代码为 <code>20090</code> 或 <code>20091</code>。</p></li><li><p>A: 设备的 <code>Security Device Credential Manager</code> 功能已损坏，请联系售后服务寻求支持。</p></li><li><p>Q: 绑定失败，错误代码为 <code>30001</code>。</p></li><li><p>A: 您的设备已被小米强制验证账户资格。小米早就抛弃了”极客”精神，我们对此无能为力。</p></li><li><p>Q: 绑定失败，错误代码为 <code>86015</code>。</p></li><li><p>A: 服务器拒绝了本次绑定请求，请重试。</p></li><li><p>Q: 错误代码为 <code>10000</code>。</p></li><li><p>A: 下载  ‘<a href="https://github.com/MlgmXyysd/Xiaomi-HyperOS-BootLoader-Bypass/releases/download/1.0-fix/Settings_Redmi_marble_V816.0.5.0.UMRINXM.zip">https://github.com/MlgmXyysd/Xiaomi-HyperOS-BootLoader-Bypass/releases/download/1.0-fix/Settings_Redmi_marble_V816.0.5.0.UMRINXM.zip</a>‘  并安装</p></li></ul>]]></content>
     
     
     
@@ -159,11 +159,11 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>Ai</tag>
       
       <tag>Chrome</tag>
+      
+      <tag>Wechat</tag>
       
     </tags>
     
@@ -312,9 +312,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>Openwrt</tag>
+      
+      <tag>Wechat</tag>
       
       <tag>Life</tag>
       
@@ -337,9 +337,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>Ai</tag>
+      
+      <tag>Wechat</tag>
       
       <tag>Script</tag>
       
@@ -423,9 +423,9 @@
       
       <tag>Mac</tag>
       
-      <tag>App</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>App</tag>
       
     </tags>
     
@@ -444,9 +444,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>Openwrt</tag>
+      
+      <tag>Wechat</tag>
       
     </tags>
     
@@ -612,9 +612,9 @@
       
       <tag>Mac</tag>
       
-      <tag>App</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>App</tag>
       
     </tags>
     
@@ -633,9 +633,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>Chrome</tag>
+      
+      <tag>Wechat</tag>
       
       <tag>Tips</tag>
       
@@ -700,9 +700,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>Wechat</tag>
       
       <tag>Oracle</tag>
       
@@ -773,9 +773,9 @@
     
     <tags>
       
-      <tag>App</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>App</tag>
       
       <tag>Amazon</tag>
       
@@ -956,7 +956,7 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -985,9 +985,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>Wechat</tag>
       
       <tag>Cloudflare</tag>
       
@@ -1073,9 +1073,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>Wechat</tag>
       
       <tag>Script</tag>
       
@@ -1182,9 +1182,9 @@
     
     <tags>
       
-      <tag>Wechat</tag>
-      
       <tag>VPS</tag>
+      
+      <tag>Wechat</tag>
       
       <tag>Oracle</tag>
       
@@ -1226,17 +1226,17 @@
     
     <tags>
       
-      <tag>Ai</tag>
-      
       <tag>VPS</tag>
       
-      <tag>Docker</tag>
+      <tag>Ai</tag>
       
       <tag>ChatGpt</tag>
       
-      <tag>Linux</tag>
+      <tag>Docker</tag>
       
       <tag>Script</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
