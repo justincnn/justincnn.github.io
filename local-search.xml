@@ -8,7 +8,7 @@
     <link href="/2025/01/18/Serv00-%E6%90%AD%E5%BB%BA%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/"/>
     <url>/2025/01/18/Serv00-%E6%90%AD%E5%BB%BA%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/</url>
     
-    <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2025/01/18/5EVUjnbgmt4vkdM.png" alt="截屏2025-01-18 07.32.25"></p><h2 id="登录Serv00，添加域名"><a href="#登录Serv00，添加域名" class="headerlink" title="登录Serv00，添加域名"></a>登录Serv00，添加域名</h2><p><img src="https://s2.loli.net/2025/01/18/Wca8nk65FY7NZEK.png" alt="Wca8nk65FY7NZEK"></p><h2 id="在Cloudflare登记A记录"><a href="#在Cloudflare登记A记录" class="headerlink" title="在Cloudflare登记A记录"></a>在Cloudflare登记A记录</h2><p>复制DNS zones中的A记录</p><p><img src="https://s2.loli.net/2025/01/18/6IrYHoF2hVPacqB.png" alt="截屏2025-01-18 07.37.34"></p><p><img src="https://s2.loli.net/2025/01/18/83uTFVKlRhIYasJ.png" alt="截屏2025-01-18 07.37.49"></p><p>添加到Cloudflare的DNS，注意代理状态不要打开</p><p><img src="https://s2.loli.net/2025/01/18/lArxN21vXptCFhs.png" alt="截屏2025-01-18 07.42.25"></p><h2 id="设置SSL"><a href="#设置SSL" class="headerlink" title="设置SSL"></a>设置SSL</h2><p><img src="https://s2.loli.net/2025/01/18/Gd2wqiF3IMgR68C.png" alt="截屏2025-01-18 07.44.58"></p><p><img src="https://s2.loli.net/2025/01/18/xlkjNzRMVPY5Boq.png" alt="截屏2025-01-18 07.45.19"></p><h2 id="兰空安装"><a href="#兰空安装" class="headerlink" title="兰空安装"></a>兰空安装</h2><p>SSH登录Serv00，进入网站命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> domains/xx.xxx.com<br></code></pre></td></tr></table></figure><p><img src="https://s2.loli.net/2025/01/18/S98LJHvQCNKjBrf.png" alt="截屏2025-01-18 07.48.00"></p><p>依次执行下面代码，下载兰空代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">release_info=$(curl -s https://api.github.com/repos/lsky-org/lsky-pro/releases/latest)<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">asset_url=$(<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$release_info</span>&quot;</span> | jq -r <span class="hljs-string">&#x27;.assets[] | select(.name != &quot;source code&quot;) | .browser_download_url&#x27;</span>)<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -L -o temp.zip <span class="hljs-string">&quot;<span class="hljs-variable">$asset_url</span>&quot;</span> &amp;&amp; unzip -q temp.zip &amp;&amp; <span class="hljs-built_in">rm</span> -f temp.zip<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> -rf public_html &amp;&amp; <span class="hljs-built_in">ln</span> -s <span class="hljs-string">&quot;<span class="hljs-variable">$PWD</span>/public&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$PWD</span>/public_html&quot;</span><br></code></pre></td></tr></table></figure><p>进入Panel设置</p><p><img src="https://s2.loli.net/2025/01/18/pTKG1eEbsj5Ifwh.png" alt="截屏2025-01-18 07.52.41"></p><p><img src="https://s2.loli.net/2025/01/18/VZ241twuHz7rIYX.png" alt="VZ241twuHz7rIYX"></p><p>在 ‘ Open Basedir directories ‘ 中结尾添加如下代码，并将用户名和域名根据自己的情况做对应修改：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs YAML"><span class="hljs-string">:/usr/home/User/domains/xx.xxx.com</span><br></code></pre></td></tr></table></figure><p>SQL数据库设置</p><p><img src="https://s2.loli.net/2025/01/18/F3MGYTI6EuZh9c8.png" alt="截屏2025-01-18 07.58.57"></p><h2 id="网页安装程序"><a href="#网页安装程序" class="headerlink" title="网页安装程序"></a>网页安装程序</h2><p>打开域名，确认所有的设置都是打勾状态，如果有错，重新检查上面的步骤</p><p><img src="https://s2.loli.net/2025/01/18/C6mysuSNJvqMHl1.png" alt="截屏2025-01-18 08.04.48"></p><p>备注：数据库连接地址填写当时邮箱发送的数据库信息</p><p><img src="https://s2.loli.net/2025/01/18/DSchq2uBiRmNpfn.png" alt="截屏2025-01-18 08.04.00"></p><p><img src="https://s2.loli.net/2025/01/18/eDhW8u4CAZpT9lb.png" alt="截屏2025-01-18 08.06.24"></p><p>安装成功，使用刚才的管理员和密码进行登录</p><h2 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h2><p>进入SSH，执行如下代码(将USER和域名改为自己的信息)，给予兰图上传权限</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> -R 777 /usr/home/USER/domains/xx.xxx.com/storage<br></code></pre></td></tr></table></figure><h2 id="保活计划任务"><a href="#保活计划任务" class="headerlink" title="保活计划任务"></a>保活计划任务</h2><p><img src="https://s2.loli.net/2025/01/18/nLe6yauvpFNbTVx.png" alt="截屏2025-01-18 08.11.57"></p><h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>内容采集自<a href="https://www.youtube.com/watch?v=pUGZf-AoDH4">米拉一</a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://s2.loli.net/2025/01/18/5EVUjnbgmt4vkdM.png" alt="截屏2025-01-18 07.32.25"></p><h2 id="登录Serv00，添加域名"><a href="#登录Serv00，添加域名" class="headerlink" title="登录Serv00，添加域名"></a>登录Serv00，添加域名</h2><p><img src="https://s2.loli.net/2025/01/18/Wca8nk65FY7NZEK.png" alt="Wca8nk65FY7NZEK"></p><h2 id="在Cloudflare登记A记录"><a href="#在Cloudflare登记A记录" class="headerlink" title="在Cloudflare登记A记录"></a>在Cloudflare登记A记录</h2><p>复制DNS zones中的A记录</p><p><img src="https://s2.loli.net/2025/01/18/6IrYHoF2hVPacqB.png" alt="截屏2025-01-18 07.37.34"></p><p><img src="https://s2.loli.net/2025/01/18/83uTFVKlRhIYasJ.png" alt="截屏2025-01-18 07.37.49"></p><p>添加到Cloudflare的DNS，注意代理状态不要打开</p><p><img src="https://s2.loli.net/2025/01/18/lArxN21vXptCFhs.png" alt="截屏2025-01-18 07.42.25"></p><h2 id="设置SSL"><a href="#设置SSL" class="headerlink" title="设置SSL"></a>设置SSL</h2><p><img src="https://s2.loli.net/2025/01/18/Gd2wqiF3IMgR68C.png" alt="截屏2025-01-18 07.44.58"></p><p><img src="https://s2.loli.net/2025/01/18/xlkjNzRMVPY5Boq.png" alt="截屏2025-01-18 07.45.19"></p><h2 id="兰空安装"><a href="#兰空安装" class="headerlink" title="兰空安装"></a>兰空安装</h2><p>SSH登录Serv00，进入网站命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> domains/xx.xxx.com<br></code></pre></td></tr></table></figure><p><img src="https://s2.loli.net/2025/01/18/S98LJHvQCNKjBrf.png" alt="截屏2025-01-18 07.48.00"></p><p>依次执行下面代码，下载兰空代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">release_info=$(curl -s https://api.github.com/repos/lsky-org/lsky-pro/releases/latest)<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">asset_url=$(<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$release_info</span>&quot;</span> | jq -r <span class="hljs-string">&#x27;.assets[] | select(.name != &quot;source code&quot;) | .browser_download_url&#x27;</span>)<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -L -o temp.zip <span class="hljs-string">&quot;<span class="hljs-variable">$asset_url</span>&quot;</span> &amp;&amp; unzip -q temp.zip &amp;&amp; <span class="hljs-built_in">rm</span> -f temp.zip<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> -rf public_html &amp;&amp; <span class="hljs-built_in">ln</span> -s <span class="hljs-string">&quot;<span class="hljs-variable">$PWD</span>/public&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$PWD</span>/public_html&quot;</span><br></code></pre></td></tr></table></figure><p>进入Panel设置</p><p><img src="https://s2.loli.net/2025/01/18/pTKG1eEbsj5Ifwh.png" alt="截屏2025-01-18 07.52.41"></p><p><img src="https://s2.loli.net/2025/01/18/VZ241twuHz7rIYX.png" alt="VZ241twuHz7rIYX"></p><p>在 ‘ Open Basedir directories ‘ 中结尾添加如下代码，并将用户名和域名根据自己的情况做对应修改：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs YAML"><span class="hljs-string">:/usr/home/User/domains/xx.xxx.com</span><br></code></pre></td></tr></table></figure><p>SQL数据库设置</p><p><img src="https://s2.loli.net/2025/01/18/F3MGYTI6EuZh9c8.png" alt="截屏2025-01-18 07.58.57"></p><h2 id="网页安装程序"><a href="#网页安装程序" class="headerlink" title="网页安装程序"></a>网页安装程序</h2><p>打开域名，确认所有的设置都是打勾状态，如果有错，重新检查上面的步骤</p><p><img src="https://s2.loli.net/2025/01/18/C6mysuSNJvqMHl1.png" alt="截屏2025-01-18 08.04.48"></p><p>备注：数据库连接地址填写当时邮箱发送的数据库信息</p><p><img src="https://s2.loli.net/2025/01/18/DSchq2uBiRmNpfn.png" alt="截屏2025-01-18 08.04.00"></p><p><img src="https://s2.loli.net/2025/01/18/eDhW8u4CAZpT9lb.png" alt="截屏2025-01-18 08.06.24"></p><p>安装成功，使用刚才的管理员和密码进行登录</p><h2 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h2><p>进入SSH，执行如下代码(将USER和域名改为自己的信息)，给予兰图上传权限</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> -R 777 /usr/home/USER/domains/xx.xxx.com/storage<br></code></pre></td></tr></table></figure><h2 id="保活计划任务"><a href="#保活计划任务" class="headerlink" title="保活计划任务"></a>保活计划任务</h2><p><img src="https://s2.loli.net/2025/01/18/nLe6yauvpFNbTVx.png" alt="截屏2025-01-18 08.11.57"></p><h2 id="Upic设置"><a href="#Upic设置" class="headerlink" title="Upic设置"></a>Upic设置</h2><p>由于版本问题，无法直接调用Upic的兰空接口，需要自定义API：</p><ul><li><p>获取token</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -X POST -F <span class="hljs-string">&quot;email=email@address&quot;</span> -F <span class="hljs-string">&quot;password=your_passwd&quot;</span> https://your.domain/api/v1/tokens<br></code></pre></td></tr></table></figure></li><li><p>Upic设置</p><p>自定义 Host:</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">POST <span class="hljs-regexp">/api/</span>v1/upload<br></code></pre></td></tr></table></figure><p>文件字段填写 :</p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript"><span class="hljs-built_in">file</span><br></code></pre></td></tr></table></figure><p>URL:</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-attr">[<span class="hljs-string">&quot;data&quot;</span>, <span class="hljs-string">&quot;links&quot;</span>, <span class="hljs-string">&quot;url&quot;</span>]</span><br></code></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-18%2012.42.16%20.png" alt="截屏2025-01-1812.42.16"></p></li></ul><p>​其他字段：</p><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%25E6%2588%25AA%25E5%25B1%258F2025-01-18%252012.43.40%2520.png" alt="截屏2025-01-18 12.43.40"></p><p>参数：</p><ul><li>Content-Type: multipart&#x2F;form-data</li><li>Accept: application&#x2F;json</li><li>Authorization: Bearer 1|FWzOLxTGKhlT51m2oxxxxxxxxxxxxxxx</li></ul><p><code>Authorization 的值填写格式：Bearer + token 字段的数据，注意中间有个空格。</code></p><p>备注：上传路径</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">~<span class="hljs-regexp">/lsky/</span>data<span class="hljs-regexp">/storage/</span>app<span class="hljs-regexp">/uploads/</span><br></code></pre></td></tr></table></figure><h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>内容采集自<a href="https://www.youtube.com/watch?v=pUGZf-AoDH4">米拉一</a></p>]]></content>
     
     
     
@@ -270,9 +270,9 @@
     
     <tags>
       
-      <tag>Github</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Github</tag>
       
       <tag>Script</tag>
       
@@ -362,9 +362,9 @@
       
       <tag>Wechat</tag>
       
-      <tag>Life</tag>
-      
       <tag>Openwrt</tag>
+      
+      <tag>Life</tag>
       
       <tag>Script</tag>
       
@@ -572,9 +572,9 @@
     
     <tags>
       
-      <tag>Github</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Github</tag>
       
     </tags>
     
@@ -593,9 +593,9 @@
     
     <tags>
       
-      <tag>Adblock</tag>
-      
       <tag>Clash</tag>
+      
+      <tag>Adblock</tag>
       
       <tag>Openwrt</tag>
       
@@ -727,9 +727,9 @@
     
     <tags>
       
-      <tag>Ai</tag>
-      
       <tag>ChatGpt</tag>
+      
+      <tag>Ai</tag>
       
     </tags>
     
@@ -775,11 +775,11 @@
       
       <tag>VPS</tag>
       
+      <tag>Tips</tag>
+      
       <tag>Linux</tag>
       
       <tag>Ubuntu</tag>
-      
-      <tag>Tips</tag>
       
     </tags>
     
@@ -846,9 +846,9 @@
       
       <tag>Mac</tag>
       
-      <tag>Github</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Github</tag>
       
       <tag>Blog</tag>
       
@@ -1004,7 +1004,7 @@
     <link href="/2023/07/23/slove-git-github-com-Permission-denied-publickey/"/>
     <url>/2023/07/23/slove-git-github-com-Permission-denied-publickey/</url>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;">&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p><h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure><h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure><h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure><p>如果出现错误提示：<br>请执行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure><p>后，继续执行命令 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure><h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p><h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>显示如下输出即表示暂时解决此问题：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -1012,9 +1012,9 @@
       
       <tag>Mac</tag>
       
-      <tag>Github</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Github</tag>
       
     </tags>
     
@@ -1056,9 +1056,9 @@
     
     <tags>
       
-      <tag>Github</tag>
-      
       <tag>Wechat</tag>
+      
+      <tag>Github</tag>
       
       <tag>Blog</tag>
       
@@ -1274,17 +1274,17 @@
     
     <tags>
       
-      <tag>Ai</tag>
-      
       <tag>VPS</tag>
       
       <tag>ChatGpt</tag>
       
-      <tag>Linux</tag>
+      <tag>Ai</tag>
       
       <tag>Docker</tag>
       
       <tag>Script</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
