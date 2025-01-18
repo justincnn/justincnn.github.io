@@ -18,36 +18,42 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言甲骨文 &#x2F; oracle是可以无限换IP的，但有朋友是通过删除实例，然后再创建实例来实现换IP的，显然，这是小题大做了，现教大家如何在不动实例的情况下快速更换甲骨文 &#x2F; oracle的IP 步骤 j进入实例：附加的VNIC   查看详细信息   进入：IP 地址   编辑：IP地址   选择：没有公共 IP并更新     没有公共 IP了   选择：临时公共 IP并更新">
+    <meta name="description" content="登录Serv00，添加域名 在Cloudflare登记A记录复制DNS zones中的A记录   添加到Cloudflare的DNS，注意代理状态不要打开  设置SSL  兰空安装SSH登录Serv00，进入网站命令 1cd domains&#x2F;xx.xxx.com     依次执行下面代码，下载兰空代码 1release_info&#x3D;$(curl -s https:&#x2F;&#x2F;api.github.com&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to change Oracle  VPS&#39; IP">
-<meta property="og:url" content="http://example.com/2024/02/04/How-to-change-Oracle-VPS-IP/index.html">
+<meta property="og:title" content="Serv00 搭建兰空图床">
+<meta property="og:url" content="http://example.com/2025/01/18/Serv00-%E6%90%AD%E5%BB%BA%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/index.html">
 <meta property="og:site_name" content="文科生的IT笔记">
-<meta property="og:description" content="前言甲骨文 &#x2F; oracle是可以无限换IP的，但有朋友是通过删除实例，然后再创建实例来实现换IP的，显然，这是小题大做了，现教大家如何在不动实例的情况下快速更换甲骨文 &#x2F; oracle的IP 步骤 j进入实例：附加的VNIC   查看详细信息   进入：IP 地址   编辑：IP地址   选择：没有公共 IP并更新     没有公共 IP了   选择：临时公共 IP并更新">
+<meta property="og:description" content="登录Serv00，添加域名 在Cloudflare登记A记录复制DNS zones中的A记录   添加到Cloudflare的DNS，注意代理状态不要打开  设置SSL  兰空安装SSH登录Serv00，进入网站命令 1cd domains&#x2F;xx.xxx.com     依次执行下面代码，下载兰空代码 1release_info&#x3D;$(curl -s https:&#x2F;&#x2F;api.github.com&#x2F;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2024/02/04/X453BRTZjEiPGAU.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/04/nmUvM6zuYJcWChE.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/04/syH7OjFCGngL16Z.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/04/lJO263jG8k7i5cE.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/04/4F9oDtbIlzaWPYU.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/04/juOUk4PIZVq6E9b.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/04/gqRzkuVhnSKiQ7P.png">
-<meta property="og:image" content="https://s2.loli.net/2024/02/04/J4hMG56vSsZjlzt.png">
-<meta property="article:published_time" content="2024-02-04T11:13:09.000Z">
-<meta property="article:modified_time" content="2024-04-15T22:52:43.201Z">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/5EVUjnbgmt4vkdM.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/Wca8nk65FY7NZEK.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/6IrYHoF2hVPacqB.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/83uTFVKlRhIYasJ.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/lArxN21vXptCFhs.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/Gd2wqiF3IMgR68C.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/xlkjNzRMVPY5Boq.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/S98LJHvQCNKjBrf.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/pTKG1eEbsj5Ifwh.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/VZ241twuHz7rIYX.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/F3MGYTI6EuZh9c8.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/C6mysuSNJvqMHl1.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/DSchq2uBiRmNpfn.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/eDhW8u4CAZpT9lb.png">
+<meta property="og:image" content="https://s2.loli.net/2025/01/18/nLe6yauvpFNbTVx.png">
+<meta property="article:published_time" content="2025-01-17T23:16:27.000Z">
+<meta property="article:modified_time" content="2025-01-18T00:14:19.816Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="Wechat">
 <meta property="article:tag" content="VPS">
-<meta property="article:tag" content="Oracle">
-<meta property="article:tag" content="Tips">
+<meta property="article:tag" content="Serv00">
+<meta property="article:tag" content="Cloudflare">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s2.loli.net/2024/02/04/X453BRTZjEiPGAU.png">
+<meta name="twitter:image" content="https://s2.loli.net/2025/01/18/5EVUjnbgmt4vkdM.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>How to change Oracle  VPS&#39; IP - 文科生的IT笔记</title>
+  <title>Serv00 搭建兰空图床 - 文科生的IT笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -228,7 +234,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="How to change Oracle  VPS&#39; IP"></span>
+            <span id="subtitle" data-typed-text="Serv00 搭建兰空图床"></span>
           
         </div>
 
@@ -239,8 +245,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-04 19:13" pubdate>
-          2024年2月4日 晚上
+        <time datetime="2025-01-18 07:16" pubdate>
+          2025年1月18日 早上
         </time>
       </span>
     
@@ -251,7 +257,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          138 字
+          311 字
         
       </span>
     
@@ -262,7 +268,7 @@
         
         
         
-          2 分钟
+          3 分钟
         
       </span>
     
@@ -307,42 +313,57 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">How to change Oracle  VPS&#39; IP</h1>
+            <h1 id="seo-header">Serv00 搭建兰空图床</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>甲骨文 &#x2F; oracle是可以无限换IP的，但有朋友是通过删除实例，然后再创建实例来实现换IP的，显然，这是小题大做了，现教大家如何在不动实例的情况下快速更换甲骨文 &#x2F; oracle的IP</p>
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul>
-<li><p>j进入实例：附加的VNIC</p>
-<p><img src="https://s2.loli.net/2024/02/04/X453BRTZjEiPGAU.png" srcset="/img/loading.gif" lazyload alt="《甲骨文 / oracle 换IP的方法》"></p>
-</li>
-<li><p>查看详细信息</p>
-<p><img src="https://s2.loli.net/2024/02/04/nmUvM6zuYJcWChE.png" srcset="/img/loading.gif" lazyload alt="《甲骨文 / oracle 换IP的方法》"></p>
-</li>
-<li><p>进入：IP 地址</p>
-<p><img src="https://s2.loli.net/2024/02/04/syH7OjFCGngL16Z.png" srcset="/img/loading.gif" lazyload alt="《甲骨文 / oracle 换IP的方法》"></p>
-</li>
-<li><p>编辑：IP地址</p>
-<p><img src="https://s2.loli.net/2024/02/04/lJO263jG8k7i5cE.png" srcset="/img/loading.gif" lazyload alt="《甲骨文 / oracle 换IP的方法》"></p>
-</li>
-<li><p>选择：没有公共 IP并更新</p>
-</li>
-</ul>
-<p><img src="https://s2.loli.net/2024/02/04/4F9oDtbIlzaWPYU.png" srcset="/img/loading.gif" lazyload alt="《甲骨文 / oracle 换IP的方法》"></p>
-<ul>
-<li><p>没有公共 IP了</p>
-<p><img src="https://s2.loli.net/2024/02/04/juOUk4PIZVq6E9b.png" srcset="/img/loading.gif" lazyload alt="《甲骨文 / oracle 换IP的方法》"></p>
-</li>
-<li><p>选择：临时公共 IP并更新</p>
-<p><img src="https://s2.loli.net/2024/02/04/gqRzkuVhnSKiQ7P.png" srcset="/img/loading.gif" lazyload alt="《甲骨文 / oracle 换IP的方法》"></p>
-</li>
-<li><p>更换IP成功</p>
-<p><img src="https://s2.loli.net/2024/02/04/J4hMG56vSsZjlzt.png" srcset="/img/loading.gif" lazyload alt="《甲骨文 / oracle 换IP的方法》"></p>
-</li>
-</ul>
-<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a target="_blank" rel="noopener" href="https://www.yoqu.win/archives/1689">甲骨文 &#x2F; oracle 换IP的方法</a></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+                <p><img src="https://s2.loli.net/2025/01/18/5EVUjnbgmt4vkdM.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 07.32.25"></p>
+<h2 id="登录Serv00，添加域名"><a href="#登录Serv00，添加域名" class="headerlink" title="登录Serv00，添加域名"></a>登录Serv00，添加域名</h2><p><img src="https://s2.loli.net/2025/01/18/Wca8nk65FY7NZEK.png" srcset="/img/loading.gif" lazyload alt="Wca8nk65FY7NZEK"></p>
+<h2 id="在Cloudflare登记A记录"><a href="#在Cloudflare登记A记录" class="headerlink" title="在Cloudflare登记A记录"></a>在Cloudflare登记A记录</h2><p>复制DNS zones中的A记录</p>
+<p><img src="https://s2.loli.net/2025/01/18/6IrYHoF2hVPacqB.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 07.37.34"></p>
+<p><img src="https://s2.loli.net/2025/01/18/83uTFVKlRhIYasJ.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 07.37.49"></p>
+<p>添加到Cloudflare的DNS，注意代理状态不要打开</p>
+<p><img src="https://s2.loli.net/2025/01/18/lArxN21vXptCFhs.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 07.42.25"></p>
+<h2 id="设置SSL"><a href="#设置SSL" class="headerlink" title="设置SSL"></a>设置SSL</h2><p><img src="https://s2.loli.net/2025/01/18/Gd2wqiF3IMgR68C.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 07.44.58"></p>
+<p><img src="https://s2.loli.net/2025/01/18/xlkjNzRMVPY5Boq.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 07.45.19"></p>
+<h2 id="兰空安装"><a href="#兰空安装" class="headerlink" title="兰空安装"></a>兰空安装</h2><p>SSH登录Serv00，进入网站命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> domains/xx.xxx.com<br></code></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://s2.loli.net/2025/01/18/S98LJHvQCNKjBrf.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 07.48.00"></p>
+<p>依次执行下面代码，下载兰空代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">release_info=$(curl -s https://api.github.com/repos/lsky-org/lsky-pro/releases/latest)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">asset_url=$(<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$release_info</span>&quot;</span> | jq -r <span class="hljs-string">&#x27;.assets[] | select(.name != &quot;source code&quot;) | .browser_download_url&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -L -o temp.zip <span class="hljs-string">&quot;<span class="hljs-variable">$asset_url</span>&quot;</span> &amp;&amp; unzip -q temp.zip &amp;&amp; <span class="hljs-built_in">rm</span> -f temp.zip<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> -rf public_html &amp;&amp; <span class="hljs-built_in">ln</span> -s <span class="hljs-string">&quot;<span class="hljs-variable">$PWD</span>/public&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$PWD</span>/public_html&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>进入Panel设置</p>
+<p><img src="https://s2.loli.net/2025/01/18/pTKG1eEbsj5Ifwh.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 07.52.41"></p>
+<p><img src="https://s2.loli.net/2025/01/18/VZ241twuHz7rIYX.png" srcset="/img/loading.gif" lazyload alt="VZ241twuHz7rIYX"></p>
+<p>在 ‘ Open Basedir directories ‘ 中结尾添加如下代码，并将用户名和域名根据自己的情况做对应修改：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs YAML"><span class="hljs-string">:/usr/home/User/domains/xx.xxx.com</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>SQL数据库设置</p>
+<p><img src="https://s2.loli.net/2025/01/18/F3MGYTI6EuZh9c8.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 07.58.57"></p>
+<h2 id="网页安装程序"><a href="#网页安装程序" class="headerlink" title="网页安装程序"></a>网页安装程序</h2><p>打开域名，确认所有的设置都是打勾状态，如果有错，重新检查上面的步骤</p>
+<p><img src="https://s2.loli.net/2025/01/18/C6mysuSNJvqMHl1.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 08.04.48"></p>
+<p>备注：数据库连接地址填写当时邮箱发送的数据库信息</p>
+<p><img src="https://s2.loli.net/2025/01/18/DSchq2uBiRmNpfn.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 08.04.00"></p>
+<p><img src="https://s2.loli.net/2025/01/18/eDhW8u4CAZpT9lb.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 08.06.24"></p>
+<p>安装成功，使用刚才的管理员和密码进行登录</p>
+<h2 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h2><p>进入SSH，执行如下代码(将USER和域名改为自己的信息)，给予兰图上传权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> -R 777 /usr/home/USER/domains/xx.xxx.com/storage<br></code></pre></td></tr></table></figure>
+
+<h2 id="保活计划任务"><a href="#保活计划任务" class="headerlink" title="保活计划任务"></a>保活计划任务</h2><p><img src="https://s2.loli.net/2025/01/18/nLe6yauvpFNbTVx.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-18 08.11.57"></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>内容采集自<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=pUGZf-AoDH4">米拉一</a></p>
+
                 
               </div>
             
@@ -354,13 +375,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Wechat/" class="print-no-link">#Wechat</a>
-      
         <a href="/tags/VPS/" class="print-no-link">#VPS</a>
       
-        <a href="/tags/Oracle/" class="print-no-link">#Oracle</a>
+        <a href="/tags/Serv00/" class="print-no-link">#Serv00</a>
       
-        <a href="/tags/Tips/" class="print-no-link">#Tips</a>
+        <a href="/tags/Cloudflare/" class="print-no-link">#Cloudflare</a>
       
     </div>
   
@@ -372,8 +391,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>How to change Oracle  VPS&#39; IP</div>
-      <div>http://example.com/2024/02/04/How-to-change-Oracle-VPS-IP/</div>
+      <div>Serv00 搭建兰空图床</div>
+      <div>http://example.com/2025/01/18/Serv00-搭建兰空图床/</div>
     </div>
     <div class="license-meta">
       
@@ -385,7 +404,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月4日</div>
+          <div>2025年1月18日</div>
         </div>
       
       
@@ -417,18 +436,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/08/Chatgpt-Prompt/" title="Chatgpt Prompt">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Chatgpt Prompt</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/04/Tips-on-Linux/" title="Tips on Linux">
-                        <span class="hidden-mobile">Tips on Linux</span>
+                      <a href="/2024/12/25/Serv00%E4%B8%80%E9%94%AE%E5%88%9B%E5%BB%BAHY2%E8%8A%82%E7%82%B9/" title="Serv00一键创建HY2节点">
+                        <span class="hidden-mobile">Serv00一键创建HY2节点</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
