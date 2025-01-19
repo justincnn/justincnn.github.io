@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Justin">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="到手测试融合怪12curl -L https:&#x2F;&#x2F;github.com&#x2F;spiritLHLS&#x2F;ecs&#x2F;raw&#x2F;main&#x2F;ecs.sh -o ecs.sh &amp;&amp; chmod +x ecs.sh &amp;&amp; bash ecs.sh  NodeLoc聚合测评脚本https:&#x2F;&#x2F;github.com&#x2F;everett7623&#x2F;nodeloc_vps_test 12# CentOSy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VPS脚本收集和分享">
+<meta property="og:url" content="http://example.com/2025/01/19/VPS%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86%E5%92%8C%E5%88%86%E4%BA%AB/index.html">
+<meta property="og:site_name" content="文科生的IT笔记">
+<meta property="og:description" content="到手测试融合怪12curl -L https:&#x2F;&#x2F;github.com&#x2F;spiritLHLS&#x2F;ecs&#x2F;raw&#x2F;main&#x2F;ecs.sh -o ecs.sh &amp;&amp; chmod +x ecs.sh &amp;&amp; bash ecs.sh  NodeLoc聚合测评脚本https:&#x2F;&#x2F;github.com&#x2F;everett7623&#x2F;nodeloc_vps_test 12# CentOSy">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-01-19T03:01:14.000Z">
+<meta property="article:modified_time" content="2025-01-19T03:25:17.999Z">
+<meta property="article:author" content="Justin">
+<meta property="article:tag" content="VPS">
+<meta property="article:tag" content="Script">
+<meta property="article:tag" content="Linux.do">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>VPS脚本收集和分享 - 文科生的IT笔记</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-52Q929YHJV"},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-52Q929YHJV", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-52Q929YHJV');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>文科生的 IT 笔记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="VPS脚本收集和分享"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-01-19 11:01" pubdate>
+          2025年1月19日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">VPS脚本收集和分享</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="到手测试"><a href="#到手测试" class="headerlink" title="到手测试"></a>到手测试</h2><h3 id="融合怪"><a href="#融合怪" class="headerlink" title="融合怪"></a>融合怪</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>curl -L https://github.com/spiritLHLS/ecs/raw/main/ecs.sh -o ecs.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x ecs.sh &amp;&amp; bash ecs.sh<br></code></pre></td></tr></table></figure>
+
+<h3 id="NodeLoc聚合测评脚本"><a href="#NodeLoc聚合测评脚本" class="headerlink" title="NodeLoc聚合测评脚本"></a>NodeLoc聚合测评脚本</h3><p><a target="_blank" rel="noopener" href="https://github.com/everett7623/nodeloc_vps_test">https://github.com/everett7623/nodeloc_vps_test</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># CentOS</span><br>yum install wget&amp;&amp;wget -O Nlbench.sh https://raw.githubusercontent.com/everett7623/nodeloc_vps_test/main/Nlbench.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x Nlbench.sh &amp;&amp; ./Nlbench.sh<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Debian/Ubuntu/Deepin</span><br>wget -O Nlbench.sh https://raw.githubusercontent.com/everett7623/nodeloc_vps_test/main/Nlbench.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x Nlbench.sh &amp;&amp; ./Nlbench.sh<br></code></pre></td></tr></table></figure>
+
+<h3 id="ip解锁"><a href="#ip解锁" class="headerlink" title="ip解锁"></a>ip解锁</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -Ls IP.Check.Place)<br></code></pre></td></tr></table></figure>
+
+<h3 id="路由追踪"><a href="#路由追踪" class="headerlink" title="路由追踪"></a>路由追踪</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl nxtrace.org/nt |bash<br></code></pre></td></tr></table></figure>
+
+<h3 id="查看vps回程路由"><a href="#查看vps回程路由" class="headerlink" title="查看vps回程路由"></a>查看vps回程路由</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nexttrace 你的宽带ip<br></code></pre></td></tr></table></figure>
+
+<h3 id="iperf测速，测试单线程，如果重传严重需调整tcp缓冲区"><a href="#iperf测速，测试单线程，如果重传严重需调整tcp缓冲区" class="headerlink" title="iperf测速，测试单线程，如果重传严重需调整tcp缓冲区"></a>iperf测速，测试单线程，如果重传严重需调整tcp缓冲区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt update<br>apt install iperf3<br><br><span class="hljs-comment"># 电脑下载iperf3，命名iperf3.exe，打开文件夹，在地址栏输入cmd。-P是线程数，-R是测试小鸡到自己的速度，去掉则反之，-t是时间</span><br>iperf3.exe -c 小鸡的ip -P 1 -t 60 -R<br></code></pre></td></tr></table></figure>
+
+<h3 id="检查是否超售"><a href="#检查是否超售" class="headerlink" title="检查是否超售"></a>检查是否超售</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">lsmod | grep virtio_balloon<br></code></pre></td></tr></table></figure>
+
+<h2 id="VPS服务"><a href="#VPS服务" class="headerlink" title="VPS服务"></a>VPS服务</h2><h3 id="脚本合集"><a href="#脚本合集" class="headerlink" title="脚本合集"></a>脚本合集</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 大杂烩，好用推荐</span><br>curl -fsSL https://raw.githubusercontent.com/eooce/ssh_tool/main/ssh_tool.sh -o ssh_tool.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x ssh_tool.sh &amp;&amp; ./ssh_tool.sh<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 科技lion脚本，据说收集信息，介意可以用下面的</span><br>bash &lt;(curl -sL kejilion.sh)<br><span class="hljs-comment"># 修改版（未知出处，欢迎指出）</span><br>bash &lt;(curl -sS https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh | sed ‘/UserLicenseAgreement()\s*&#123;/a <span class="hljs-built_in">return</span>’ | sed ‘/send_stats()\s*&#123;/a <span class="hljs-built_in">return</span>’)<br></code></pre></td></tr></table></figure>
+
+<h3 id="dd系统"><a href="#dd系统" class="headerlink" title="dd系统"></a>dd系统</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># dd系统为debian，ssh端口不变，密码为LeitboGi0ro</span><br><span class="hljs-comment"># https://github.com/leitbogioro/Tools</span><br>apt update -y<br>apt install wget -y<br>wget --no-check-certificate -qO InstallNET.sh <span class="hljs-string">&#x27;https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh&#x27;</span> &amp;&amp; <span class="hljs-built_in">chmod</span> a+x InstallNET.sh<br>bash InstallNET.sh -debian<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 煎饼佬的，密码123@@@</span><br><span class="hljs-comment"># https://github.com/bin456789/reinstall</span><br>curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh || wget -O reinstall.sh <span class="hljs-variable">$_</span><br>bash reinstall.sh <span class="hljs-built_in">dd</span> --img https://example.com/xxx.xz<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">第三方<br>https://minlearn.org/inst<br>https://github.com/bohanyang/debi<br>https://github.com/LloydAsp/OsMutation<br></code></pre></td></tr></table></figure>
+
+<h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><h3 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 增加虚拟内存为2G，适合小内存vps,教程https://blog.laoda.de/archives/vps-swap与下面命令同理</span><br><span class="hljs-comment"># 根据自己vps内存修改，2G以下建议实际内存2倍，2-4G建议1.5倍</span><br>sudo swapon --show <span class="hljs-comment"># 查看当前系统的交换空间配置，可以重启再运行这个命令看是否生效</span><br>sudo fallocate -l 2G /swapfile<br>sudo <span class="hljs-built_in">chmod</span> 600 /swapfile<br>sudo mkswap /swapfile<br>sudo swapon /swapfile<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;/swapfile none swap sw 0 0&#x27;</span> | sudo <span class="hljs-built_in">tee</span> -a /etc/fstab <span class="hljs-comment"># 固化</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="修改ssh端口"><a href="#修改ssh端口" class="headerlink" title="修改ssh端口"></a>修改ssh端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 修改ssh端口，建议不要关闭ssh窗口防止连不上</span><br>sudo nano /etc/ssh/sshd_config<br>修改取消注释，把22改成你想要的端口<br>Port &lt;你想要的端口&gt;<br>sudo systemctl restart sshd<br></code></pre></td></tr></table></figure>
+
+<h3 id="允许密钥登录"><a href="#允许密钥登录" class="headerlink" title="允许密钥登录"></a>允许密钥登录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 修改为仅允许密钥登录，建议不要关闭ssh窗口防止连不上</span><br>nano ~/.ssh/authorized_keys <span class="hljs-comment">#加入xshell等工具生成的公钥</span><br><span class="hljs-built_in">chmod</span> 600 ~/.ssh/authorized_keys<br><span class="hljs-built_in">chmod</span> 700 ~/.ssh<br>sudo nano /etc/ssh/sshd_config<br><br>修改<br>PasswordAuthentication no <span class="hljs-comment"># 不允许密码登录</span><br>PubkeyAuthentication <span class="hljs-built_in">yes</span><span class="hljs-comment"># 允许密钥登录</span><br><br>最后执行<br>sudo systemctl restart sshd<br></code></pre></td></tr></table></figure>
+
+<h3 id="ufw防火墙"><a href="#ufw防火墙" class="headerlink" title="ufw防火墙"></a>ufw防火墙</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#安装ufw防火墙</span><br>sudo apt install ufw -y<br>sudo ufw default allow outgoing <span class="hljs-comment"># 默认允许所有数据出站</span><br>sudo ufw default deny incoming <span class="hljs-comment"># 默认禁止所有数据入站</span><br>sudo ufw allow 22 <span class="hljs-comment"># 修改成你ssh的端口</span><br>sudo ufw <span class="hljs-built_in">enable</span> <span class="hljs-comment"># 启动ufw</span><br>sudo ufw stauts <span class="hljs-comment"># 查看ufw的规则</span><br>具体建议查看佬友的帖子<br>https://linux.do/t/topic/267502?u=ggsmida<br></code></pre></td></tr></table></figure>
+
+<h3 id="Fail2ban"><a href="#Fail2ban" class="headerlink" title="Fail2ban"></a>Fail2ban</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 手动安装 Fail2ban</span><br>sudo apt install fail2ban<br><br><span class="hljs-comment"># 一键安装部署 Fail2ban，自动配置防 SSH 爆破。可自定义 ip 封禁时间，最高重试次数，ssh端口。</span><br><br><span class="hljs-comment"># 安装</span><br>wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh<br>bash fail2ban.sh<br><br><span class="hljs-comment"># 卸载</span><br>wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/uninstall.sh<br>bash uninstall.sh<br></code></pre></td></tr></table></figure>
+
+<h3 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 修改主机名解决无法解析主机名的问题，修改127.0.1.1后面的为正确主机名</span><br>nano /etc/hosts<br></code></pre></td></tr></table></figure>
+
+<h3 id="增加dns"><a href="#增加dns" class="headerlink" title="增加dns"></a>增加dns</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 增加dns</span><br>chattr -i /etc/resolv.conf &amp;&amp; wget -N --no-check-certificate https://raw.githubusercontent.com/chengziqaq/dnsunblocknetflix/master/dns-change.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x dns-change.sh &amp;&amp; ./dns-change.sh 要增加的dns<br><br><span class="hljs-comment"># 或者动修改nameserver</span><br>chattr -i /etc/resolv.conf<span class="hljs-comment"># 解锁</span><br>sudo nano /etc/resolv.conf<br>chattr +i /etc/resolv.conf<span class="hljs-comment"># 上锁</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="tcp调优"><a href="#tcp调优" class="headerlink" title="tcp调优"></a>tcp调优</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># tcp调优，通常对优化线路有用，降低重传增加稳定性</span><br><span class="hljs-comment"># BlackSheep佬的脚本</span><br><span class="hljs-comment"># 详细情况请看ns的BlackSheep大佬的帖子</span><br><span class="hljs-comment"># https://www.nodeseek.com/post-197087-1</span><br>apt install iperf3<br>wget -q https://raw.githubusercontent.com/BlackSheep-cry/TCP-Optimization-Tool/main/tool.sh -O tool.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x tool.sh &amp;&amp; ./tool.sh<br></code></pre></td></tr></table></figure>
+
+<h2 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h2><h3 id="223boy-sing-box"><a href="#223boy-sing-box" class="headerlink" title="223boy sing-box"></a>223boy sing-box</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 223boy sing-box</span><br><span class="hljs-comment"># https://233boy.com/sing-box/sing-box-script/</span><br>bash &lt;(wget -qO- -o- https://github.com/233boy/sing-box/raw/main/install.sh)<br></code></pre></td></tr></table></figure>
+
+<h3 id="sing-box-订阅"><a href="#sing-box-订阅" class="headerlink" title="sing-box+订阅"></a>sing-box+订阅</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># sing-box+订阅</span><br><span class="hljs-comment"># https://github.com/fscarmen/sing-box</span><br>bash &lt;(wget -qO- https://raw.githubusercontent.com/fscarmen/sing-box/main/sing-box.sh)<br></code></pre></td></tr></table></figure>
+
+<h3 id="mack-a-8合1-sing-box"><a href="#mack-a-8合1-sing-box" class="headerlink" title="mack-a 8合1 sing-box"></a>mack-a 8合1 sing-box</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># mack-a 8合1 sing-box</span><br><span class="hljs-comment"># https://github.com/mack-a/v2ray-agent</span><br>wget -P /root -N --no-check-certificate <span class="hljs-string">&quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot;</span> &amp;&amp; <span class="hljs-built_in">chmod</span> 700 /root/install.sh &amp;&amp; /root/install.sh<br></code></pre></td></tr></table></figure>
+
+<h3 id="ygkkk-sing-box"><a href="#ygkkk-sing-box" class="headerlink" title="ygkkk sing-box"></a>ygkkk sing-box</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># ygkkk sing-box</span><br><span class="hljs-comment"># https://github.com/yonggekkk/sing-box-yg</span><br>bash &lt;(curl -Ls https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb.sh)<br></code></pre></td></tr></table></figure>
+
+<h3 id="3x-ui"><a href="#3x-ui" class="headerlink" title="3x-ui"></a>3x-ui</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装3x-ui</span><br><span class="hljs-comment"># https://github.com/MHSanaei/3x-ui</span><br>bash &lt;(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)<br></code></pre></td></tr></table></figure>
+
+<h3 id="warp解锁"><a href="#warp解锁" class="headerlink" title="warp解锁"></a>warp解锁</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装warp解锁</span><br><span class="hljs-comment"># https://github.com/fscarmen/warp-sh</span><br><span class="hljs-comment"># 首次运行</span><br>wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;&amp; bash menu.sh [option] [lisence/url/token]<br><span class="hljs-comment"># 再次运行</span><br>warp [option] [lisence]<br></code></pre></td></tr></table></figure>
+
+<h3 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 端口转发，也可以自行根据官方wiki手搓</span><br><span class="hljs-comment"># realm一键脚本</span><br>wget -N https://raw.githubusercontent.com/qqrrooty/EZrealm/main/realm.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x realm.sh &amp;&amp; ./realm.sh<br><span class="hljs-comment"># gost一键脚本</span><br>wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/qqrrooty/EZgost/main/gost.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x gost.sh &amp;&amp; ./gost.sh<br></code></pre></td></tr></table></figure>
+
+<h3 id="CFWarp"><a href="#CFWarp" class="headerlink" title="CFWarp"></a>CFWarp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># https://gitlab.com/rwkgyg/CFwarp</span><br>bash &lt;(wget -qO- https://gitlab.com/rwkgyg/CFwarp/raw/main/CFwarp.sh 2&gt; /dev/null)<br></code></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash &lt;(curl -Ls https://gitlab.com/rwkgyg/CFwarp/raw/main/CFwarp.sh)<br></code></pre></td></tr></table></figure>
+
+<p>多平台优选WARP对端IP + 无限生成WARP-Wireguard配置 脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -sSL https://gitlab.com/rwkgyg/CFwarp/raw/main/point/endip.sh -o endip.sh &amp;&amp; <span class="hljs-built_in">chmod</span> +x endip.sh &amp;&amp; ./endip.sh<br></code></pre></td></tr></table></figure>
+
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><h3 id="1panel"><a href="#1panel" class="headerlink" title="1panel"></a>1panel</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh<br></code></pre></td></tr></table></figure>
+
+<h3 id="aapanel"><a href="#aapanel" class="headerlink" title="aapanel"></a>aapanel</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">URL=https://www.aapanel.com/script/install_7.0_en.sh &amp;&amp; <span class="hljs-keyword">if</span> [ -f /usr/bin/curl ];<span class="hljs-keyword">then</span> curl -ksSO <span class="hljs-string">&quot;<span class="hljs-variable">$URL</span>&quot;</span> ;<span class="hljs-keyword">else</span> wget --no-check-certificate -O install_7.0_en.sh <span class="hljs-string">&quot;<span class="hljs-variable">$URL</span>&quot;</span>;<span class="hljs-keyword">fi</span>;bash install_7.0_en.sh aapanel<br></code></pre></td></tr></table></figure>
+
+<h3 id="宝塔"><a href="#宝塔" class="headerlink" title="宝塔"></a>宝塔</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basn">wget -O install.sh https://download.bt.cn/install/install_lts.sh &amp;&amp; bash install.sh ed8484bec<br></code></pre></td></tr></table></figure>
+
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装Docker</span><br>curl -fsSL https://get.docker.com -o get-docker.sh<br>sudo sh get-docker.sh<br></code></pre></td></tr></table></figure>
+
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p><strong>详情见</strong><br><a target="_blank" rel="noopener" href="https://www.ioiox.com/archives/84.html">https://www.ioiox.com/archives/84.html</a><br><a target="_blank" rel="noopener" href="https://containrrr.dev/watchtower/arguments/">Arguments - Watchtower</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 手动更新全部容器，并删除旧镜像</span><br>docker run --<span class="hljs-built_in">rm</span> \<br>    -v /var/run/docker.sock:/var/run/docker.sock \<br>    containrrr/watchtower \<br>    --cleanup \<br>    --run-once<br></code></pre></td></tr></table></figure>
+
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>内容采集自<a target="_blank" rel="noopener" href="https://linux.do/u/ggsmida">ggsmida@Linux.do</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/VPS/" class="print-no-link">#VPS</a>
+      
+        <a href="/tags/Script/" class="print-no-link">#Script</a>
+      
+        <a href="/tags/Linux-do/" class="print-no-link">#Linux.do</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>VPS脚本收集和分享</div>
+      <div>http://example.com/2025/01/19/VPS脚本收集和分享/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Justin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年1月19日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/01/18/Cloudflare%E9%85%8D%E7%BD%AE%E4%B8%B4%E6%97%B6%E9%82%AE%E7%AE%B1/" title="Cloudflare配置临时邮箱">
+                        <span class="hidden-mobile">Cloudflare配置临时邮箱</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
