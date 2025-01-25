@@ -28,10 +28,12 @@
 <meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/6794668de2d40.webp">
 <meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/67946b2d1f634.webp">
 <meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/67946b7487c3d.webp">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/6794bdeb18c37.webp">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/6794be7749d51.webp">
 <meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/67946c4eac841.webp">
 <meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/67946d9015914.webp">
 <meta property="article:published_time" content="2025-01-25T04:04:00.000Z">
-<meta property="article:modified_time" content="2025-01-25T04:53:52.452Z">
+<meta property="article:modified_time" content="2025-01-25T10:37:30.041Z">
 <meta property="article:author" content="Justin">
 <meta property="article:tag" content="VPS">
 <meta property="article:tag" content="Serv00">
@@ -247,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          671 字
+          915 字
         
       </span>
     
@@ -258,7 +260,7 @@
         
         
         
-          6 分钟
+          8 分钟
         
       </span>
     
@@ -362,6 +364,43 @@
 <p><img src="https://servpic.sharepan.eu.org/i/2025/01/25/67946b7487c3d.webp" srcset="/img/loading.gif" lazyload></p>
 </li>
 </ul>
+</li>
+</ul>
+<h2 id="其他Serv00单装agent"><a href="#其他Serv00单装agent" class="headerlink" title="其他Serv00单装agent"></a>其他Serv00单装agent</h2><ul>
+<li><p>SSH登录需要安装agent的Serv00</p>
+</li>
+<li><p>执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/vfhky/serv00_ct8_nezha.git<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> serv00_ct8_nezha <br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">python3 main.py<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安装选项</p>
+<ol>
+<li><p>是否生成私钥(一般是安装面板需要生成，安装agent时不需要)?:N</p>
+</li>
+<li><p>是否拷贝公私钥到相互保活的主机(一般是首次安装面板才需要)?:N</p>
+</li>
+<li><p>是否选择安装哪吒V1版本？(V1和V0完全不兼容，请确认)?:Y</p>
+</li>
+<li><p>是否安装【V1】版本的dashboard面板?:N</p>
+</li>
+<li><p>是否安装【V1】版本的agent?:Y</p>
+</li>
+<li><p>请输入面板配置文件中的密钥agentsecretkey: 如果忘了，可以通过面板下面的路径获取</p>
+<p><img src="https://servpic.sharepan.eu.org/i/2025/01/25/6794bdeb18c37.webp" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>启用针对 gRPC 端口的 SSL&#x2F;TLS加密，无特殊情况请选择false-否 true-是: false</p>
+</li>
+<li><p>请输入面板设置的 GRPC 通信地址(例如 vfhky.serv00.net:8888)：dashboard的ip：端口，也可以通过dashboard面板获取（Agent对接地址【域名&#x2F;IP:端口】）</p>
+<p><img src="https://servpic.sharepan.eu.org/i/2025/01/25/6794be7749d51.webp" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>等待安装结束，dashboard中即成功填写了此服务器的agent，</p>
+</li>
+<li><p>别忘了保活</p>
+</li>
+</ol>
 </li>
 </ul>
 <h2 id="域名登录哪吒探针"><a href="#域名登录哪吒探针" class="headerlink" title="域名登录哪吒探针"></a>域名登录哪吒探针</h2><ul>
