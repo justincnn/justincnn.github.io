@@ -18,33 +18,32 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="​    在管理 VPS 时，很多人习惯直接通过 IP 地址进行访问，但使用域名登录却是一个更专业且高效的选择。域名不仅更易记忆，还能提升连接的稳定性与安全性。当你的 VPS IP 地址发生变化时，通过域名解析功能（如动态 DNS），你可以避免频繁修改配置。此外，使用域名便于配置 HTTPS 证书，增强数据传输的安全性，并提高搜索引擎的信任度。如果你打算搭建网站或提供服务，通过域名登录将是管理和访">
+    <meta name="description" content="哪吒探针是一款轻量级、高性能的开源服务器监控工具，以其实时监控和简洁的界面而备受开发者青睐。它能够帮助用户实时掌握服务器的运行状态，包括 CPU 使用率、内存占用、网络流量等关键指标，并以直观的图表呈现，让复杂的系统数据一目了然。 与传统监控工具相比，哪吒探针安装简便，资源占用低，适合个人开发者、小型团队甚至企业级用户使用。此外，其开源特性不仅让用户能够自由部署和使用，还可以根据需求进行个性化定制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1panel 设置域名登录">
-<meta property="og:url" content="http://example.com/2025/01/21/1panel-%E8%AE%BE%E7%BD%AE%E5%9F%9F%E5%90%8D%E7%99%BB%E5%BD%95/index.html">
+<meta property="og:title" content="serv00部署哪吒探针">
+<meta property="og:url" content="http://example.com/2025/01/25/serv00%E9%83%A8%E7%BD%B2%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/index.html">
 <meta property="og:site_name" content="文科生的IT笔记">
-<meta property="og:description" content="​    在管理 VPS 时，很多人习惯直接通过 IP 地址进行访问，但使用域名登录却是一个更专业且高效的选择。域名不仅更易记忆，还能提升连接的稳定性与安全性。当你的 VPS IP 地址发生变化时，通过域名解析功能（如动态 DNS），你可以避免频繁修改配置。此外，使用域名便于配置 HTTPS 证书，增强数据传输的安全性，并提高搜索引擎的信任度。如果你打算搭建网站或提供服务，通过域名登录将是管理和访">
+<meta property="og:description" content="哪吒探针是一款轻量级、高性能的开源服务器监控工具，以其实时监控和简洁的界面而备受开发者青睐。它能够帮助用户实时掌握服务器的运行状态，包括 CPU 使用率、内存占用、网络流量等关键指标，并以直观的图表呈现，让复杂的系统数据一目了然。 与传统监控工具相比，哪吒探针安装简便，资源占用低，适合个人开发者、小型团队甚至企业级用户使用。此外，其开源特性不仅让用户能够自由部署和使用，还可以根据需求进行个性化定制">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-21%2018.20.39%20.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/3AiOsS%20.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-21%2018.22.36%20.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-21%2018.32.14%20.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-21%2018.45.01%20.png">
-<meta property="article:published_time" content="2025-01-21T10:14:26.000Z">
-<meta property="article:modified_time" content="2025-01-21T11:05:55.109Z">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/6794668de2d40.webp">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/67946b2d1f634.webp">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/67946b7487c3d.webp">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/67946c4eac841.webp">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/67946d9015914.webp">
+<meta property="article:published_time" content="2025-01-25T04:04:00.000Z">
+<meta property="article:modified_time" content="2025-01-25T04:53:52.452Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="Cloudflare">
 <meta property="article:tag" content="VPS">
-<meta property="article:tag" content="Oracle">
-<meta property="article:tag" content="1panel">
+<meta property="article:tag" content="Serv00">
+<meta property="article:tag" content="Scripts">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-21%2018.20.39%20.png">
+<meta name="twitter:image" content="https://servpic.sharepan.eu.org/i/2025/01/25/6794668de2d40.webp">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>1panel 设置域名登录 - 文科生的IT笔记</title>
+  <title>serv00部署哪吒探针 - 文科生的IT笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -225,7 +224,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="1panel 设置域名登录"></span>
+            <span id="subtitle" data-typed-text="serv00部署哪吒探针"></span>
           
         </div>
 
@@ -236,8 +235,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-21 18:14" pubdate>
-          2025年1月21日 晚上
+        <time datetime="2025-01-25 12:04" pubdate>
+          2025年1月25日 中午
         </time>
       </span>
     
@@ -248,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          345 字
+          671 字
         
       </span>
     
@@ -259,7 +258,7 @@
         
         
         
-          3 分钟
+          6 分钟
         
       </span>
     
@@ -304,41 +303,90 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">1panel 设置域名登录</h1>
+            <h1 id="seo-header">serv00部署哪吒探针</h1>
             
             
               <div class="markdown-body">
                 
-                <p>​    在管理 VPS 时，很多人习惯直接通过 IP 地址进行访问，但使用域名登录却是一个更专业且高效的选择。域名不仅更易记忆，还能提升连接的稳定性与安全性。当你的 VPS IP 地址发生变化时，通过域名解析功能（如动态 DNS），你可以避免频繁修改配置。此外，使用域名便于配置 HTTPS 证书，增强数据传输的安全性，并提高搜索引擎的信任度。如果你打算搭建网站或提供服务，通过域名登录将是管理和访问 VPS 的最佳实践。接下来，我们将探讨如何绑定域名到 VPS，并实现从 IP 到域名的无缝切换。</p>
-<h2 id="Cloudflare设置"><a href="#Cloudflare设置" class="headerlink" title="Cloudflare设置"></a>Cloudflare设置</h2><ul>
-<li><p>DNS 设置</p>
-<p>添加子域名A，指向VPS IP，并开启小黄云</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-21%2018.20.39%20.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-2118.20.39"></p>
+                <p>哪吒探针是一款轻量级、高性能的开源服务器监控工具，以其实时监控和简洁的界面而备受开发者青睐。它能够帮助用户实时掌握服务器的运行状态，包括 CPU 使用率、内存占用、网络流量等关键指标，并以直观的图表呈现，让复杂的系统数据一目了然。</p>
+<p>与传统监控工具相比，哪吒探针安装简便，资源占用低，适合个人开发者、小型团队甚至企业级用户使用。此外，其开源特性不仅让用户能够自由部署和使用，还可以根据需求进行个性化定制。无论是用于单个服务器的独立监控，还是多台服务器的集中化管理，哪吒探针都提供了灵活的解决方案。</p>
+<p><img src="https://servpic.sharepan.eu.org/i/2025/01/25/6794668de2d40.webp" srcset="/img/loading.gif" lazyload></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><p>获取Serv00 IP</p>
+<p>可以直接按默认域名的DNS里面查看</p>
 </li>
-<li><p>SSL&#x2F;TLS加密</p>
-<p>加密模式：完全</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/3AiOsS%20.png" srcset="/img/loading.gif" lazyload alt="3AiOsS"></p>
+<li><p>开放任一TCP端口</p>
 </li>
-<li><p>服务器源证书</p>
-<p>将源证书和私钥复制</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-21%2018.22.36%20.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-2118.22.36"></p>
+<li><p>在Cloudfalre下新建子域名，并关联DNS的ip为 serv00的ip，注意不需要打开小黄云</p>
 </li>
 </ul>
-<h2 id="1panel设置"><a href="#1panel设置" class="headerlink" title="1panel设置"></a>1panel设置</h2><ul>
-<li><p>上传证书</p>
-<p>将上面生产的证书上传到1panel</p>
+<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><ul>
+<li><p>进入Serv00 SSH，执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/vfhky/serv00_ct8_nezha.git<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> serv00_ct8_nezha <br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim config/host.eg <span class="hljs-comment"># 添加需要保活的主机信息</span><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">python3 main.py<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>安装dashboard选项<ol>
+<li>是否拷贝公私钥到相互保活的主机：Y</li>
+<li>是否选择安装哪吒V1版本？:Y</li>
+<li>是否安装【V1】版本的dashboard面板?:Y</li>
+<li>请输入面板标题: 哪吒tital，随意</li>
+<li>输入面板访问端口(如 80):在panel中开放的tcp端口</li>
+<li>请输入面板设置的 GRPC 通信地址：填入serv00的ip：端口</li>
+<li>启用针对 gRPC 端口的 SSL&#x2F;TLS加密，无特殊情况请选择false-否 true-是: false</li>
+<li>GitHub和Gitee登录：按需求设置</li>
+</ol>
 </li>
-<li><p>设置-安全</p>
-<p>打开SSL，另外安全口可以去掉，如果不放心也可以继续保留</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-21%2018.32.14%20.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-2118.32.14"></p>
+<li>安装agent选项<ol>
+<li>请输入面板配置文件中的密钥agentsecretke：刚才生成的密钥</li>
+<li>肩用针对JRPC 端口的 SSL&#x2F;TLS加密：false</li>
+<li>请输入面板设置的 GRPC 通信地址：Serv00ip+端口</li>
+</ol>
 </li>
-<li><p>设置域名</p>
-<p>端口改为免费CL账号允许的范围：</p>
-<p>HTTP 支持的端口（非加密流量）：<br>80 (标准 HTTP 端口)<br>8080<br>8880<br>2052<br>2082<br>2086<br>2095<br>HTTPS 支持的端口（加密流量，使用 SSL&#x2F;TLS）：<br>443 (标准 HTTPS 端口)<br>2053<br>2083<br>2087<br>2096<br>8443</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-21%2018.45.01%20.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-2118.45.01"></p>
+<li>其他Serv00如果需要监控，执行上面指令，只需要安装agent，无需安装Dashboard</li>
+</ul>
+<h2 id="哪吒监控网页设置"><a href="#哪吒监控网页设置" class="headerlink" title="哪吒监控网页设置"></a>哪吒监控网页设置</h2><ul>
+<li>进入个人设置，修改用户名和密码</li>
+</ul>
+<p><img src="https://servpic.sharepan.eu.org/i/2025/01/25/67946b2d1f634.webp" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>非Serv00服务器安装agent</p>
+<p>服务器，安装命令，根据vps的服务器操作系统选择命令，直接在需要监控的vps以管理员权限执行命令即可</p>
+<p><img src="https://servpic.sharepan.eu.org/i/2025/01/25/67946b7487c3d.webp" srcset="/img/loading.gif" lazyload></p>
 </li>
 </ul>
-<h2 id="设置结束，"><a href="#设置结束，" class="headerlink" title="设置结束，"></a>设置结束，</h2>
+</li>
+</ul>
+<h2 id="域名登录哪吒探针"><a href="#域名登录哪吒探针" class="headerlink" title="域名登录哪吒探针"></a>域名登录哪吒探针</h2><ul>
+<li><p>登录serv00-WWW website，以反代的方式添加在准备阶段准备的子域名</p>
+<ul>
+<li>网页类型：Proxy</li>
+<li>Proxy port：刚才开放的tcp端口</li>
+<li>DNS supports：确认</li>
+</ul>
+<p><img src="https://servpic.sharepan.eu.org/i/2025/01/25/67946c4eac841.webp" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>添加证书</p>
+<p>i. WWW website- Manage SSL certificates-（对应域名的）管理</p>
+<p>ii. Add certificate</p>
+<p>iii. 生成证书</p>
+<p><img src="https://servpic.sharepan.eu.org/i/2025/01/25/67946d9015914.webp" srcset="/img/loading.gif" lazyload></p>
+<p>iv. 添加，等待成功，即可域名访问</p>
+</li>
+</ul>
+<h2 id="任务保活"><a href="#任务保活" class="headerlink" title="任务保活"></a>任务保活</h2><ul>
+<li>推荐方案</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://newchato.eu.org/2024/12/15/Serv00-%E9%83%A8%E7%BD%B2%E6%A1%88%E4%BE%8B%E5%92%8C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#Serv00-PHP%E4%BF%9D%E6%B4%BB">Serv00 PHP保活</a></p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><a target="_blank" rel="noopener" href="https://typecodes.com/python/serv00ct8nezhav1.html">Typecodes</a></p>
+
                 
               </div>
             
@@ -350,13 +398,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Cloudflare/" class="print-no-link">#Cloudflare</a>
-      
         <a href="/tags/VPS/" class="print-no-link">#VPS</a>
       
-        <a href="/tags/Oracle/" class="print-no-link">#Oracle</a>
+        <a href="/tags/Serv00/" class="print-no-link">#Serv00</a>
       
-        <a href="/tags/1panel/" class="print-no-link">#1panel</a>
+        <a href="/tags/Scripts/" class="print-no-link">#Scripts</a>
       
     </div>
   
@@ -368,8 +414,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>1panel 设置域名登录</div>
-      <div>http://example.com/2025/01/21/1panel-设置域名登录/</div>
+      <div>serv00部署哪吒探针</div>
+      <div>http://example.com/2025/01/25/serv00部署哪吒探针/</div>
     </div>
     <div class="license-meta">
       
@@ -381,7 +427,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月21日</div>
+          <div>2025年1月25日</div>
         </div>
       
       
@@ -413,18 +459,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/25/serv00%E9%83%A8%E7%BD%B2%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/" title="serv00部署哪吒探针">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">serv00部署哪吒探针</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/19/VPS%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86%E5%92%8C%E5%88%86%E4%BA%AB/" title="VPS脚本收集和分享">
-                        <span class="hidden-mobile">VPS脚本收集和分享</span>
+                      <a href="/2025/01/21/1panel-%E8%AE%BE%E7%BD%AE%E5%9F%9F%E5%90%8D%E7%99%BB%E5%BD%95/" title="1panel 设置域名登录">
+                        <span class="hidden-mobile">1panel 设置域名登录</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
