@@ -18,26 +18,31 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言在使用github作为hexo博客托管机的时候，经常会遇到 &amp;#x67;&amp;#x69;&amp;#x74;&amp;#64;&amp;#x67;&amp;#105;&amp;#116;&amp;#x68;&amp;#117;&amp;#x62;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;: Permission denied (publickey)，本文介绍如何（临时性）解决此问题 进入macOS ssh文件夹1cd ~&#x2F;.ssh       SSH Ke">
+    <meta name="description" content="WebDAV（Web Distributed Authoring and Versioning）是一种基于HTTP协议的文件管理技术，旨在帮助用户高效地在远程服务器上管理和共享文件。它不仅支持文件的上传、下载，还支持文件夹的创建、删除和编辑操作，让网络存储像本地磁盘一样易用。WebDAV 被广泛应用于企业协作、云存储服务（如Koofr、Nextcloud）以及个人文件同步等场景，兼容性强且操作简单">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决 git@github.com:Permission denied (publickey)">
-<meta property="og:url" content="http://example.com/2023/07/23/slove-git-github-com-Permission-denied-publickey/index.html">
+<meta property="og:title" content="支持Webdav的免费网盘整理-持续更新中">
+<meta property="og:url" content="http://example.com/2025/01/28/%E6%94%AF%E6%8C%81Webdav%E7%9A%84%E5%85%8D%E8%B4%B9%E7%BD%91%E7%9B%98%E6%95%B4%E7%90%86-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD/index.html">
 <meta property="og:site_name" content="文科生的IT笔记">
-<meta property="og:description" content="前言在使用github作为hexo博客托管机的时候，经常会遇到 &amp;#x67;&amp;#x69;&amp;#x74;&amp;#64;&amp;#x67;&amp;#105;&amp;#116;&amp;#x68;&amp;#117;&amp;#x62;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;: Permission denied (publickey)，本文介绍如何（临时性）解决此问题 进入macOS ssh文件夹1cd ~&#x2F;.ssh       SSH Ke">
+<meta property="og:description" content="WebDAV（Web Distributed Authoring and Versioning）是一种基于HTTP协议的文件管理技术，旨在帮助用户高效地在远程服务器上管理和共享文件。它不仅支持文件的上传、下载，还支持文件夹的创建、删除和编辑操作，让网络存储像本地磁盘一样易用。WebDAV 被广泛应用于企业协作、云存储服务（如Koofr、Nextcloud）以及个人文件同步等场景，兼容性强且操作简单">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-07-23T08:48:36.000Z">
-<meta property="article:modified_time" content="2024-04-16T08:19:12.722Z">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/28/6798137135463.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/S1tUk5%20.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-28%2007.19.45%20.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/kSFKne%20.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/2NjYFa%20.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/b40kZm%20.png">
+<meta property="article:published_time" content="2025-01-27T23:09:39.000Z">
+<meta property="article:modified_time" content="2025-01-27T23:39:08.302Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="Mac">
-<meta property="article:tag" content="Wechat">
-<meta property="article:tag" content="Github">
+<meta property="article:tag" content="Webdav">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://servpic.sharepan.eu.org/i/2025/01/28/6798137135463.webp">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>解决 git@github.com:Permission denied (publickey) - 文科生的IT笔记</title>
+  <title>支持Webdav的免费网盘整理-持续更新中 - 文科生的IT笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +223,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="解决 git@github.com:Permission denied (publickey)"></span>
+            <span id="subtitle" data-typed-text="支持Webdav的免费网盘整理-持续更新中"></span>
           
         </div>
 
@@ -229,8 +234,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-23 16:48" pubdate>
-          2023年7月23日 下午
+        <time datetime="2025-01-28 07:09" pubdate>
+          2025年1月28日 早上
         </time>
       </span>
     
@@ -241,7 +246,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          246 字
+          329 字
         
       </span>
     
@@ -297,35 +302,57 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">解决 git@github.com:Permission denied (publickey)</h1>
+            <h1 id="seo-header">支持Webdav的免费网盘整理-持续更新中</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用github作为hexo博客托管机的时候，经常会遇到 <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#109;</a>: Permission denied (publickey)，本文介绍如何（临时性）解决此问题</p>
-<h1 id="进入macOS-ssh文件夹"><a href="#进入macOS-ssh文件夹" class="headerlink" title="进入macOS ssh文件夹"></a>进入macOS ssh文件夹</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh     <br></code></pre></td></tr></table></figure>
-
-<h1 id="SSH-Key生成"><a href="#SSH-Key生成" class="headerlink" title="SSH Key生成"></a>SSH Key生成</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;xx@example.com&quot;</span><br><span class="hljs-comment">#  youremail@example.com改为自己的邮箱即可，途中会让你输入密码啥的，不需要管，一路回车即可，会生成你的ssh key。（如果重新生成的话会覆盖之前的ssh key）</span><br></code></pre></td></tr></table></figure>
-
-
-<h1 id="验证命令"><a href="#验证命令" class="headerlink" title="验证命令"></a>验证命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -v git@github.com<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure>
-
-<p>如果出现错误提示：<br>请执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> `ssh-agent -s`<br></code></pre></td></tr></table></figure>
-
-<p>后，继续执行命令 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa，<br></code></pre></td></tr></table></figure>
-
-<h1 id="同步github"><a href="#同步github" class="headerlink" title="同步github"></a>同步github</h1><p>打开你刚刚生成的id_rsa.pub，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，title随便取一个名字，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p>
-<h1 id="验证key"><a href="#验证key" class="headerlink" title="验证key"></a>验证key</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure>
-
-<p>显示如下输出即表示暂时解决此问题：</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">You<span class="hljs-symbol">&#x27;ve</span> successfully authenticated, but GitHub does <span class="hljs-keyword">not</span> provide shell <span class="hljs-keyword">access</span>.<br></code></pre></td></tr></table></figure>
-
+                <p>WebDAV（Web Distributed Authoring and Versioning）是一种基于HTTP协议的文件管理技术，旨在帮助用户高效地在远程服务器上管理和共享文件。它不仅支持文件的上传、下载，还支持文件夹的创建、删除和编辑操作，让网络存储像本地磁盘一样易用。WebDAV 被广泛应用于企业协作、云存储服务（如Koofr、Nextcloud）以及个人文件同步等场景，兼容性强且操作简单。如果你想更高效地管理云端文件，WebDAV 是一个值得了解的工具！</p>
+<h2 id="国内"><a href="#国内" class="headerlink" title="国内"></a>国内</h2><h3 id="坚果云"><a href="#坚果云" class="headerlink" title="坚果云"></a><a target="_blank" rel="noopener" href="https://www.jianguoyun.com/">坚果云</a></h3><ul>
+<li><p>免费账号使用量</p>
+<p><img src="https://servpic.sharepan.eu.org/i/2025/01/28/6798137135463.webp" srcset="/img/loading.gif" lazyload alt="6798137135463"></p>
+</li>
+<li><p>如何使用</p>
+<ol>
+<li><p>注册<a target="_blank" rel="noopener" href="https://www.jianguoyun.com/d/signup#from=https%3A%2F%2Fwww.jianguoyun.com%2F">坚果云</a></p>
+</li>
+<li><p>账户信息–安全选项</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/S1tUk5%20.png" srcset="/img/loading.gif" lazyload alt="S1tUk5"></p>
+</li>
+<li><p>设置密码</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/%E6%88%AA%E5%B1%8F2025-01-28%2007.19.45%20.png" srcset="/img/loading.gif" lazyload alt="截屏2025-01-2807.19.45"></p>
+<ol start="4">
+<li>Webdav信息</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">服务器地址：https:<span class="hljs-regexp">//</span>dav.jianguoyun.com<span class="hljs-regexp">/dav/</span><br>账户：注册邮箱<br>密码：应用密码<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="国外"><a href="#国外" class="headerlink" title="国外"></a>国外</h2><h3 id="koofr"><a href="#koofr" class="headerlink" title="koofr"></a>koofr</h3><ul>
+<li><p>免费用量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/kSFKne%20.png" srcset="/img/loading.gif" lazyload alt="kSFKne"></p>
+</li>
+<li><p>特色：支持onedrive和google drive的外链，并转化为webdav，完全不用担心用量</p>
+</li>
+<li><p>如何使用</p>
+<ol>
+<li><p>注册链接：<a target="_blank" rel="noopener" href="https://k00.fr/3jurgejd">koofr.net</a></p>
+</li>
+<li><p>扩容：主页–Connet-选择一个云盘（以onedrive为例）：免费账号只能挂载2个第三方网盘</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/2NjYFa%20.png" srcset="/img/loading.gif" lazyload alt="2NjYFa"></p>
+</li>
+<li><p>用户-Preferences-Password-Generate</p>
+<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/b40kZm%20.png" srcset="/img/loading.gif" lazyload alt="b40kZm"></p>
+</li>
+<li><p>Webdav信息</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">服务器地址：https:<span class="hljs-regexp">//</span>app.koofr.net<span class="hljs-regexp">/dav/</span>OneDrive<br>账户：注册邮箱<br>密码：App passwords<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>不挂载三方网盘的webdav信息</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">服务器地址：https:<span class="hljs-regexp">//</span>app.koofr.net/dav<br>账户：注册邮箱<br>密码：App passwords<br></code></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+<p>​				</p>
 
                 
               </div>
@@ -338,11 +365,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Mac/" class="print-no-link">#Mac</a>
-      
-        <a href="/tags/Wechat/" class="print-no-link">#Wechat</a>
-      
-        <a href="/tags/Github/" class="print-no-link">#Github</a>
+        <a href="/tags/Webdav/" class="print-no-link">#Webdav</a>
       
     </div>
   
@@ -354,8 +377,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>解决 git@github.com:Permission denied (publickey)</div>
-      <div>http://example.com/2023/07/23/slove-git-github-com-Permission-denied-publickey/</div>
+      <div>支持Webdav的免费网盘整理-持续更新中</div>
+      <div>http://example.com/2025/01/28/支持Webdav的免费网盘整理-持续更新中/</div>
     </div>
     <div class="license-meta">
       
@@ -367,7 +390,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年7月23日</div>
+          <div>2025年1月28日</div>
         </div>
       
       
@@ -399,9 +422,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/29/Build-a-gist-based-clash-subscription/" title="打造基于gist的Clash订阅">
+                      <a href="/2025/01/28/Oracle%E9%82%AE%E4%BB%B6%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81%E8%A6%81%E6%B1%82%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86/" title="Oracle邮件安全认证要求如何处理">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">打造基于gist的Clash订阅</span>
+                        <span class="hidden-mobile">Oracle邮件安全认证要求如何处理</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -409,8 +432,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/23/https-certificate-apply-on-the-cloudflare-for-free/" title="Cloudflare申请免费https证书">
-                        <span class="hidden-mobile">Cloudflare申请免费https证书</span>
+                      <a href="/2025/01/25/serv00%E9%83%A8%E7%BD%B2%E5%93%AA%E5%90%92%E6%8E%A2%E9%92%88/" title="serv00部署哪吒探针">
+                        <span class="hidden-mobile">serv00部署哪吒探针</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
