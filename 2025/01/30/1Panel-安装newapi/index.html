@@ -18,32 +18,29 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言发现N1有很多好玩的地方，今天发现一个可以用来抢茅台的脚本。需确保N1已经安装Openwrt或者Linux系统，且已经配置docker和docker compse。 配置文件下载地址 将文件下载，解压放入N1目录 打包文件利用 GitHub 的 Actions 自动构建文件，步骤如下：  Fork 项目  打开自己项目的写入权限 在 settings -&gt; actions -&gt; G">
+    <meta name="description" content="New API：🍥新一代大模型网关与AI资产管理系统✨ 主要特性 🎨 全新的UI界面（部分界面还待更新） 🌍 多语言支持（待完善） 🎨 添加Midjourney-Proxy(Plus)接口支持，对接文档 💰 支持在线充值功能，可在系统设置中设置： 易支付   🔍 支持用key查询使用额度： 配合项目neko-api-key-tool可实现用key查询使用   📑 分页支持选择每页显示">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在N1上抢茅台">
-<meta property="og:url" content="http://example.com/2024/02/25/Snatch-Moutai-at-N1/index.html">
+<meta property="og:title" content="1Panel 安装newapi">
+<meta property="og:url" content="http://example.com/2025/01/30/1Panel-%E5%AE%89%E8%A3%85newapi/index.html">
 <meta property="og:site_name" content="文科生的IT笔记">
-<meta property="og:description" content="前言发现N1有很多好玩的地方，今天发现一个可以用来抢茅台的脚本。需确保N1已经安装Openwrt或者Linux系统，且已经配置docker和docker compse。 配置文件下载地址 将文件下载，解压放入N1目录 打包文件利用 GitHub 的 Actions 自动构建文件，步骤如下：  Fork 项目  打开自己项目的写入权限 在 settings -&gt; actions -&gt; G">
+<meta property="og:description" content="New API：🍥新一代大模型网关与AI资产管理系统✨ 主要特性 🎨 全新的UI界面（部分界面还待更新） 🌍 多语言支持（待完善） 🎨 添加Midjourney-Proxy(Plus)接口支持，对接文档 💰 支持在线充值功能，可在系统设置中设置： 易支付   🔍 支持用key查询使用额度： 配合项目neko-api-key-tool可实现用key查询使用   📑 分页支持选择每页显示">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251829328.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251846362.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251831764.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251850521.png">
-<meta property="article:published_time" content="2024-02-25T10:21:00.000Z">
-<meta property="article:modified_time" content="2024-04-14T08:47:48.306Z">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/30/679aea7035334.webp">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/30/679aeac7eb6ef.webp">
+<meta property="og:image" content="https://servpic.sharepan.eu.org/i/2025/01/30/679aeae335e7c.webp">
+<meta property="article:published_time" content="2025-01-30T02:51:08.000Z">
+<meta property="article:modified_time" content="2025-01-30T04:14:12.182Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="Wechat">
-<meta property="article:tag" content="Openwrt">
-<meta property="article:tag" content="Script">
-<meta property="article:tag" content="Life">
+<meta property="article:tag" content="Ai">
+<meta property="article:tag" content="1panel">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251829328.png">
+<meta name="twitter:image" content="https://servpic.sharepan.eu.org/i/2025/01/30/679aea7035334.webp">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>在N1上抢茅台 - 文科生的IT笔记</title>
+  <title>1Panel 安装newapi - 文科生的IT笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,7 +221,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="在N1上抢茅台"></span>
+            <span id="subtitle" data-typed-text="1Panel 安装newapi"></span>
           
         </div>
 
@@ -235,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-25 18:21" pubdate>
-          2024年2月25日 晚上
+        <time datetime="2025-01-30 10:51" pubdate>
+          2025年1月30日 上午
         </time>
       </span>
     
@@ -247,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          425 字
+          484 字
         
       </span>
     
@@ -258,7 +255,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -303,67 +300,56 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">在N1上抢茅台</h1>
+            <h1 id="seo-header">1Panel 安装newapi</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>发现N1有很多好玩的地方，今天发现一个可以用来抢茅台的脚本。需确保N1已经安装Openwrt或者Linux系统，且已经配置docker和docker compse。</p>
-<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p><a target="_blank" rel="noopener" href="https://github.com/oddfar/campus-imaotai/blob/master/doc/docker-compose.zip">下载地址</a></p>
-<p>将文件下载，解压放入N1目录</p>
-<h1 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h1><p>利用 <code>GitHub</code> 的 <code>Actions</code> 自动构建文件，步骤如下：</p>
-<ul>
-<li><p><code>Fork</code> <a target="_blank" rel="noopener" href="https://github.com/oddfar/campus">项目</a></p>
-</li>
-<li><p>打开自己项目的写入权限</p>
-<p>在 settings -&gt; actions -&gt; General</p>
-<p>Workflow permissions 中选择 <code>Read and write permissions</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251829328.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-25 18.29.42"></p>
-</li>
-<li><p>运行任务</p>
-</li>
+                <h1 id="New-API：🍥新一代大模型网关与AI资产管理系统"><a href="#New-API：🍥新一代大模型网关与AI资产管理系统" class="headerlink" title="New API：🍥新一代大模型网关与AI资产管理系统"></a>New API：🍥新一代大模型网关与AI资产管理系统</h1><h2 id="✨-主要特性"><a href="#✨-主要特性" class="headerlink" title="✨ 主要特性"></a>✨ 主要特性</h2><ol>
+<li>🎨 全新的UI界面（部分界面还待更新）</li>
+<li>🌍 多语言支持（待完善）</li>
+<li>🎨 添加<a target="_blank" rel="noopener" href="https://github.com/novicezk/midjourney-proxy">Midjourney-Proxy(Plus)</a>接口支持，<a target="_blank" rel="noopener" href="https://github.com/Calcium-Ion/new-api/blob/main/Midjourney.md">对接文档</a></li>
+<li>💰 支持在线充值功能，可在系统设置中设置：<ul>
+<li>易支付</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251846362.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-25 18.46.23"></p>
-<p>运行完之后在本项目的 <code>releases</code> 下，有打包好的文件</p>
-<p><code>dist_xxx.tar.gz</code> ：前端</p>
-<p><code>campus-modular_xxx.jar</code> ：后端</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251831764.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-25 18.31.45"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251850521.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-25 18.49.42"></p>
-<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>可参考 <a target="_blank" rel="noopener" href="https://github.com/oddfar/campus-imaotai/releases/download/V1.0.11/campus-imt-V1.0.11.zip">campus-imt-V1.0.11.zip (opens new window)</a>文件</p>
-<ul>
-<li><p>解压 <a target="_blank" rel="noopener" href="https://github.com/oddfar/campus-imaotai/blob/master/doc/docker-compose.zip">docker-compose.zip(opens new window)</a></p>
 </li>
-<li><p>放置需要的的文件</p>
-<p><code>/db</code> 目录下放置 <code>sql</code> 文件（在本项目 <code>/doc/sql</code> 目录下 ）</p>
-<p><code>/jar</code> 目录下换成最新的 <code>jar</code> 包</p>
-<p><code>/html</code> 目录下换成最新的 <code>dist</code> 文件夹（不是压缩包）</p>
-</li>
+<li>🔍 支持用key查询使用额度：<ul>
+<li>配合项目<a target="_blank" rel="noopener" href="https://github.com/Calcium-Ion/neko-api-key-tool">neko-api-key-tool</a>可实现用key查询使用</li>
 </ul>
-<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><p><code>N1是arm64的cpu，配置文件默认是x86，需要把sql的镜像改为arm，mysql-dockerfile、docker-compose.yml里面的镜像名称更改为biarms/mysql</code></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">campus-mysql:</span><br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">campus-mysql</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">biarms/mysql</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><ul>
-<li><p>进入目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> 压缩文件名<br></code></pre></td></tr></table></figure>
-
-
 </li>
-<li><p>构建docker服务：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose build<br></code></pre></td></tr></table></figure>
+<li>📑 分页支持选择每页显示数量</li>
+<li>🔄 兼容原版One API的数据库，可直接使用原版数据库（one-api.db）</li>
+<li>💵 支持模型按次数收费，可在 系统设置-运营设置 中设置</li>
+<li>⚖️ 支持渠道<strong>加权随机</strong></li>
+<li>📈 数据看板（控制台）</li>
+<li>🔒 可设置令牌能调用的模型</li>
+<li>🤖 支持Telegram授权登录：<ol>
+<li>系统设置-配置登录注册-允许通过Telegram登录</li>
+<li>对<a target="_blank" rel="noopener" href="https://t.me/botfather">@Botfather</a>输入指令&#x2F;setdomain</li>
+<li>选择你的bot，然后输入http(s):&#x2F;&#x2F;你的网站地址&#x2F;login</li>
+<li>Telegram Bot 名称是bot username 去掉@后的字符串</li>
+</ol>
 </li>
-<li><p>启动docker容器：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up -d<br></code></pre></td></tr></table></figure></li>
-</ul>
-<p>打开浏览器，输入：<a target="_blank" rel="noopener" href="http://localhost/">http://localhost:80 (opens new window)</a>，若能正确展示页面，则表明环境搭建成功。一共4个服务</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果80端口已经被占用，将下面的docker compose前面的<code>80</code>端口修改为其他空闲端口</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">campus-nginx:</span><br>  <span class="hljs-attr">container_name:</span> <span class="hljs-string">campus-nginx</span><br>  <span class="hljs-attr">image:</span> <span class="hljs-string">nginx</span><br>  <span class="hljs-attr">build:</span><br>    <span class="hljs-attr">context:</span> <span class="hljs-string">.</span><br>    <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">nginx-dockerfile</span><br>  <span class="hljs-attr">ports:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;80:80&quot;</span><br></code></pre></td></tr></table></figure>
+<li>🎵 添加 <a target="_blank" rel="noopener" href="https://github.com/Suno-API/Suno-API">Suno API</a>接口支持，<a target="_blank" rel="noopener" href="https://github.com/Calcium-Ion/new-api/blob/main/Suno.md">对接文档</a></li>
+<li>🔄 支持Rerank模型，目前兼容Cohere和Jina，可接入Dify，<a target="_blank" rel="noopener" href="https://github.com/Calcium-Ion/new-api/blob/main/Rerank.md">对接文档</a></li>
+<li>⚡ <strong><a target="_blank" rel="noopener" href="https://platform.openai.com/docs/guides/realtime/integration">OpenAI Realtime API</a></strong> - 支持OpenAI的Realtime API，支持Azure渠道</li>
+<li>支持使用路由&#x2F;chat2link 进入聊天界面</li>
+</ol>
+<h1 id="1panel部署步骤"><a href="#1panel部署步骤" class="headerlink" title="1panel部署步骤"></a>1panel部署步骤</h1><h2 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h2><ol>
+<li><p>安装SQL工具</p>
+<p><img src="https://servpic.sharepan.eu.org/i/2025/01/30/679aea7035334.webp" srcset="/img/loading.gif" lazyload alt="679aea7035334"></p>
+</li>
+<li><p>创建数据库,并记录用户名密码</p>
+</li>
+</ol>
+<p>​	<img src="https://servpic.sharepan.eu.org/i/2025/01/30/679aeac7eb6ef.webp" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://servpic.sharepan.eu.org/i/2025/01/30/679aeae335e7c.webp" srcset="/img/loading.gif" lazyload alt="image-20250130105837081"></p>
+<h1 id="Newapi设置"><a href="#Newapi设置" class="headerlink" title="Newapi设置"></a>Newapi设置</h1><h2 id="使用-Docker-Compose-部署"><a href="#使用-Docker-Compose-部署" class="headerlink" title="使用 Docker Compose 部署"></a>使用 Docker Compose 部署</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 下载项目</span><br>git <span class="hljs-built_in">clone</span> https://github.com/Calcium-Ion/new-api.git<br><span class="hljs-built_in">cd</span> new-api<br><span class="hljs-comment"># 按需编辑 docker-compose.yml</span><br><span class="hljs-comment"># 启动</span><br>docker-compose up -d		<br></code></pre></td></tr></table></figure>
 
-<h1 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h1><p>把 <code>/jar</code> 目录下换成最新的 <code>jar</code> 包，<code>/html</code> 目录下换成最新的 <code>dist</code> 文件夹</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">#1、删除容器：</span><br>docker <span class="hljs-built_in">rm</span> -f campus-server campus-nginx<br><span class="hljs-comment">#2、删除旧镜像</span><br>docker rmi campus-imt-vxxx_campus-server<br><span class="hljs-comment">#3、启动项目，项目根目录下执行</span><br>docker-compose up -d<br></code></pre></td></tr></table></figure>
+<p>由于在1panel已经设置了SQL数据库，可以将docker compose的数据库配置去掉，特别是对于轻量级VPS来说特别重要</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;3.4&#x27;</span><br><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">new-api:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">calciumion/new-api:latest</span><br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">new-api</span><br>    <span class="hljs-attr">restart:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attr">command:</span> <span class="hljs-string">--log-dir</span> <span class="hljs-string">/app/logs</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;3000:3000&quot;</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./data:/data</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./logs:/app/logs</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">SQL_DSN=root:123456@tcp(172.18.0.2:3306)/new-api</span>  <span class="hljs-comment"># Point to the mysql service</span><br>   <span class="hljs-comment">#   - REDIS_CONN_STRING=redis://redis</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">TZ=Asia/Shanghai</span><br>    <span class="hljs-comment">#      - SESSION_SECRET=random_string  # 多机部署时设置，必须修改这个随机字符串！！！！！！！</span><br>    <span class="hljs-comment">#      - NODE_TYPE=slave  # Uncomment for slave node in multi-node deployment</span><br>    <span class="hljs-comment">#      - SYNC_FREQUENCY=60  # Uncomment if regular database syncing is needed</span><br>    <span class="hljs-comment">#      - FRONTEND_BASE_URL=https://openai.justsong.cn  # Uncomment for multi-node deployment with front-end URL</span><br><br>   <br><span class="hljs-attr">volumes:</span><br>  <span class="hljs-attr">mysql_data:</span><br></code></pre></td></tr></table></figure>
 
-
-
-<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a target="_blank" rel="noopener" href="https://oddfar.github.io/campus-doc/">Campus</a></p>
+<p>默认账号root 密码123456</p>
 
                 
               </div>
@@ -376,13 +362,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Wechat/" class="print-no-link">#Wechat</a>
+        <a href="/tags/Ai/" class="print-no-link">#Ai</a>
       
-        <a href="/tags/Openwrt/" class="print-no-link">#Openwrt</a>
-      
-        <a href="/tags/Script/" class="print-no-link">#Script</a>
-      
-        <a href="/tags/Life/" class="print-no-link">#Life</a>
+        <a href="/tags/1panel/" class="print-no-link">#1panel</a>
       
     </div>
   
@@ -394,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>在N1上抢茅台</div>
-      <div>http://example.com/2024/02/25/Snatch-Moutai-at-N1/</div>
+      <div>1Panel 安装newapi</div>
+      <div>http://example.com/2025/01/30/1Panel-安装newapi/</div>
     </div>
     <div class="license-meta">
       
@@ -407,7 +389,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月25日</div>
+          <div>2025年1月30日</div>
         </div>
       
       
@@ -439,18 +421,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/26/Cut-and-Move-Files-in-OS-X/" title="MacOS 剪切+移动文件">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MacOS 剪切+移动文件</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/24/Irregular-updates-Reverse-engineered-ChatGPT-proxy/" title="不定期更新:可用的Reverse engineered ChatGPT proxy">
-                        <span class="hidden-mobile">不定期更新:可用的Reverse engineered ChatGPT proxy</span>
+                      <a href="/2025/01/30/Oracle%EF%BC%9A%E6%96%B0%E7%94%B3%E8%AF%B7VPS%E6%8E%A8%E8%8D%90%E8%AE%BE%E7%BD%AE/" title="Oracle：新申请VPS推荐设置">
+                        <span class="hidden-mobile">Oracle：新申请VPS推荐设置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
