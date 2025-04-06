@@ -18,32 +18,27 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言发现N1有很多好玩的地方，今天发现一个可以用来抢茅台的脚本。需确保N1已经安装Openwrt或者Linux系统，且已经配置docker和docker compse。 配置文件下载地址 将文件下载，解压放入N1目录 打包文件利用 GitHub 的 Actions 自动构建文件，步骤如下：  Fork 项目  打开自己项目的写入权限 在 settings -&gt; actions -&gt; G">
+    <meta name="description" content="让 fail2ban 自动监控 UFW BLOCK 日志，并在检测到攻击时封禁 IP！比手动 ufw deny 更高效，适合长期防御！ 安装 ufw 防火墙 和 fail2ban1sudo apt install ufw -y  安装完成后，启用 ufw 防火墙： 1sudo ufw enable  建议自己稍微配置一下防火墙，关掉所有端口，只留下必要的 80&#x2F;443 等端口，SSH等端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在N1上抢茅台">
-<meta property="og:url" content="http://example.com/2024/02/25/Snatch-Moutai-at-N1/index.html">
+<meta property="og:title" content="让fail2ban监控UFW BLOCK日志并自动封禁IP">
+<meta property="og:url" content="http://example.com/2025/04/06/%E8%AE%A9fail2ban%E7%9B%91%E6%8E%A7UFW-BLOCK%E6%97%A5%E5%BF%97%E5%B9%B6%E8%87%AA%E5%8A%A8%E5%B0%81%E7%A6%81IP/index.html">
 <meta property="og:site_name" content="文科生的IT笔记">
-<meta property="og:description" content="前言发现N1有很多好玩的地方，今天发现一个可以用来抢茅台的脚本。需确保N1已经安装Openwrt或者Linux系统，且已经配置docker和docker compse。 配置文件下载地址 将文件下载，解压放入N1目录 打包文件利用 GitHub 的 Actions 自动构建文件，步骤如下：  Fork 项目  打开自己项目的写入权限 在 settings -&gt; actions -&gt; G">
+<meta property="og:description" content="让 fail2ban 自动监控 UFW BLOCK 日志，并在检测到攻击时封禁 IP！比手动 ufw deny 更高效，适合长期防御！ 安装 ufw 防火墙 和 fail2ban1sudo apt install ufw -y  安装完成后，启用 ufw 防火墙： 1sudo ufw enable  建议自己稍微配置一下防火墙，关掉所有端口，只留下必要的 80&#x2F;443 等端口，SSH等端">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251829328.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251846362.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251831764.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251850521.png">
-<meta property="article:published_time" content="2024-02-25T10:21:00.000Z">
-<meta property="article:modified_time" content="2024-04-14T08:47:48.306Z">
+<meta property="article:published_time" content="2025-04-06T02:31:20.000Z">
+<meta property="article:modified_time" content="2025-04-06T02:37:43.847Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="Wechat">
-<meta property="article:tag" content="Openwrt">
-<meta property="article:tag" content="Script">
-<meta property="article:tag" content="Life">
+<meta property="article:tag" content="VPS">
+<meta property="article:tag" content="Oracle">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251829328.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>在N1上抢茅台 - 文科生的IT笔记</title>
+  <title>让fail2ban监控UFW BLOCK日志并自动封禁IP - 文科生的IT笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="在N1上抢茅台"></span>
+            <span id="subtitle" data-typed-text="让fail2ban监控UFW BLOCK日志并自动封禁IP"></span>
           
         </div>
 
@@ -235,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-25 18:21" pubdate>
-          2024年2月25日 晚上
+        <time datetime="2025-04-06 10:31" pubdate>
+          2025年4月6日 上午
         </time>
       </span>
     
@@ -247,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          425 字
+          547 字
         
       </span>
     
@@ -258,7 +253,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -303,67 +298,55 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">在N1上抢茅台</h1>
+            <h1 id="seo-header">让fail2ban监控UFW BLOCK日志并自动封禁IP</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>发现N1有很多好玩的地方，今天发现一个可以用来抢茅台的脚本。需确保N1已经安装Openwrt或者Linux系统，且已经配置docker和docker compse。</p>
-<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p><a target="_blank" rel="noopener" href="https://github.com/oddfar/campus-imaotai/blob/master/doc/docker-compose.zip">下载地址</a></p>
-<p>将文件下载，解压放入N1目录</p>
-<h1 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h1><p>利用 <code>GitHub</code> 的 <code>Actions</code> 自动构建文件，步骤如下：</p>
-<ul>
-<li><p><code>Fork</code> <a target="_blank" rel="noopener" href="https://github.com/oddfar/campus">项目</a></p>
-</li>
-<li><p>打开自己项目的写入权限</p>
-<p>在 settings -&gt; actions -&gt; General</p>
-<p>Workflow permissions 中选择 <code>Read and write permissions</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251829328.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-25 18.29.42"></p>
-</li>
-<li><p>运行任务</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251846362.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-25 18.46.23"></p>
-<p>运行完之后在本项目的 <code>releases</code> 下，有打包好的文件</p>
-<p><code>dist_xxx.tar.gz</code> ：前端</p>
-<p><code>campus-modular_xxx.jar</code> ：后端</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251831764.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-25 18.31.45"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures/img/202402251850521.png" srcset="/img/loading.gif" lazyload alt="截屏2024-02-25 18.49.42"></p>
-<h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><p>可参考 <a target="_blank" rel="noopener" href="https://github.com/oddfar/campus-imaotai/releases/download/V1.0.11/campus-imt-V1.0.11.zip">campus-imt-V1.0.11.zip (opens new window)</a>文件</p>
-<ul>
-<li><p>解压 <a target="_blank" rel="noopener" href="https://github.com/oddfar/campus-imaotai/blob/master/doc/docker-compose.zip">docker-compose.zip(opens new window)</a></p>
-</li>
-<li><p>放置需要的的文件</p>
-<p><code>/db</code> 目录下放置 <code>sql</code> 文件（在本项目 <code>/doc/sql</code> 目录下 ）</p>
-<p><code>/jar</code> 目录下换成最新的 <code>jar</code> 包</p>
-<p><code>/html</code> 目录下换成最新的 <code>dist</code> 文件夹（不是压缩包）</p>
-</li>
-</ul>
-<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><p><code>N1是arm64的cpu，配置文件默认是x86，需要把sql的镜像改为arm，mysql-dockerfile、docker-compose.yml里面的镜像名称更改为biarms/mysql</code></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">campus-mysql:</span><br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">campus-mysql</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">biarms/mysql</span><br></code></pre></td></tr></table></figure>
+                <p><strong>让 <code>fail2ban</code> 自动监控 <code>UFW BLOCK</code> 日志，并在检测到攻击时封禁 IP！</strong><br><strong>比手动 <code>ufw deny</code> 更高效，适合长期防御！</strong></p>
+<h2 id="安装-ufw-防火墙-和-fail2ban"><a href="#安装-ufw-防火墙-和-fail2ban" class="headerlink" title="安装 ufw 防火墙 和 fail2ban"></a>安装 <code>ufw</code> 防火墙 和 <code>fail2ban</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install ufw -y<br></code></pre></td></tr></table></figure>
 
-<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><ul>
-<li><p>进入目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> 压缩文件名<br></code></pre></td></tr></table></figure>
+<p>安装完成后，启用 <code>ufw</code> 防火墙：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo ufw <span class="hljs-built_in">enable</span><br></code></pre></td></tr></table></figure>
 
+<p><strong>建议自己稍微配置一下防火墙，关掉所有端口，只留下必要的 80&#x2F;443 等端口，SSH等端口不要开放（最好设置仅对白名单 IP 放行）</strong></p>
+<p>安装 fail2ban：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install fail2ban -y<br></code></pre></td></tr></table></figure>
 
-</li>
-<li><p>构建docker服务：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose build<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>启动docker容器：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker-compose up -d<br></code></pre></td></tr></table></figure></li>
-</ul>
-<p>打开浏览器，输入：<a target="_blank" rel="noopener" href="http://localhost/">http://localhost:80 (opens new window)</a>，若能正确展示页面，则表明环境搭建成功。一共4个服务</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果80端口已经被占用，将下面的docker compose前面的<code>80</code>端口修改为其他空闲端口</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">campus-nginx:</span><br>  <span class="hljs-attr">container_name:</span> <span class="hljs-string">campus-nginx</span><br>  <span class="hljs-attr">image:</span> <span class="hljs-string">nginx</span><br>  <span class="hljs-attr">build:</span><br>    <span class="hljs-attr">context:</span> <span class="hljs-string">.</span><br>    <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">nginx-dockerfile</span><br>  <span class="hljs-attr">ports:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;80:80&quot;</span><br></code></pre></td></tr></table></figure>
+<p>设置 fail2ban 开机自启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl start fail2ban<br>sudo systemctl <span class="hljs-built_in">enable</span> fail2ban<br></code></pre></td></tr></table></figure>
 
-<h1 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h1><p>把 <code>/jar</code> 目录下换成最新的 <code>jar</code> 包，<code>/html</code> 目录下换成最新的 <code>dist</code> 文件夹</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">#1、删除容器：</span><br>docker <span class="hljs-built_in">rm</span> -f campus-server campus-nginx<br><span class="hljs-comment">#2、删除旧镜像</span><br>docker rmi campus-imt-vxxx_campus-server<br><span class="hljs-comment">#3、启动项目，项目根目录下执行</span><br>docker-compose up -d<br></code></pre></td></tr></table></figure>
+<h2 id="创建自定义-jail-规则"><a href="#创建自定义-jail-规则" class="headerlink" title="创建自定义 jail 规则"></a><strong>创建自定义 <code>jail</code> 规则</strong></h2><p>首先需要手动添加一个新的监控规则来专门处理 <code>UFW BLOCK</code> 日志：</p>
+<p>编辑 <code>jail.local</code> 配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bansh">sudo via /etc/fail2ban/jail.local<br></code></pre></td></tr></table></figure>
 
+<p>参考配置如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs yaml">[<span class="hljs-string">DEFAULT</span>]<br><span class="hljs-comment"># 忽略的IP列表（白名单），建议添加内网IP和管理IP</span><br><span class="hljs-string">ignoreip</span> <span class="hljs-string">=</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><span class="hljs-string">/8</span> <span class="hljs-string">::1</span> <span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.0</span><span class="hljs-string">/24</span><br><span class="hljs-comment"># IPv6支持</span><br><span class="hljs-string">allowipv6</span> <span class="hljs-string">=</span> <span class="hljs-literal">true</span><br><span class="hljs-comment"># 日志检测机制（推荐systemd）</span><br><span class="hljs-string">backend</span> <span class="hljs-string">=</span> <span class="hljs-string">systemd</span><br><span class="hljs-comment"># 全局默认设置</span><br><span class="hljs-string">bantime</span> <span class="hljs-string">=</span> <span class="hljs-number">3600</span><br><span class="hljs-string">findtime</span> <span class="hljs-string">=</span> <span class="hljs-number">600</span><br><span class="hljs-string">maxretry</span> <span class="hljs-string">=</span> <span class="hljs-number">5</span><br><br>[<span class="hljs-string">sshd</span>]<br><span class="hljs-string">enabled</span> <span class="hljs-string">=</span> <span class="hljs-literal">true</span><br><span class="hljs-string">filter</span> <span class="hljs-string">=</span> <span class="hljs-string">sshd</span><br><span class="hljs-comment"># 如果使用了非标准SSH端口，需要修改</span><br><span class="hljs-string">port</span> <span class="hljs-string">=</span> <span class="hljs-string">ssh</span><br><span class="hljs-string">logpath</span> <span class="hljs-string">=</span> <span class="hljs-string">%(sshd_log)s</span><br><span class="hljs-comment"># 更安全的封禁时间（避免永久封禁导致管理问题）</span><br><span class="hljs-string">bantime</span> <span class="hljs-string">=</span> <span class="hljs-number">86400</span><br><span class="hljs-string">findtime</span> <span class="hljs-string">=</span> <span class="hljs-number">86400</span><br><span class="hljs-string">maxretry</span> <span class="hljs-string">=</span> <span class="hljs-number">3</span><br><span class="hljs-comment"># 推荐的action</span><br><span class="hljs-string">action</span> <span class="hljs-string">=</span> <span class="hljs-string">%(action_)s</span><br><br>[<span class="hljs-string">ufw-block</span>]<br><span class="hljs-string">enabled</span> <span class="hljs-string">=</span> <span class="hljs-literal">true</span><br><span class="hljs-string">filter</span> <span class="hljs-string">=</span> <span class="hljs-string">ufw-block</span><br><span class="hljs-string">logpath</span> <span class="hljs-string">=</span> <span class="hljs-string">/var/log/ufw.log</span><br><span class="hljs-string">maxretry</span> <span class="hljs-string">=</span> <span class="hljs-number">5</span><br><span class="hljs-string">findtime</span> <span class="hljs-string">=</span> <span class="hljs-number">600</span><br><span class="hljs-string">bantime</span> <span class="hljs-string">=</span> <span class="hljs-number">-1</span>  <span class="hljs-comment"># 改为永久封禁</span><br><span class="hljs-comment"># 使用更具体的filter避免误封</span><br><span class="hljs-string">action</span> <span class="hljs-string">=</span> <span class="hljs-string">ufw[application=&quot;Block&quot;,</span> <span class="hljs-string">blocktype=reject]</span><br><br><span class="hljs-comment"># 建议添加的额外保护规则</span><br>[<span class="hljs-string">nginx-botsearch</span>]<br><span class="hljs-string">enabled</span> <span class="hljs-string">=</span> <span class="hljs-literal">true</span><br><span class="hljs-string">port</span> <span class="hljs-string">=</span> <span class="hljs-string">http,https</span><br><span class="hljs-string">logpath</span> <span class="hljs-string">=</span> <span class="hljs-string">/var/log/nginx/access.log</span><br><span class="hljs-string">maxretry</span> <span class="hljs-string">=</span> <span class="hljs-number">100</span><br><span class="hljs-string">findtime</span> <span class="hljs-string">=</span> <span class="hljs-number">600</span><br><span class="hljs-string">bantime</span> <span class="hljs-string">=</span> <span class="hljs-number">2592000</span><br></code></pre></td></tr></table></figure>
 
+<h2 id="创建-ufw-block-过滤器"><a href="#创建-ufw-block-过滤器" class="headerlink" title="创建 ufw-block 过滤器"></a><strong>创建 <code>ufw-block</code> 过滤器</strong></h2><p><code>fail2ban</code> 需要知道如何从日志中提取攻击 IP。创建过滤器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo via /etc/fail2ban/filter.d/ufw-block.conf<br></code></pre></td></tr></table></figure>
 
-<h1 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h1><p><a target="_blank" rel="noopener" href="https://oddfar.github.io/campus-doc/">Campus</a></p>
+<p>写入以下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml">[<span class="hljs-string">Definition</span>]<br><span class="hljs-string">failregex</span> <span class="hljs-string">=</span> <span class="hljs-string">^.*\[UFW</span> <span class="hljs-string">BLOCK\].*SRC=&lt;HOST&gt;.*$</span>   <span class="hljs-comment"># 匹配 UFW BLOCK 日志中的 SRC=&lt;IP&gt;</span><br><span class="hljs-string">ignoreregex</span> <span class="hljs-string">=</span>   <span class="hljs-comment"># 可留空，用于排除某些 IP</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="重启-fail2ban-使配置生效"><a href="#重启-fail2ban-使配置生效" class="headerlink" title="重启 fail2ban 使配置生效"></a><strong>重启 <code>fail2ban</code> 使配置生效</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo fail2ban-client status<br></code></pre></td></tr></table></figure>
+
+<p>现在应该能看到 <code>jail list</code> 多了一个 <code>ufw-block</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">Status</span><br><span class="hljs-string">|-</span> <span class="hljs-attr">Number of jail:</span>      <span class="hljs-number">3</span><br><span class="hljs-string">`-</span> <span class="hljs-attr">Jail list:</span>   <span class="hljs-string">nginx-botsearch,</span> <span class="hljs-string">sshd,</span> <span class="hljs-string">ufw-block</span><br></code></pre></td></tr></table></figure>
+
+<p>查看 <code>ufw-block</code> 的封禁情况：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo fail2ban-client status ufw-block<br></code></pre></td></tr></table></figure>
+
+<h2 id="解封-IP"><a href="#解封-IP" class="headerlink" title="解封 IP"></a><strong>解封 IP</strong></h2><p>如果需要手动解封某个 IP：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo fail2ban-client <span class="hljs-built_in">set</span> ufw-block unbanip 123.123.123.123<br></code></pre></td></tr></table></figure>
+
+<h2 id="白名单"><a href="#白名单" class="headerlink" title="白名单"></a><strong>白名单</strong></h2><p>为了防止自己设备的 IP 被误封，可以添加常用 IP 到 fail2ban 的白名单：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo via /etc/fail2ban/jail.local<br></code></pre></td></tr></table></figure>
+
+<p>里面的一行后面加上自己的 IP：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">bantime</span> <span class="hljs-string">=</span> <span class="hljs-number">-1</span> <span class="hljs-comment"># 不是这行</span><br><span class="hljs-string">findtime</span> <span class="hljs-string">=</span> <span class="hljs-number">600</span> <span class="hljs-comment"># 不是这行</span><br><span class="hljs-string">maxretry</span> <span class="hljs-string">=</span> <span class="hljs-number">1</span> <span class="hljs-comment"># 不是这行</span><br><span class="hljs-string">ignoreip</span> <span class="hljs-string">=</span> <span class="hljs-string">例如</span> <span class="hljs-number">123.123</span><span class="hljs-number">.123</span><span class="hljs-number">.123</span> <span class="hljs-comment"># 在这行添加白名单 IP</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><a target="_blank" rel="noopener" href="https://linux.do/t/topic/533088">https://linux.do/t/topic/533088</a></p>
 
                 
               </div>
@@ -376,13 +359,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Wechat/" class="print-no-link">#Wechat</a>
+        <a href="/tags/VPS/" class="print-no-link">#VPS</a>
       
-        <a href="/tags/Openwrt/" class="print-no-link">#Openwrt</a>
+        <a href="/tags/Oracle/" class="print-no-link">#Oracle</a>
       
-        <a href="/tags/Script/" class="print-no-link">#Script</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
-        <a href="/tags/Life/" class="print-no-link">#Life</a>
+        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
       
     </div>
   
@@ -394,8 +377,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>在N1上抢茅台</div>
-      <div>http://example.com/2024/02/25/Snatch-Moutai-at-N1/</div>
+      <div>让fail2ban监控UFW BLOCK日志并自动封禁IP</div>
+      <div>http://example.com/2025/04/06/让fail2ban监控UFW-BLOCK日志并自动封禁IP/</div>
     </div>
     <div class="license-meta">
       
@@ -407,7 +390,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月25日</div>
+          <div>2025年4月6日</div>
         </div>
       
       
@@ -439,18 +422,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/26/Cut-and-Move-Files-in-OS-X/" title="MacOS 剪切+移动文件">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MacOS 剪切+移动文件</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/24/Irregular-updates-Reverse-engineered-ChatGPT-proxy/" title="不定期更新:可用的Reverse engineered ChatGPT proxy">
-                        <span class="hidden-mobile">不定期更新:可用的Reverse engineered ChatGPT proxy</span>
+                      <a href="/2025/03/30/%E8%AE%A9%E4%BD%A0%E7%9A%84-VPS-%E7%99%BB%E5%BD%95%E4%B8%8D%E5%86%8D%E5%8D%95%E8%B0%83%EF%BC%9A%E6%89%93%E9%80%A0%E7%82%AB%E9%85%B7%E5%AE%9E%E7%94%A8%E7%9A%84-MOTD-%E6%AC%A2%E8%BF%8E%E4%BF%A1%E6%81%AF/" title="让你的 VPS 登录不再单调：打造炫酷实用的 MOTD 欢迎信息">
+                        <span class="hidden-mobile">让你的 VPS 登录不再单调：打造炫酷实用的 MOTD 欢迎信息</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
