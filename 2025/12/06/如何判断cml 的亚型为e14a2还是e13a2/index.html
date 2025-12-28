@@ -18,29 +18,23 @@
   <meta name="author" content="Justin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="当我们注册国外服务时，尽管使用了VPN，但有时由于VPN的IP地址被广泛使用、质量较差，甚至被多个用户共享，许多国外服务会将这些IP列入黑名单，导致注册过程遇到困难。为了解决这个问题，本文将介绍一种利用Google Cloud临时搭建远程桌面的方案，帮助用户顺利注册国外服务。 登录Google Cloud地址： 1https:&#x2F;&#x2F;console.cloud.google.com      激活Cl">
+    <meta name="description" content="慢性髓性白血病（CML）是一种由BCR-ABL1融合基因驱动的血液恶性肿瘤。BCR-ABL1融合基因的转录本类型对CML的临床表现和治疗反应有显著影响。e13a2和e14a2是两种主要的BCR-ABL1转录本类型，它们在临床特征和治疗反应上存在差异。  临床表现差异：  e13a2和e14a2在白细胞计数和血小板计数上存在显著差异。e13a2患者的白细胞计数较高（88 × 10^9&#x2F;L）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="临时的虚拟Linux主机：google cloud的另类用法">
-<meta property="og:url" content="http://example.com/2025/02/02/%E4%B8%B4%E6%97%B6%E7%9A%84%E8%99%9A%E6%8B%9FLinux%E4%B8%BB%E6%9C%BA%EF%BC%9Agoogle-cloud%E7%9A%84%E5%8F%A6%E7%B1%BB%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:title" content="文科生的IT笔记">
+<meta property="og:url" content="http://example.com/2025/12/06/%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%ADcml%20%E7%9A%84%E4%BA%9A%E5%9E%8B%E4%B8%BAe14a2%E8%BF%98%E6%98%AFe13a2/index.html">
 <meta property="og:site_name" content="文科生的IT笔记">
-<meta property="og:description" content="当我们注册国外服务时，尽管使用了VPN，但有时由于VPN的IP地址被广泛使用、质量较差，甚至被多个用户共享，许多国外服务会将这些IP列入黑名单，导致注册过程遇到困难。为了解决这个问题，本文将介绍一种利用Google Cloud临时搭建远程桌面的方案，帮助用户顺利注册国外服务。 登录Google Cloud地址： 1https:&#x2F;&#x2F;console.cloud.google.com      激活Cl">
+<meta property="og:description" content="慢性髓性白血病（CML）是一种由BCR-ABL1融合基因驱动的血液恶性肿瘤。BCR-ABL1融合基因的转录本类型对CML的临床表现和治疗反应有显著影响。e13a2和e14a2是两种主要的BCR-ABL1转录本类型，它们在临床特征和治疗反应上存在差异。  临床表现差异：  e13a2和e14a2在白细胞计数和血小板计数上存在显著差异。e13a2患者的白细胞计数较高（88 × 10^9&#x2F;L）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/image-20250202105826624%2520.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/bzsULp%20.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/0sJ5iW%20.png">
-<meta property="article:published_time" content="2025-02-02T02:50:08.000Z">
-<meta property="article:modified_time" content="2025-02-03T05:39:12.645Z">
+<meta property="article:published_time" content="2025-12-06T10:46:00.000Z">
+<meta property="article:modified_time" content="2025-12-06T10:46:00.000Z">
 <meta property="article:author" content="Justin">
-<meta property="article:tag" content="VPS">
-<meta property="article:tag" content="Google">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/image-20250202105826624%2520.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>临时的虚拟Linux主机：google cloud的另类用法 - 文科生的IT笔记</title>
+  <title>文科生的IT笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -221,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="临时的虚拟Linux主机：google cloud的另类用法"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -232,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-02 10:50" pubdate>
-          2025年2月2日 上午
+        <time datetime="2025-12-06 18:46" pubdate>
+          2025年12月6日 晚上
         </time>
       </span>
     
@@ -244,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          147 字
+          880 字
         
       </span>
     
@@ -255,7 +249,7 @@
         
         
         
-          2 分钟
+          8 分钟
         
       </span>
     
@@ -300,26 +294,46 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">临时的虚拟Linux主机：google cloud的另类用法</h1>
+            <h1 id="seo-header"></h1>
             
             
               <div class="markdown-body">
                 
-                <p>当我们注册国外服务时，尽管使用了VPN，但有时由于VPN的IP地址被广泛使用、质量较差，甚至被多个用户共享，许多国外服务会将这些IP列入黑名单，导致注册过程遇到困难。为了解决这个问题，本文将介绍一种利用Google Cloud临时搭建远程桌面的方案，帮助用户顺利注册国外服务。</p>
-<h2 id="登录Google-Cloud"><a href="#登录Google-Cloud" class="headerlink" title="登录Google Cloud"></a>登录Google Cloud</h2><p>地址：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>console.cloud.google.com<br></code></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="激活Cloud-Shel"><a href="#激活Cloud-Shel" class="headerlink" title="激活Cloud Shel"></a>激活Cloud Shel</h2><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/image-20250202105826624%2520.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="远程虚拟机"><a href="#远程虚拟机" class="headerlink" title="远程虚拟机"></a>远程虚拟机</h2><p>运行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -p 8080:80 dorowu/ubuntu-desktop-lxde-vnc<br></code></pre></td></tr></table></figure>
-
-<p>运行结束之后：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/bzsULp%20.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="愉快的使用"><a href="#愉快的使用" class="headerlink" title="愉快的使用"></a>愉快的使用</h2><p><img src="https://cdn.jsdelivr.net/gh/justincnn/pictures@master/upic/0sJ5iW%20.png" srcset="/img/loading.gif" lazyload alt="0sJ5iW"></p>
+                <p>慢性髓性白血病（CML）是一种由BCR-ABL1融合基因驱动的血液恶性肿瘤。BCR-ABL1融合基因的转录本类型对CML的临床表现和治疗反应有显著影响。e13a2和e14a2是两种主要的BCR-ABL1转录本类型，它们在临床特征和治疗反应上存在差异。</p>
+<ol>
+<li><p><strong>临床表现差异</strong>：</p>
+<ul>
+<li>e13a2和e14a2在白细胞计数和血小板计数上存在显著差异。e13a2患者的白细胞计数较高（88 × 10^9&#x2F;L），而e14a2患者的白细胞计数较低（65 × 10^9&#x2F;L）；e13a2患者的血小板计数较低（296 × 10^9&#x2F;L），而e14a2患者的血小板计数较高（430 × 10^9&#x2F;L）。</li>
+</ul>
+</li>
+<li><p><strong>治疗反应差异</strong>：</p>
+<ul>
+<li>e13a2患者的分子反应较差。研究发现，e13a2患者在使用伊马替尼（imatinib）治疗时，其主要分子反应（MMR）和4-log分子反应（MR4）的累积发生率显著低于e14a2患者。然而，两种转录本类型在细胞遗传学反应和总体生存率上没有显著差异。</li>
+</ul>
+</li>
+<li><p><strong>临床意义</strong>：</p>
+<ul>
+<li>尽管e13a2和e14a2在分子反应上存在差异，但它们在伊马替尼治疗下的临床结局相似，无法根据转录本类型进行风险预测。</li>
+</ul>
+</li>
+</ol>
+<p>总结来说，e13a2和e14a2亚型在CML患者的临床表现和治疗反应上存在显著差异，但这些差异在临床治疗决策中的影响有限。医生通常会根据患者的具体情况和治疗反应来制定个性化的治疗方案。</p>
+<p>要通过实验室检测区分CML的e13a2和e14a2亚型，主要采用以下方法：</p>
+<ol>
+<li><p><strong>分子学检测</strong>：通过逆转录聚合酶链反应（RT-PCR）技术来检测BCR-ABL融合基因的不同转录本类型。这种方法可以区分e13a2和e14a2亚型，因为它们在BCR基因的断裂点上存在差异，导致产生的mRNA序列不同。”外周血或骨髓标本经逆转录聚合酶链反应（RT-PCR）检测，确认存在 BCR-ABL 融合基因。”</p>
+</li>
+<li><p><strong>定量PCR（qPCR）</strong>：使用针对特定转录本的引物和探针进行qPCR分析，可以定量检测e13a2和e14a2的表达水平。这种定量方法有助于监测治疗效果和疾病状态。</p>
+</li>
+<li><p><strong>基因测序</strong>：对疑似CML患者的BCR-ABL融合基因进行直接测序，可以准确鉴定融合基因的类型和断裂点，从而区分e13a2和e14a2亚型。</p>
+</li>
+<li><p><strong>荧光原位杂交（FISH）</strong>：虽然FISH主要用于检测Ph染色体的存在，但结合特定的探针，也可以用于区分不同的BCR-ABL融合转录本。</p>
+</li>
+<li><p><strong>免疫表型分析</strong>：通过流式细胞仪进行免疫表型分析，可以检测细胞表面标志物的表达差异，这可能与不同的BCR-ABL转录本类型相关。</p>
+</li>
+<li><p><strong>临床表现与实验室指标</strong>：虽然这不是直接区分亚型的方法，但患者的临床表现和实验室指标（如白细胞计数和血小板计数）有时可以提供一些线索。例如，某些研究表明e13a2亚型可能与较高的白细胞计数和较低的血小板计数相关 。</p>
+</li>
+</ol>
+<p>在实际应用中，医生和实验室人员会根据具体情况选择合适的检测方法，并结合临床表现和治疗反应来综合评估患者的CML亚型。</p>
 
                 
               </div>
@@ -329,15 +343,6 @@
               <div class="post-metas my-3">
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/VPS/" class="print-no-link">#VPS</a>
-      
-        <a href="/tags/Google/" class="print-no-link">#Google</a>
-      
-    </div>
-  
 </div>
 
 
@@ -346,8 +351,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>临时的虚拟Linux主机：google cloud的另类用法</div>
-      <div>http://example.com/2025/02/02/临时的虚拟Linux主机：google-cloud的另类用法/</div>
+      <div></div>
+      <div>http://example.com/2025/12/06/如何判断cml 的亚型为e14a2还是e13a2/</div>
     </div>
     <div class="license-meta">
       
@@ -359,7 +364,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月2日</div>
+          <div>2025年12月6日</div>
         </div>
       
       
@@ -391,9 +396,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/02/02/%E8%87%AA%E5%BB%BA%E5%9B%BE%E5%BA%8A%E4%B9%8B%EF%BC%9Atelegraph/" title="自建图床之：telegraph">
+                      <a href="/2025/12/28/%E4%BD%A0%E7%9A%84%E9%9A%90%E7%A7%81%E4%BD%A0%E5%81%9A%E4%B8%BB%EF%BC%9A%E5%A6%82%E4%BD%95%E7%94%A8-VPS-%E8%87%AA%E5%BB%BA%E5%8A%A0%E5%AF%86-DNS-AdGuard-Home-%E7%89%88/" title="你的隐私你做主：如何用 VPS 自建加密 DNS (AdGuard Home 版)">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">自建图床之：telegraph</span>
+                        <span class="hidden-mobile">你的隐私你做主：如何用 VPS 自建加密 DNS (AdGuard Home 版)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -401,8 +406,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/02/outlook%E5%BD%B1%E5%88%86%E8%BA%AB%E5%A4%A7%E6%B3%95%EF%BC%9A%E6%B7%BB%E5%8A%A0%E5%88%AB%E5%90%8D/" title="outlook影分身大法：添加别名">
-                        <span class="hidden-mobile">outlook影分身大法：添加别名</span>
+                      <a href="/2025/12/06/%E5%A6%82%E4%BD%95%E5%A2%9E%E5%BC%BA%E6%82%A8%E7%9A%84%E5%85%8D%E7%96%AB%E7%B3%BB%E7%BB%9F/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
