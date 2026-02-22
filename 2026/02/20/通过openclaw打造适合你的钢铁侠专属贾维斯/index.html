@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://img.8108000.xyz/file/1771559029018_share_sf-O4301wgk.webp">
 <meta property="og:image" content="https://img.8108000.xyz/file/1771559095912_image.webp">
 <meta property="article:published_time" content="2026-02-20T01:58:42.000Z">
-<meta property="article:modified_time" content="2026-02-22T00:42:01.793Z">
+<meta property="article:modified_time" content="2026-02-22T03:02:30.360Z">
 <meta property="article:author" content="Justin">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://img.8108000.xyz/file/1771555266139_image.webp">
@@ -246,7 +246,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.1k 字
+          3.6k 字
         
       </span>
     
@@ -257,7 +257,7 @@
         
         
         
-          27 分钟
+          30 分钟
         
       </span>
     
@@ -479,6 +479,34 @@
 <li>用 <strong>BCE Embedding</strong> 做知识记忆和相似度搜索；</li>
 <li>网关只在本机 <code>127.0.0.1:18789</code> 开放，通过 SSH 隧道访问，安全性相对更高。</li>
 </ul>
+<h1 id="搜索设置"><a href="#搜索设置" class="headerlink" title="搜索设置"></a>搜索设置</h1><p>Openclaw内置brave搜索引擎，但是效果一般，你可以让openclaw安装其他的搜索skill，<br>项目地址：<code>https://github.com/blessonism/openclaw-search-skills</code></p>
+<h2 id="方式一：让-OpenClaw-帮你装（推荐-🚀）"><a href="#方式一：让-OpenClaw-帮你装（推荐-🚀）" class="headerlink" title="方式一：让 OpenClaw 帮你装（推荐 🚀）"></a>方式一：让 OpenClaw 帮你装（推荐 🚀）</h2><p>直接在对话里告诉你的 OpenClaw agent：</p>
+<blockquote>
+<p>帮我安装这个 skill：<a target="_blank" rel="noopener" href="https://github.com/blessonism/openclaw-search-skills">https://github.com/blessonism/openclaw-search-skills</a></p>
+</blockquote>
+<h3 id="方式二：手动安装"><a href="#方式二：手动安装" class="headerlink" title="方式二：手动安装"></a>方式二：手动安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 1. Clone 到任意位置</span><br><span class="hljs-built_in">mkdir</span> -p ~/.openclaw/workspace/_repos<br>git <span class="hljs-built_in">clone</span> https://github.com/blessonism/openclaw-search-skills.git \<br>  ~/.openclaw/workspace/_repos/openclaw-search-skills<br><br><span class="hljs-comment"># 2. 链接到你的 skills 目录</span><br><span class="hljs-built_in">cd</span> ~/.openclaw/workspace/skills<br><br><span class="hljs-built_in">ln</span> -s ~/.openclaw/workspace/_repos/openclaw-search-skills/search-layer search-layer<br><span class="hljs-built_in">ln</span> -s ~/.openclaw/workspace/_repos/openclaw-search-skills/content-extract content-extract<br><span class="hljs-built_in">ln</span> -s ~/.openclaw/workspace/_repos/openclaw-search-skills/mineru-extract mineru-extract<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 skills 目录因安装方式不同可能不同，常见的是 <code>~/.openclaw/workspace/skills/</code> 或 <code>~/.openclaw/skills/</code>。</p>
+</blockquote>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="搜索-API-Keys（search-layer-需要）"><a href="#搜索-API-Keys（search-layer-需要）" class="headerlink" title="搜索 API Keys（search-layer 需要）"></a>搜索 API Keys（search-layer 需要）</h3><p><strong>方式一：Credentials 文件（推荐）</strong></p>
+<p>创建 <code>~/.openclaw/credentials/search.json</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;exa&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;your-exa-key&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;tavily&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;your-tavily-key&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;grok&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;apiUrl&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://api.x.ai/v1&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;apiKey&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;your-grok-key&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;model&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;grok-4.1-fast&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 Grok 配置可选。缺失时自动降级为 Exa + Tavily 双源。</p>
+</blockquote>
+<p><strong>方式二：环境变量（兼容）</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> EXA_API_KEY=<span class="hljs-string">&quot;your-exa-key&quot;</span>        <span class="hljs-comment"># https://exa.ai</span><br><span class="hljs-built_in">export</span> TAVILY_API_KEY=<span class="hljs-string">&quot;your-tavily-key&quot;</span>  <span class="hljs-comment"># https://tavily.com</span><br><span class="hljs-built_in">export</span> GROK_API_URL=<span class="hljs-string">&quot;https://api.x.ai/v1&quot;</span>  <span class="hljs-comment"># 可选</span><br><span class="hljs-built_in">export</span> GROK_API_KEY=<span class="hljs-string">&quot;your-grok-key&quot;</span>      <span class="hljs-comment"># 可选</span><br><span class="hljs-built_in">export</span> GROK_MODEL=<span class="hljs-string">&quot;grok-4.1-fast&quot;</span>        <span class="hljs-comment"># 可选，默认 grok-4.1-fast</span><br></code></pre></td></tr></table></figure>
+
+<p>环境变量会覆盖 credentials 文件中的同名配置。</p>
+<p>Brave API Key 由 OpenClaw 内置的 <code>web_search</code> 工具管理，不需要在这里配置。</p>
+<h3 id="MinerU-Token（可选，content-extract-需要）"><a href="#MinerU-Token（可选，content-extract-需要）" class="headerlink" title="MinerU Token（可选，content-extract 需要）"></a>MinerU Token（可选，content-extract 需要）</h3><p>只有当你需要抓取微信&#x2F;知乎&#x2F;小红书等反爬站点时才需要：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cp</span> mineru-extract/.env.example mineru-extract/.env<br><span class="hljs-comment"># 编辑 .env，填入你的 MinerU token（从 https://mineru.net/apiManage 获取）</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="Python-依赖"><a href="#Python-依赖" class="headerlink" title="Python 依赖"></a>Python 依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip install requests  <span class="hljs-comment"># 唯一的外部依赖</span><br></code></pre></td></tr></table></figure>
+
+
 <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="🚀-最后一步：解决“找不到命令”"><a href="#🚀-最后一步：解决“找不到命令”" class="headerlink" title="🚀 最后一步：解决“找不到命令”"></a>🚀 最后一步：解决“找不到命令”</h2><p>如果你安装完 OpenClaw 后输入命令提示 <code>command not found</code>，先别急着重装，大概率是 PATH 没生效。</p>
 <p>先执行下面两条（bash）：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;export PATH=\&quot;<span class="hljs-subst">$(npm config get prefix)</span>/bin:\$PATH\&quot;&quot;</span> &gt;&gt; ~/.bashrc<br><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></table></figure>
